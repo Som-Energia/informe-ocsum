@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#-*- encoding: utf-8 -*-
 
 import psycopg2
 import psycopg2.extras
@@ -106,37 +107,33 @@ def numeroDeCasos(db) :
 
 
 
-def peticionsPendentsDeResposta(db):
+def peticionsPendentsDeResposta(db, inici, final):
 
 	processos = idsProcessos(db)
 	passes = idsPasses(db, "C1", 'C2')
 
-	# TODO: Group by 'TipoCambio' (siempre C3? cambio comercializadora)
+	# TODO: S'esta fent servir incorrectament la creacio del cas com a data de carga del fitxer al sistema de la distribuidora
+	# TODO: Group by 'TipoCambio' (siempre C3? cambio comercializadora. Cuando C4?)
 	# TODO: Group by 'TipoPunto'
 	# TODO: Group by 'Comer_saliente'
-	# TODO: Group by 'Comer_entrante'
+	# TODO: Group by 'Comer_entrante' (siempre 1 - Somenergia?)
 	# TODO: Revisar interval de les dates
+	# TODO: Plaç depenent de la tarifa
 
 	with db.cursor() as cur :
 		cur.execute("""\
 			SELECT
-				CASE
-					WHEN c101.id IS NOT NULL THEN 'C101'
-					WHEN c201.id IS NOT NULL THEN 'C201'
-					ELSE NULL
-				END as fullname,
-				COUNT(*) as nprocessos,
-				SUM(CASE WHEN s.ontime THEN 1 ELSE 0 END) as ontime,
-				SUM(CASE WHEN NOT s.ontime AND NOT s.verylate THEN 1 ELSE 0 END) as late,
-				SUM(CASE WHEN s.verylate THEN 1 ELSE 0 END) as verylate, 
-				s.npassos AS npassos,
+				COUNT(*) AS nprocessos,
+				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN 1 ELSE 0 END) AS ontime,
+				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN 1 ELSE 0 END) AS late,
+				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate, 
 				codiprovincia,
 				s.distri,
 				s.tarname,
 				s.refdistribuidora,
 				nomprovincia,
 				s.nomdistribuidora,
-				STRING_AGG(s.sw_id::text, ','),
+				STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id),
 				TRUE
 			FROM (
 				SELECT
@@ -149,8 +146,12 @@ def peticionsPendentsDeResposta(db):
 					dist.ref AS refdistribuidora,
 					dist.name AS nomdistribuidora,
 					tar.name AS tarname,
-					(sw.create_date + %(tempsDeResposta)s) >= %(periodEnd)s as ontime,
-					(sw.create_date + %(tempsDeResposta)s + interval '15 days') < %(periodEnd)s as verylate,
+					CASE
+						WHEN tar.name = ANY( %(tarifesAltaTensio)s ) THEN
+							sw.create_date + interval '15 days'
+						ELSE
+							sw.create_date + interval '7 days'
+					END AS termini,
 					TRUE
 				FROM
 					giscedata_switching AS sw
@@ -190,6 +191,13 @@ def peticionsPendentsDeResposta(db):
 					codiprovincia,
 					nomprovincia,
 					TRUE
+				ORDER BY
+					sw.id,
+					tarname,
+					dist.id,
+					codiprovincia,
+					nomprovincia,
+					TRUE
 				) AS s
 			LEFT JOIN 
 				giscedata_switching_step_header AS sth ON sth.sw_id = s.sw_id
@@ -198,29 +206,80 @@ def peticionsPendentsDeResposta(db):
 			LEFT JOIN
 				giscedata_switching_c2_01 AS c201 ON c201.header_id = sth.id
 			WHERE
-				s.npassos = 1
+				s.npassos = 1 AND
+				NOT (
+					c101.id IS NULL AND
+					c201.id IS NULL
+				)
 			GROUP BY
 				s.nomdistribuidora,
-				fullname,
-				s.npassos,
 				s.distri,
+				s.npassos,
 				s.refdistribuidora,
 				s.tarname,
 				s.codiprovincia,
 				s.nomprovincia,
 				TRUE
 			ORDER BY
-				fullname,
-				s.distri
+				s.distri,
+				s.codiprovincia,
+				s.tarname,
+				TRUE
 			""",
 			dict(
-				periodEnd = datetime.date.today()-datetime.timedelta(days=90),
 				process = [processos[name] for name in 'C1','C2'],
-				tempsDeResposta = datetime.timedelta(days=50),
+				periodEnd = final,
+				tarifesAltaTensio = [
+					'3.1A',
+				],
 			))
 		result = csvTable(cur)
 		return result
 
+class Back2Back(unittest.TestCase) :
+	def assertBack2Back(self, result, testId) :
+		def write(result) :
+			with open(resultfilename,'w') as resultfile:
+				resultfile.write(result)
+
+		print (self.id().replace('__main__.','').replace(".", "/"))
+		resultfilename = 'b2bdata/{}-result'.format(testId)
+		expectedfilename = 'b2bdata/{}-expected'.format(testId)
+
+		try :
+			with open(expectedfilename) as expectedfile:
+				expected=expectedfile.read()
+		except IOError as e:
+			write(result)
+			raise AssertionError("No expectation, accept with: mv {} {}".format(resultfilename, expectedfilename))
+
+		self.maxDiff = None
+		try:
+			self.assertMultiLineEqual(expected, result)
+		except AssertionError:
+			import sys
+	 		print("Back-to-back results differ, accept with: mv {} {}".format(resultfilename, expectedfilename))
+			write(result)
+			raise
+		
+	def _test_peticionsPendentsDeResposta(self, testcase) :
+		year, month = testcase
+		inici=datetime.date(year,month,1)
+		try:
+			final=datetime.date(year,month+1,1)
+		except ValueError:
+			final=datetime.date(year+1,1,1)
+		result = peticionsPendentsDeResposta(db, inici, final)
+		self.assertBack2Back(result, 'peticionsPendentsDeResposta-{}'.format(inici))
+
+	def test_peticionsPendentsDeResposta_2014_02(self) :
+		self._test_peticionsPendentsDeResposta((2014,02))
+
+	def test_peticionsPendentsDeResposta_2014_03(self) :
+		self._test_peticionsPendentsDeResposta((2014,03))
+
+	def test_peticionsPendentsDeResposta_2014_04(self) :
+		self._test_peticionsPendentsDeResposta((2014,04))
 
 
 with psycopg2.connect(dbname='somenergia') as db:
@@ -229,12 +288,10 @@ with psycopg2.connect(dbname='somenergia') as db:
 	print("CACA")
 
 	casosPerTipus = numeroDeCasos(db)
-	result = peticionsPendentsDeResposta(db)
-	print "result:", result
 	print(casosPerTipus['C1']+casosPerTipus['C2'])
 
 	import sys
-	sys.exit(-1)
+	sys.exit(unittest.main())
 
 	with db.cursor() as cur:
 		cur.execute("""
@@ -251,15 +308,6 @@ with psycopg2.connect(dbname='somenergia') as db:
 			SELECT
 				sw.id,
 				sw.data_sollicitud,
-/*
-				sw.*,
-				p1.id as p1_id,
-				p1.data_final as p1_data_final,
-				p1.data_accio as p1_data_accio,
-				p1.activacio_cicle as p1_activacio_cicle,
-				p1.validacio_pendent as p1_validacio_pendent,
-				p2.id as p2_id,
-*/
 				p2.id as p2_id,
 				ph2.date_created as ph2_date_created,
 				p2.data_acceptacio as p2_data_acceptacio, 
