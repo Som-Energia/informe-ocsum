@@ -241,10 +241,11 @@ class Back2Back(unittest.TestCase) :
 		def write(result) :
 			with open(resultfilename,'w') as resultfile:
 				resultfile.write(result)
+		import os
 
 		print (self.id().replace('__main__.','').replace(".", "/"))
-		resultfilename = 'b2bdata/{}-result'.format(testId)
-		expectedfilename = 'b2bdata/{}-expected'.format(testId)
+		resultfilename = 'b2bdata/{}-result'.format(*os.path.splitext(testId))
+		expectedfilename = 'b2bdata/{}-expected{}'.format(*os.path.splitext(testId))
 
 		try :
 			with open(expectedfilename) as expectedfile:
@@ -270,16 +271,22 @@ class Back2Back(unittest.TestCase) :
 		except ValueError:
 			final=datetime.date(year+1,1,1)
 		result = peticionsPendentsDeResposta(db, inici, final)
-		self.assertBack2Back(result, 'peticionsPendentsDeResposta-{}'.format(inici))
+		self.assertBack2Back(result, 'peticionsPendentsDeResposta-{}.csv'.format(inici))
 
 	def test_peticionsPendentsDeResposta_2014_02(self) :
-		self._test_peticionsPendentsDeResposta((2014,02))
+		self._test_peticionsPendentsDeResposta((2014,2))
 
 	def test_peticionsPendentsDeResposta_2014_03(self) :
-		self._test_peticionsPendentsDeResposta((2014,03))
+		self._test_peticionsPendentsDeResposta((2014,3))
 
 	def test_peticionsPendentsDeResposta_2014_04(self) :
-		self._test_peticionsPendentsDeResposta((2014,04))
+		self._test_peticionsPendentsDeResposta((2014,4))
+
+	def test_peticionsPendentsDeResposta_2014_12(self) :
+		self._test_peticionsPendentsDeResposta((2014,12))
+
+	def test_peticionsPendentsDeResposta_2015_02(self) :
+		self._test_peticionsPendentsDeResposta((2015,2))
 
 
 with psycopg2.connect(dbname='somenergia') as db:
