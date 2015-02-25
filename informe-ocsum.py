@@ -244,8 +244,11 @@ class Back2Back(unittest.TestCase) :
 		import os
 
 		print (self.id().replace('__main__.','').replace(".", "/"))
-		resultfilename = 'b2bdata/{}-result'.format(*os.path.splitext(testId))
+		resultfilename = 'b2bdata/{}-result{}'.format(*os.path.splitext(testId))
 		expectedfilename = 'b2bdata/{}-expected{}'.format(*os.path.splitext(testId))
+
+		if os.access(resultfilename, os.F_OK) :
+			os.unlink(resultfilename)
 
 		try :
 			with open(expectedfilename) as expectedfile:
@@ -290,9 +293,6 @@ class Back2Back(unittest.TestCase) :
 
 
 with psycopg2.connect(dbname='somenergia') as db:
-
-#	unittest.main()
-	print("CACA")
 
 	casosPerTipus = numeroDeCasos(db)
 	print(casosPerTipus['C1']+casosPerTipus['C2'])
