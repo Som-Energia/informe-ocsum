@@ -158,6 +158,7 @@ def peticionsPendentsDeResposta(db, inici, final):
 				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN 1 ELSE 0 END) AS ontime,
 				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN 1 ELSE 0 END) AS late,
 				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate, 
+/*				SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
 				codiprovincia,
 				s.distri,
 				s.tarname,
@@ -216,6 +217,12 @@ def peticionsPendentsDeResposta(db, inici, final):
 
 					/* Ens focalitzem en els processos indicats */
 					sw.proces_id = ANY( %(process)s )  AND
+
+					/* No son de petites marcades com a rebutjades sense 02 */
+					case_.priority != '4' AND
+
+					/* No son de petites marcades com a aceptades sense 01 */
+					case_.priority != '5' AND
 
 					TRUE
 				GROUP BY
@@ -315,128 +322,6 @@ with psycopg2.connect(**config) as db:
 	import sys
 	sys.exit(unittest.main())
 
-	with db.cursor() as cur:
-		cur.execute("""
-			SELECT
-				pr.name,
-				pr.id
-			FROM
-				giscedata_switching_proces as pr
-			""")
-		processos = dict( (row.name, row.id) for row in fetchNs(cur))
-
-	with db.cursor() as cur:
-		cur.execute("""
-			SELECT
-				sw.id,
-				sw.data_sollicitud,
-				p2.id as p2_id,
-				ph2.date_created as ph2_date_created,
-				p2.data_acceptacio as p2_data_acceptacio, 
-				p2.data_activacio as p2_data_activacio,
-				p2.rebuig as p2_rebuig,
-				p2.tipus_activacio as p2_tipus_activacio,
-				p2.actuacio_camp as p2_actuacio_camp,
-				current_date > sw.data_sollicitud+5 AS fuera,
-				current_date > sw.data_sollicitud+15 AS muyFuera
-			FROM
-				giscedata_switching AS sw
-			LEFT JOIN
-				giscedata_switching_step_header AS ph1 ON ph1.sw_id = sw.id
-			LEFT JOIN
-				giscedata_switching_c1_01 AS p1 ON p1.header_id = ph1.id
-			LEFT JOIN
-				giscedata_switching_step_header AS ph2 ON ph2.sw_id = sw.id
-			LEFT JOIN
-				giscedata_switching_c1_02 AS p2 ON p2.header_id = ph2.id
-			LEFT JOIN
-				giscedata_switching_step_header AS ph5 ON ph5.sw_id = sw.id
-			LEFT JOIN
-				giscedata_switching_c1_05 AS p5 ON p5.header_id = ph5.id
-			WHERE
-				sw.data_sollicitud < %(finalPeriode)s AND
-				sw.proces_id = %(process)s  AND
-				p2.rebuig = %(rebuig)s
-
-/*
-			GROUP BY
-				fuera,
-				muyFuera
-*/
-			""",
-			# Add literals here to avoid SQL injection
-			dict(
-				finalPeriode=datetime.date(2015,03,01),
-				process = processos['C1'],
-				rebuig=True,
-			))
-
-	# sw.data_sollicitud:
-	# ph2.date_created: Considerem la data del rebuig en cas de C1_02
-	# p2.rebuig
-
-	with db.cursor() as cur:
-		cur.execute("""
-			SELECT 
-				sw.id,
-/*				count(sw.id),*/
-				sw.data_sollicitud,
-/*
-				sw.*,
-				p1.id as p1_id,
-				p1.data_final as p1_data_final,
-				p1.data_accio as p1_data_accio,
-				p1.activacio_cicle as p1_activacio_cicle,
-				p1.validacio_pendent as p1_validacio_pendent,
-				p2.id as p2_id,
-*/
-				p2.id as p2_id,
-				ph2.date_created as ph2_date_created,
-				p2.data_acceptacio as p2_data_acceptacio, 
-				p2.data_activacio as p2_data_activacio,
-				p2.rebuig as p2_rebuig,
-				p2.tipus_activacio as p2_tipus_activacio,
-				p2.actuacio_camp as p2_actuacio_camp,
-				current_date > sw.data_sollicitud+5 AS fuera,
-				current_date > sw.data_sollicitud+15 AS muyFuera
-			FROM
-				giscedata_switching AS sw
-/*
-			LEFT JOIN
-				giscedata_switching_step_header AS ph1 ON ph1.sw_id = sw.id
-			LEFT JOIN
-				giscedata_switching_c1_01 AS p1 ON p1.header_id = ph1.id
-*/
-			LEFT JOIN
-				giscedata_switching_step_header AS ph2 ON ph2.sw_id = sw.id
-			LEFT JOIN
-				giscedata_switching_c1_02 AS p2 ON p2.header_id = ph2.id
-/*			LEFT JOIN
-				giscedata_switching_step_header AS ph5 ON ph5.sw_id = sw.id
-			LEFT JOIN
-				giscedata_switching_c1_05 AS p5 ON p5.header_id = ph5.id
-*/
-			WHERE
-				sw.data_sollicitud >= %(inici)s AND
-				sw.proces_id = %(process)s  AND
-				p2.rebuig = %(rebuig)s
-
-/*
-			GROUP BY
-				fuera,
-				muyFuera
-*/
-			""",
-			# Add literals here to avoid SQL injection
-			dict(
-				inici=datetime.date(2015,01,01),
-				process = processos['C1'],
-				rebuig=True,
-			))
-
-		print csvTable(cur)
-#		print [row.p2_tipus_activacio for row in fetchNs(cur)]
-#		print ns(data=[row.dump() for row in fetchNs(cur)]).dump()
 
 
 
