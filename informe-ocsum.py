@@ -149,6 +149,7 @@ def peticionsPendentsDeResposta(db, inici, final):
 	# TODO: Group by 'Comer_entrante' (siempre 1 - Somenergia?)
 	# TODO: Revisar interval de les dates
 	# TODO: Plaç depenent de la tarifa
+	# TODO: Tarifa s'agafa de l'actual, pot haver canviat
 
 	with db.cursor() as cur :
 		cur.execute("""\
@@ -201,9 +202,14 @@ def peticionsPendentsDeResposta(db, inici, final):
 					giscedata_switching_step_header AS sth ON sth.sw_id = sw.id
 				LEFT JOIN 
 					giscedata_switching_proces AS pr ON sw.proces_id = pr.id
+				LEFT JOIN
+					crm_case AS case_ ON case_.id = sw.case_id
 				WHERE
 					/* S'ha creat el cas abans del final del periode */
-					sth.date_created < %(periodEnd)s AND 
+					sth.date_created < %(periodEnd)s AND
+
+					/* No s'ha tancat el cas abans de finalitzar el periode */
+					(case_.date_closed IS NULL OR case_.date_closed >%(periodEnd)s ) AND
 
 					/* No s'ha fet l'alta abans de finalitzar el periode */
 					(pol.data_alta IS NULL OR pol.data_alta>%(periodEnd)s ) AND
@@ -267,6 +273,12 @@ def peticionsPendentsDeResposta(db, inici, final):
 		return result
 
 class OcsumReport_Test(Back2BackTestCase) :
+
+	def setUp(self):
+		self.db = db
+
+	def tearDown(self) :
+		self.db.rollback()
 
 	def _test_peticionsPendentsDeResposta(self, testcase) :
 		year, month = testcase
