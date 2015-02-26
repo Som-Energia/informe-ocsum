@@ -20,6 +20,36 @@ def csvTable(cursor) :
 	fields = [column.name for column in cursor.description]
 	return '\n'.join('\t'.join(str(x) for x in line) for line in ([fields] + cursor.fetchall()) )
 
+import unittest
+
+class Back2BackTestCase(unittest.TestCase) :
+	def assertBack2Back(self, result, testId) :
+		def write(result) :
+			with open(resultfilename,'w') as resultfile:
+				resultfile.write(result)
+		import os
+
+		resultfilename = 'b2bdata/{}-result{}'.format(*os.path.splitext(testId))
+		expectedfilename = 'b2bdata/{}-expected{}'.format(*os.path.splitext(testId))
+
+		if os.access(resultfilename, os.F_OK) :
+			os.unlink(resultfilename)
+
+		try :
+			with open(expectedfilename) as expectedfile:
+				expected=expectedfile.read()
+		except IOError as e:
+			write(result)
+			raise AssertionError("No expectation, accept with: mv {} {}".format(resultfilename, expectedfilename))
+
+		self.maxDiff = None
+		try:
+			self.assertMultiLineEqual(expected, result)
+		except AssertionError:
+			import sys
+	 		print("Back-to-back results differ, accept with: mv {} {}".format(resultfilename, expectedfilename))
+			write(result)
+			raise
 
 def idsProcessos(db):
 	with db.cursor() as cur:
@@ -133,7 +163,7 @@ def peticionsPendentsDeResposta(db, inici, final):
 				s.refdistribuidora,
 				nomprovincia,
 				s.nomdistribuidora,
-				STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id),
+				STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
 				TRUE
 			FROM (
 				SELECT
@@ -236,36 +266,8 @@ def peticionsPendentsDeResposta(db, inici, final):
 		result = csvTable(cur)
 		return result
 
-class Back2Back(unittest.TestCase) :
-	def assertBack2Back(self, result, testId) :
-		def write(result) :
-			with open(resultfilename,'w') as resultfile:
-				resultfile.write(result)
-		import os
+class OcsumReport_Test(Back2BackTestCase) :
 
-		print (self.id().replace('__main__.','').replace(".", "/"))
-		resultfilename = 'b2bdata/{}-result{}'.format(*os.path.splitext(testId))
-		expectedfilename = 'b2bdata/{}-expected{}'.format(*os.path.splitext(testId))
-
-		if os.access(resultfilename, os.F_OK) :
-			os.unlink(resultfilename)
-
-		try :
-			with open(expectedfilename) as expectedfile:
-				expected=expectedfile.read()
-		except IOError as e:
-			write(result)
-			raise AssertionError("No expectation, accept with: mv {} {}".format(resultfilename, expectedfilename))
-
-		self.maxDiff = None
-		try:
-			self.assertMultiLineEqual(expected, result)
-		except AssertionError:
-			import sys
-	 		print("Back-to-back results differ, accept with: mv {} {}".format(resultfilename, expectedfilename))
-			write(result)
-			raise
-		
 	def _test_peticionsPendentsDeResposta(self, testcase) :
 		year, month = testcase
 		inici=datetime.date(year,month,1)
@@ -291,8 +293,9 @@ class Back2Back(unittest.TestCase) :
 	def test_peticionsPendentsDeResposta_2015_02(self) :
 		self._test_peticionsPendentsDeResposta((2015,2))
 
+from dbconfig import psycopg as config
 
-with psycopg2.connect(dbname='somenergia') as db:
+with psycopg2.connect(**config) as db:
 
 	casosPerTipus = numeroDeCasos(db)
 	print(casosPerTipus['C1']+casosPerTipus['C2'])
