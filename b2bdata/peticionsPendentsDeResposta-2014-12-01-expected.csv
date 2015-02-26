@@ -1,4 +1,4 @@
-nprocessos	ontime	late	verylate	codiprovincia	distri	tarname	refdistribuidora	nomprovincia	nomdistribuidora	string_agg	bool
+nprocessos	ontime	late	verylate	codiprovincia	distri	tarname	refdistribuidora	nomprovincia	nomdistribuidora	casos	bool
 1	0	0	1	17	2272	2.0DHA	0176	Girona	ELECTRA AVELLANA, S.L.	5345	True
 16	16	0	0	07	2273	2.0A	0031	Balears, Illes	ENDESA DISTRIBUCIÓN ELÉCTRICA S. L.	28117,28136,28400,28401,28404,28405,28408,28412,28434,28443,28482,28488,28492,28523,28528,28543	True
 2	2	0	0	07	2273	3.0A	0031	Balears, Illes	ENDESA DISTRIBUCIÓN ELÉCTRICA S. L.	28403,28432	True
