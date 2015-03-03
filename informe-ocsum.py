@@ -295,6 +295,13 @@ def peticionsAcceptades(db, inici, final):
 				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN 1 ELSE 0 END) AS late,
 				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate, 
 /*				SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
+
+				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN
+					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS ontimeAddedTime,
+				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN
+					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS lateAddedTime,
+				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN
+					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS verylateAddedTime, 
 				codiprovincia,
 				s.distri,
 				s.tarname,
@@ -319,6 +326,7 @@ def peticionsAcceptades(db, inici, final):
 					dist.ref AS refdistribuidora,
 					dist.name AS nomdistribuidora,
 					tar.name AS tarname,
+					sw.create_date AS create_date,
 					CASE
 						WHEN tar.name = ANY( %(tarifesAltaTensio)s ) THEN
 							sw.create_date + interval '15 days'
@@ -364,6 +372,11 @@ def peticionsAcceptades(db, inici, final):
 						TRUE
 					) OR (
 						/* No son de petites marcades com a aceptades sense 02 */
+						c202.data_acceptacio >= %(periodStart)s AND
+						c202.data_acceptacio <= %(periodEnd)s AND
+						pol.data_alta IS NOT NULL AND
+						pol.data_alta>=%(periodStart)s AND
+						pol.data_alta<=%(periodEnd)s AND
 						case_.priority = '5'
 					)
 				) as s 
