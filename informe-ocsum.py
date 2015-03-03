@@ -453,6 +453,9 @@ class OcsumReport_Test(Back2BackTestCase) :
 	def test_peticionsAcceptades_2014_02(self) :
 		self._test_peticionsAcceptades((2014,2))
 
+	def test_peticionsAcceptades_2014_03(self) :
+		self._test_peticionsAcceptades((2014,3))
+
 from dbconfig import psycopg as config
 
 with psycopg2.connect(**config) as db:
