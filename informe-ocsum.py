@@ -136,7 +136,6 @@ def numeroDeCasos(db) :
 		return dict((name, count) for name, count in cur)
 
 
-
 def peticionsPendentsDeResposta(db, inici, final):
 
 	processos = idsProcessos(db)
@@ -149,7 +148,8 @@ def peticionsPendentsDeResposta(db, inici, final):
 	# TODO: Group by 'Comer_entrante' (siempre 1 - Somenergia?)
 	# TODO: Revisar interval de les dates
 	# TODO: Plaç depenent de la tarifa
-	# TODO: Tarifa s'agafa de l'actual, pot haver canviat
+	# TODO: Tarifa s'agafa de l'actual, i pot haver canviat
+	# TODO: La prioritat (que es fa servir per indicar gestionades sense 02) podria ser posterior a la data
 
 	with db.cursor() as cur :
 		cur.execute("""\
@@ -221,7 +221,7 @@ def peticionsPendentsDeResposta(db, inici, final):
 					/* No son de petites marcades com a rebutjades sense 02 */
 					case_.priority != '4' AND
 
-					/* No son de petites marcades com a aceptades sense 01 */
+					/* No son de petites marcades com a aceptades sense 02 */
 					case_.priority != '5' AND
 
 					TRUE
@@ -279,6 +279,120 @@ def peticionsPendentsDeResposta(db, inici, final):
 		result = csvTable(cur)
 		return result
 
+def peticionsAcceptades(db, inici, final):
+
+	# TODO:
+	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
+
+	processos = idsProcessos(db)
+	passes = idsPasses(db, "C1", 'C2')
+
+	with db.cursor() as cur :
+		cur.execute("""\
+			SELECT
+				COUNT(*) AS nprocessos,
+				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN 1 ELSE 0 END) AS ontime,
+				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN 1 ELSE 0 END) AS late,
+				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate, 
+/*				SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
+				codiprovincia,
+				s.distri,
+				s.tarname,
+				s.refdistribuidora,
+				nomprovincia,
+				s.nomdistribuidora,
+				STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
+				TRUE
+			FROM (
+				SELECT
+					CASE
+						WHEN c202.id IS NOT NULL THEN c202.data_acceptacio
+						WHEN c102.id IS NOT NULL THEN c102.data_acceptacio
+						WHEN case_.priority = '5' THEN %(periodEnd)s
+						ELSE null
+					END as data_accpetacio,
+					sw.id AS sw_id,
+					provincia.code AS codiprovincia,
+					provincia.name AS nomprovincia,
+					sw.company_id AS company_id,
+					dist.id AS distri,
+					dist.ref AS refdistribuidora,
+					dist.name AS nomdistribuidora,
+					tar.name AS tarname,
+					CASE
+						WHEN tar.name = ANY( %(tarifesAltaTensio)s ) THEN
+							sw.create_date + interval '15 days'
+						ELSE
+							sw.create_date + interval '7 days'
+					END AS termini,
+					TRUE
+				FROM
+					giscedata_switching AS sw
+				LEFT JOIN 
+					giscedata_switching_step_header AS sth ON sth.sw_id = sw.id
+				LEFT JOIN
+					giscedata_switching_c1_02 AS c102 ON c102.header_id = sth.id
+				LEFT JOIN
+					giscedata_switching_c2_02 AS c202 ON c202.header_id = sth.id
+				LEFT JOIN
+					crm_case AS case_ ON case_.id = sw.case_id
+				LEFT JOIN
+					giscedata_cups_ps AS cups ON sw.cups_id = cups.id
+				LEFT JOIN
+					res_municipi ON  cups.id_municipi = res_municipi.id
+				LEFT JOIN
+					res_country_state AS provincia ON res_municipi.state = provincia.id
+				LEFT JOIN 
+					giscedata_polissa AS pol ON cups_polissa_id = pol.id
+				LEFT JOIN 
+					res_partner AS dist ON pol.distribuidora = dist.id
+				LEFT JOIN
+					giscedata_polissa_tarifa AS tar ON pol.tarifa = tar.id
+				WHERE
+					(
+						c102.id IS NOT NULL AND
+						c102.data_acceptacio >= %(periodStart)s AND
+						c102.data_acceptacio <= %(periodEnd)s AND
+						NOT c102.rebuig AND
+						TRUE
+						
+					) OR (
+						c202.id IS NOT NULL AND
+						c202.data_acceptacio >= %(periodStart)s AND
+						c202.data_acceptacio <= %(periodEnd)s AND
+						NOT c202.rebuig AND
+						TRUE
+					) OR (
+						/* No son de petites marcades com a aceptades sense 02 */
+						case_.priority = '5'
+					)
+				) as s 
+			GROUP BY
+				s.nomdistribuidora,
+				s.distri,
+				s.refdistribuidora,
+				s.tarname,
+				s.codiprovincia,
+				s.nomprovincia,
+				TRUE
+			ORDER BY
+				s.distri,
+				s.codiprovincia,
+				s.tarname,
+				TRUE
+			"""
+			,dict(
+
+				process = [processos[name] for name in 'C1','C2'],
+				periodStart = inici,
+				periodEnd = final,
+				tarifesAltaTensio = [
+					'3.1A',
+				],
+			))
+		result = csvTable(cur)
+		return result
+
 class OcsumReport_Test(Back2BackTestCase) :
 
 	def setUp(self):
@@ -311,6 +425,20 @@ class OcsumReport_Test(Back2BackTestCase) :
 
 	def test_peticionsPendentsDeResposta_2015_02(self) :
 		self._test_peticionsPendentsDeResposta((2015,2))
+
+
+	def _test_peticionsAcceptades(self, testcase) :
+		year, month = testcase
+		inici=datetime.date(year,month,1)
+		try:
+			final=datetime.date(year,month+1,1)
+		except ValueError:
+			final=datetime.date(year+1,1,1)
+		result = peticionsAcceptades(db, inici, final)
+		self.assertBack2Back(result, 'peticionsAcceptades-{}.csv'.format(inici))
+
+	def test_peticionsAcceptades_2014_02(self) :
+		self._test_peticionsAcceptades((2014,2))
 
 from dbconfig import psycopg as config
 
