@@ -456,6 +456,113 @@ class OcsumReport_Test(Back2BackTestCase) :
 	def test_peticionsAcceptades_2014_03(self) :
 		self._test_peticionsAcceptades((2014,3))
 
+from lxml import etree
+class InformeSwitching:
+
+	def __init__(self, **kw ) :
+		self.__dict__.update(kw)
+
+	def addElement(self, parent, name, content=None) :
+		element = etree.Element(name)
+		if parent is not None: parent.append(element)
+		if content is not None: element.text = content
+		return element
+
+	def genera(self) :
+		etree.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+
+		root = self.addElement(None, 'MensajeSolicitudesRealizadas')
+		root.attrib['{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation'] = 'SolicitudesRealizadas_v1.0.xsd'
+		cabecera = self.addElement(root, 'Cabecera')
+		self.addElement(cabecera, 'CodigoAgente', self.CodigoAgente)
+		self.addElement(cabecera, 'TipoMercado', self.TipoMercado)
+		self.addElement(cabecera, 'TipoAgente', self.TipoAgente)
+		self.addElement(cabecera, 'Periodo', self.Periodo)
+
+		return etree.tostring(
+			root,
+			pretty_print=True,
+        	xml_declaration=True,
+			encoding='utf-8',
+        	method="xml",
+			)
+
+class InformeSwitching_Test(unittest.TestCase) :
+	def assertXmlEqual(self, got, want):
+		from lxml.doctestcompare import LXMLOutputChecker
+		from doctest import Example
+
+		checker = LXMLOutputChecker()
+		if checker.check_output(want, got, 0):
+			return
+		message = checker.output_difference(Example("", want), got, 0)
+		raise AssertionError(message)
+
+	head = """\
+<?xml version="1.0" encoding="UTF-8"?>
+<MensajeSolicitudesRealizadas
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="SolicitudesRealizadas_v1.0.xsd"
+>
+	<Cabecera>
+		<CodigoAgente>R2-415</CodigoAgente>
+		<TipoMercado>E</TipoMercado>
+		<TipoAgente>C</TipoAgente>
+		<Periodo>201501</Periodo>
+	</Cabecera>
+"""
+	foot = """\
+</MensajeSolicitudesRealizadas>
+"""
+
+	def test_genera_senseSolicituds(self) :
+		informe = InformeSwitching(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head+self.foot
+			)
+	def test_genera_solicitudsPendents(self) :
+		informe = InformeSwitching(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head +
+			"""\
+	<SolicitudesRealizadas>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia> <!-- dos primers numeros del cp zero padded -->
+			<Distribuidor>Endesa</Distribuidor>
+			<Comer_entrante>Endesa</Comer_entrante>
+			<Comer_saliente>SomEnergia</Comer_saliente>
+			<TipoCambio>TODO</TipoCambio> <!-- C3: Cambio de comercializador -->
+			<TipoPunto>TODO</TipoPunto>
+			<TarifaATR>TODO</TarifaATR>
+			<!-- Los campos anteriores han de ser unicos, los de abajo cuentan los agregados -->
+			<TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>5</SolicitudesAnuladas>
+			<Reposiciones>2</Reposiciones>
+			<ClientesSalientes>3</ClientesSalientes>
+			<NumImpagados>5</NumImpagados>
+			<DetallePendientesRespuesta> <!-- Solo en caso de que las haya, uno por tipo -->
+				<TipoRetraso>00</TipoRetraso>
+				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+		</DatosSolicitudes>
+	</SolicitudesRealizadas>
+""" + self.foot
+			)
+
+
 from dbconfig import psycopg as config
 
 with psycopg2.connect(**config) as db:
