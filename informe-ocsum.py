@@ -12,7 +12,7 @@ from dbqueries import *
 from decimal import Decimal
 
 from lxml import etree
-class InformeSwitching:
+class SwichingReport:
 
 	def __init__(self, **kw ) :
 
@@ -146,7 +146,7 @@ class InformeSwitching:
 			self.canvis.setdefault(key, ns()).accepted = accepted
 
 
-class InformeSwitching_Test(unittest.TestCase) :
+class SwichingReport_Test(unittest.TestCase) :
 
 	head = """\
 <?xml version="1.0" encoding="UTF-8"?>
@@ -166,7 +166,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 """
 
 	def test_genera_senseSolicituds(self) :
-		informe = InformeSwitching(
+		informe = SwichingReport(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
@@ -177,7 +177,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			self.head+self.foot
 			)
 	def test_genera_solicitudsPendents(self) :
-		informe = InformeSwitching(
+		informe = SwichingReport(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
@@ -223,7 +223,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			)
 
 	def test_genera_solicitudsPendents_retrasades(self) :
-		informe = InformeSwitching(
+		informe = SwichingReport(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
@@ -276,7 +276,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 """ + self.foot
 			)
 	def test_genera_solicitudsPendents_diversesComercialitzadores(self) :
-		informe = InformeSwitching(
+		informe = SwichingReport(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
@@ -356,7 +356,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 """ + self.foot
 			)
 	def test_genera_solicitudsAcceptades(self) :
-		informe = InformeSwitching(
+		informe = SwichingReport(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
@@ -406,7 +406,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			)
 
 	def test_genera_solicitudsAcceptades_delayed(self) :
-		informe = InformeSwitching(
+		informe = SwichingReport(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
@@ -472,7 +472,7 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			final=datetime.date(year,month+1,1)
 		except ValueError:
 			final=datetime.date(year+1,1,1)
-		informe = InformeSwitching(
+		informe = SwichingReport(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
