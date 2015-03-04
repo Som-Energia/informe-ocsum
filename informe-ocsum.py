@@ -72,7 +72,7 @@ class InformeSwitching:
 			self.element(detail, 'TMSolicitudesAceptadas', '{:.1f}'.format(meanTime))
 			self.element(detail, 'NumSolicitudesAceptadas', n)
 
-	def generaSolicituds(self, root):
+	def generateRequestSummaries(self, root):
 		if not self.canvis : return
 		solicitudes = self.element(root, 'SolicitudesRealizadas')
 		for (
@@ -99,19 +99,20 @@ class InformeSwitching:
 				if 'accepted' in canvi :
 					self.generaAcceptades(datos, canvi.accepted)
 
+	def generateHeader(self, parent):
+		cabecera = self.element(parent, 'Cabecera')
+		self.element(cabecera, 'CodigoAgente', self.CodigoAgente)
+		self.element(cabecera, 'TipoMercado', self.TipoMercado)
+		self.element(cabecera, 'TipoAgente', self.TipoAgente)
+		self.element(cabecera, 'Periodo', self.Periodo)
 
 	def genera(self) :
 		etree.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
 		root = self.element(None, 'MensajeSolicitudesRealizadas')
 		xsdNs = '{http://www.w3.org/2001/XMLSchema-instance}'
 		root.attrib[xsdNs+'noNamespaceSchemaLocation'] = 'SolicitudesRealizadas_v1.0.xsd'
-		cabecera = self.element(root, 'Cabecera')
-		self.element(cabecera, 'CodigoAgente', self.CodigoAgente)
-		self.element(cabecera, 'TipoMercado', self.TipoMercado)
-		self.element(cabecera, 'TipoAgente', self.TipoAgente)
-		self.element(cabecera, 'Periodo', self.Periodo)
-
-		self.generaSolicituds(root)
+		self.generateHeader(root)
+		self.generateRequestSummaries(root)
 
 		return etree.tostring(
 			root,
