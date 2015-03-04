@@ -560,9 +560,6 @@ class InformeSwitching:
 			pendent.tarname,
 			)
 		self.canvis.setdefault(key, ns()).pendents = pendent
-		print(self.canvis)
-
-print(InformeSwitching._codiTipusTarifa)
 
 class InformeSwitching_Test(unittest.TestCase) :
 	def assertXmlEqual(self, got, want):
