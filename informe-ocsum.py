@@ -481,7 +481,7 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			acceptades=peticionsAcceptades(db, inici, final)
 
 		informe.fillPending( pendents )
-#		informe.fillAccepted( acceptades )
+		informe.fillAccepted( acceptades )
 
 
 		result = informe.genera()
