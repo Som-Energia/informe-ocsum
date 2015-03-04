@@ -6,7 +6,6 @@ import psycopg2.extras
 import datetime
 
 from namespace import namespace as ns
-
 def fetchNs(cursor):
 	"""Wraps a database cursor so that instead of providing data
 	as arrays, it provides objects with attributes named
@@ -15,6 +14,9 @@ def fetchNs(cursor):
 	for row in cursor:
 		yield ns(zip(fields, row))
 	raise StopIteration
+
+def nsList(cursor) :
+	return [e for e in fetchNs(cursor) ]
 
 def csvTable(cursor) :
 	fields = [column.name for column in cursor.description]
@@ -105,7 +107,7 @@ def numeroDeCasos(db) :
 		return dict((name, count) for name, count in cur)
 
 
-def peticionsPendentsDeResposta(db, inici, final):
+def peticionsPendentsDeResposta(db, inici, final, cursorManager=nsList):
 
 	processos = idsProcessos(db)
 	passes = idsPasses(db, "C1", 'C2')
@@ -113,7 +115,7 @@ def peticionsPendentsDeResposta(db, inici, final):
 	# TODO: S'esta fent servir incorrectament la creacio del cas com a data de carga del fitxer al sistema de la distribuidora
 	# TODO: Group by 'TipoCambio' (siempre C3? cambio comercializadora. Cuando C4?)
 	# TODO: Group by 'TipoPunto'
-	# TODO: Group by 'Comer_saliente'
+	# TODO: Group by 'Comer_saliente' (siempre 0 - Desconocido?)
 	# TODO: Group by 'Comer_entrante' (siempre 1 - Somenergia?)
 	# TODO: Revisar interval de les dates
 	# TODO: Plaç depenent de la tarifa
@@ -246,10 +248,10 @@ def peticionsPendentsDeResposta(db, inici, final):
 					'3.1A',
 				],
 			))
-		result = csvTable(cur)
+		result = cursorManager(cur)
 		return result
 
-def peticionsAcceptades(db, inici, final):
+def peticionsAcceptades(db, inici, final, cursorManager=nsList):
 
 	# TODO:
 	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
@@ -370,7 +372,7 @@ def peticionsAcceptades(db, inici, final):
 				periodStart = inici,
 				periodEnd = final,
 			))
-		result = csvTable(cur)
+		result = cursorManager(cur)
 		return result
 
 import b2btest
@@ -390,7 +392,7 @@ class OcsumReport_Test(b2btest.TestCase) :
 			final=datetime.date(year,month+1,1)
 		except ValueError:
 			final=datetime.date(year+1,1,1)
-		result = peticionsPendentsDeResposta(db, inici, final)
+		result = peticionsPendentsDeResposta(db, inici, final, cursorManager=csvTable)
 		self.assertBack2Back(result, 'peticionsPendentsDeResposta-{}.csv'.format(inici))
 
 	def test_peticionsPendentsDeResposta_2014_02(self) :
@@ -416,7 +418,7 @@ class OcsumReport_Test(b2btest.TestCase) :
 			final=datetime.date(year,month+1,1)
 		except ValueError:
 			final=datetime.date(year+1,1,1)
-		result = peticionsAcceptades(db, inici, final)
+		result = peticionsAcceptades(db, inici, final, cursorManager=csvTable)
 		self.assertBack2Back(result, 'peticionsAcceptades-{}.csv'.format(inici))
 
 	def test_peticionsAcceptades_2014_02(self) :
@@ -434,6 +436,7 @@ class InformeSwitching:
 	_codiTipusTarifa = dict(
 		line.split()[::-1]
 		for line in """\
+			1	2.0A  
 			1T	2.1A  
 			2	2.0DHA
 			2S	2.0DHS
@@ -528,16 +531,8 @@ class InformeSwitching:
 			)
 		self.canvis.setdefault(key, ns()).pendents = pendent
 
-class InformeSwitching_Test(unittest.TestCase) :
-	def assertXmlEqual(self, got, want):
-		from lxml.doctestcompare import LXMLOutputChecker
-		from doctest import Example
 
-		checker = LXMLOutputChecker()
-		if checker.check_output(want, got, 0):
-			return
-		message = checker.output_difference(Example("", want), got, 0)
-		raise AssertionError(message)
+class InformeSwitching_Test(unittest.TestCase) :
 
 	head = """\
 <?xml version="1.0" encoding="UTF-8"?>
@@ -628,7 +623,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 				verylate=300, 
 				codiprovincia='08',
 				tarname='2.0DHA',
-				refdistribuidora='R1-001',
+				refdistribuidora='R1-002',
 				),
 			])
 		
@@ -639,7 +634,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 	<SolicitudesRealizadas>
 		<DatosSolicitudes>
 			<Provincia>08000</Provincia>
-			<Distribuidor>R1-001</Distribuidor>
+			<Distribuidor>R1-002</Distribuidor>
 			<Comer_entrante>R2-415</Comer_entrante>
 			<Comer_saliente>0</Comer_saliente>
 			<TipoCambio>C3</TipoCambio>
@@ -666,6 +661,114 @@ class InformeSwitching_Test(unittest.TestCase) :
 	</SolicitudesRealizadas>
 """ + self.foot
 			)
+	def _test_genera_solicitudsPendents_diversesComercialitzadores(self) :
+		informe = InformeSwitching(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.pendents( [
+			ns(
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			ns(
+				nprocessos=600,
+				ontime=100,
+				late=200,
+				verylate=300, 
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-002',
+				),
+			])
+		
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head +
+			"""\
+	<SolicitudesRealizadas>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-001</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+			<DetallePendientesRespuesta>
+				<TipoRetraso>00</TipoRetraso>
+				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+		</DatosSolicitudes>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-002</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+			<DetallePendientesRespuesta>
+				<TipoRetraso>00</TipoRetraso>
+				<NumSolicitudesPendientes>100</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+			<DetallePendientesRespuesta>
+				<TipoRetraso>05</TipoRetraso>
+				<NumSolicitudesPendientes>200</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+			<DetallePendientesRespuesta>
+				<TipoRetraso>15</TipoRetraso>
+				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+		</DatosSolicitudes>
+	</SolicitudesRealizadas>
+""" + self.foot
+			)
+
+class XmlGenerateFromDb_Test(b2btest.TestCase) :
+
+	def _test_fullGenerate(self):
+		"""Work In progress as we get it assembled"""
+
+		year, month = (2014,2)
+		inici=datetime.date(year,month,1)
+		try:
+			final=datetime.date(year,month+1,1)
+		except ValueError:
+			final=datetime.date(year+1,1,1)
+		informe = InformeSwitching(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		pendents=peticionsPendentsDeResposta(db, inici, final)
+		print (pendents)
+		informe.pendents( pendents )
+
+		acceptades=peticionsAcceptades(db, inici, final)
+
+		result = informe.genera()
+
+		self.assertBack2Back(result, 'informeOcsum-{}.xml'.format(inici))
+
 
 
 from dbconfig import psycopg as config
