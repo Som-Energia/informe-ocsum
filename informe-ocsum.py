@@ -77,7 +77,7 @@ class InformeSwitching:
 		solicitudes = self.element(root, 'SolicitudesRealizadas')
 		for (
 			provincia, distribuidora, tipoPunto, tipoTarifa
-			),canvi  in self.canvis.iteritems():
+			),canvi  in sorted(self.canvis.iteritems()):
 				datos = self.element(solicitudes, 'DatosSolicitudes')
 				self.element(datos, 'Provincia', provincia+'000')
 				self.element(datos, 'Distribuidor', distribuidora)
