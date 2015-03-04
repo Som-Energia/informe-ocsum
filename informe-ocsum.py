@@ -456,28 +456,92 @@ class OcsumReport_Test(Back2BackTestCase) :
 	def test_peticionsAcceptades_2014_03(self) :
 		self._test_peticionsAcceptades((2014,3))
 
+
+
+
+
+
 from lxml import etree
 class InformeSwitching:
 
+	_codiTipusTarifa = dict(
+		line.split()[::-1]
+		for line in """\
+	1T	2.1A  
+	2	2.0DHA
+	2S	2.0DHS
+	2T	2.1DHA
+	2V	2.1DHS
+	3	3.0A  
+	4	3.1A    
+	5	6.1A  
+	5T	6.1B  
+	6	6.2  
+	7	6.3    
+	8	6.4    
+	9	6.5    
+	""".split('\n')
+		if line.strip()
+	)
+
+
 	def __init__(self, **kw ) :
 		self.__dict__.update(kw)
+		self.canvis = {}
 
-	def addElement(self, parent, name, content=None) :
+	def element(self, parent, name, content=None) :
 		element = etree.Element(name)
 		if parent is not None: parent.append(element)
-		if content is not None: element.text = content
+		if content is not None: element.text = str(content)
 		return element
+
+	def generaPendientes(self, parent, canvisPendents) :
+		for codigoRetraso, n in [
+				('00', canvisPendents.ontime),
+				('05', canvisPendents.late),
+				('15', canvisPendents.verylate),
+				]:
+			if not n: continue
+			detalle = self.element(parent, 'DetallePendientesRespuesta')
+			self.element(detalle, 'TipoRetraso', codigoRetraso)
+			self.element(detalle, 'NumSolicitudesPendientes', n)
+
+	def generaSolicitudes(self, root):
+		if not self.canvis : return
+		solicitudes = self.element(root, 'SolicitudesRealizadas')
+		for (
+			provincia, distribuidora, tipoPunto, tipoTarifa
+			),canvi  in self.canvis.iteritems():
+				datos = self.element(solicitudes, 'DatosSolicitudes')
+				self.element(datos, 'Provincia', provincia+'000')
+				self.element(datos, 'Distribuidor', distribuidora)
+				self.element(datos, 'Comer_entrante', 'R2-415')
+				self.element(datos, 'Comer_saliente', '0')
+				self.element(datos, 'TipoCambio', 'C3') # TODO
+				self.element(datos, 'TipoPunto', tipoPunto) # TODO
+				self.element(datos, 'TarifaATR', self._codiTipusTarifa[tipoTarifa]) # TODO
+
+				self.element(datos, 'TotalSolicitudesEnviadas', 69) # TODO
+				self.element(datos, 'SolicitudesAnuladas', 0) # TODO
+				self.element(datos, 'Reposiciones', 0) # TODO
+				self.element(datos, 'ClientesSalientes', 0) # TODO
+				self.element(datos, 'NumImpagados', 0) # TODO
+
+				self.generaPendientes(datos, canvi.pendents)
+
 
 	def genera(self) :
 		etree.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
 
-		root = self.addElement(None, 'MensajeSolicitudesRealizadas')
+		root = self.element(None, 'MensajeSolicitudesRealizadas')
 		root.attrib['{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation'] = 'SolicitudesRealizadas_v1.0.xsd'
-		cabecera = self.addElement(root, 'Cabecera')
-		self.addElement(cabecera, 'CodigoAgente', self.CodigoAgente)
-		self.addElement(cabecera, 'TipoMercado', self.TipoMercado)
-		self.addElement(cabecera, 'TipoAgente', self.TipoAgente)
-		self.addElement(cabecera, 'Periodo', self.Periodo)
+		cabecera = self.element(root, 'Cabecera')
+		self.element(cabecera, 'CodigoAgente', self.CodigoAgente)
+		self.element(cabecera, 'TipoMercado', self.TipoMercado)
+		self.element(cabecera, 'TipoAgente', self.TipoAgente)
+		self.element(cabecera, 'Periodo', self.Periodo)
+
+		self.generaSolicitudes(root)
 
 		return etree.tostring(
 			root,
@@ -486,6 +550,19 @@ class InformeSwitching:
 			encoding='utf-8',
         	method="xml",
 			)
+
+	def pendents(self,pendents) :
+		pendent = pendents[0]
+		key=(
+			pendent.codiprovincia,
+			pendent.refdistribuidora,
+			1, # TODO
+			pendent.tarname,
+			)
+		self.canvis.setdefault(key, ns()).pendents = pendent
+		print(self.canvis)
+
+print(InformeSwitching._codiTipusTarifa)
 
 class InformeSwitching_Test(unittest.TestCase) :
 	def assertXmlEqual(self, got, want):
@@ -533,6 +610,17 @@ class InformeSwitching_Test(unittest.TestCase) :
 			TipoAgente='C',
 			Periodo='201501',
 			)
+		informe.pendents( [
+			ns(
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
 		
 		self.assertXmlEqual(
 			informe.genera(),
@@ -540,21 +628,74 @@ class InformeSwitching_Test(unittest.TestCase) :
 			"""\
 	<SolicitudesRealizadas>
 		<DatosSolicitudes>
-			<Provincia>08000</Provincia> <!-- dos primers numeros del cp zero padded -->
-			<Distribuidor>Endesa</Distribuidor>
-			<Comer_entrante>Endesa</Comer_entrante>
-			<Comer_saliente>SomEnergia</Comer_saliente>
-			<TipoCambio>TODO</TipoCambio> <!-- C3: Cambio de comercializador -->
-			<TipoPunto>TODO</TipoPunto>
-			<TarifaATR>TODO</TarifaATR>
-			<!-- Los campos anteriores han de ser unicos, los de abajo cuentan los agregados -->
-			<TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
-			<SolicitudesAnuladas>5</SolicitudesAnuladas>
-			<Reposiciones>2</Reposiciones>
-			<ClientesSalientes>3</ClientesSalientes>
-			<NumImpagados>5</NumImpagados>
-			<DetallePendientesRespuesta> <!-- Solo en caso de que las haya, uno por tipo -->
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-001</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+			<DetallePendientesRespuesta>
 				<TipoRetraso>00</TipoRetraso>
+				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+		</DatosSolicitudes>
+	</SolicitudesRealizadas>
+""" + self.foot
+			)
+
+	def test_genera_solicitudsPendents_retrasades(self) :
+		informe = InformeSwitching(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.pendents( [
+			ns(
+				nprocessos=600,
+				ontime=100,
+				late=200,
+				verylate=300, 
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
+		
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head +
+			"""\
+	<SolicitudesRealizadas>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-001</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+			<DetallePendientesRespuesta>
+				<TipoRetraso>00</TipoRetraso>
+				<NumSolicitudesPendientes>100</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+			<DetallePendientesRespuesta>
+				<TipoRetraso>05</TipoRetraso>
+				<NumSolicitudesPendientes>200</NumSolicitudesPendientes>
+			</DetallePendientesRespuesta>
+			<DetallePendientesRespuesta>
+				<TipoRetraso>15</TipoRetraso>
 				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
 			</DetallePendientesRespuesta>
 		</DatosSolicitudes>
