@@ -1,5 +1,7 @@
 # SwitchingReport
 
+***WARNING: WIP! THIS MODULE IS SUBJECT OF CURRENT ACTIVE DEVELOPMENT AND IT IS NOT FUNCTIONAL YET***
+
 This Python module can be used by electricity retailers
 to generate the report Spanish regulators require about
 consumer retailer switching.
