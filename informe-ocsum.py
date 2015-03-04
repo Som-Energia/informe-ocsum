@@ -14,32 +14,33 @@ from decimal import Decimal
 from lxml import etree
 class InformeSwitching:
 
-	"""Codi tret de la taula mestra versió 4.1"""
-	_codiTipusTarifa = dict(
-		line.split()[::-1]
-		for line in """\
-			1	2.0A  
-			1T	2.1A  
-			2	2.0DHA
-			2S	2.0DHS
-			2T	2.1DHA
-			2V	2.1DHS
-			3	3.0A  
-			4	3.1A    
-			5	6.1A  
-			5T	6.1B  
-			6	6.2  
-			7	6.3    
-			8	6.4    
-			9	6.5    
-			""".split('\n')
-		if line.strip()
-	)
-
-
 	def __init__(self, **kw ) :
+
 		self.__dict__.update(kw)
 		self.canvis = {}
+
+		# Codi tret de la taula mestra versió 4.1
+		self._codiTipusTarifa = dict(
+			line.split()[::-1]
+			for line in """\
+				1	2.0A  
+				1T	2.1A  
+				2	2.0DHA
+				2S	2.0DHS
+				2T	2.1DHA
+				2V	2.1DHS
+				3	3.0A  
+				4	3.1A    
+				5	6.1A  
+				5T	6.1B  
+				6	6.2  
+				7	6.3    
+				8	6.4    
+				9	6.5    
+				""".split('\n')
+			if line.strip()
+		)
+
 
 	def element(self, parent, name, content=None) :
 		element = etree.Element(name)
@@ -47,30 +48,30 @@ class InformeSwitching:
 		if content is not None: element.text = str(content)
 		return element
 
-	def generaPendents(self, parent, canvisPendents) :
-		for codigoRetraso, n in [
-				('00', canvisPendents.ontime),
-				('05', canvisPendents.late),
-				('15', canvisPendents.verylate),
-				]:
-			if not n: continue
-			detail = self.element(parent, 'DetallePendientesRespuesta')
-			self.element(detail, 'TipoRetraso', codigoRetraso)
-			self.element(detail, 'NumSolicitudesPendientes', n)
+	def genera(self) :
+		xsiNs = 'http://www.w3.org/2001/XMLSchema-instance'
+		xsi = '{'+xsiNs +'}'
+		schema = 'SolicitudesRealizadas_v1.0.xsd'
+		etree.register_namespace('xsi', xsiNs)
+		root = self.element(None, 'MensajeSolicitudesRealizadas')
+		root.attrib[xsi+'noNamespaceSchemaLocation'] = schema
+		self.generateHeader(root)
+		self.generateRequestSummaries(root)
 
-	def generaAcceptades(self, parent, accepted):
-		for codigoRetraso, n, addedTime in [
-				('00', accepted.ontime, accepted.ontimeaddedtime),
-				('05', accepted.late, accepted.lateaddedtime),
-				('15', accepted.verylate, accepted.verylateaddedtime),
-			]:
+		return etree.tostring(
+			root,
+			pretty_print=True,
+        	xml_declaration=True,
+			encoding='utf-8',
+        	method="xml",
+			)
 
-			if not n : continue
-			meanTime = Decimal(addedTime) / n
-			detail = self.element(parent, 'DetalleAceptadas')
-			self.element(detail, 'TipoRetraso', codigoRetraso)
-			self.element(detail, 'TMSolicitudesAceptadas', '{:.1f}'.format(meanTime))
-			self.element(detail, 'NumSolicitudesAceptadas', n)
+	def generateHeader(self, parent):
+		cabecera = self.element(parent, 'Cabecera')
+		self.element(cabecera, 'CodigoAgente', self.CodigoAgente)
+		self.element(cabecera, 'TipoMercado', self.TipoMercado)
+		self.element(cabecera, 'TipoAgente', self.TipoAgente)
+		self.element(cabecera, 'Periodo', self.Periodo)
 
 	def generateRequestSummaries(self, root):
 		if not self.canvis : return
@@ -94,33 +95,35 @@ class InformeSwitching:
 				self.element(datos, 'NumImpagados', 0) # TODO: No ben definit
 
 				if 'pendents' in canvi :
-					self.generaPendents(datos, canvi.pendents)
+					self.generatePendingDetails(datos, canvi.pendents)
 
 				if 'accepted' in canvi :
-					self.generaAcceptades(datos, canvi.accepted)
+					self.generateAcceptedDetails(datos, canvi.accepted)
 
-	def generateHeader(self, parent):
-		cabecera = self.element(parent, 'Cabecera')
-		self.element(cabecera, 'CodigoAgente', self.CodigoAgente)
-		self.element(cabecera, 'TipoMercado', self.TipoMercado)
-		self.element(cabecera, 'TipoAgente', self.TipoAgente)
-		self.element(cabecera, 'Periodo', self.Periodo)
+	def generatePendingDetails(self, parent, canvisPendents) :
+		for codigoRetraso, n in [
+				('00', canvisPendents.ontime),
+				('05', canvisPendents.late),
+				('15', canvisPendents.verylate),
+				]:
+			if not n: continue
+			detail = self.element(parent, 'DetallePendientesRespuesta')
+			self.element(detail, 'TipoRetraso', codigoRetraso)
+			self.element(detail, 'NumSolicitudesPendientes', n)
 
-	def genera(self) :
-		etree.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-		root = self.element(None, 'MensajeSolicitudesRealizadas')
-		xsdNs = '{http://www.w3.org/2001/XMLSchema-instance}'
-		root.attrib[xsdNs+'noNamespaceSchemaLocation'] = 'SolicitudesRealizadas_v1.0.xsd'
-		self.generateHeader(root)
-		self.generateRequestSummaries(root)
+	def generateAcceptedDetails(self, parent, accepted):
+		for codigoRetraso, n, addedTime in [
+				('00', accepted.ontime, accepted.ontimeaddedtime),
+				('05', accepted.late, accepted.lateaddedtime),
+				('15', accepted.verylate, accepted.verylateaddedtime),
+			]:
 
-		return etree.tostring(
-			root,
-			pretty_print=True,
-        	xml_declaration=True,
-			encoding='utf-8',
-        	method="xml",
-			)
+			if not n : continue
+			meanTime = Decimal(addedTime) / n
+			detail = self.element(parent, 'DetalleAceptadas')
+			self.element(detail, 'TipoRetraso', codigoRetraso)
+			self.element(detail, 'TMSolicitudesAceptadas', '{:.1f}'.format(meanTime))
+			self.element(detail, 'NumSolicitudesAceptadas', n)
 
 	def fillPending(self,pendents) :
 		for pendent in pendents:
