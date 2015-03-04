@@ -522,14 +522,14 @@ class InformeSwitching:
 			)
 
 	def pendents(self,pendents) :
-		pendent = pendents[0]
-		key=(
-			pendent.codiprovincia,
-			pendent.refdistribuidora,
-			1, # TODO
-			pendent.tarname,
-			)
-		self.canvis.setdefault(key, ns()).pendents = pendent
+		for pendent in pendents:
+			key=(
+				pendent.codiprovincia,
+				pendent.refdistribuidora,
+				1, # TODO
+				pendent.tarname,
+				)
+			self.canvis.setdefault(key, ns()).pendents = pendent
 
 
 class InformeSwitching_Test(unittest.TestCase) :
@@ -661,7 +661,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 	</SolicitudesRealizadas>
 """ + self.foot
 			)
-	def _test_genera_solicitudsPendents_diversesComercialitzadores(self) :
+	def test_genera_solicitudsPendents_diversesComercialitzadores(self) :
 		informe = InformeSwitching(
 			CodigoAgente='R2-415',
 			TipoMercado='E',
@@ -744,7 +744,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 
 class XmlGenerateFromDb_Test(b2btest.TestCase) :
 
-	def _test_fullGenerate(self):
+	def test_fullGenerate(self):
 		"""Work In progress as we get it assembled"""
 
 		year, month = (2014,2)
@@ -757,10 +757,9 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			CodigoAgente='R2-415',
 			TipoMercado='E',
 			TipoAgente='C',
-			Periodo='201501',
+			Periodo='{}{:02}'.format(year, month),
 			)
 		pendents=peticionsPendentsDeResposta(db, inici, final)
-		print (pendents)
 		informe.pendents( pendents )
 
 		acceptades=peticionsAcceptades(db, inici, final)
