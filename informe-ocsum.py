@@ -179,7 +179,7 @@ def peticionsPendentsDeResposta(db, inici, final):
 					dist.name AS nomdistribuidora,
 					tar.name AS tarname,
 					CASE
-						WHEN tar.name = ANY( %(tarifesAltaTensio)s ) THEN
+						WHEN tar.tipus = 'AT' THEN
 							sw.create_date + interval '15 days'
 						ELSE
 							sw.create_date + interval '7 days'
@@ -230,6 +230,7 @@ def peticionsPendentsDeResposta(db, inici, final):
 					sw.company_id,
 					refdistribuidora,
 					tarname,
+					tar.tipus,
 					dist.id,
 					codiprovincia,
 					nomprovincia,
@@ -328,7 +329,7 @@ def peticionsAcceptades(db, inici, final):
 					tar.name AS tarname,
 					sw.create_date AS create_date,
 					CASE
-						WHEN tar.name = ANY( %(tarifesAltaTensio)s ) THEN
+						WHEN tar.tipus = 'AT' THEN
 							sw.create_date + interval '15 days'
 						ELSE
 							sw.create_date + interval '7 days'
@@ -399,9 +400,6 @@ def peticionsAcceptades(db, inici, final):
 				process = [processos[name] for name in 'C1','C2'],
 				periodStart = inici,
 				periodEnd = final,
-				tarifesAltaTensio = [
-					'3.1A',
-				],
 			))
 		result = csvTable(cur)
 		return result
