@@ -9,7 +9,7 @@ from namespace import namespace as ns
 import b2btest
 
 from dbqueries import *
-
+from decimal import Decimal
 
 from lxml import etree
 class InformeSwitching:
@@ -54,9 +54,23 @@ class InformeSwitching:
 				('15', canvisPendents.verylate),
 				]:
 			if not n: continue
-			detalle = self.element(parent, 'DetallePendientesRespuesta')
-			self.element(detalle, 'TipoRetraso', codigoRetraso)
-			self.element(detalle, 'NumSolicitudesPendientes', n)
+			detail = self.element(parent, 'DetallePendientesRespuesta')
+			self.element(detail, 'TipoRetraso', codigoRetraso)
+			self.element(detail, 'NumSolicitudesPendientes', n)
+
+	def generaAcceptades(self, parent, accepted):
+		for codigoRetraso, n, addedTime in [
+				('00', accepted.ontime, accepted.ontimeaddedtime),
+				('05', accepted.late, accepted.lateaddedtime),
+				('15', accepted.verylate, accepted.verylateaddedtime),
+			]:
+
+			if not n : continue
+			meanTime = Decimal(addedTime) / n
+			detail = self.element(parent, 'DetalleAceptadas')
+			self.element(detail, 'TipoRetraso', codigoRetraso)
+			self.element(detail, 'TMSolicitudesAceptadas', '{:.1f}'.format(meanTime))
+			self.element(detail, 'NumSolicitudesAceptadas', n)
 
 	def generaSolicituds(self, root):
 		if not self.canvis : return
@@ -79,7 +93,11 @@ class InformeSwitching:
 				self.element(datos, 'ClientesSalientes', 0) # TODO: 
 				self.element(datos, 'NumImpagados', 0) # TODO: No ben definit
 
-				self.generaPendents(datos, canvi.pendents)
+				if 'pendents' in canvi :
+					self.generaPendents(datos, canvi.pendents)
+
+				if 'accepted' in canvi :
+					self.generaAcceptades(datos, canvi.accepted)
 
 
 	def genera(self) :
@@ -172,7 +190,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 				refdistribuidora='R1-001',
 				),
 			])
-		
+
 		self.assertXmlEqual(
 			informe.genera(),
 			self.head +
@@ -218,7 +236,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 				refdistribuidora='R1-002',
 				),
 			])
-		
+
 		self.assertXmlEqual(
 			informe.genera(),
 			self.head +
@@ -280,7 +298,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 				refdistribuidora='R1-002',
 				),
 			])
-		
+
 		self.assertXmlEqual(
 			informe.genera(),
 			self.head +
@@ -333,6 +351,111 @@ class InformeSwitching_Test(unittest.TestCase) :
 	</SolicitudesRealizadas>
 """ + self.foot
 			)
+	def test_genera_solicitudsAcceptades(self) :
+		informe = InformeSwitching(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillAccepted( [
+			ns(
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				ontimeaddedtime=450,
+				lateaddedtime=0,
+				verylateaddedtime=0,
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
+
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head +
+			"""\
+	<SolicitudesRealizadas>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-001</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+			<DetalleAceptadas>
+				<TipoRetraso>00</TipoRetraso>
+				<TMSolicitudesAceptadas>1.5</TMSolicitudesAceptadas>
+				<NumSolicitudesAceptadas>300</NumSolicitudesAceptadas>
+			</DetalleAceptadas>
+		</DatosSolicitudes>
+	</SolicitudesRealizadas>
+""" + self.foot
+			)
+
+	def test_genera_solicitudsAcceptades_delayed(self) :
+		informe = InformeSwitching(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillAccepted( [
+			ns(
+				nprocessos=300,
+				ontime=0,
+				late=200,
+				verylate=100, 
+				ontimeaddedtime=0,
+				lateaddedtime=3200,
+				verylateaddedtime=2000,
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
+
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head +
+			"""\
+	<SolicitudesRealizadas>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-001</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+			<DetalleAceptadas>
+				<TipoRetraso>05</TipoRetraso>
+				<TMSolicitudesAceptadas>16.0</TMSolicitudesAceptadas>
+				<NumSolicitudesAceptadas>200</NumSolicitudesAceptadas>
+			</DetalleAceptadas>
+			<DetalleAceptadas>
+				<TipoRetraso>15</TipoRetraso>
+				<TMSolicitudesAceptadas>20.0</TMSolicitudesAceptadas>
+				<NumSolicitudesAceptadas>100</NumSolicitudesAceptadas>
+			</DetalleAceptadas>
+		</DatosSolicitudes>
+	</SolicitudesRealizadas>
+""" + self.foot
+			)
+
 
 class XmlGenerateFromDb_Test(b2btest.TestCase) :
 
@@ -351,20 +474,22 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			TipoAgente='C',
 			Periodo='{}{:02}'.format(year, month),
 			)
-		pendents=peticionsPendentsDeResposta(db, inici, final)
-		informe.fillPending( pendents )
+		from dbconfig import psycopg as config
 
-		acceptades=peticionsAcceptades(db, inici, final)
+		with psycopg2.connect(**config) as db:
+			pendents=peticionsPendentsDeResposta(db, inici, final)
+			acceptades=peticionsAcceptades(db, inici, final)
+
+		informe.fillPending( pendents )
+#		informe.fillAccepted( acceptades )
+
 
 		result = informe.genera()
 
 		self.assertBack2Back(result, 'informeOcsum-{}.xml'.format(inici))
 
 
-
-from dbconfig import psycopg as config
-
-with psycopg2.connect(**config) as db:
+if __name__ == '__main__' :
 	import sys
 	sys.exit(unittest.main())
 
