@@ -29,9 +29,12 @@ class TestCase(unittest.TestCase) :
 				"No expectation, accept with: mv {} {}".format(
 					resultfilename, expectedfilename))
 
-		self.maxDiff = None
 		try:
-			self.assertMultiLineEqual(expected, result)
+			if testId.endswith(".xml"):
+				self.assertXmlEqual(expected, result)
+			else:
+				self.maxDiff = None
+				self.assertMultiLineEqual(expected, result)
 		except AssertionError:
 			import sys
 			print(
