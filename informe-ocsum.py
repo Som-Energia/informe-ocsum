@@ -521,7 +521,7 @@ class InformeSwitching:
         	method="xml",
 			)
 
-	def pendents(self,pendents) :
+	def fillPending(self,pendents) :
 		for pendent in pendents:
 			key=(
 				pendent.codiprovincia,
@@ -530,6 +530,16 @@ class InformeSwitching:
 				pendent.tarname,
 				)
 			self.canvis.setdefault(key, ns()).pendents = pendent
+
+	def fillAccepted(self, acceptedSummary) :
+		for accepted in acceptedSummary:
+			key=(
+				accepted.codiprovincia,
+				accepted.refdistribuidora,
+				1, # TODO
+				accepted.tarname,
+				)
+			self.canvis.setdefault(key, ns()).accepted = accepted
 
 
 class InformeSwitching_Test(unittest.TestCase) :
@@ -569,7 +579,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			TipoAgente='C',
 			Periodo='201501',
 			)
-		informe.pendents( [
+		informe.fillPending( [
 			ns(
 				nprocessos=300,
 				ontime=300,
@@ -615,7 +625,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			TipoAgente='C',
 			Periodo='201501',
 			)
-		informe.pendents( [
+		informe.fillPending( [
 			ns(
 				nprocessos=600,
 				ontime=100,
@@ -668,7 +678,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			TipoAgente='C',
 			Periodo='201501',
 			)
-		informe.pendents( [
+		informe.fillPending( [
 			ns(
 				nprocessos=300,
 				ontime=300,
@@ -760,7 +770,7 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			Periodo='{}{:02}'.format(year, month),
 			)
 		pendents=peticionsPendentsDeResposta(db, inici, final)
-		informe.pendents( pendents )
+		informe.fillPending( pendents )
 
 		acceptades=peticionsAcceptades(db, inici, final)
 
