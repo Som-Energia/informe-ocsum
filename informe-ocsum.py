@@ -458,29 +458,27 @@ class OcsumReport_Test(Back2BackTestCase) :
 
 
 
-
-
-
 from lxml import etree
 class InformeSwitching:
 
+	"""Codi tret de la taula mestra versió 4.1"""
 	_codiTipusTarifa = dict(
 		line.split()[::-1]
 		for line in """\
-	1T	2.1A  
-	2	2.0DHA
-	2S	2.0DHS
-	2T	2.1DHA
-	2V	2.1DHS
-	3	3.0A  
-	4	3.1A    
-	5	6.1A  
-	5T	6.1B  
-	6	6.2  
-	7	6.3    
-	8	6.4    
-	9	6.5    
-	""".split('\n')
+			1T	2.1A  
+			2	2.0DHA
+			2S	2.0DHS
+			2T	2.1DHA
+			2V	2.1DHS
+			3	3.0A  
+			4	3.1A    
+			5	6.1A  
+			5T	6.1B  
+			6	6.2  
+			7	6.3    
+			8	6.4    
+			9	6.5    
+			""".split('\n')
 		if line.strip()
 	)
 
@@ -495,7 +493,7 @@ class InformeSwitching:
 		if content is not None: element.text = str(content)
 		return element
 
-	def generaPendientes(self, parent, canvisPendents) :
+	def generaPendents(self, parent, canvisPendents) :
 		for codigoRetraso, n in [
 				('00', canvisPendents.ontime),
 				('05', canvisPendents.late),
@@ -506,7 +504,7 @@ class InformeSwitching:
 			self.element(detalle, 'TipoRetraso', codigoRetraso)
 			self.element(detalle, 'NumSolicitudesPendientes', n)
 
-	def generaSolicitudes(self, root):
+	def generaSolicituds(self, root):
 		if not self.canvis : return
 		solicitudes = self.element(root, 'SolicitudesRealizadas')
 		for (
@@ -521,27 +519,27 @@ class InformeSwitching:
 				self.element(datos, 'TipoPunto', tipoPunto) # TODO
 				self.element(datos, 'TarifaATR', self._codiTipusTarifa[tipoTarifa]) # TODO
 
-				self.element(datos, 'TotalSolicitudesEnviadas', 69) # TODO
+				self.element(datos, 'TotalSolicitudesEnviadas', 0) # TODO
 				self.element(datos, 'SolicitudesAnuladas', 0) # TODO
-				self.element(datos, 'Reposiciones', 0) # TODO
-				self.element(datos, 'ClientesSalientes', 0) # TODO
-				self.element(datos, 'NumImpagados', 0) # TODO
+				self.element(datos, 'Reposiciones', 0) # TODO: No ben definit
+				self.element(datos, 'ClientesSalientes', 0) # TODO: 
+				self.element(datos, 'NumImpagados', 0) # TODO: No ben definit
 
-				self.generaPendientes(datos, canvi.pendents)
+				self.generaPendents(datos, canvi.pendents)
 
 
 	def genera(self) :
 		etree.register_namespace('xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-
 		root = self.element(None, 'MensajeSolicitudesRealizadas')
-		root.attrib['{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation'] = 'SolicitudesRealizadas_v1.0.xsd'
+		xsdNs = '{http://www.w3.org/2001/XMLSchema-instance}'
+		root.attrib[xsdNs+'noNamespaceSchemaLocation'] = 'SolicitudesRealizadas_v1.0.xsd'
 		cabecera = self.element(root, 'Cabecera')
 		self.element(cabecera, 'CodigoAgente', self.CodigoAgente)
 		self.element(cabecera, 'TipoMercado', self.TipoMercado)
 		self.element(cabecera, 'TipoAgente', self.TipoAgente)
 		self.element(cabecera, 'Periodo', self.Periodo)
 
-		self.generaSolicitudes(root)
+		self.generaSolicituds(root)
 
 		return etree.tostring(
 			root,
@@ -632,7 +630,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			<TipoCambio>C3</TipoCambio>
 			<TipoPunto>1</TipoPunto>
 			<TarifaATR>2</TarifaATR>
-			<TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
 			<SolicitudesAnuladas>0</SolicitudesAnuladas>
 			<Reposiciones>0</Reposiciones>
 			<ClientesSalientes>0</ClientesSalientes>
@@ -678,7 +676,7 @@ class InformeSwitching_Test(unittest.TestCase) :
 			<TipoCambio>C3</TipoCambio>
 			<TipoPunto>1</TipoPunto>
 			<TarifaATR>2</TarifaATR>
-			<TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
 			<SolicitudesAnuladas>0</SolicitudesAnuladas>
 			<Reposiciones>0</Reposiciones>
 			<ClientesSalientes>0</ClientesSalientes>
@@ -704,10 +702,6 @@ class InformeSwitching_Test(unittest.TestCase) :
 from dbconfig import psycopg as config
 
 with psycopg2.connect(**config) as db:
-
-	casosPerTipus = numeroDeCasos(db)
-	print(casosPerTipus['C1']+casosPerTipus['C2'])
-
 	import sys
 	sys.exit(unittest.main())
 
