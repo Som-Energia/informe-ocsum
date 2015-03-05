@@ -11,8 +11,10 @@
 - ~~Skip db base test when no bd config available~~
 - ~~Setup a requirements.txt file~~
 - Separate tests from code
-- Add setup.py to run tests and install
+- ~~Add setup.py to run tests~~
+- Add setup.py to run install
 - Setup travisCI
+- Windows setup
 - To investigate:
 	- When TipoCambio has to be 'C4' instead of 'C3'
 	- Where to obtain `TipoPunto`
