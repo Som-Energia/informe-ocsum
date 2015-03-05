@@ -2,6 +2,13 @@
 
 ***WARNING: WIP! THIS MODULE IS SUBJECT OF CURRENT ACTIVE DEVELOPMENT AND IT IS NOT FUNCTIONAL YET***
 
+
+[![Build Status](https://travis-ci.org/Som-Energia/informe-ocsum.png?branch=master)](https://travis-ci.org/Som-Energia/informe-ocsum)
+[![Coverage Status](https://coveralls.io/repos/Som-Energia/informe-ocsum/badge.png?branch=master)](https://coveralls.io/r/Som-Energia/informe-ocsum?branch=master)
+[![Issue Stats](http://www.issuestats.com/github/Som-Energia/informe-ocsum/badge/pr)](http://www.issuestats.com/github/Som-Energia/informe-ocsum)
+[![Issue Stats](http://www.issuestats.com/github/Som-Energia/informe-ocsum/badge/issue)](http://www.issuestats.com/github/Som-Energia/informe-ocsum)
+
+
 This Python module can be used by electricity retailers
 to generate the report Spanish regulators require about
 consumer retailer switching.
@@ -14,6 +21,7 @@ An old but open version is still available at the former regulator,
 
 The module is coupled to the data model developed by Gisce
 on the top of their OpenERP fork for electricity market agents.
+
 
 ## Requirements
 
