@@ -22,7 +22,7 @@ class namespace(dict) :
 		def wrap(data) :
 			if type(data) is dict :
 				return namespace([
-					(k wrap(v))
+					(k, wrap(v))
 					for k,v in data.items()
 					])
 			if isinstance(data, list) or isinstance(data, tuple) :
