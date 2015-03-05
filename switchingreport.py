@@ -95,6 +95,10 @@ class SwichingReport:
 				if 'accepted' in canvi :
 					self.generateAcceptedDetails(datos, canvi.accepted)
 
+				if 'rejected' in canvi :
+					for rejected in canvi.rejected :
+						self.generateRejectedDetails(datos, rejected)
+
 	def generatePendingDetails(self, parent, canvisPendents) :
 		for codigoRetraso, n in [
 				('00', canvisPendents.ontime),
@@ -120,6 +124,24 @@ class SwichingReport:
 			self.element(detail, 'TMSolicitudesAceptadas', '{:.1f}'.format(meanTime))
 			self.element(detail, 'NumSolicitudesAceptadas', n)
 
+	def generateRejectedDetails(self, parent, rejected):
+		for codigoRetraso, n, addedTime in [
+				('00', rejected.ontime, rejected.ontimeaddedtime),
+				('05', rejected.late, rejected.lateaddedtime),
+				('15', rejected.verylate, rejected.verylateaddedtime),
+			]:
+
+			if not n : continue
+			meanTime = Decimal(addedTime) / n
+			detail = self.element(parent, 'DetalleRechazadas')
+			self.element(detail, 'TipoRetraso', codigoRetraso)
+			self.element(detail, 'TMSolicitudesRechazadas', '{:.1f}'.format(meanTime))
+			self.element(detail, 'MotivoRechazo', rejected.reason)
+			self.element(detail, 'NumSolicitudesRechazadas', n)
+
+	def details(self, key) :
+		return self.canvis.setdefault(key, ns())
+
 	def fillPending(self,pendents) :
 		for pendent in pendents:
 			key=(
@@ -128,7 +150,7 @@ class SwichingReport:
 				1, # TODO
 				pendent.tarname,
 				)
-			self.canvis.setdefault(key, ns()).pendents = pendent
+			self.details(key).pendents = pendent
 
 	def fillAccepted(self, acceptedSummary) :
 		for accepted in acceptedSummary:
@@ -138,7 +160,19 @@ class SwichingReport:
 				1, # TODO
 				accepted.tarname,
 				)
-			self.canvis.setdefault(key, ns()).accepted = accepted
+			self.details(key).accepted = accepted
+
+	def fillRejected(self, rejectedSummary):
+		for rejected in rejectedSummary:
+			key = (
+					rejected.codiprovincia,
+					rejected.refdistribuidora,
+					1, # TODO
+					rejected.tarname,
+					)
+			# More than one entry (for each different reason
+			self.details(key).setdefault('rejected',[]).append(rejected)
+
 
 
 class SwichingReport_Test(unittest.TestCase) :
@@ -158,6 +192,42 @@ class SwichingReport_Test(unittest.TestCase) :
 """
 	foot = """\
 </MensajeSolicitudesRealizadas>
+"""
+	summaryHead = """\
+	<SolicitudesRealizadas>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-001</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+"""
+	secondSummaryHeader = """\
+		</DatosSolicitudes>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-002</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+"""
+	summaryFoot = """\
+		</DatosSolicitudes>
+	</SolicitudesRealizadas>
 """
 
 	def test_genera_senseSolicituds(self) :
@@ -193,28 +263,13 @@ class SwichingReport_Test(unittest.TestCase) :
 		self.assertXmlEqual(
 			informe.genera(),
 			self.head +
+			self.summaryHead +
 			"""\
-	<SolicitudesRealizadas>
-		<DatosSolicitudes>
-			<Provincia>08000</Provincia>
-			<Distribuidor>R1-001</Distribuidor>
-			<Comer_entrante>R2-415</Comer_entrante>
-			<Comer_saliente>0</Comer_saliente>
-			<TipoCambio>C3</TipoCambio>
-			<TipoPunto>1</TipoPunto>
-			<TarifaATR>2</TarifaATR>
-			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-			<SolicitudesAnuladas>0</SolicitudesAnuladas>
-			<Reposiciones>0</Reposiciones>
-			<ClientesSalientes>0</ClientesSalientes>
-			<NumImpagados>0</NumImpagados>
 			<DetallePendientesRespuesta>
 				<TipoRetraso>00</TipoRetraso>
 				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
 			</DetallePendientesRespuesta>
-		</DatosSolicitudes>
-	</SolicitudesRealizadas>
-""" + self.foot
+""" + self.summaryFoot + self.foot
 			)
 
 	def test_genera_solicitudsPendents_retrasades(self) :
@@ -301,39 +356,13 @@ class SwichingReport_Test(unittest.TestCase) :
 		self.assertXmlEqual(
 			informe.genera(),
 			self.head +
+			self.summaryHead +
 			"""\
-	<SolicitudesRealizadas>
-		<DatosSolicitudes>
-			<Provincia>08000</Provincia>
-			<Distribuidor>R1-001</Distribuidor>
-			<Comer_entrante>R2-415</Comer_entrante>
-			<Comer_saliente>0</Comer_saliente>
-			<TipoCambio>C3</TipoCambio>
-			<TipoPunto>1</TipoPunto>
-			<TarifaATR>2</TarifaATR>
-			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-			<SolicitudesAnuladas>0</SolicitudesAnuladas>
-			<Reposiciones>0</Reposiciones>
-			<ClientesSalientes>0</ClientesSalientes>
-			<NumImpagados>0</NumImpagados>
 			<DetallePendientesRespuesta>
 				<TipoRetraso>00</TipoRetraso>
 				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
 			</DetallePendientesRespuesta>
-		</DatosSolicitudes>
-		<DatosSolicitudes>
-			<Provincia>08000</Provincia>
-			<Distribuidor>R1-002</Distribuidor>
-			<Comer_entrante>R2-415</Comer_entrante>
-			<Comer_saliente>0</Comer_saliente>
-			<TipoCambio>C3</TipoCambio>
-			<TipoPunto>1</TipoPunto>
-			<TarifaATR>2</TarifaATR>
-			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-			<SolicitudesAnuladas>0</SolicitudesAnuladas>
-			<Reposiciones>0</Reposiciones>
-			<ClientesSalientes>0</ClientesSalientes>
-			<NumImpagados>0</NumImpagados>
+""" + self.secondSummaryHeader + """\
 			<DetallePendientesRespuesta>
 				<TipoRetraso>00</TipoRetraso>
 				<NumSolicitudesPendientes>100</NumSolicitudesPendientes>
@@ -346,9 +375,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				<TipoRetraso>15</TipoRetraso>
 				<NumSolicitudesPendientes>300</NumSolicitudesPendientes>
 			</DetallePendientesRespuesta>
-		</DatosSolicitudes>
-	</SolicitudesRealizadas>
-""" + self.foot
+""" + self.summaryFoot + self.foot
 			)
 	def test_genera_solicitudsAcceptades(self) :
 		informe = SwichingReport(
@@ -374,30 +401,16 @@ class SwichingReport_Test(unittest.TestCase) :
 
 		self.assertXmlEqual(
 			informe.genera(),
-			self.head +
+			self.head + self.summaryHead +
 			"""\
-	<SolicitudesRealizadas>
-		<DatosSolicitudes>
-			<Provincia>08000</Provincia>
-			<Distribuidor>R1-001</Distribuidor>
-			<Comer_entrante>R2-415</Comer_entrante>
-			<Comer_saliente>0</Comer_saliente>
-			<TipoCambio>C3</TipoCambio>
-			<TipoPunto>1</TipoPunto>
-			<TarifaATR>2</TarifaATR>
-			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-			<SolicitudesAnuladas>0</SolicitudesAnuladas>
-			<Reposiciones>0</Reposiciones>
-			<ClientesSalientes>0</ClientesSalientes>
-			<NumImpagados>0</NumImpagados>
 			<DetalleAceptadas>
 				<TipoRetraso>00</TipoRetraso>
 				<TMSolicitudesAceptadas>1.5</TMSolicitudesAceptadas>
 				<NumSolicitudesAceptadas>300</NumSolicitudesAceptadas>
 			</DetalleAceptadas>
-		</DatosSolicitudes>
-	</SolicitudesRealizadas>
-""" + self.foot
+"""
+			+ self.summaryFoot
+			+ self.foot
 			)
 
 	def test_genera_solicitudsAcceptades_delayed(self) :
@@ -424,22 +437,8 @@ class SwichingReport_Test(unittest.TestCase) :
 
 		self.assertXmlEqual(
 			informe.genera(),
-			self.head +
+			self.head + self.summaryHead +
 			"""\
-	<SolicitudesRealizadas>
-		<DatosSolicitudes>
-			<Provincia>08000</Provincia>
-			<Distribuidor>R1-001</Distribuidor>
-			<Comer_entrante>R2-415</Comer_entrante>
-			<Comer_saliente>0</Comer_saliente>
-			<TipoCambio>C3</TipoCambio>
-			<TipoPunto>1</TipoPunto>
-			<TarifaATR>2</TarifaATR>
-			<TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-			<SolicitudesAnuladas>0</SolicitudesAnuladas>
-			<Reposiciones>0</Reposiciones>
-			<ClientesSalientes>0</ClientesSalientes>
-			<NumImpagados>0</NumImpagados>
 			<DetalleAceptadas>
 				<TipoRetraso>05</TipoRetraso>
 				<TMSolicitudesAceptadas>16.0</TMSolicitudesAceptadas>
@@ -450,9 +449,97 @@ class SwichingReport_Test(unittest.TestCase) :
 				<TMSolicitudesAceptadas>20.0</TMSolicitudesAceptadas>
 				<NumSolicitudesAceptadas>100</NumSolicitudesAceptadas>
 			</DetalleAceptadas>
-		</DatosSolicitudes>
-	</SolicitudesRealizadas>
-""" + self.foot
+""" + self.summaryFoot +  self.foot
+			)
+
+
+	def test_genera_rejectedRequest_single(self) :
+		informe = SwichingReport(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillRejected( [
+			ns(
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				ontimeaddedtime=450,
+				lateaddedtime=0,
+				verylateaddedtime=0,
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				reason='03',
+				),
+			])
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head + self.summaryHead +
+			"""\
+			<DetalleRechazadas>
+				<TipoRetraso>00</TipoRetraso>
+				<TMSolicitudesRechazadas>1.5</TMSolicitudesRechazadas>
+				<MotivoRechazo>03</MotivoRechazo>
+				<NumSolicitudesRechazadas>300</NumSolicitudesRechazadas>
+			</DetalleRechazadas>
+""" + self.summaryFoot + self.foot
+			)
+	def test_genera_rejectedRequest_multipleDistros(self) :
+		informe = SwichingReport(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillRejected( [
+			ns(
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				ontimeaddedtime=450,
+				lateaddedtime=0,
+				verylateaddedtime=0,
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				reason='03',
+				),
+			ns(
+				nprocessos=200,
+				ontime=200,
+				late=0,
+				verylate=0, 
+				ontimeaddedtime=1000,
+				lateaddedtime=0,
+				verylateaddedtime=0,
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-002',
+				reason='01',
+				),
+			])
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head + self.summaryHead +
+			"""\
+			<DetalleRechazadas>
+				<TipoRetraso>00</TipoRetraso>
+				<TMSolicitudesRechazadas>1.5</TMSolicitudesRechazadas>
+				<MotivoRechazo>03</MotivoRechazo>
+				<NumSolicitudesRechazadas>300</NumSolicitudesRechazadas>
+			</DetalleRechazadas>
+""" + self.secondSummaryHeader + """\
+			<DetalleRechazadas>
+				<TipoRetraso>00</TipoRetraso>
+				<TMSolicitudesRechazadas>5.0</TMSolicitudesRechazadas>
+				<MotivoRechazo>01</MotivoRechazo>
+				<NumSolicitudesRechazadas>200</NumSolicitudesRechazadas>
+			</DetalleRechazadas>
+""" + self.summaryFoot + self.foot
 			)
 
 
@@ -482,9 +569,11 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 		with psycopg2.connect(**config) as db:
 			pendents=peticionsPendentsDeResposta(db, inici, final)
 			acceptades=peticionsAcceptades(db, inici, final)
+#			rejected=rejectedRequests(db, inici, final)
 
 		informe.fillPending( pendents )
 		informe.fillAccepted( acceptades )
+#		informe.fillRejected( rejected )
 
 
 		result = informe.genera()
