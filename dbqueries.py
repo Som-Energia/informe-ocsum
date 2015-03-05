@@ -405,16 +405,16 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 /*				SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
 
 				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN
-					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS ontimeaddedtime,
+					DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS ontimeaddedtime,
 				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN
-					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS lateaddedtime,
+					DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS lateaddedtime,
 				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN
-					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS verylateaddedtime, 
-				codiprovincia,
+					DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS verylateaddedtime, 
+				provincia.code AS codiprovincia,
 				s.distri,
 				s.tarname,
 				s.refdistribuidora,
-				nomprovincia,
+				provincia.name AS nomprovincia,
 				s.nomdistribuidora,
 				STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
 				TRUE
@@ -427,8 +427,6 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 						ELSE null
 					END as data_rebuig,
 					sw.id AS sw_id,
-					provincia.code AS codiprovincia,
-					provincia.name AS nomprovincia,
 					sw.company_id AS company_id,
 					dist.id AS distri,
 					dist.ref AS refdistribuidora,
@@ -441,6 +439,7 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 						ELSE
 							sw.create_date + interval '7 days'
 					END AS termini,
+					sw.cups_id,
 					TRUE
 				FROM
 					giscedata_switching AS sw
@@ -454,12 +453,6 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 					giscedata_switching_c2_02 AS c202 ON c202.header_id = sth2.id
 				LEFT JOIN
 					crm_case AS case_ ON case_.id = sw.case_id
-				LEFT JOIN
-					giscedata_cups_ps AS cups ON sw.cups_id = cups.id
-				LEFT JOIN
-					res_municipi ON  cups.id_municipi = res_municipi.id
-				LEFT JOIN
-					res_country_state AS provincia ON res_municipi.state = provincia.id
 				LEFT JOIN 
 					giscedata_polissa AS pol ON cups_polissa_id = pol.id
 				LEFT JOIN 
@@ -493,17 +486,23 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 						)
 					)
 				) as s 
+			LEFT JOIN
+				giscedata_cups_ps AS cups ON s.cups_id = cups.id
+			LEFT JOIN
+				res_municipi ON  cups.id_municipi = res_municipi.id
+			LEFT JOIN
+				res_country_state AS provincia ON res_municipi.state = provincia.id
 			GROUP BY
 				s.nomdistribuidora,
 				s.distri,
 				s.refdistribuidora,
 				s.tarname,
-				s.codiprovincia,
-				s.nomprovincia,
+				codiprovincia,
+				nomprovincia,
 				TRUE
 			ORDER BY
 				s.distri,
-				s.codiprovincia,
+				codiprovincia,
 				s.tarname,
 				TRUE
 			"""
