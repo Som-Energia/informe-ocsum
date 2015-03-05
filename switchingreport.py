@@ -136,7 +136,7 @@ class SwichingReport:
 			detail = self.element(parent, 'DetalleRechazadas')
 			self.element(detail, 'TipoRetraso', codigoRetraso)
 			self.element(detail, 'TMSolicitudesRechazadas', '{:.1f}'.format(meanTime))
-			self.element(detail, 'MotivoRechazo', rejected.reason)
+			self.element(detail, 'MotivoRechazo', rejected.rejectreason)
 			self.element(detail, 'NumSolicitudesRechazadas', n)
 
 	def details(self, key) :
@@ -472,7 +472,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				refdistribuidora='R1-001',
-				reason='03',
+				rejectreason='03',
 				),
 			])
 		self.assertXmlEqual(
@@ -506,7 +506,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				refdistribuidora='R1-001',
-				reason='03',
+				rejectreason='03',
 				),
 			ns(
 				nprocessos=200,
@@ -519,7 +519,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				refdistribuidora='R1-002',
-				reason='01',
+				rejectreason='01',
 				),
 			])
 		self.assertXmlEqual(
@@ -569,11 +569,11 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 		with psycopg2.connect(**config) as db:
 			pendents=peticionsPendentsDeResposta(db, inici, final)
 			acceptades=peticionsAcceptades(db, inici, final)
-#			rejected=rejectedRequests(db, inici, final)
+			rejected=rejectedRequests(db, inici, final)
 
 		informe.fillPending( pendents )
 		informe.fillAccepted( acceptades )
-#		informe.fillRejected( rejected )
+		informe.fillRejected( rejected )
 
 
 		result = informe.genera()

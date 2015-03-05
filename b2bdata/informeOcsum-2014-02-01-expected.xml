@@ -25,6 +25,18 @@
         <TMSolicitudesAceptadas>11.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>2</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>38</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>02000</Provincia>
@@ -97,6 +109,18 @@
         <TMSolicitudesAceptadas>25.8</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>6</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>03000</Provincia>
@@ -126,6 +150,12 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>11</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>03000</Provincia>
@@ -266,6 +296,12 @@
         <TMSolicitudesAceptadas>25.2</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>15</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>1</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>07000</Provincia>
@@ -369,6 +405,54 @@
         <TMSolicitudesAceptadas>25.3</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>82</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>1</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>1</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>11</MotivoRechazo>
+        <NumSolicitudesRechazadas>3</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>11</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>2</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>4</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>14.5</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>6</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.6</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>8</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>08000</Provincia>
@@ -402,6 +486,30 @@
         <TMSolicitudesAceptadas>24.6</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>8</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>1</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>17.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>17</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>29.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>17</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>08000</Provincia>
@@ -435,6 +543,18 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>1</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>08000</Provincia>
@@ -497,6 +617,18 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>4</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>6</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>08000</Provincia>
@@ -603,6 +735,12 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>6</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>09000</Provincia>
@@ -622,6 +760,12 @@
         <TMSolicitudesAceptadas>1.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>10000</Provincia>
@@ -779,6 +923,18 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>2.5</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>12000</Provincia>
@@ -917,6 +1073,12 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>16000</Provincia>
@@ -981,6 +1143,26 @@
       </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
+      <Provincia>16000</Provincia>
+      <Distribuidor>0032</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>1</TarifaATR>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
       <Provincia>17000</Provincia>
       <Distribuidor>0031</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
@@ -1016,6 +1198,18 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>11</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>11</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>17000</Provincia>
@@ -1202,6 +1396,12 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>2</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>18000</Provincia>
@@ -1588,6 +1788,18 @@
         <TMSolicitudesAceptadas>37.2</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>4</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>25000</Provincia>
@@ -1707,6 +1919,18 @@
         <TMSolicitudesAceptadas>13.3</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>9.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>26000</Provincia>
@@ -1792,6 +2016,36 @@
         <TMSolicitudesAceptadas>25.4</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>19</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.3</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>3</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>10.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>28000</Provincia>
@@ -1825,6 +2079,24 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>2</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>2</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>28000</Provincia>
@@ -1877,6 +2149,18 @@
         <TMSolicitudesAceptadas>24.7</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>10</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>1</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>40</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>28000</Provincia>
@@ -1901,6 +2185,12 @@
         <TMSolicitudesAceptadas>15.7</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>1</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>28000</Provincia>
@@ -1992,6 +2282,18 @@
         <TMSolicitudesAceptadas>13.6</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>8</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>30000</Provincia>
@@ -2063,6 +2365,18 @@
         <TMSolicitudesAceptadas>25.7</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>7</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>31000</Provincia>
@@ -2350,6 +2664,26 @@
       </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
+      <Provincia>40000</Provincia>
+      <Distribuidor>0022</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>1</TarifaATR>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>99</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
       <Provincia>41000</Provincia>
       <Distribuidor>0031</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
@@ -2414,6 +2748,12 @@
         <TMSolicitudesAceptadas>4.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>42000</Provincia>
@@ -2432,6 +2772,12 @@
         <TipoRetraso>00</TipoRetraso>
         <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>18.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>43000</Provincia>
@@ -2555,6 +2901,12 @@
         <TMSolicitudesAceptadas>11.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>44000</Provincia>
@@ -2603,6 +2955,18 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>4.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>46000</Provincia>
@@ -2640,6 +3004,36 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>6</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>2</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>15</TipoRetraso>
+        <TMSolicitudesRechazadas>25.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>2.5</TMSolicitudesRechazadas>
+        <MotivoRechazo>36</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>40</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>46000</Provincia>
@@ -2664,6 +3058,30 @@
         <TMSolicitudesAceptadas>13.6</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>5</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>2</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>53</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>21.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>53</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>46000</Provincia>
@@ -2835,6 +3253,24 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>20</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesRechazadas>1.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>13.5</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>2</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>48000</Provincia>
@@ -2912,6 +3348,12 @@
         <TMSolicitudesAceptadas>25.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>4</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>14.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>3</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>50000</Provincia>
@@ -2936,6 +3378,12 @@
         <TMSolicitudesAceptadas>18.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetalleRechazadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesRechazadas>11.0</TMSolicitudesRechazadas>
+        <MotivoRechazo>11</MotivoRechazo>
+        <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
+      </DetalleRechazadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>50000</Provincia>
