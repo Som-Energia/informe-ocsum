@@ -8,9 +8,10 @@
 	- Repositioned requests count
 	- Outgoing clients count
 	- Unpaid contracts count
+- ~~Skip db base test when no bd config available~~
+- ~~Setup a requirements.txt file~~
 - Separate tests from code
 - Add setup.py to run tests and install
-- Skip db base test when no bd config available
 - Setup travisCI
 - To investigate:
 	- When TipoCambio has to be 'C4' instead of 'C3'

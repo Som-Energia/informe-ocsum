@@ -15,6 +15,16 @@ An old but open version is still available at the former regulator,
 The module is coupled to the data model developed by Gisce
 on the top of their OpenERP fork for electricity market agents.
 
+## Requirements
+
+### Native dependencies on Debian/Ubuntu
+
+	$ sudo apt-get install libpq-dev libyaml-dev libxml2-dev libxslt1-dev
+
+### Python dependencies
+
+	$ pip install -r requirements.txt
+
 
 
 
