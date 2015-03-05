@@ -1,17 +1,12 @@
 #!/usr/bin/env python
 #-*- encoding: utf-8 -*-
 
-import psycopg2
-import psycopg2.extras
 import datetime
-
 from namespace import namespace as ns
-import b2btest
-
 from dbqueries import *
 from decimal import Decimal
-
 from lxml import etree
+
 class SwichingReport:
 
 	def __init__(self, **kw ) :
@@ -460,6 +455,9 @@ class SwichingReport_Test(unittest.TestCase) :
 """ + self.foot
 			)
 
+
+import b2btest
+
 @unittest.skipIf(config is None, "No dbconfig.py found")
 class XmlGenerateFromDb_Test(b2btest.TestCase) :
 
@@ -480,6 +478,7 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			)
 		from dbconfig import psycopg as config
 
+		import psycopg2
 		with psycopg2.connect(**config) as db:
 			pendents=peticionsPendentsDeResposta(db, inici, final)
 			acceptades=peticionsAcceptades(db, inici, final)
