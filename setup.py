@@ -14,5 +14,6 @@ setup(
     keywords = "electricity market retailer switching",
     url = "https://github.com/Som-Energia/informe-ocsum",
     # long_description, download_url, classifiers
+    test_suite='switchingreport',
 )
 
