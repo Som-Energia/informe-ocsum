@@ -41,10 +41,10 @@ class namespace(dict) :
 
 		def unwrap(data) :
 			if type(data) is namespace :
-				return dict({
-					k: unwrap(v)
+				return dict([
+					(k, unwrap(v))
 					for k,v in data.items()
-					})
+					])
 			if isinstance(data, list) or isinstance(data, tuple) :
 				return [unwrap(v) for v in data]
 			return data
