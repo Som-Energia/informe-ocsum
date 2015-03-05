@@ -15,7 +15,7 @@ class SwichingReport:
 		self.canvis = {}
 
 		# Codi tret de la taula mestra versió 4.1
-		self._codiTipusTarifa = dict(
+		self._fareCodes = dict(
 			line.split()[::-1]
 			for line in """\
 				1	2.0A  
@@ -81,7 +81,7 @@ class SwichingReport:
 				self.element(datos, 'Comer_saliente', '0')
 				self.element(datos, 'TipoCambio', 'C3') # TODO
 				self.element(datos, 'TipoPunto', tipoPunto) # TODO
-				self.element(datos, 'TarifaATR', self._codiTipusTarifa[tipoTarifa]) # TODO
+				self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa]) # TODO
 
 				self.element(datos, 'TotalSolicitudesEnviadas', 0) # TODO
 				self.element(datos, 'SolicitudesAnuladas', 0) # TODO
@@ -98,6 +98,12 @@ class SwichingReport:
 				if 'rejected' in canvi :
 					for rejected in canvi.rejected :
 						self.generateRejectedDetails(datos, rejected)
+	
+				if 'activationPending' in canvi :
+					self.generateActivationPendingDetails(datos, canvi.activationPending)
+
+				if 'activated' in canvi :
+					self.generateActivated(datos, canvi.activated)
 
 	def generatePendingDetails(self, parent, canvisPendents) :
 		for codigoRetraso, n in [
@@ -110,12 +116,12 @@ class SwichingReport:
 			self.element(detail, 'TipoRetraso', codigoRetraso)
 			self.element(detail, 'NumSolicitudesPendientes', n)
 
-	def generateAcceptedDetails(self, parent, accepted):
+	def generateAcceptedDetails(self, parent, summary):
 		for codigoRetraso, n, addedTime in [
-				('00', accepted.ontime, accepted.ontimeaddedtime),
-				('05', accepted.late, accepted.lateaddedtime),
-				('15', accepted.verylate, accepted.verylateaddedtime),
-			]:
+				('00', summary.ontime, summary.ontimeaddedtime),
+				('05', summary.late, summary.lateaddedtime),
+				('15', summary.verylate, summary.verylateaddedtime),
+				]:
 
 			if not n : continue
 			meanTime = Decimal(addedTime) / n
@@ -129,7 +135,7 @@ class SwichingReport:
 				('00', rejected.ontime, rejected.ontimeaddedtime),
 				('05', rejected.late, rejected.lateaddedtime),
 				('15', rejected.verylate, rejected.verylateaddedtime),
-			]:
+				]:
 
 			if not n : continue
 			meanTime = Decimal(addedTime) / n
@@ -138,6 +144,33 @@ class SwichingReport:
 			self.element(detail, 'TMSolicitudesRechazadas', '{:.1f}'.format(meanTime))
 			self.element(detail, 'MotivoRechazo', rejected.rejectreason)
 			self.element(detail, 'NumSolicitudesRechazadas', n)
+
+	def generateActivationPendingDetails(self, parent, summary) :
+		for codigoRetraso, n in [
+				('00', summary.ontime),
+				('05', summary.late),
+				('15', summary.verylate),
+				]:
+			if not n : continue
+			detail = self.element(parent, 'DetallePdteActivacion')
+			self.element(detail, 'TipoRetraso', codigoRetraso)
+			self.element(detail, 'NumIncidencias', 0)
+			self.element(detail, 'NumSolicitudesPdteActivacion', n)
+
+	def generateActivated(self, parent, summary) :
+		for codigoRetraso, n, addedTime in [
+				('00', summary.ontime, summary.ontimeaddedtime),
+				('05', summary.late, summary.lateaddedtime),
+				('15', summary.verylate, summary.verylateaddedtime),
+				]:
+
+			if not n : continue
+			meanTime = Decimal(addedTime) / n
+			detail = self.element(parent, 'DetalleActivadas')
+			self.element(detail, 'TipoRetraso', codigoRetraso)
+			self.element(detail, 'TMActivacion', '{:.1f}'.format(meanTime))
+			self.element(detail, 'NumIncidencias', 0)
+			self.element(detail, 'NumSolicitudesActivadas', n)
 
 	def details(self, key) :
 		return self.canvis.setdefault(key, ns())
@@ -152,27 +185,46 @@ class SwichingReport:
 				)
 			self.details(key).pendents = pendent
 
-	def fillAccepted(self, acceptedSummary) :
-		for accepted in acceptedSummary:
+	def fillAccepted(self, sumaries) :
+		for summary in sumaries:
 			key=(
-				accepted.codiprovincia,
-				accepted.refdistribuidora,
+				summary.codiprovincia,
+				summary.refdistribuidora,
 				1, # TODO
-				accepted.tarname,
+				summary.tarname,
 				)
-			self.details(key).accepted = accepted
+			self.details(key).accepted = summary
 
-	def fillRejected(self, rejectedSummary):
-		for rejected in rejectedSummary:
+	def fillRejected(self, summaries):
+		for summary in summaries:
 			key = (
-					rejected.codiprovincia,
-					rejected.refdistribuidora,
-					1, # TODO
-					rejected.tarname,
-					)
+				summary.codiprovincia,
+				summary.refdistribuidora,
+				1, # TODO
+				summary.tarname,
+				)
 			# More than one entry (for each different reason
-			self.details(key).setdefault('rejected',[]).append(rejected)
+			self.details(key).setdefault('rejected',[]).append(summary)
 
+	def fillActivationPending(self, summaries) :
+			summary = summaries[0]
+			key = (
+				summary.codiprovincia,
+				summary.refdistribuidora,
+				1, # TODO
+				summary.tarname,
+				)
+			self.details(key).activationPending = summary
+
+	def fillActivated(self, summaries) :
+		for summary in summaries:
+			key=(
+				summary.codiprovincia,
+				summary.refdistribuidora,
+				1, # TODO
+				summary.tarname,
+				)
+			self.details(key).activated = summary
 
 
 class SwichingReport_Test(unittest.TestCase) :
@@ -542,6 +594,103 @@ class SwichingReport_Test(unittest.TestCase) :
 """ + self.summaryFoot + self.foot
 			)
 
+	def test_genera_activationPendingRequest_ontime(self) :
+		informe = SwichingReport(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillActivationPending( [
+			ns(
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head + self.summaryHead +
+		"""\
+			<DetallePdteActivacion>
+				<TipoRetraso>00</TipoRetraso>
+				<NumIncidencias>0</NumIncidencias>
+				<NumSolicitudesPdteActivacion>300</NumSolicitudesPdteActivacion>
+			</DetallePdteActivacion>
+""" + self.summaryFoot + self.foot
+			)
+
+	def test_genera_activationPendingRequest_delayed(self) :
+		informe = SwichingReport(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillActivationPending( [
+			ns(
+				nprocessos=300,
+				ontime=0,
+				late=200,
+				verylate=100, 
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head + self.summaryHead +
+		"""\
+			<DetallePdteActivacion>
+				<TipoRetraso>05</TipoRetraso>
+				<NumIncidencias>0</NumIncidencias>
+				<NumSolicitudesPdteActivacion>200</NumSolicitudesPdteActivacion>
+			</DetallePdteActivacion>
+			<DetallePdteActivacion>
+				<TipoRetraso>15</TipoRetraso>
+				<NumIncidencias>0</NumIncidencias>
+				<NumSolicitudesPdteActivacion>100</NumSolicitudesPdteActivacion>
+			</DetallePdteActivacion>
+""" + self.summaryFoot + self.foot
+			)
+	def test_genera_activatedRequest_ontime(self) :
+		informe = SwichingReport(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillActivated( [
+			ns(
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				ontimeaddedtime=6000,
+				lateaddedtime=0,
+				verylateaddedtime=0,
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head + self.summaryHead +
+		"""\
+			<DetalleActivadas>
+				<TipoRetraso>00</TipoRetraso>
+				<TMActivacion>20.0</TMActivacion>
+				<NumIncidencias>0</NumIncidencias>
+				<NumSolicitudesActivadas>300</NumSolicitudesActivadas>
+			</DetalleActivadas>
+""" + self.summaryFoot + self.foot
+			)
 
 import b2btest
 

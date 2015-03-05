@@ -10,10 +10,13 @@
 	- Unpaid contracts count
 - ~~Skip db base test when no bd config available~~
 - ~~Setup a requirements.txt file~~
-- Separate tests from code
 - ~~Add setup.py to run tests~~
-- Add setup.py to run install
 - ~~Setup travisCI~~
+- Separate tests from code
+- Add setup.py to run install
+- CLI frontend
+- GUI frontend
+- OERP frontend
 - Windows setup
 - To investigate:
 	- When TipoCambio has to be 'C4' instead of 'C3'
@@ -23,5 +26,8 @@
 	- Check all the date intervals
 	- Pick a date for managed request with no C2 (by email) (written down as 'case.priority')
 	- Current fare could be different from the one at the reported period
+	- Rejected marked as priority '4' are not taken into account
+	- `NumIncidencias` set to 0 in Activated and ActivationPending
+
 
 
