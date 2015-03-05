@@ -387,6 +387,135 @@ def peticionsAcceptades(db, inici, final, cursorManager=nsList):
 		result = cursorManager(cur)
 		return result
 
+def rejectedRequests(db, inici, final, cursorManager=nsList):
+
+	# TODO:
+	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
+
+	processos = idsProcessos(db)
+	passes = idsPasses(db, "C1", 'C2')
+
+	with db.cursor() as cur :
+		cur.execute("""\
+			SELECT
+				COUNT(*) AS nprocessos,
+				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN 1 ELSE 0 END) AS ontime,
+				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN 1 ELSE 0 END) AS late,
+				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate, 
+/*				SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
+
+				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN
+					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS ontimeaddedtime,
+				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN
+					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS lateaddedtime,
+				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN
+					DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS verylateaddedtime, 
+				codiprovincia,
+				s.distri,
+				s.tarname,
+				s.refdistribuidora,
+				nomprovincia,
+				s.nomdistribuidora,
+				STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
+				TRUE
+			FROM (
+				SELECT DISTINCT
+					CASE
+						WHEN c102.id IS NOT NULL THEN sth1.date_created
+						WHEN c202.id IS NOT NULL THEN sth2.date_created
+						WHEN case_.priority = '4' THEN %(periodEnd)s
+						ELSE null
+					END as data_rebuig,
+					sw.id AS sw_id,
+					provincia.code AS codiprovincia,
+					provincia.name AS nomprovincia,
+					sw.company_id AS company_id,
+					dist.id AS distri,
+					dist.ref AS refdistribuidora,
+					dist.name AS nomdistribuidora,
+					tar.name AS tarname,
+					sw.create_date AS create_date,
+					CASE
+						WHEN tar.tipus = 'AT' THEN
+							sw.create_date + interval '15 days'
+						ELSE
+							sw.create_date + interval '7 days'
+					END AS termini,
+					TRUE
+				FROM
+					giscedata_switching AS sw
+				LEFT JOIN 
+					giscedata_switching_step_header AS sth1 ON sth1.sw_id = sw.id
+				LEFT JOIN 
+					giscedata_switching_step_header AS sth2 ON sth2.sw_id = sw.id
+				LEFT JOIN
+					giscedata_switching_c1_02 AS c102 ON c102.header_id = sth1.id
+				LEFT JOIN
+					giscedata_switching_c2_02 AS c202 ON c202.header_id = sth2.id
+				LEFT JOIN
+					crm_case AS case_ ON case_.id = sw.case_id
+				LEFT JOIN
+					giscedata_cups_ps AS cups ON sw.cups_id = cups.id
+				LEFT JOIN
+					res_municipi ON  cups.id_municipi = res_municipi.id
+				LEFT JOIN
+					res_country_state AS provincia ON res_municipi.state = provincia.id
+				LEFT JOIN 
+					giscedata_polissa AS pol ON cups_polissa_id = pol.id
+				LEFT JOIN 
+					res_partner AS dist ON pol.distribuidora = dist.id
+				LEFT JOIN
+					giscedata_polissa_tarifa AS tar ON pol.tarifa = tar.id
+				WHERE
+					/* Ens focalitzem en els processos indicats */
+					sw.proces_id = ANY( %(process)s )  AND
+					(
+						(
+							c102.id IS NOT NULL AND
+							sth1.date_created >= %(periodStart)s AND
+							sth1.date_created <= %(periodEnd)s AND
+							c102.rebuig AND
+							TRUE
+							
+						) OR (
+							c202.id IS NOT NULL AND
+							sth2.date_created >= %(periodStart)s AND
+							sth2.date_created <= %(periodEnd)s AND
+							c202.rebuig AND
+							TRUE
+						) OR (
+							/* No son de petites marcades com a aceptades sense 02 */
+	/*						pol.data_alta IS NULL AND
+							pol.data_alta>=%(periodStart)s AND
+							pol.data_alta<=%(periodEnd)s AND
+							case_.priority = '4' AND
+	*/						FALSE
+						)
+					)
+				) as s 
+			GROUP BY
+				s.nomdistribuidora,
+				s.distri,
+				s.refdistribuidora,
+				s.tarname,
+				s.codiprovincia,
+				s.nomprovincia,
+				TRUE
+			ORDER BY
+				s.distri,
+				s.codiprovincia,
+				s.tarname,
+				TRUE
+			"""
+			,dict(
+
+				process = [processos[name] for name in 'C1','C2'],
+				periodStart = inici,
+				periodEnd = final,
+			))
+		result = cursorManager(cur)
+		return result
+
 import b2btest
 
 @unittest.skipIf(config is None, "No dbconfig.py file found")
@@ -443,6 +572,18 @@ class OcsumReport_Test(b2btest.TestCase) :
 		self._test_peticionsAcceptades((2014,3))
 
 
+	def _test_rejectedRequests(self, testcase) :
+		year, month = testcase
+		inici=datetime.date(year,month,1)
+		try:
+			final=datetime.date(year,month+1,1)
+		except ValueError:
+			final=datetime.date(year+1,1,1)
+		result = rejectedRequests(self.db, inici, final, cursorManager=csvTable)
+		self.assertBack2Back(result, 'rejectedRequests-{}.csv'.format(inici))
+
+	def test_rejectedRequests_2014_02(self) :
+		self._test_rejectedRequests((2014,2))
 
 
 

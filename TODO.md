@@ -13,7 +13,7 @@
 - Separate tests from code
 - ~~Add setup.py to run tests~~
 - Add setup.py to run install
-- Setup travisCI
+- ~~Setup travisCI~~
 - Windows setup
 - To investigate:
 	- When TipoCambio has to be 'C4' instead of 'C3'
@@ -23,7 +23,5 @@
 	- Check all the date intervals
 	- Pick a date for managed request with no C2 (by email) (written down as 'case.priority')
 	- Current fare could be different from the one at the reported period
-
-
 
 
