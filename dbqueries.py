@@ -425,7 +425,7 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 					SELECT *, 1 as process FROM giscedata_switching_c1_02
 					UNION
 					SELECT *, 2 as process FROM giscedata_switching_c2_02
-					) as c102 ON c102.header_id = sth1.id
+					) as pas02 ON pas02.header_id = sth1.id
 				LEFT JOIN
 					crm_case AS case_ ON case_.id = sw.case_id
 				LEFT JOIN 
@@ -437,23 +437,11 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 				WHERE
 					/* Ens focalitzem en els processos indicats */
 					sw.proces_id = ANY( %(process)s )  AND
-					(
-						(
-							c102.id IS NOT NULL AND
-							sth1.date_created >= %(periodStart)s AND
-							sth1.date_created <= %(periodEnd)s AND
-							c102.rebuig AND
-							TRUE
-							
-						) OR (
-							/* No son de petites marcades com a aceptades sense 02 */
-	/*						pol.data_alta IS NULL AND
-							pol.data_alta>=%(periodStart)s AND
-							pol.data_alta<=%(periodEnd)s AND
-							case_.priority = '4' AND
-	*/						FALSE
-						)
-					)
+					pas02.id IS NOT NULL AND
+					sth1.date_created >= %(periodStart)s AND
+					sth1.date_created <= %(periodEnd)s AND
+					pas02.rebuig AND
+					TRUE
 				) as s 
 			LEFT JOIN
 				giscedata_cups_ps AS cups ON s.cups_id = cups.id
