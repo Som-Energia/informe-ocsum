@@ -9,6 +9,7 @@ before_install:
 - sudo apt-get install libpq-dev libyaml-dev libxml2-dev libxslt1-dev
 install:
 - pip install --allow-external --allow-unverified -r requirements.txt
+- pip install coveralls
 after_success:
 - coveralls
 
