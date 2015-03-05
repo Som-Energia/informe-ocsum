@@ -5,6 +5,12 @@ import psycopg2
 import psycopg2.extras
 import datetime
 
+try:
+	from dbconfig import psycopg as config
+except ImportError:
+	config=None
+
+
 from namespace import namespace as ns
 def fetchNs(cursor):
 	"""Wraps a database cursor so that instead of providing data
@@ -57,6 +63,7 @@ def idsPasses(db, *args):
 
 import unittest
 
+@unittest.skipIf(config is None, "No dbconfig.py file found")
 class Test_switching(unittest.TestCase):
 
 	def setUp(self):
@@ -382,6 +389,7 @@ def peticionsAcceptades(db, inici, final, cursorManager=nsList):
 
 import b2btest
 
+@unittest.skipIf(config is None, "No dbconfig.py file found")
 class OcsumReport_Test(b2btest.TestCase) :
 
 	def setUp(self):

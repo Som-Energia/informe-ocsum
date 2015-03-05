@@ -460,7 +460,7 @@ class SwichingReport_Test(unittest.TestCase) :
 """ + self.foot
 			)
 
-
+@unittest.skipIf(config is None, "No dbconfig.py found")
 class XmlGenerateFromDb_Test(b2btest.TestCase) :
 
 	def test_fullGenerate(self):
