@@ -399,12 +399,7 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 				TRUE
 			FROM (
 				SELECT DISTINCT
-					CASE
-						WHEN c102.id IS NOT NULL THEN sth1.date_created
-						WHEN c202.id IS NOT NULL THEN sth2.date_created
-						WHEN case_.priority = '4' THEN %(periodEnd)s
-						ELSE null
-					END as data_rebuig,
+					sth1.date_created as data_rebuig,
 					sw.id AS sw_id,
 					sw.company_id AS company_id,
 					dist.id AS distri,
@@ -426,10 +421,11 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 					giscedata_switching_step_header AS sth1 ON sth1.sw_id = sw.id
 				LEFT JOIN 
 					giscedata_switching_step_header AS sth2 ON sth2.sw_id = sw.id
-				LEFT JOIN
-					giscedata_switching_c1_02 AS c102 ON c102.header_id = sth1.id
-				LEFT JOIN
-					giscedata_switching_c2_02 AS c202 ON c202.header_id = sth2.id
+				LEFT JOIN (
+					SELECT *, 1 as process FROM giscedata_switching_c1_02
+					UNION
+					SELECT *, 2 as process FROM giscedata_switching_c2_02
+					) as c102 ON c102.header_id = sth1.id
 				LEFT JOIN
 					crm_case AS case_ ON case_.id = sw.case_id
 				LEFT JOIN 
@@ -449,12 +445,6 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 							c102.rebuig AND
 							TRUE
 							
-						) OR (
-							c202.id IS NOT NULL AND
-							sth2.date_created >= %(periodStart)s AND
-							sth2.date_created <= %(periodEnd)s AND
-							c202.rebuig AND
-							TRUE
 						) OR (
 							/* No son de petites marcades com a aceptades sense 02 */
 	/*						pol.data_alta IS NULL AND
