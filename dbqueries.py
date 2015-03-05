@@ -391,6 +391,7 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 					DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS verylateaddedtime, 
 				provincia.code AS codiprovincia,
 				s.distri,
+				s.rejectreason,
 				s.tarname,
 				s.refdistribuidora,
 				provincia.name AS nomprovincia,
@@ -398,8 +399,8 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 				STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
 				TRUE
 			FROM (
-				SELECT DISTINCT
-					sth1.date_created as data_rebuig,
+				SELECT 
+					steph.date_created as data_rebuig,
 					sw.id AS sw_id,
 					sw.company_id AS company_id,
 					dist.id AS distri,
@@ -414,19 +415,30 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 							sw.create_date + interval '7 days'
 					END AS termini,
 					sw.cups_id,
+					(
+						SELECT MIN(motiu.name)
+						FROM sw_step_header_rebuig_ref AS h2r 
+						LEFT JOIN
+							giscedata_switching_rebuig AS rebuig ON h2r.rebuig_id = rebuig.id
+						LEFT JOIN
+							giscedata_switching_motiu_rebuig AS motiu ON rebuig.motiu_rebuig = motiu.id
+						WHERE h2r.header_id = steph.id
+					) AS rejectreason,
 					TRUE
 				FROM
 					giscedata_switching AS sw
 				LEFT JOIN 
-					giscedata_switching_step_header AS sth1 ON sth1.sw_id = sw.id
-				LEFT JOIN 
-					giscedata_switching_step_header AS sth2 ON sth2.sw_id = sw.id
+					giscedata_switching_step_header AS steph ON steph.sw_id = sw.id
 				LEFT JOIN (
-					SELECT *, 1 as process FROM giscedata_switching_c1_02
+						SELECT *, 1 as process FROM giscedata_switching_c1_02
 					UNION
-					SELECT *, 2 as process FROM giscedata_switching_c2_02
-					) as pas02 ON pas02.header_id = sth1.id
+						SELECT *, 2 as process FROM giscedata_switching_c2_02
+					) as pas02 ON pas02.header_id = steph.id
+/*				LEFT JOIN
+					sw_step_header_rebuig_ref AS h2r ON h2r.header_id = steph.id
 				LEFT JOIN
+					giscedata_switching_motiu_rebuig AS rebuig ON h2r.rebuig_id = rebuig.id
+*/				LEFT JOIN
 					crm_case AS case_ ON case_.id = sw.case_id
 				LEFT JOIN 
 					giscedata_polissa AS pol ON cups_polissa_id = pol.id
@@ -438,8 +450,8 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 					/* Ens focalitzem en els processos indicats */
 					sw.proces_id = ANY( %(process)s )  AND
 					pas02.id IS NOT NULL AND
-					sth1.date_created >= %(periodStart)s AND
-					sth1.date_created <= %(periodEnd)s AND
+					steph.date_created >= %(periodStart)s AND
+					steph.date_created <= %(periodEnd)s AND
 					pas02.rebuig AND
 					TRUE
 				) as s 
@@ -456,6 +468,7 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 				s.tarname,
 				codiprovincia,
 				nomprovincia,
+				s.rejectreason,
 				TRUE
 			ORDER BY
 				s.distri,
