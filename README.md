@@ -33,6 +33,17 @@ on the top of their OpenERP fork for electricity market agents.
 
 	$ pip install -r requirements.txt
 
+## Testing
+
+In order to run the database b2b tests you need to create a `dbconfig` module.
+It should contain a dicctionary with the database configuration, in
+a global var named `psycodb`.
+
+If you don't have it, database dependant tests will be skipped.
+
+To run the tests:
+
+	$ python2 setup.py test
 
 
 
