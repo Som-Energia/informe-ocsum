@@ -111,6 +111,7 @@ class SwichingReport:
 				('05', canvisPendents.late),
 				('15', canvisPendents.verylate),
 				]:
+
 			if not n: continue
 			detail = self.element(parent, 'DetallePendientesRespuesta')
 			self.element(detail, 'TipoRetraso', codigoRetraso)
@@ -146,22 +147,23 @@ class SwichingReport:
 			self.element(detail, 'NumSolicitudesRechazadas', n)
 
 	def generateActivationPendingDetails(self, parent, summary) :
-		for codigoRetraso, n in [
-				('00', summary.ontime),
-				('05', summary.late),
-				('15', summary.verylate),
+		for codigoRetraso, n, issues in [
+				('00', summary.ontime, summary.ontimeissues),
+				('05', summary.late, summary.lateissues),
+				('15', summary.verylate, summary.verylateissues),
 				]:
+
 			if not n : continue
 			detail = self.element(parent, 'DetallePdteActivacion')
 			self.element(detail, 'TipoRetraso', codigoRetraso)
-			self.element(detail, 'NumIncidencias', 0)
+			self.element(detail, 'NumIncidencias', issues)
 			self.element(detail, 'NumSolicitudesPdteActivacion', n)
 
 	def generateActivated(self, parent, summary) :
-		for codigoRetraso, n, addedTime in [
-				('00', summary.ontime, summary.ontimeaddedtime),
-				('05', summary.late, summary.lateaddedtime),
-				('15', summary.verylate, summary.verylateaddedtime),
+		for codigoRetraso, n, addedTime, issues in [
+				('00', summary.ontime, summary.ontimeaddedtime, summary.ontimeissues),
+				('05', summary.late, summary.lateaddedtime, summary.lateissues),
+				('15', summary.verylate, summary.verylateaddedtime, summary.verylateissues),
 				]:
 
 			if not n : continue
@@ -169,7 +171,7 @@ class SwichingReport:
 			detail = self.element(parent, 'DetalleActivadas')
 			self.element(detail, 'TipoRetraso', codigoRetraso)
 			self.element(detail, 'TMActivacion', '{:.1f}'.format(meanTime))
-			self.element(detail, 'NumIncidencias', 0)
+			self.element(detail, 'NumIncidencias', issues)
 			self.element(detail, 'NumSolicitudesActivadas', n)
 
 	def details(self, key) :
@@ -607,6 +609,9 @@ class SwichingReport_Test(unittest.TestCase) :
 				ontime=300,
 				late=0,
 				verylate=0, 
+				ontimeissues=0,
+				lateissues=0,
+				verylateissues=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
 				refdistribuidora='R1-001',
@@ -637,6 +642,9 @@ class SwichingReport_Test(unittest.TestCase) :
 				ontime=0,
 				late=200,
 				verylate=100, 
+				ontimeissues=0,
+				lateissues=0,
+				verylateissues=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
 				refdistribuidora='R1-001',
@@ -674,6 +682,9 @@ class SwichingReport_Test(unittest.TestCase) :
 				ontimeaddedtime=6000,
 				lateaddedtime=0,
 				verylateaddedtime=0,
+				ontimeissues=0,
+				lateissues=0,
+				verylateissues=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
 				refdistribuidora='R1-001',
