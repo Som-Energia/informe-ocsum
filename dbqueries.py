@@ -482,12 +482,11 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 		cur.execute("""\
 			SELECT
 				count(*),
-				step.data_activacio,
-				dist.id,
-				dist.ref,
+				dist.id as distriid,
+				dist.ref as distriref,
 				provincia.code AS codiprovincia,
 				provincia.name AS nomprovincia,
-				dist.name,
+				dist.name as distriname,
 				STRING_AGG(sw.id::text, ',' ORDER BY sw.id) as casos
 			FROM
 				(
@@ -536,7 +535,6 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 			WHERE
 				TRUE
 			GROUP BY
-				step.data_activacio,
 				tar.name,
 				dist.name,
 				provincia.code,
@@ -544,12 +542,12 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				dist.ref,
 				provincia.name,
 				dist.name,
+				data_activacio,
 				TRUE
 			ORDER BY
 				tar.name,
 				dist.name,
 				provincia.code,
-				step.data_activacio,
 				TRUE
 			"""
 			,dict(
