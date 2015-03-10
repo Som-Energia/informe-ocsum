@@ -481,22 +481,20 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 	with db.cursor() as cur :
 		cur.execute("""\
 			SELECT
-				count(*),
-				dist.id as distriid,
-				dist.ref as distriref,
+				COUNT(*),
+				dist.id AS distriid,
+				dist.ref AS distriref,
 				provincia.code AS codiprovincia,
 				provincia.name AS nomprovincia,
-				dist.name as distriname,
-				STRING_AGG(sw.id::text, ',' ORDER BY sw.id) as casos
+				dist.name AS distriname,
+				STRING_AGG(sw.id::text, ',' ORDER BY sw.id) AS casos
 			FROM
 				(
 				SELECT
-					id as pass_id,
+					id AS pass_id,
 					header_id,
-					"tarifaATR",
 					data_activacio,
-					contracte_atr,
-					1 as process
+					1 AS process
 				FROM giscedata_switching_c1_05
 				WHERE
 					data_activacio >= %(periodStart)s AND
@@ -504,12 +502,10 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 					TRUE
 				UNION
 				SELECT
-					id as pass_id,
+					id AS pass_id,
 					header_id,
-					"tarifaATR",
 					data_activacio,
-					contracte_atr,
-					2 as process
+					2 AS process
 				FROM giscedata_switching_c2_05
 				WHERE
 					data_activacio >= %(periodStart)s AND
@@ -532,8 +528,6 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				res_municipi ON res_municipi.id = cups.id_municipi
 			LEFT JOIN
 				res_country_state AS provincia ON provincia.id = res_municipi.state
-			WHERE
-				TRUE
 			GROUP BY
 				tar.name,
 				dist.name,
