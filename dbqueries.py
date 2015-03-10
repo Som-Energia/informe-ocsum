@@ -540,11 +540,13 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				step.data_activacio,
 				tar.name,
 				dist.name,
+				provincia.code,
 				TRUE
 			ORDER BY
 				step.data_activacio,
 				tar.name,
 				dist.name,
+				provincia.code,
 				TRUE
 			"""
 			,dict(
