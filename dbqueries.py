@@ -546,10 +546,10 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				dist.name,
 				TRUE
 			ORDER BY
-				step.data_activacio,
 				tar.name,
 				dist.name,
 				provincia.code,
+				step.data_activacio,
 				TRUE
 			"""
 			,dict(
