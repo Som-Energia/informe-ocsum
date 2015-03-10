@@ -101,7 +101,6 @@ def numeroDeCasos(db) :
 def peticionsPendentsDeResposta(db, inici, final, cursorManager=nsList):
 
 	processos = idsProcessos(db)
-	passes = idsPasses(db, "C1", 'C2')
 
 	# TODO: S'esta fent servir incorrectament la creacio del cas com a data de carga del fitxer al sistema de la distribuidora
 	# TODO: Group by 'TipoCambio' (siempre C3? cambio comercializadora. Cuando C4?)
@@ -248,7 +247,6 @@ def peticionsAcceptades(db, inici, final, cursorManager=nsList):
 	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
 
 	processos = idsProcessos(db)
-	passes = idsPasses(db, "C1", 'C2')
 
 	with db.cursor() as cur :
 		cur.execute("""\
@@ -372,7 +370,6 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
 
 	processos = idsProcessos(db)
-	passes = idsPasses(db, "C1", 'C2')
 
 	with db.cursor() as cur :
 		cur.execute("""\
@@ -433,12 +430,8 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 						SELECT *, 1 as process FROM giscedata_switching_c1_02
 					UNION
 						SELECT *, 2 as process FROM giscedata_switching_c2_02
-					) as pas02 ON pas02.header_id = steph.id
-/*				LEFT JOIN
-					sw_step_header_rebuig_ref AS h2r ON h2r.header_id = steph.id
+					) AS pass ON pass.header_id = steph.id
 				LEFT JOIN
-					giscedata_switching_motiu_rebuig AS rebuig ON h2r.rebuig_id = rebuig.id
-*/				LEFT JOIN
 					crm_case AS case_ ON case_.id = sw.case_id
 				LEFT JOIN 
 					giscedata_polissa AS pol ON cups_polissa_id = pol.id
@@ -449,10 +442,10 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 				WHERE
 					/* Ens focalitzem en els processos indicats */
 					sw.proces_id = ANY( %(process)s )  AND
-					pas02.id IS NOT NULL AND
+					pass.id IS NOT NULL AND
 					steph.date_created >= %(periodStart)s AND
 					steph.date_created <= %(periodEnd)s AND
-					pas02.rebuig AND
+					pass.rebuig AND
 					TRUE
 				) as s 
 			LEFT JOIN
@@ -484,6 +477,63 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 			))
 		result = cursorManager(cur)
 		return result
+
+
+def activatedRequests(db, inici, final, cursorManager=nsList):
+	processos = idsProcessos(db)
+
+	with db.cursor() as cur :
+		cur.execute("""\
+			SELECT
+				count(*),
+				step.data_activacio,
+				TRUE
+			FROM
+				(
+				SELECT
+					id as pass_id,
+					header_id,
+					"tarifaATR",
+					data_activacio,
+					contracte_atr,
+					1 as process
+				FROM giscedata_switching_c1_05
+				WHERE
+					data_activacio >= %(periodStart)s AND
+					data_activacio < %(periodEnd)s AND
+					TRUE
+				UNION
+				SELECT
+					id as pass_id,
+					header_id,
+					"tarifaATR",
+					data_activacio,
+					contracte_atr,
+					2 as process
+				FROM giscedata_switching_c2_05
+				WHERE
+					data_activacio >= %(periodStart)s AND
+					data_activacio < %(periodEnd)s AND
+					TRUE
+				) AS step
+			WHERE
+				TRUE
+			GROUP BY
+				step.data_activacio,
+				TRUE
+			ORDER BY
+				step.data_activacio,
+				TRUE
+			"""
+			,dict(
+				process = [processos[name] for name in 'C1','C2'],
+				periodStart = inici,
+				periodEnd = final,
+			))
+
+		result = cursorManager(cur)
+	return result
+
 
 import b2btest
 
@@ -553,6 +603,20 @@ class OcsumReport_Test(b2btest.TestCase) :
 
 	def test_rejectedRequests_2014_02(self) :
 		self._test_rejectedRequests((2014,2))
+
+
+	def _test_activatedRequests(self, testcase) :
+		year, month = testcase
+		inici=datetime.date(year,month,1)
+		try:
+			final=datetime.date(year,month+1,1)
+		except ValueError:
+			final=datetime.date(year+1,1,1)
+		result = activatedRequests(self.db, inici, final, cursorManager=csvTable)
+		self.assertBack2Back(result, 'activatedRequests-{}.csv'.format(inici))
+
+	def test_activatedRequests_2014_02(self) :
+		self._test_activatedRequests((2014,2))
 
 
 
