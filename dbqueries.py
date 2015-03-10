@@ -516,6 +516,24 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				giscedata_switching_step_header AS sth ON step.header_id = sth.id
 			LEFT JOIN
 				giscedata_switching AS sw ON sw.id = sth.sw_id
+			LEFT JOIN
+				giscedata_cups_ps AS cups ON cups.id = sw.cups_id
+			LEFT JOIN
+				giscedata_polissa AS pol ON pol.id = sw.cups_polissa_id
+/*
+				LEFT JOIN
+					res_partner AS dist ON pol.distribuidora = dist.id
+				LEFT JOIN
+					giscedata_polissa_tarifa AS tar ON pol.tarifa = tar.id
+				LEFT JOIN
+					res_municipi ON  cups.id_municipi = res_municipi.id
+				LEFT JOIN
+					res_country_state AS provincia ON res_municipi.state = provincia.id
+				LEFT JOIN
+					giscedata_switching_proces AS pr ON sw.proces_id = pr.id
+				LEFT JOIN
+					crm_case AS case_ ON case_.id = sw.case_id
+*/
 			WHERE
 				TRUE
 			GROUP BY
