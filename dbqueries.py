@@ -483,6 +483,11 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 			SELECT
 				count(*),
 				step.data_activacio,
+				dist.id,
+				dist.ref,
+				provincia.code AS codiprovincia,
+				provincia.name AS nomprovincia,
+				dist.name,
 				STRING_AGG(sw.id::text, ',' ORDER BY sw.id) as casos
 			FROM
 				(
@@ -528,12 +533,6 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				res_municipi ON res_municipi.id = cups.id_municipi
 			LEFT JOIN
 				res_country_state AS provincia ON provincia.id = res_municipi.state
-/*
-				LEFT JOIN
-					giscedata_switching_proces AS pr ON sw.proces_id = pr.id
-				LEFT JOIN
-					crm_case AS case_ ON case_.id = sw.case_id
-*/
 			WHERE
 				TRUE
 			GROUP BY
@@ -541,6 +540,10 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				tar.name,
 				dist.name,
 				provincia.code,
+				dist.id,
+				dist.ref,
+				provincia.name,
+				dist.name,
 				TRUE
 			ORDER BY
 				step.data_activacio,
