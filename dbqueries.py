@@ -134,7 +134,6 @@ def peticionsPendentsDeResposta(db, inici, final, cursorManager=nsList):
 					sw.id AS sw_id,
 					provincia.code AS codiprovincia,
 					provincia.name AS nomprovincia,
-					sw.company_id AS company_id,
 					dist.id AS distri,
 					dist.ref AS refdistribuidora,
 					dist.name AS nomdistribuidora,
@@ -188,7 +187,6 @@ def peticionsPendentsDeResposta(db, inici, final, cursorManager=nsList):
 					TRUE
 				GROUP BY
 					sw.id,
-					sw.company_id,
 					refdistribuidora,
 					tarname,
 					tar.tipus,
@@ -282,7 +280,6 @@ def peticionsAcceptades(db, inici, final, cursorManager=nsList):
 					sw.id AS sw_id,
 					provincia.code AS codiprovincia,
 					provincia.name AS nomprovincia,
-					sw.company_id AS company_id,
 					dist.id AS distri,
 					dist.ref AS refdistribuidora,
 					dist.name AS nomdistribuidora,
@@ -399,7 +396,6 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 				SELECT 
 					steph.date_created as data_rebuig,
 					sw.id AS sw_id,
-					sw.company_id AS company_id,
 					dist.id AS distri,
 					dist.ref AS refdistribuidora,
 					dist.name AS nomdistribuidora,
@@ -487,7 +483,7 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 			SELECT
 				count(*),
 				step.data_activacio,
-				TRUE
+				STRING_AGG(sw.id::text, ',' ORDER BY sw.id) as casos
 			FROM
 				(
 				SELECT
@@ -516,6 +512,10 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 					data_activacio < %(periodEnd)s AND
 					TRUE
 				) AS step
+			LEFT JOIN
+				giscedata_switching_step_header AS sth ON step.header_id = sth.id
+			LEFT JOIN
+				giscedata_switching AS sw ON sw.id = sth.sw_id
 			WHERE
 				TRUE
 			GROUP BY
