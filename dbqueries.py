@@ -539,10 +539,12 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 			GROUP BY
 				step.data_activacio,
 				tar.name,
+				dist.name,
 				TRUE
 			ORDER BY
 				step.data_activacio,
 				tar.name,
+				dist.name,
 				TRUE
 			"""
 			,dict(
