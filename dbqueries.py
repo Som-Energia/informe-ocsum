@@ -542,7 +542,6 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				dist.ref,
 				provincia.name,
 				dist.name,
-				data_activacio,
 				TRUE
 			ORDER BY
 				tar.name,
