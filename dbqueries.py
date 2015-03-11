@@ -504,8 +504,12 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 					data_activacio >  sw.create_date + interval '81 days'
 					) THEN DATE_PART('day', data_activacio - sw.create_date ) ELSE 0 END
 				) AS verylateaddedtime,
+				0 AS ontimeissues,
+				0 AS lateissues,
+				0 AS verylateissues,
 				dist.id AS distriid,
-				dist.ref AS distriref,
+				dist.ref AS refdistribuidora,
+				tar.name as tarname,
 				provincia.code AS codiprovincia,
 				provincia.name AS nomprovincia,
 				dist.name AS distriname,
