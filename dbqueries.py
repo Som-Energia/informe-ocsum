@@ -378,7 +378,8 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 /*				SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
 
 				SUM(CASE WHEN (%(periodEnd)s <= termini) THEN
-					DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS ontimeaddedtime,
+					DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
+					) AS ontimeaddedtime,
 				SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN
 					DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS lateaddedtime,
 				SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN
@@ -492,6 +493,19 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				SUM(CASE WHEN (
 					data_activacio >  sw.create_date + interval '81 days'
 					) THEN 1 ELSE 0 END) AS verylate,
+				SUM(CASE WHEN (
+					data_activacio <= sw.create_date + interval '66 days'
+					) THEN DATE_PART('day', data_activacio - sw.create_date ) ELSE 0 END
+				) AS ontimeaddedtime,
+				SUM(CASE WHEN (
+					data_activacio >  sw.create_date + interval '66 days' AND 
+					data_activacio <= sw.create_date + interval '81 days'
+					) THEN DATE_PART('day', data_activacio - sw.create_date ) ELSE 0 END
+				) AS lateaddedtime,
+				SUM(CASE WHEN (
+					data_activacio >  sw.create_date + interval '81 days'
+					) THEN DATE_PART('day', data_activacio - sw.create_date ) ELSE 0 END
+				) AS verylateaddedtime,
 				dist.id AS distriid,
 				dist.ref AS distriref,
 				provincia.code AS codiprovincia,
