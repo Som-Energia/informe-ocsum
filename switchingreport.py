@@ -730,10 +730,12 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			pendents=peticionsPendentsDeResposta(db, inici, final)
 			acceptades=peticionsAcceptades(db, inici, final)
 			rejected=rejectedRequests(db, inici, final)
+			activated=activatedRequests(db, inici, final)
 
 		informe.fillPending( pendents )
 		informe.fillAccepted( acceptades )
 		informe.fillRejected( rejected )
+		informe.fillActivated( activated )
 
 
 		result = informe.genera()
