@@ -482,7 +482,16 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 		cur.execute("""\
 			SELECT
 				COUNT(*),
-				SUM(CASE WHEN (data_activacio <= sw.create_date + interval '66 days' ) THEN 1 ELSE 0 END) AS ontime,
+				SUM(CASE WHEN (
+					data_activacio <= sw.create_date + interval '66 days'
+					) THEN 1 ELSE 0 END) AS ontime,
+				SUM(CASE WHEN (
+					data_activacio >  sw.create_date + interval '66 days' AND 
+					data_activacio <= sw.create_date + interval '81 days'
+					) THEN 1 ELSE 0 END) AS late,
+				SUM(CASE WHEN (
+					data_activacio >  sw.create_date + interval '81 days'
+					) THEN 1 ELSE 0 END) AS verylate,
 				dist.id AS distriid,
 				dist.ref AS distriref,
 				provincia.code AS codiprovincia,
