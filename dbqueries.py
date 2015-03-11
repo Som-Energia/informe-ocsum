@@ -581,7 +581,7 @@ def sentRequests(db, inici, final, cursorManager=nsList) :
 	with db.cursor() as cur :
 		cur.execute("""\
 			SELECT
-				COUNT(*),
+				COUNT(*) AS nreq,
 				dist.id AS distriid,
 				dist.ref AS refdistribuidora,
 				tar.name as tarname,

@@ -1,4 +1,4 @@
-count	distriid	refdistribuidora	tarname	codiprovincia	nomprovincia	distriname	casos
+nreq	distriid	refdistribuidora	tarname	codiprovincia	nomprovincia	distriname	casos
 4	2282	0112	2.0A	17	Girona	AGRI ENERGIA ELECTRICA	7405,7901,7953,8256
 1	3742	0033	2.0A	27	Lugo	DISTRIBUCIÓN BEGASA	7617
 2	2406	0026	2.0A	33	Asturias	DISTRIBUCIÓN CANTÁBRICO	7531,8403

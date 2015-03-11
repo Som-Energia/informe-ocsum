@@ -83,7 +83,7 @@ class SwichingReport:
 				self.element(datos, 'TipoPunto', tipoPunto) # TODO
 				self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa]) # TODO
 
-				self.element(datos, 'TotalSolicitudesEnviadas', 0) # TODO
+				self.element(datos, 'TotalSolicitudesEnviadas', canvi.get('sent',0))
 				self.element(datos, 'SolicitudesAnuladas', 0) # TODO
 				self.element(datos, 'Reposiciones', 0) # TODO: No ben definit
 				self.element(datos, 'ClientesSalientes', 0) # TODO: 
@@ -177,6 +177,16 @@ class SwichingReport:
 	def details(self, key) :
 		return self.canvis.setdefault(key, ns())
 
+	def fillSent(self,pendents) :
+		for pendent in pendents:
+			key=(
+				pendent.codiprovincia,
+				pendent.refdistribuidora,
+				1, # TODO
+				pendent.tarname,
+				)
+			self.details(key).sent = pendent.nreq
+
 	def fillPending(self,pendents) :
 		for pendent in pendents:
 			key=(
@@ -263,6 +273,22 @@ class SwichingReport_Test(unittest.TestCase) :
 			<ClientesSalientes>0</ClientesSalientes>
 			<NumImpagados>0</NumImpagados>
 """
+	summaryHead2 = """\
+	<SolicitudesRealizadas>
+		<DatosSolicitudes>
+			<Provincia>08000</Provincia>
+			<Distribuidor>R1-001</Distribuidor>
+			<Comer_entrante>R2-415</Comer_entrante>
+			<Comer_saliente>0</Comer_saliente>
+			<TipoCambio>C3</TipoCambio>
+			<TipoPunto>1</TipoPunto>
+			<TarifaATR>2</TarifaATR>
+			<TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
+			<SolicitudesAnuladas>0</SolicitudesAnuladas>
+			<Reposiciones>0</Reposiciones>
+			<ClientesSalientes>0</ClientesSalientes>
+			<NumImpagados>0</NumImpagados>
+"""
 	secondSummaryHeader = """\
 		</DatosSolicitudes>
 		<DatosSolicitudes>
@@ -295,6 +321,31 @@ class SwichingReport_Test(unittest.TestCase) :
 			informe.genera(),
 			self.head+self.foot
 			)
+
+	def test_genera_nonDetail(self) :
+		informe = SwichingReport(
+			CodigoAgente='R2-415',
+			TipoMercado='E',
+			TipoAgente='C',
+			Periodo='201501',
+			)
+		informe.fillSent([
+			ns(
+				nreq=2,
+				nprocessos=300,
+				ontime=300,
+				late=0,
+				verylate=0, 
+				codiprovincia='08',
+				tarname='2.0DHA',
+				refdistribuidora='R1-001',
+				),
+			])
+		self.assertXmlEqual(
+			informe.genera(),
+			self.head+self.summaryHead2+self.summaryFoot+self.foot
+			)
+
 	def test_genera_solicitudsPendents(self) :
 		informe = SwichingReport(
 			CodigoAgente='R2-415',
@@ -731,11 +782,13 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			acceptades=peticionsAcceptades(db, inici, final)
 			rejected=rejectedRequests(db, inici, final)
 			activated=activatedRequests(db, inici, final)
+			sent=sentRequests(db, inici, final)
 
 		informe.fillPending( pendents )
 		informe.fillAccepted( acceptades )
 		informe.fillRejected( rejected )
 		informe.fillActivated( activated )
+		informe.fillSent( sent )
 
 
 		result = informe.genera()

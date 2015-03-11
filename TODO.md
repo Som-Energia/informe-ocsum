@@ -3,7 +3,7 @@
 - Activation pending request details
 - ~~Activated requests details~~
 - Short queries (by distributor, fare, in/out retailer...)
-	- Sent requests count
+	- ~~Sent requests count~~
 	- Cancelled requests count
 	- Repositioned requests count
 	- Outgoing clients count
