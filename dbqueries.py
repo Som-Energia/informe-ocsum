@@ -477,8 +477,6 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 
 
 def activatedRequests(db, inici, final, cursorManager=nsList):
-	processos = idsProcessos(db)
-
 	with db.cursor() as cur :
 		cur.execute("""\
 			SELECT
@@ -568,7 +566,6 @@ def activatedRequests(db, inici, final, cursorManager=nsList):
 				TRUE
 			"""
 			,dict(
-				process = [processos[name] for name in 'C1','C2'],
 				periodStart = inici,
 				periodEnd = final,
 			))
