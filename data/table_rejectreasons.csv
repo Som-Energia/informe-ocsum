@@ -1,0 +1,58 @@
+1	No existe Punto de Suministro asociado al CUPS
+2	Inexistencia de Contrato de ATR previo en vigor
+3	NIF-CIF No coincide con el del Contrato en vigor
+6	Existencia de Solicitud ATR previa en curso
+7	Tipo de Contrato sin informar
+8	Duración y/o Tipo de Renovación del Contrato sin informar o no válida
+9	Existencia de sentencia judicial relativa a deuda del cliente
+11	Comercializadora incorrecta
+12	Contrato cortado
+13	Potencias No Normalizadas en Tarifas 2.XA y 2.XDHA
+14	Potencia Solicitada mayor que la Potencia Máxima Autorizada
+15	Secuencia de Potencias incorrectas, Pi>Pi+1 
+17	Tarifa no válida para la Tensión de Suministro
+18	Equipo nuevo propiedad del Cliente no cumple los criterios de Contratación ATR
+20	Instalación no disponible o ampliación suministro en trámite (Expediente Abierto + Código de Expediente + Motivo de Expediente)
+21	Existencia de Contrato Previo en vigor en una Salida Directa a Mercado Libre
+22	Potencia Solicitada mayor que la Potencia Máxima Reconocida de Extensión
+23	CNAE No Informado
+25	Ausencia del Titular con Cita
+26	Acceso imposibilitado más de dos veces por causas ajenas a la Distribuidora
+27	Caja ICP no válida o inexistente
+28	Rechazo por Anormalidad o Fraude contrastado
+29	Falta Equipo Cliente
+31	Impedimento del Titular
+32	Suministro Esencial
+34	Cliente no cortable por otras circunstancias
+35	Cliente ya cortado
+36	NIF-CIF Erróneo
+37	Existencia de Solicitud previa en curso A3
+38	Existencia de Solicitud previa en curso C1
+39	Existencia de Solicitud previa en curso C2
+40	Existencia de Solicitud previa en curso M1
+41	Existencia de Solicitud previa en curso B1
+42	Error al anular OT ya emitida
+43	Error al anular Solicitud finalizada
+44	Error en las horas de utilización (Eventuales)
+45	Fecha de Finalización de Contrato sin informar (Eventuales, Temporada y Obras)
+46	Fecha de la operación solicitada con carácter retroactivo
+47	Potencias No Normalizadas en Suministro Trifásico
+48	Potencias No Normalizadas en Suministro Monofásico
+49	Necesario cambio de Tensión Monofásica a Trifásica
+50	Transformadores de medida fuera de rango
+51	Tarifa no válida para Contratos de Peaje
+52	Tarifa no válida para Potencias Solicitadas
+53	Necesidad de abrir Expediente de Acometida
+54	No Existe Boletín Eventual
+55	Nuevo Cliente coincide con el Actual
+56	Falta de Datos en Campo 84 en Modificaciones
+57	Falta C.I.E. y/o Acta de Puesta en Marcha
+58	Teléfono de Contacto erróneo o no contesta reiteradamente
+59	Armario / Módulo no válido o inexistente
+60	Instalación incompleta o con elementos no válidos
+61	CGP no válida o inexistente
+62	Actuación Solicitada por Comercializador no acorde con requerimientos Cliente
+63	Potencia Solicitada no puede ser inferior a Potencia de B.I.E. (Suministros en Modo 2 no interrumpibles)
+64	Desconexión no posible técnicamente en Corte
+65	Más de una modificación de potencia en menos de 12 meses
+99	Otros
