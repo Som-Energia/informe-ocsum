@@ -98,7 +98,7 @@ def numeroDeCasos(db) :
 		return dict((name, count) for name, count in cur)
 
 
-def peticionsPendentsDeResposta(db, inici, final, cursorManager=nsList):
+def unansweredRequests(db, inici, final, cursorManager=nsList):
 
 	processos = idsProcessos(db)
 
@@ -276,7 +276,7 @@ def peticionsAcceptades(db, inici, final, cursorManager=nsList):
 						WHEN c102.id IS NOT NULL THEN c102.data_acceptacio
 						WHEN case_.priority = '5' THEN %(periodEnd)s
 						ELSE null
-					END as data_accpetacio,
+					END as data_acceptacio,
 					sw.id AS sw_id,
 					provincia.code AS codiprovincia,
 					provincia.name AS nomprovincia,
@@ -672,8 +672,8 @@ class OcsumReport_Test(b2btest.TestCase) :
 			final=datetime.date(year,month+1,1)
 		except ValueError:
 			final=datetime.date(year+1,1,1)
-		result = peticionsPendentsDeResposta(self.db, inici, final, cursorManager=csvTable)
-		self.assertBack2Back(result, 'peticionsPendentsDeResposta-{}.csv'.format(inici))
+		result = unansweredRequests(self.db, inici, final, cursorManager=csvTable)
+		self.assertBack2Back(result, 'unansweredRequests-{}.csv'.format(inici))
 
 	def test_peticionsPendentsDeResposta_2014_02(self) :
 		self._test_peticionsPendentsDeResposta((2014,2))

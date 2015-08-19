@@ -778,7 +778,7 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 
 		import psycopg2
 		with psycopg2.connect(**config) as db:
-			pendents=peticionsPendentsDeResposta(db, inici, final)
+			pendents=unansweredRequests(db, inici, final)
 			acceptades=peticionsAcceptades(db, inici, final)
 			rejected=rejectedRequests(db, inici, final)
 			activated=activatedRequests(db, inici, final)
