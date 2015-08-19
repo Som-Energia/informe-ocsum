@@ -1,0 +1,45 @@
+MensajeSolicitudesRealizadas:
+	_attr:
+		'xmlns:xsi': http://www.w3.org/2001/XMLSchema-instance
+		'xsi:noNamespaceSchemaLocation': SolicitudesRealizadas_v1.0
+	Cabecera:
+		CodigoAgente: R2-415
+		TipoMercado: E
+		TipoAgente: C
+		Periodo: 201501
+	SolicitudesRealizadas: # Si No hay, se descarta el contenedor
+		DatosSolicitudes:
+			Provincia: 08000 # dos primers numeros del cp zero padded
+			Distribuidor: Endesa
+			Comer_entrante: Endesa
+			Comer_saliente: SomEnergia
+			TipoCambio: TODO # C3: cambio de comercializadora, C4: alta directa a mercado
+			TipoPunto: TODO # 1: >=10MW, 2: >450 kW, 3: >50kW, 4: P>15kW, 5: P<=15kW
+			TarifaATR: TODO
+			# Los campos anteriores han de ser unicos, los de abajo cuentan los agregados
+			TotalSolicitudesEnviadas: 4
+			SolicitudesAnuladas: 5
+			Reposiciones: 2
+			ClientesSalientes: 3
+			NumImpagados: 5
+			- DetallePendientesRespuesta:  # Solo en caso de que las haya, uno por tipo
+				TipoRetraso: 00
+				NumSolicitudesPendientes: 300
+			- DetalleAceptadas: # Uno por tipo de retraso, si hay
+				TipoRetraso: 00
+				TMSolicitudesAceptadas: 002.3 # Tiempo medio en dias naturales 999.99
+				NumSolicitudesAceptadas: 200
+			- DetalleRechazadas: # Unico para cada tipo retraso y motivo rechazo
+				TipoRetraso: 00
+				TMSolicitudesRechazadas: 003.2 # Tiempo medio en dias naturales 999.99
+				MotivoRechazo: TODO
+				NumSolicitudesRechazadas: 200
+			- DetallePdteActivacion:
+				TipoRetraso: 00
+				NumIncidencias: 3
+				NumSolicitudesPdteActivacion: 200
+			- DetalleActivadas: 
+				TipoRetraso: 00
+				TMActivacion: 003.2 # Tiempo medio en dias naturales 999.99
+				NumIncidencias: 3
+				NumSolicitudesActivadas: 200
