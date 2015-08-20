@@ -46,4 +46,52 @@ To run the tests:
 	$ python2 setup.py test
 
 
+## Concepts
+
+The report is sent for a period consisting in a month.
+Requests are counted, not contracts, 
+so that three requests of the same contract count as three, not one.
+
+- **Sent requests ("Solicitudes enviadas"):**
+    - Those sent during the period regardless its resolution.
+
+- **Unanswered requests ("Solicitudes pendientes de respuesta"):**
+    - Those without neither rejection nor acceptation answer from the distributor at the end of the period.
+    - Warning: This could include requests started on previous periods.
+
+- **Accepted requests ("Solicitudes aceptadas"):**
+    - Those accepted within the period
+    - Warning: This could include requests started on previous periods.
+
+- **Rejected requests ("Solicitudes rechazadas"):**
+    - Those rejected within the period
+        - Direct rejection: C1/2:02 with rejection flag
+        - After failed field intervention: C1/2:04
+    - Includes also rejections because of field intervention after acceptation
+    - Does not include rejections because of the format
+    - Warning: This could include requests started on previous periods.
+
+- **Unactivated requests ("Solicitudes pendientes de activacion"):**
+    - Those accepted but not activated at the end of the period
+    - Warning: This could include requests **send or accepted** on previous periods.
+    - Plazo: desde la carga de la solicitud a final de mes
+
+- **Activated requests ("Solicitudes activadas"):**
+    - Those with activation date (C1/2:04) during the period
+    - Warning: Not the reception date of C1/2:04, but the indicated activation date
+    - Warning: This may include request **sent or accepted** on previous periods.
+    - Includes later repositionated requests
+    - Plazo: desde la carga de la solicitud a la fecha indicada para la activación
+
+- **Cancelled requests ("Solicitudes anuladas"):**
+    - Those cancelled (C1/2:09 o A1:06)
+    - Warning: the step that counts is the acceptation of the cancellation (C1/2:09) not the cancellation request (C1/2:08)
+
+- **Repositioned requests ("Solicitudes reposicionadas"):**
+    - Those the outgoing 
+
+
+
+
+
 
