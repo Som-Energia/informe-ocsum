@@ -15,10 +15,10 @@ MensajeSolicitudesRealizadas:
 			Comer_saliente: SomEnergia
 			TipoCambio: TODO # C3: cambio de comercializadora, C4: alta directa a mercado
 			TipoPunto: TODO # 1: >=10MW, 2: >450 kW, 3: >50kW, 4: P>15kW, 5: P<=15kW
-			TarifaATR: TODO
+			TarifaATR: # DONE
 			# Los campos anteriores han de ser unicos, los de abajo cuentan los agregados
 			TotalSolicitudesEnviadas: 4
-			SolicitudesAnuladas: 5
+			SolicitudesAnuladas: 5  # TODO: Les que tenen un pas 08
 			Reposiciones: 2
 			ClientesSalientes: 3
 			NumImpagados: 5
