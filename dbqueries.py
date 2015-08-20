@@ -239,7 +239,7 @@ def unansweredRequests(db, inici, final, cursorManager=nsList):
 		result = cursorManager(cur)
 		return result
 
-def peticionsAcceptades(db, inici, final, cursorManager=nsList):
+def acceptedRequests(db, inici, final, cursorManager=nsList):
 
 	# TODO:
 	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
@@ -831,21 +831,21 @@ class OcsumReport_Test(b2btest.TestCase) :
 		self._test_peticionsPendentsDeResposta((2015,2))
 
 
-	def _test_peticionsAcceptades(self, testcase) :
+	def _test_acceptedRequests(self, testcase) :
 		year, month = testcase
 		inici=datetime.date(year,month,1)
 		try:
 			final=datetime.date(year,month+1,1)
 		except ValueError:
 			final=datetime.date(year+1,1,1)
-		result = peticionsAcceptades(self.db, inici, final, cursorManager=csvTable)
-		self.assertBack2Back(result, 'peticionsAcceptades-{}.csv'.format(inici))
+		result = acceptedRequests(self.db, inici, final, cursorManager=csvTable)
+		self.assertBack2Back(result, 'acceptedRequests-{}.csv'.format(inici))
 
-	def test_peticionsAcceptades_2014_02(self) :
-		self._test_peticionsAcceptades((2014,2))
+	def test_acceptedRequests_2014_02(self) :
+		self._test_acceptedRequests((2014,2))
 
-	def test_peticionsAcceptades_2014_03(self) :
-		self._test_peticionsAcceptades((2014,3))
+	def test_acceptedRequests_2014_03(self) :
+		self._test_acceptedRequests((2014,3))
 
 
 	def _test_rejectedRequests(self, testcase) :
