@@ -33,7 +33,15 @@ on the top of their OpenERP fork for electricity market agents.
 
 	$ pip install -r requirements.txt
 
-## Testing
+## Testinga
+
+### Running
+
+To run the tests:
+
+	$ python2 setup.py test
+
+### Enabling database dependant tests
 
 In order to run the database b2b tests you need to create a `dbconfig` module.
 It should contain a dicctionary with the database configuration, in
@@ -41,14 +49,30 @@ a global var named `psycodb`.
 
 If you don't have it, database dependant tests will be skipped.
 
-To run the tests:
+### Enabling tests based on personal data
 
-	$ python2 setup.py test
+Also some b2b data contain personal data that cannot be
+uploaded to the public repositories.
+The strategy here, if you have access to the database,
+is to run the tests before doing any changes to the code
+to generate the reference data. So:
 
+- Create the `b2bdata/personal` folder
+- Run the test, instead of skip, personal data based test will fail
+- Accept the new data generated
+
+### Accepting or discarding modification to b2b data
+
+Two scripts are provided:
+
+- `acceptb2b.sh`: to turn `result` data in to the `expected`
+- `discardb2b.sh`: to discard `result` data and stich with the current `expected`
+
+Before accepting new data, take a close look at the changes.
 
 ## Concepts
 
-The report is sent for a period consisting in a month.
+The report is sent for a period of time, usually from the first of a month till the last day.
 Requests are counted, not contracts, 
 so that three requests of the same contract count as three, not one.
 
@@ -86,6 +110,7 @@ so that three requests of the same contract count as three, not one.
 - **Cancelled requests ("Solicitudes anuladas"):**
     - Those cancelled (C1/2:09 o A1:06)
     - Warning: the step that counts is the acceptation of the cancellation (C1/2:09) not the cancellation request (C1/2:08)
+    - TODO: Ensure that 
 
 - **Repositioned requests ("Solicitudes reposicionadas"):**
     - Those the outgoing 
