@@ -13,6 +13,7 @@ def loadQuery(name):
 	with open(fullFilename) as queryFile:
 		return queryFile.read()
 
+
 def idsProcessos(db):
 	with db.cursor() as cur:
 		cur.execute("""
@@ -70,12 +71,17 @@ class Test_switching(unittest.TestCase):
 		passes = idsPasses(self.db)
 		self.assertEqual(
 			sorted(passes.keys()), [
-				'A3_01', 'A3_02', 'A3_03', 'A3_04', 'A3_05', 'A3_06', 'A3_07',
+				'A3_01', 'A3_02', 'A3_03', 'A3_04',
+				'A3_05', 'A3_06', 'A3_07',
 				'B1_01', 'B1_02', 'B1_03', 'B1_04', 'B1_05', 
-				'C1_01', 'C1_02', 'C1_05', 'C1_06', 'C1_08', 'C1_09', 'C1_10', 'C1_11',
-				'C2_01', 'C2_02', 'C2_03', 'C2_04', 'C2_05', 'C2_06', 'C2_07', 'C2_08', 'C2_09', 'C2_10', 'C2_11', 'C2_12',
+				'C1_01', 'C1_02', 'C1_05', 'C1_06', 'C1_08',
+				'C1_09', 'C1_10', 'C1_11',
+				'C2_01', 'C2_02', 'C2_03', 'C2_04', 'C2_05',
+				'C2_06', 'C2_07', 'C2_08', 'C2_09', 'C2_10',
+				'C2_11', 'C2_12',
 				'D1_01',
-				'M1_01', 'M1_02', 'M1_03', 'M1_04', 'M1_05', 'M1_06', 'M1_07', 'M1_08',
+				'M1_01', 'M1_02', 'M1_03', 'M1_04', 'M1_05',
+				'M1_06', 'M1_07', 'M1_08',
 			])
 
 	def test_idsPasses_filteringByProcess(self):
@@ -83,7 +89,9 @@ class Test_switching(unittest.TestCase):
 		self.assertEqual(
 			sorted(passes.keys()), [
 				'B1_01', 'B1_02', 'B1_03', 'B1_04', 'B1_05', 
-				'C2_01', 'C2_02', 'C2_03', 'C2_04', 'C2_05', 'C2_06', 'C2_07', 'C2_08', 'C2_09', 'C2_10', 'C2_11', 'C2_12',
+				'C2_01', 'C2_02', 'C2_03', 'C2_04', 'C2_05',
+				'C2_06', 'C2_07', 'C2_08', 'C2_09', 'C2_10',
+				'C2_11', 'C2_12',
 			])
 
 # TODO: Not covered
@@ -109,10 +117,8 @@ def unansweredRequests(db, inici, final, cursorManager=nsList):
 	processos = idsProcessos(db)
 
 	# TODO: S'esta fent servir incorrectament la creacio del cas com a data de carga del fitxer al sistema de la distribuidora
-	# TODO: Group by 'TipoCambio' (siempre C3? cambio comercializadora. Cuando C4?)
-	# TODO: Group by 'TipoPunto'
-	# TODO: Group by 'Comer_saliente' (siempre 0 - Desconocido?)
-	# TODO: Group by 'Comer_entrante' (siempre 1 - Somenergia?)
+	# TODO: Group by 'TipoCambio' C4 si alta directa
+	# TODO: Group by 'TipoPunto' depends on max power
 	# TODO: Revisar interval de les dates
 	# TODO: Plaç depenent de la tarifa
 	# TODO: Tarifa s'agafa de l'actual, i pot haver canviat
@@ -137,7 +143,6 @@ def acceptedRequests(db, inici, final, cursorManager=nsList):
 	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
 
 	processos = idsProcessos(db)
-
 	with db.cursor() as cur :
 		cur.execute(
 			loadQuery('query-acceptedRequests.sql'),
