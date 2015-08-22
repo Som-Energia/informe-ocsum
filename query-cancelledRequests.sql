@@ -1,5 +1,5 @@
 /*
-	All the sent request during the given period.
+	All the request cancelled during the given period.
 */
 SELECT
 	COUNT(*) AS nreq,
