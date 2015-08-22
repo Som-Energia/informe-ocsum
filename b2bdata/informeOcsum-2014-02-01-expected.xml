@@ -849,7 +849,7 @@
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>1</SolicitudesAnuladas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
@@ -4032,7 +4032,7 @@
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>11</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>1</SolicitudesAnuladas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>

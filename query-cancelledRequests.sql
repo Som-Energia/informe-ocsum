@@ -16,20 +16,22 @@ FROM
 		id AS pass_id,
 		header_id,
 		1 AS process
-	FROM giscedata_switching_c1_08
+	FROM giscedata_switching_c1_09
 	WHERE
 		create_date >= %(periodStart)s AND
 		create_date < %(periodEnd)s AND
+		rebuig = FALSE AND
 		TRUE
 	UNION
 	SELECT
 		id AS pass_id,
 		header_id,
 		2 AS process
-	FROM giscedata_switching_c2_08
+	FROM giscedata_switching_c2_09
 	WHERE
 		create_date >= %(periodStart)s AND
 		create_date < %(periodEnd)s AND
+		rebuig = FALSE AND
 		TRUE
 	) AS step
 LEFT JOIN
