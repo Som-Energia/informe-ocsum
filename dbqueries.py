@@ -198,6 +198,17 @@ def sentRequests(db, inici, final, cursorManager=nsList) :
 		result = cursorManager(cur)
 	return result
 
+def cancelledRequests(db, inici, final, cursorManager=nsList) :
+	with db.cursor() as cur :
+		cur.execute(
+			loadQuery('query-cancelledRequests.sql'),
+			dict(
+				periodStart = inici,
+				periodEnd = final,
+			))
+		result = cursorManager(cur)
+	return result
+
 
 def unactivatedRequests(db, inici, final, cursorManager=nsList):
 
@@ -311,6 +322,19 @@ class OcsumReport_Test(b2btest.TestCase) :
 
 	def test_sentRequests_2014_02(self) :
 		self._test_sentRequests((2014,2))
+
+	def _test_cancelledRequests(self, testcase) :
+		year, month = testcase
+		inici=datetime.date(year,month,1)
+		try:
+			final=datetime.date(year,month+1,1)
+		except ValueError:
+			final=datetime.date(year+1,1,1)
+		result = cancelledRequests(self.db, inici, final, cursorManager=csvTable)
+		self.assertBack2Back(result, 'cancelledRequests-{}.csv'.format(inici))
+
+	def test_cancelledRequests_2014_02(self) :
+		self._test_cancelledRequests((2014,2))
 
 
 	def _test_unactivatedRequests(self, testcase) :

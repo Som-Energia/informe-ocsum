@@ -84,7 +84,7 @@ class SwichingReport:
 				self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa]) # TODO
 
 				self.element(datos, 'TotalSolicitudesEnviadas', canvi.get('sent',0))
-				self.element(datos, 'SolicitudesAnuladas', 0) # TODO
+				self.element(datos, 'SolicitudesAnuladas', canvi.get('cancelled',0))
 				self.element(datos, 'Reposiciones', 0) # TODO: No ben definit
 				self.element(datos, 'ClientesSalientes', 0) # TODO: 
 				self.element(datos, 'NumImpagados', 0) # TODO: No ben definit
@@ -186,6 +186,16 @@ class SwichingReport:
 				pendent.tarname,
 				)
 			self.details(key).sent = pendent.nreq
+
+	def fillCancelled(self,cancelledOnes) :
+		for cancelled in cancelledOnes:
+			key=(
+				cancelled.codiprovincia,
+				cancelled.refdistribuidora,
+				1, # TODO
+				cancelled.tarname,
+				)
+			self.details(key).cancelled = cancelled.nreq
 
 	def fillPending(self,pendents) :
 		for pendent in pendents:
@@ -783,12 +793,14 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			rejected=rejectedRequests(db, inici, final)
 			activated=activatedRequests(db, inici, final)
 			sent=sentRequests(db, inici, final)
+			cancelled=cancelledRequests(db, inici, final)
 
 		informe.fillPending( pendents )
 		informe.fillAccepted( acceptades )
 		informe.fillRejected( rejected )
 		informe.fillActivated( activated )
 		informe.fillSent( sent )
+		informe.fillCancelled( cancelled )
 
 
 		result = informe.genera()
