@@ -4,6 +4,7 @@
 import datetime
 from namespace import namespace as ns
 from dbqueries import *
+from debugcase import *
 from decimal import Decimal
 from lxml import etree
 

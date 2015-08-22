@@ -1,7 +1,7 @@
 #!/bin/bash
 
 found=''
-for a in b2bdata/*-result.*; do 
+for a in b2bdata/*-result.* b2bdata/personal/*-result.*; do 
 	[ -e $a ] || continue
 	mv $a ${a/-result/-expected}
 	found="$found $a"
