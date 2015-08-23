@@ -159,9 +159,7 @@ def rejectedRequests(db, inici, final, cursorManager=nsList):
 
 	# TODO:
 	# - Date on 5-priority cases (accepted without a 02 step) migth not be real and outside the period.
-
 	processos = idsProcessos(db)
-
 	with db.cursor() as cur :
 		cur.execute(
 			loadQuery('query-rejectedRequests.sql'),
@@ -211,15 +209,24 @@ def cancelledRequests(db, inici, final, cursorManager=nsList) :
 
 
 def unactivatedRequests(db, inici, final, cursorManager=nsList):
-
 	processos = idsProcessos(db)
-
 	with db.cursor() as cur :
 		cur.execute(
 			loadQuery('query-unactivatedRequests.sql'),
 			dict(
 
 				process = [processos[name] for name in 'C1','C2'],
+				periodStart = inici,
+				periodEnd = final,
+			))
+		result = cursorManager(cur)
+		return result
+
+def dropoutRequests(db, inici, final, cursorManager=nsList):
+	with db.cursor() as cur :
+		cur.execute(
+			loadQuery('query-dropoutRequests.sql'),
+			dict(
 				periodStart = inici,
 				periodEnd = final,
 			))
@@ -349,6 +356,20 @@ class OcsumReport_Test(b2btest.TestCase) :
 
 	def test_unactivatedRequests_2014_02(self) :
 		self._test_unactivatedRequests((2014,2))
+
+
+	def _test_dropoutRequests(self, testcase) :
+		year, month = testcase
+		inici=datetime.date(year,month,1)
+		try:
+			final=datetime.date(year,month+1,1)
+		except ValueError:
+			final=datetime.date(year+1,1,1)
+		result = dropoutRequests(self.db, inici, final, cursorManager=csvTable)
+		self.assertBack2Back(result, 'dropoutRequests-{}.csv'.format(inici))
+
+	def test_dropoutRequests_2014_02(self) :
+		self._test_dropoutRequests((2014,2))
 
 
 

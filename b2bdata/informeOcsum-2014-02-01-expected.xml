@@ -532,7 +532,7 @@
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
+      <ClientesSalientes>1</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
@@ -556,7 +556,7 @@
       <TotalSolicitudesEnviadas>443</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
+      <ClientesSalientes>5</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
@@ -2848,7 +2848,7 @@
       <TotalSolicitudesEnviadas>38</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
+      <ClientesSalientes>3</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
@@ -3722,7 +3722,7 @@
       <TotalSolicitudesEnviadas>50</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
+      <ClientesSalientes>1</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
@@ -4254,7 +4254,7 @@
       <TotalSolicitudesEnviadas>18</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
+      <ClientesSalientes>1</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>

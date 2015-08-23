@@ -87,7 +87,7 @@ class SwichingReport:
 				self.element(datos, 'TotalSolicitudesEnviadas', canvi.get('sent',0))
 				self.element(datos, 'SolicitudesAnuladas', canvi.get('cancelled',0))
 				self.element(datos, 'Reposiciones', 0) # TODO: No ben definit
-				self.element(datos, 'ClientesSalientes', 0) # TODO: 
+				self.element(datos, 'ClientesSalientes', canvi.get('dropouts',0))
 				self.element(datos, 'NumImpagados', 0) # TODO: No ben definit
 
 				if 'pendents' in canvi :
@@ -187,6 +187,16 @@ class SwichingReport:
 				pendent.tarname,
 				)
 			self.details(key).sent = pendent.nreq
+
+	def fillDropOuts(self, dropouts):
+		for dropout in dropouts:
+			key=(
+				dropout.codiprovincia,
+				dropout.refdistribuidora,
+				1, # TODO
+				dropout.tarname,
+				)
+			self.details(key).dropouts = dropout.nreq
 
 	def fillCancelled(self,cancelledOnes) :
 		for cancelled in cancelledOnes:
@@ -795,6 +805,7 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 			activated=activatedRequests(db, inici, final)
 			sent=sentRequests(db, inici, final)
 			cancelled=cancelledRequests(db, inici, final)
+			dropouts=dropoutRequests(db, inici, final)
 
 		informe.fillPending( pendents )
 		informe.fillAccepted( acceptades )
@@ -802,6 +813,7 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 		informe.fillActivated( activated )
 		informe.fillSent( sent )
 		informe.fillCancelled( cancelled )
+		informe.fillDropOuts( dropouts )
 
 
 		result = informe.genera()
