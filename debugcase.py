@@ -36,8 +36,10 @@ def debugCase(db, caseId):
 			maybeSteps = idsPasses(db, processNames[case.proces_id])
 			step.details = []
 			for maybeStepName, maybeStepId in maybeSteps.items():
-				cur.execute(
-					'SELECT * FROM giscedata_switching_{} WHERE header_id=%(id)s'.format(maybeStepName.lower()),
+				cur.execute("""\
+					SELECT * FROM giscedata_switching_{}
+					WHERE header_id=%(id)s
+					""".format(maybeStepName.lower()),
 					dict(
 						id = step.id,
 					))
