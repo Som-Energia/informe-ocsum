@@ -85,13 +85,13 @@ GROUP BY
 	s.distri,
 	s.refdistribuidora,
 	s.tarname,
-	s.codiprovincia,
-	s.nomprovincia,
+	codiprovincia,
+	nomprovincia,
 	s.rejectreason,
 	TRUE
 ORDER BY
 	s.distri,
-	s.codiprovincia,
+	codiprovincia,
 	s.tarname,
 	TRUE
 ;
