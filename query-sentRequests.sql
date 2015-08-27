@@ -49,18 +49,17 @@ LEFT JOIN
 LEFT JOIN
 	res_country_state AS provincia ON provincia.id = res_municipi.state
 GROUP BY
-	tar.name,
-	dist.name,
-	provincia.code,
 	dist.id,
 	dist.ref,
-	provincia.name,
-	dist.name,
-	TRUE
-ORDER BY
-	tar.name,
 	dist.name,
 	provincia.code,
+	provincia.name,
+	tar.name,
+	TRUE
+ORDER BY
+	dist.name,
+	provincia.code,
+	tar.name,
 	TRUE
 ;
 

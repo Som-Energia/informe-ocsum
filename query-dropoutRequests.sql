@@ -1,9 +1,10 @@
 /*
-	Request to drop out from the distributor.
+	Drop outs
 	Including:
 	- C1_06: Third party comercializer change activated
 	- C2_06: Third party comercializer change activated, with contract changes
-	- B3_??: TODO: Dropout to the reference comercializer
+	- B3_??: TODO: Dropout to the reference comercializera
+	Implemented as:
 */
 SELECT
 	COUNT(*) AS nreq,
@@ -53,18 +54,17 @@ LEFT JOIN
 LEFT JOIN
 	res_country_state AS provincia ON provincia.id = res_municipi.state
 GROUP BY
-	tar.name,
-	dist.name,
-	provincia.code,
 	dist.id,
 	dist.ref,
-	provincia.name,
-	dist.name,
-	TRUE
-ORDER BY
-	tar.name,
 	dist.name,
 	provincia.code,
+	provincia.name,
+	tar.name,
+	TRUE
+ORDER BY
+	dist.name,
+	provincia.code,
+	tar.name,
 	TRUE
 ;
 

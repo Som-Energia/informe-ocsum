@@ -115,5 +115,6 @@ ORDER BY
 	s.distri,
 	s.codiprovincia,
 	s.tarname,
-			TRUE
+	TRUE
+;
 

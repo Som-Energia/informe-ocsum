@@ -102,3 +102,5 @@ ORDER BY
 	s.codiprovincia,
 	s.tarname,
 	TRUE
+;
+

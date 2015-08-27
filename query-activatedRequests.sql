@@ -1,3 +1,9 @@
+/*
+	All the requests with activation date during the period
+	Implemented as:
+	- C1 or C2 case
+	- With a 05 step (activation) with data_activacio during the period
+*/
 SELECT
 	COUNT(*),
 	SUM(CASE WHEN (
@@ -74,17 +80,17 @@ LEFT JOIN
 LEFT JOIN
 	res_country_state AS provincia ON provincia.id = res_municipi.state
 GROUP BY
-	tar.name,
-	dist.name,
-	provincia.code,
 	dist.id,
 	dist.ref,
-	provincia.name,
+	tar.name,
+	provincia.code,
 	dist.name,
+	provincia.name,
 	TRUE
 ORDER BY
-	tar.name,
 	dist.name,
 	provincia.code,
+	tar.name,
 	TRUE
+;
 
