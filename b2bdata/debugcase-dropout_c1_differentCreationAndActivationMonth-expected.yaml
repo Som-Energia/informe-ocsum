@@ -1,0 +1,47 @@
+accio_pendent: false
+case_id: 8221
+codi_sollicitud: '201400006394'
+comer_sortint_id: null
+company_id: 1
+conversation_id: 78086
+create_date: 2014-02-11 12:53:55.109703
+create_uid: 5
+cups_id: 14185
+cups_polissa_id: 13872
+data_sollicitud: 2014-02-06
+finalitzat: true
+id: 8166
+notificacio_pendent: false
+obrir_cas_pendent: false
+proces: null
+proces_id: 1
+process_name: C1
+ref_contracte: 000485069617
+seq_sollicitud: '01'
+step_id: 4
+steps:
+- _stepname: C1_06
+  create_date: 2014-02-11 12:53:55.109703
+  create_uid: 5
+  date_created: 2014-02-06 00:44:50
+  details:
+    create_date: 2014-02-11 12:53:55.109703
+    create_uid: 5
+    data_activacio: 2014-01-29
+    header_id: 17591
+    id: 79
+    write_date: 2014-02-11 12:53:55.109703
+    write_uid: 5
+  emisor_id: 13788
+  enviament_pendent: false
+  id: 17591
+  receptor_id: 1
+  sw_id: 8166
+  validacio_pendent: false
+  write_date: 2014-02-11 12:53:55.109703
+  write_uid: 5
+validacio_pendent: false
+versio: '02'
+whereiam: comer
+write_date: null
+write_uid: null

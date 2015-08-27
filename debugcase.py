@@ -9,11 +9,21 @@ import os
 from namespace import namespace as ns
 from consolemsg import warn, fail
 
+def anonyfy(text):
+	return ' '.join( w[0]+'.'*len(w[:-2])+w[-1] for  w in text.split())
 
+def impersonatePersonalData(detail):
+	personalKeys = set(
+		"nom cognom_1 cognom_2 codi_document telefon".split())
+	for key in personalKeys:
+		if key in detail:
+			detail[key] = detail[key] and anonyfy(detail[key])
 
-def debugCase(db, caseId):
+def debugCase(db, caseId, impersonate=False):
+
 	processIds = idsProcessos(db)
 	processNames = {v:k for k,v in processIds.items()}
+
 	with db.cursor() as cur :
 		cur.execute('SELECT * FROM giscedata_switching WHERE id=%(caseid)s',
 			dict(
@@ -45,6 +55,9 @@ def debugCase(db, caseId):
 					))
 				details = nsList(cur)
 				if not details: continue
+				if impersonate:
+					for detail in details:
+						impersonatePersonalData(detail)
 				step._stepname = maybeStepName
 				step.details += details
 			if not step.details :
@@ -64,8 +77,10 @@ def skipIfNoPersonalDataAccess():
 	return unittest.skip("Requires confidential b2b data")
 
 
-@unittest.skipIf(config is None, "No dbconfig.py file found")
+#@unittest.skipIf(config is None, "No dbconfig.py file found")
 class DebugCase_Test(b2btest.TestCase) :
+
+	def __str__(self): return self.id()
 
 	def setUp(self):
 		from dbconfig import psycopg as config
@@ -75,9 +90,19 @@ class DebugCase_Test(b2btest.TestCase) :
 		self.db.rollback()
 		self.db.close()
 
+	def test_anonyfy(self):
+		self.assertEqual(
+			anonyfy("Perico"),
+			'P....o')
+
+	def test_anonify_multiword(self):
+		self.assertEqual(
+			anonyfy("Perico de los Palotes"),
+			'P....o de l.s P.....s')
+
 	def _test_debugCase(self,caseid,description) :
-		result = debugCase(self.db, caseid)
-		self.assertBack2Back(result.dump(), 'personal/debugcase-{}.yaml'.format(description))
+		result = debugCase(self.db, caseid, impersonate=True)
+		self.assertBack2Back(result.dump(), 'debugcase-{}.yaml'.format(description))
 
 	@skipIfNoPersonalDataAccess()
 	def test_debugCase_activated_c1(self) :

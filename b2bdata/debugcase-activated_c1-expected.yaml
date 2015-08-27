@@ -1,0 +1,117 @@
+accio_pendent: false
+case_id: 5375
+codi_sollicitud: '201312184409'
+comer_sortint_id: null
+company_id: 1
+conversation_id: 55453
+create_date: 2013-12-18 11:26:15.270452
+create_uid: 1
+cups_id: 13542
+cups_polissa_id: 13229
+data_sollicitud: 2013-12-18
+finalitzat: true
+id: 5342
+notificacio_pendent: false
+obrir_cas_pendent: false
+proces: null
+proces_id: 1
+process_name: C1
+ref_contracte: '111111111'
+seq_sollicitud: '01'
+step_id: 3
+steps:
+- _stepname: C1_01
+  create_date: 2013-12-18 11:26:15.270452
+  create_uid: 1
+  date_created: 2013-12-18 17:26:31
+  details:
+    activacio_cicle: S
+    codi_document: 1.......P
+    cognom_1: B....a
+    cognom_2: P......r
+    create_date: 2013-12-18 11:26:15.270452
+    create_uid: 1
+    data_accio: 2013-12-18
+    data_final: 2013-12-18
+    header_id: 10953
+    id: 4030
+    ind_direccio: S
+    ind_representant: S
+    linia_negoci: '01'
+    nom: J....r A.....o
+    persona: F
+    prefix: null
+    telefon: 9.......2
+    tipus_contracte: '01'
+    tipus_document: DN
+    validacio_pendent: null
+    write_date: 2013-12-18 11:26:15.270452
+    write_uid: 1
+  emisor_id: 1
+  enviament_pendent: false
+  id: 10953
+  receptor_id: 13789
+  sw_id: 5342
+  validacio_pendent: false
+  write_date: 2013-12-18 11:46:40.909211
+  write_uid: 5
+- _stepname: C1_02
+  create_date: 2013-12-20 11:12:39.905644
+  create_uid: 11
+  date_created: 2013-12-20 17:06:16
+  details:
+    actuacio_camp: N
+    consum_anual: 0
+    create_date: 2013-12-20 11:12:39.905644
+    create_uid: 11
+    data_acceptacio: 2013-12-20
+    data_activacio: null
+    data_ult_lect: 2013-11-29
+    header_id: 11021
+    id: 2655
+    potencia_actual: 4400
+    rebuig: false
+    tarifaATR: '001'
+    tipus_activacio: ''
+    write_date: 2013-12-20 11:12:39.905644
+    write_uid: 11
+  emisor_id: 13789
+  enviament_pendent: true
+  id: 11021
+  receptor_id: 1
+  sw_id: 5342
+  validacio_pendent: false
+  write_date: 2013-12-20 11:12:39.905644
+  write_uid: 11
+- _stepname: C1_05
+  create_date: 2014-02-06 11:13:04.348927
+  create_uid: 5
+  date_created: 2014-02-03 01:10:17
+  details:
+    contracte_atr: null
+    control_potencia: null
+    create_date: 2014-02-06 11:13:04.348927
+    create_uid: 5
+    data_activacio: 2014-02-01
+    header_id: 16765
+    hora_activacio: !!python/object/apply:datetime.time
+    - "\x01\n\0\0\0\0"
+    id: 2671
+    periodicitat_facturacio: '02'
+    tarifaATR: '001'
+    tipus_contracte: '01'
+    write_date: 2014-02-06 11:13:04.348927
+    write_uid: 5
+  emisor_id: 13789
+  enviament_pendent: false
+  id: 16765
+  receptor_id: 1
+  sw_id: 5342
+  validacio_pendent: false
+  write_date: 2014-02-06 11:13:04.348927
+  write_uid: 5
+validacio_pendent: false
+versio: '02'
+whereiam: comer
+write_date: null
+write_uid: null

@@ -1,0 +1,90 @@
+accio_pendent: false
+case_id: 8145
+codi_sollicitud: '201402106838'
+comer_sortint_id: null
+company_id: 1
+conversation_id: 77780
+create_date: 2014-02-10 11:55:55.209982
+create_uid: 5
+cups_id: 27121
+cups_polissa_id: 26835
+data_sollicitud: 2014-02-10
+finalitzat: true
+id: 8091
+notificacio_pendent: false
+obrir_cas_pendent: false
+proces: null
+proces_id: 1
+process_name: C1
+ref_contracte: '111111111'
+seq_sollicitud: '01'
+step_id: 2
+steps:
+- _stepname: C1_01
+  create_date: 2014-02-10 11:55:55.209982
+  create_uid: 5
+  date_created: 2014-02-10 12:03:49
+  details:
+    activacio_cicle: S
+    codi_document: B.......0
+    cognom_1: ''
+    cognom_2: ''
+    create_date: 2014-02-10 11:55:55.209982
+    create_uid: 5
+    data_accio: 2014-02-10
+    data_final: 2014-02-10
+    header_id: 17271
+    id: 5833
+    ind_direccio: S
+    ind_representant: S
+    linia_negoci: '01'
+    nom: La M......, C......s P..o M.....s S...
+    persona: J
+    prefix: null
+    telefon: 6.......9
+    tipus_contracte: '01'
+    tipus_document: CI
+    validacio_pendent: null
+    write_date: 2014-02-10 12:18:38.555913
+    write_uid: 5
+  emisor_id: 1
+  enviament_pendent: false
+  id: 17271
+  receptor_id: 13788
+  sw_id: 8091
+  validacio_pendent: false
+  write_date: 2014-02-10 12:26:11.737935
+  write_uid: 5
+- _stepname: C1_02
+  create_date: 2014-02-18 10:45:54.362538
+  create_uid: 5
+  date_created: 2014-02-12 11:24:30
+  details:
+    actuacio_camp: null
+    consum_anual: null
+    create_date: 2014-02-18 10:45:54.362538
+    create_uid: 5
+    data_acceptacio: null
+    data_activacio: null
+    data_ult_lect: null
+    header_id: 18419
+    id: 4262
+    potencia_actual: null
+    rebuig: true
+    tarifaATR: null
+    tipus_activacio: null
+    write_date: 2014-02-18 10:45:54.362538
+    write_uid: 5
+  emisor_id: 13788
+  enviament_pendent: true
+  id: 18419
+  receptor_id: 1
+  sw_id: 8091
+  validacio_pendent: false
+  write_date: 2014-02-18 10:45:54.362538
+  write_uid: 5
+validacio_pendent: false
+versio: '02'
+whereiam: comer
+write_date: 2014-02-18 11:51:36.437152
+write_uid: 5

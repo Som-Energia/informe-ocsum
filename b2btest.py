@@ -1,6 +1,7 @@
 import unittest
 
 
+
 class TestCase(unittest.TestCase) :
 	"""
 	This class is yet quite adhoc for single case.
@@ -8,6 +9,7 @@ class TestCase(unittest.TestCase) :
 	data file names.
 	"""
 
+	def __str__(self): return self.id()
 	def assertBack2Back(self, result, testId) :
 		def write(result) :
 			with open(resultfilename,'w') as resultfile:

@@ -1,0 +1,141 @@
+accio_pendent: false
+case_id: 7540
+codi_sollicitud: '201402036340'
+comer_sortint_id: null
+company_id: 1
+conversation_id: 75021
+create_date: 2014-02-03 12:45:16.415751
+create_uid: 5
+cups_id: 26126
+cups_polissa_id: 25842
+data_sollicitud: 2014-02-03
+finalitzat: true
+id: 7492
+notificacio_pendent: false
+obrir_cas_pendent: false
+proces: null
+proces_id: 1
+process_name: C1
+ref_contracte: '111111111'
+seq_sollicitud: '01'
+step_id: 6
+steps:
+- _stepname: C1_01
+  create_date: 2014-02-03 12:45:16.415751
+  create_uid: 5
+  date_created: 2014-02-03 12:47:58
+  details:
+    activacio_cicle: S
+    codi_document: B.......1
+    cognom_1: ''
+    cognom_2: ''
+    create_date: 2014-02-03 12:45:16.415751
+    create_uid: 5
+    data_accio: 2014-02-03
+    data_final: 2014-02-03
+    header_id: 16121
+    id: 5394
+    ind_direccio: S
+    ind_representant: S
+    linia_negoci: '01'
+    nom: X....r G....o S...
+    persona: J
+    prefix: null
+    telefon: null
+    tipus_contracte: '01'
+    tipus_document: CI
+    validacio_pendent: null
+    write_date: 2014-02-03 13:30:09.018196
+    write_uid: 5
+  emisor_id: 1
+  enviament_pendent: false
+  id: 16121
+  receptor_id: 13788
+  sw_id: 7492
+  validacio_pendent: false
+  write_date: 2014-02-03 16:26:05.791975
+  write_uid: 5
+- _stepname: C1_02
+  create_date: 2014-02-06 11:11:33.796161
+  create_uid: 5
+  date_created: 2014-02-03 17:55:17
+  details:
+    actuacio_camp: N
+    consum_anual: 0
+    create_date: 2014-02-06 11:11:33.796161
+    create_uid: 5
+    data_acceptacio: 2014-02-03
+    data_activacio: null
+    data_ult_lect: 2014-01-21
+    header_id: 16711
+    id: 3865
+    potencia_actual: 34641
+    rebuig: false
+    tarifaATR: '003'
+    tipus_activacio: ''
+    write_date: 2014-02-06 11:11:33.796161
+    write_uid: 5
+  emisor_id: 13788
+  enviament_pendent: true
+  id: 16711
+  receptor_id: 1
+  sw_id: 7492
+  validacio_pendent: false
+  write_date: 2014-02-06 11:11:33.796161
+  write_uid: 5
+- _stepname: C1_08
+  create_date: 2014-02-18 12:55:38.499545
+  create_uid: 1
+  date_created: 2014-02-18 12:55:39
+  details:
+    codi_document: B.......1
+    cognom_1: ''
+    cognom_2: ''
+    create_date: 2014-02-18 12:55:38.499545
+    create_uid: 1
+    header_id: 18738
+    id: 27
+    linia_negoci: '01'
+    nom: X....r G....o S...
+    tipus_document: CI
+    write_date: 2014-02-18 12:55:38.499545
+    write_uid: 1
+  emisor_id: 1
+  enviament_pendent: false
+  id: 18738
+  receptor_id: 13788
+  sw_id: 7492
+  validacio_pendent: true
+  write_date: 2014-02-18 19:05:36.856851
+  write_uid: 5
+- _stepname: C1_09
+  create_date: 2014-02-25 11:47:32.407673
+  create_uid: 5
+  date_created: 2014-02-18 13:59:01
+  details:
+    actuacio_camp: N
+    consum_anual: 0
+    create_date: 2014-02-25 11:47:32.407673
+    create_uid: 5
+    data_acceptacio: 2014-02-03
+    data_ult_lect: 2014-01-21
+    header_id: 20153
+    id: 5
+    potencia_actual: 34641
+    rebuig: false
+    tarifaATR: '003'
+    write_date: 2014-02-25 11:47:32.407673
+    write_uid: 5
+  emisor_id: 13788
+  enviament_pendent: true
+  id: 20153
+  receptor_id: 1
+  sw_id: 7492
+  validacio_pendent: false
+  write_date: 2014-02-25 11:47:32.407673
+  write_uid: 5
+validacio_pendent: false
+versio: '02'
+whereiam: comer
+write_date: 2014-02-18 12:55:38.499545
+write_uid: 1
