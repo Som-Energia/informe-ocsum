@@ -1,0 +1,107 @@
+accio_pendent: false
+case_id: 15297
+codi_sollicitud: '201406022456'
+comer_sortint_id: null
+company_id: 1
+conversation_id: 138252
+create_date: 2014-06-02 12:44:18.243476
+create_uid: 8
+cups_id: 13680
+cups_polissa_id: 13368
+data_sollicitud: 2014-06-02
+finalitzat: true
+id: 15235
+notificacio_pendent: false
+obrir_cas_pendent: false
+proces: null
+proces_id: 5
+process_name: B1
+ref_contracte: '97020424902'
+seq_sollicitud: '01'
+step_id: 268
+steps:
+- _stepname: B1_01
+  create_date: 2014-06-02 12:44:37.322803
+  create_uid: 8
+  date_created: 2014-06-02 12:44:38
+  details:
+    address_id: 13082
+    codi_document: 2.......F
+    cognom_1: L......e
+    cognom_2: A....a
+    create_date: 2014-06-02 12:44:37.322803
+    create_uid: 8
+    data_accio: 2014-06-02
+    header_id: 33950
+    id: 21
+    ind_direccio: S
+    linia_negoci: '01'
+    motiu: '01'
+    nom: P....a
+    persona: F
+    prefix: ''
+    telefon: 6.......3
+    tipus_document: DN
+    write_date: 2014-06-02 12:45:48.282435
+    write_uid: 8
+  emisor_id: 1
+  enviament_pendent: true
+  id: 33950
+  receptor_id: 13789
+  sw_id: 15235
+  validacio_pendent: false
+  write_date: 2014-06-02 12:45:48.282435
+  write_uid: 8
+- _stepname: B1_02
+  create_date: 2014-06-10 11:24:55.065356
+  create_uid: 8
+  date_created: 2014-06-02 12:49:03
+  details:
+    actuacio_camp: S
+    create_date: 2014-06-10 11:24:55.065356
+    create_uid: 8
+    data_acceptacio: 2014-06-02
+    data_ult_lect: 2014-05-07
+    header_id: 34679
+    id: 5
+    potencia_actual: 4600
+    rebuig: false
+    write_date: 2014-06-10 11:24:55.065356
+    write_uid: 8
+  emisor_id: 13789
+  enviament_pendent: true
+  id: 34679
+  receptor_id: 1
+  sw_id: 15235
+  validacio_pendent: false
+  write_date: 2014-06-10 11:24:55.065356
+  write_uid: 8
+- _stepname: B1_05
+  create_date: 2014-06-10 11:24:56.879497
+  create_uid: 8
+  date_created: 2014-06-03 00:47:11
+  details:
+    control_potencia: null
+    create_date: 2014-06-10 11:24:56.879497
+    create_uid: 8
+    data_activacio: 2014-06-03
+    header_id: 34680
+    hora_activacio: !!python/object/apply:datetime.time
+    - "\0/\0\0\0\0"
+    id: 3
+    tipus_contracte: '01'
+    write_date: 2014-06-10 11:24:56.879497
+    write_uid: 8
+  emisor_id: 13789
+  enviament_pendent: false
+  id: 34680
+  receptor_id: 1
+  sw_id: 15235
+  validacio_pendent: false
+  write_date: 2014-06-10 11:24:56.879497
+  write_uid: 8
+validacio_pendent: false
+versio: '02'
+whereiam: comer
+write_date: 2014-06-02 12:44:37.322803
+write_uid: 8

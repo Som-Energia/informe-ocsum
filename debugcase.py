@@ -120,6 +120,10 @@ class DebugCase_Test(b2btest.TestCase) :
 	def test_debugCase_dropout_c1_differentCreationAndActivationMonth(self) :
 		self._test_debugCase('8166', 'dropout_c1_differentCreationAndActivationMonth')
 
+#	@skipIfNoPersonalDataAccess()
+	def test_debugCase_activated_b1(self) :
+		self._test_debugCase('15235', 'activated_b1')
+
 
 
 if __name__ == '__main__' :
