@@ -371,6 +371,9 @@ class OcsumReport_Test(b2btest.TestCase) :
 	def test_dropoutRequests_2014_02(self) :
 		self._test_dropoutRequests((2014,2))
 
+	def test_dropoutRequests_2014_06(self) :
+		self._test_dropoutRequests((2014,6))
+
 
 
 

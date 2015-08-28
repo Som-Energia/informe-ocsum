@@ -15,7 +15,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		1 AS process
+		'c1' AS process
 	FROM giscedata_switching_c1_01
 	WHERE
 		create_date >= %(periodStart)s AND
@@ -25,8 +25,18 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		2 AS process
+		'c2' AS process
 	FROM giscedata_switching_c2_01
+	WHERE
+		create_date >= %(periodStart)s AND
+		create_date < %(periodEnd)s AND
+		TRUE
+	UNION
+	SELECT
+		id AS pass_id,
+		header_id,
+		'a3' AS process
+	FROM giscedata_switching_a3_01
 	WHERE
 		create_date >= %(periodStart)s AND
 		create_date < %(periodEnd)s AND

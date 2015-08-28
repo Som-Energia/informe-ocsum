@@ -1,9 +1,10 @@
 /*
 	All the requests cancelled during the given period.
 	Implemented as:
-	- C1 or C2 case
-	- With a 09 step (cancellation response) created during the period
+	- Cases C1, C2 or A3
+	- With a Cn_09 or A3_07 step (cancellation response) created during the period
 	- having the 'rebuig' flag off
+	TODO: En criterio de conteo se dice que se usara FechaSolicitud del 09
 */
 SELECT
 	COUNT(*) AS nreq,
@@ -19,7 +20,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		1 AS process
+		'c1' AS process
 	FROM giscedata_switching_c1_09
 	WHERE
 		create_date >= %(periodStart)s AND
@@ -30,8 +31,19 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		2 AS process
+		'c2' AS process
 	FROM giscedata_switching_c2_09
+	WHERE
+		create_date >= %(periodStart)s AND
+		create_date < %(periodEnd)s AND
+		rebuig = FALSE AND
+		TRUE
+	UNION
+	SELECT
+		id AS pass_id,
+		header_id,
+		'a3' AS process
+	FROM giscedata_switching_a3_07
 	WHERE
 		create_date >= %(periodStart)s AND
 		create_date < %(periodEnd)s AND

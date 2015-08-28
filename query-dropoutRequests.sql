@@ -1,10 +1,11 @@
 /*
 	Drop outs
 	Including:
-	- C1_06: Third party comercializer change activated
-	- C2_06: Third party comercializer change activated, with contract changes
-	- B3_??: TODO: Dropout to the reference comercializera
-	Implemented as:
+	- C1_06: Third party comercializer change req activated
+	- C2_06: Third party comercializer change req activated, with contract changes
+	- B1_05: Comercializer side dropout request activated
+	TODO:
+	- Test a period with a case with actual B1_05 step
 */
 SELECT
 	COUNT(*) AS nreq,
@@ -20,7 +21,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		1 AS process
+		'c1' AS process
 	FROM giscedata_switching_c1_06
 	WHERE
 		data_activacio >= %(periodStart)s AND
@@ -30,8 +31,18 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		2 AS process
+		'c2' AS process
 	FROM giscedata_switching_c2_06
+	WHERE
+		data_activacio >= %(periodStart)s AND
+		data_activacio < %(periodEnd)s AND
+		TRUE
+	UNION
+	SELECT
+		id AS pass_id,
+		header_id,
+		'b1' AS process
+	FROM giscedata_switching_b1_05
 	WHERE
 		data_activacio >= %(periodStart)s AND
 		data_activacio < %(periodEnd)s AND
