@@ -77,7 +77,7 @@ def skipIfNoPersonalDataAccess():
 	return unittest.skip("Requires confidential b2b data")
 
 
-#@unittest.skipIf(config is None, "No dbconfig.py file found")
+@unittest.skipIf(config is None, "No dbconfig.py file found")
 class DebugCase_Test(b2btest.TestCase) :
 
 	def __str__(self): return self.id()
@@ -104,19 +104,19 @@ class DebugCase_Test(b2btest.TestCase) :
 		result = debugCase(self.db, caseid, impersonate=True)
 		self.assertBack2Back(result.dump(), 'debugcase-{}.yaml'.format(description))
 
-	@skipIfNoPersonalDataAccess()
+#	@skipIfNoPersonalDataAccess()
 	def test_debugCase_activated_c1(self) :
 		self._test_debugCase('5342', 'activated_c1')
 
-	@skipIfNoPersonalDataAccess()
+#	@skipIfNoPersonalDataAccess()
 	def test_debugCase_cancelled_c1(self) :
 		self._test_debugCase('7492', 'cancelled_c1')
 
-	@skipIfNoPersonalDataAccess()
+#	@skipIfNoPersonalDataAccess()
 	def test_debugCase_rejected_c1(self) :
 		self._test_debugCase('8091', 'rejected_c1')
 
-	@skipIfNoPersonalDataAccess()
+#	@skipIfNoPersonalDataAccess()
 	def test_debugCase_dropout_c1_differentCreationAndActivationMonth(self) :
 		self._test_debugCase('8166', 'dropout_c1_differentCreationAndActivationMonth')
 
