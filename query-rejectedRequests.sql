@@ -10,9 +10,11 @@ SELECT
 		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
 		) AS ontimeaddedtime,
 	SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN
-		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS lateaddedtime,
+		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
+		) AS lateaddedtime,
 	SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN
-		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END) AS verylateaddedtime, 
+		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
+		) AS verylateaddedtime,
 	provincia.code AS codiprovincia,
 	s.distri,
 	s.rejectreason,

@@ -6,11 +6,14 @@ SELECT
 	SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate,
 /*	SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
 	SUM(CASE WHEN (%(periodEnd)s <= termini) THEN
-		DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS ontimeaddedtime,
+		DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
+		) AS ontimeaddedtime,
 	SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN
-		DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS lateaddedtime,
+		DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
+		) AS lateaddedtime,
 	SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN
-		DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END) AS verylateaddedtime, 
+		DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
+		) AS verylateaddedtime,
 	codiprovincia,
 	s.distri,
 	s.tarname,
@@ -85,7 +88,7 @@ FROM (
 	LEFT JOIN
 		giscedata_polissa_tarifa AS tar ON pol.tarifa = tar.id
 	WHERE
-(
+		(
 			(
 				/* Accepted prior to end of the period */
 				cn02.id IS NOT NULL AND
