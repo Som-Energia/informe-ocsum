@@ -7,6 +7,7 @@ from dbqueries import *
 from debugcase import *
 from decimal import Decimal
 from lxml import etree
+from consolemsg import step
 
 class SwichingReport:
 
@@ -777,6 +778,50 @@ class SwichingReport_Test(unittest.TestCase) :
 
 import b2btest
 
+def fullGenerate(year, month, agent):
+	inici=datetime.date(year,month,1)
+	try:
+		final=datetime.date(year,month+1,1)
+	except ValueError:
+		final=datetime.date(year+1,1,1)
+	informe = SwichingReport(
+		CodigoAgente=agent,
+		TipoMercado='E',
+		TipoAgente='C',
+		Periodo='{}{:02}'.format(year, month),
+		)
+	from dbconfig import psycopg as config
+
+	import psycopg2
+	with psycopg2.connect(**config) as db:
+		pendents=unansweredRequests(db, inici, final)
+		acceptades=acceptedRequests(db, inici, final)
+		rejected=rejectedRequests(db, inici, final)
+		activated=activatedRequests(db, inici, final)
+		sent=sentRequests(db, inici, final)
+		cancelled=cancelledRequests(db, inici, final)
+		dropouts=dropoutRequests(db, inici, final)
+
+	informe.fillPending( pendents )
+	informe.fillAccepted( acceptades )
+	informe.fillRejected( rejected )
+	informe.fillActivated( activated )
+	informe.fillSent( sent )
+	informe.fillCancelled( cancelled )
+	informe.fillDropOuts( dropouts )
+
+	result = informe.genera()
+	return result
+
+def reportName(year, month, agent, sequence=1):
+	return 'SI_{}_{}_{:04}{:02}_{}.xml'.format(
+		agent, 'E',
+		year,
+		month,
+		sequence,
+		)
+
+
 @unittest.skipIf(config is None, "No dbconfig.py found")
 class XmlGenerateFromDb_Test(b2btest.TestCase) :
 
@@ -784,46 +829,71 @@ class XmlGenerateFromDb_Test(b2btest.TestCase) :
 		"""Work In progress as we get it assembled"""
 
 		year, month = (2014,2)
+		agent = 'R2-415'
 		inici=datetime.date(year,month,1)
-		try:
-			final=datetime.date(year,month+1,1)
-		except ValueError:
-			final=datetime.date(year+1,1,1)
-		informe = SwichingReport(
-			CodigoAgente='R2-415',
-			TipoMercado='E',
-			TipoAgente='C',
-			Periodo='{}{:02}'.format(year, month),
-			)
-		from dbconfig import psycopg as config
-
-		import psycopg2
-		with psycopg2.connect(**config) as db:
-			pendents=unansweredRequests(db, inici, final)
-			acceptades=acceptedRequests(db, inici, final)
-			rejected=rejectedRequests(db, inici, final)
-			activated=activatedRequests(db, inici, final)
-			sent=sentRequests(db, inici, final)
-			cancelled=cancelledRequests(db, inici, final)
-			dropouts=dropoutRequests(db, inici, final)
-
-		informe.fillPending( pendents )
-		informe.fillAccepted( acceptades )
-		informe.fillRejected( rejected )
-		informe.fillActivated( activated )
-		informe.fillSent( sent )
-		informe.fillCancelled( cancelled )
-		informe.fillDropOuts( dropouts )
-
-
-		result = informe.genera()
-
+		result = fullGenerate(year,month, agent)
 		self.assertBack2Back(result, 'informeOcsum-{}.xml'.format(inici))
 
 
 if __name__ == '__main__' :
 	import sys
-	sys.exit(unittest.main())
+	if '--test' in sys.argv:
+		sys.argv.remove('--test')
+		sys.exit(unittest.main())
+
+	import argparse
+	parser = argparse.ArgumentParser(description='Generates switching monthly report')
+	parser.add_argument('year', type=int, metavar='YEAR')
+	parser.add_argument('month', type=int, metavar='MONTH')
+	parser.add_argument('sequence', type=int, metavar='SEQUENCE', nargs='?')
+	parser.add_argument('--agent', metavar='AGENT', nargs='?', default='R2-415', help='Agent code ')
+	parser.add_argument('--csv', help='Agent code ', action='store_true')
+	args = parser.parse_args()
+	sequence = args.sequence
+
+	inici=datetime.date(args.year,args.month,1)
+	try:
+		final=datetime.date(args.year,args.month+1,1)
+	except ValueError:
+		final=datetime.date(args.year+1,1,1)
+
+	if args.csv:
+		from dbconfig import psycopg as config
+
+		import psycopg2
+		with psycopg2.connect(**config) as db:
+			for f in (
+				unansweredRequests,
+				acceptedRequests,
+				rejectedRequests,
+				activatedRequests,
+				sentRequests,
+				cancelledRequests,
+				dropoutRequests,
+				) :
+				results = f(db, inici, final, cursorManager=csvTable)
+				csvname = 'report-{:04}{:02}-{}.csv'.format(
+					args.year, args.month, f.__name__)
+				step("Generating '{}'...".format(csvname))
+				with open(csvname,'w') as output:
+					output.write(results)
+		sys.exit(0)
+
+	if args.sequence is None:
+		args.sequence = 0
+		while True:
+			args.sequence+=1
+			xmlname = reportName(args.year, args.month, args.agent, args.sequence)
+			if os.access(xmlname, os.F_OK) : continue
+			break
+	else:
+		xmlname = reportName(args.year, args.month, args.agent, args.sequence)
+		
+	step("Collecting data...")
+	result = fullGenerate(args.year, args.month, args.agent)
+	step("Writing {}...".format(xmlname))
+	with open(xmlname, 'w') as xml:
+		xml.write(result)
 
 
 
