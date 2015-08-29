@@ -1,7 +1,9 @@
 /*
 	All the requests cancelled during the given period.
 	Implemented as:
-	- Cases C1, C2 or A3
+	- c1_09 (change cancellation response)
+	- c2_09 (change cancellation response)
+	- a3_07 (direct cancellation response)
 	- With a Cn_09 or A3_07 step (cancellation response) created during the period
 	- having the 'rebuig' flag off
 	TODO: En criterio de conteo se dice que se usara FechaSolicitud del 09
@@ -20,6 +22,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		'c1' AS process
 	FROM giscedata_switching_c1_09
 	WHERE
@@ -31,6 +34,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		'c2' AS process
 	FROM giscedata_switching_c2_09
 	WHERE
@@ -42,6 +46,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C4' AS tipo_cambio,
 		'a3' AS process
 	FROM giscedata_switching_a3_07
 	WHERE

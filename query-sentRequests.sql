@@ -1,5 +1,11 @@
 /*
 	All the sent request during the given period.
+	Including:
+	- c1_01
+	- c2_01
+	- a3_01
+	- with create_date within the period
+	TODO: To be honest it should be the upload date not the creation date
 */
 SELECT
 	COUNT(*) AS nreq,
@@ -15,6 +21,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		'c1' AS process
 	FROM giscedata_switching_c1_01
 	WHERE
@@ -25,6 +32,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		'c2' AS process
 	FROM giscedata_switching_c2_01
 	WHERE
@@ -35,6 +43,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C4' AS tipo_cambio,
 		'a3' AS process
 	FROM giscedata_switching_a3_01
 	WHERE

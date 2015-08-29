@@ -1,8 +1,10 @@
 /*
 	All the requests with activation date during the period
 	Implemented as:
-	- C1 or C2 case
-	- With a 05 step (activation) with data_activacio during the period
+	- c1_05
+	- c2_05
+	- a3_05
+	- with data_activacio during the period
 */
 SELECT
 	COUNT(*),
@@ -44,8 +46,9 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		data_activacio,
-		1 AS process
+		'c1' AS process
 	FROM giscedata_switching_c1_05
 	WHERE
 		data_activacio >= %(periodStart)s AND
@@ -55,9 +58,22 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		data_activacio,
-		2 AS process
+		'c2' AS process
 	FROM giscedata_switching_c2_05
+	WHERE
+		data_activacio >= %(periodStart)s AND
+		data_activacio < %(periodEnd)s AND
+		TRUE
+	UNION
+	SELECT
+		id AS pass_id,
+		header_id,
+		'C4' AS tipo_cambio,
+		data_activacio,
+		'a3' AS process
+	FROM giscedata_switching_a3_05
 	WHERE
 		data_activacio >= %(periodStart)s AND
 		data_activacio < %(periodEnd)s AND
@@ -82,10 +98,10 @@ LEFT JOIN
 GROUP BY
 	dist.id,
 	dist.ref,
-	tar.name,
-	provincia.code,
 	dist.name,
+	provincia.code,
 	provincia.name,
+	tar.name,
 	TRUE
 ORDER BY
 	dist.name,

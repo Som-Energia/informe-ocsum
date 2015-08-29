@@ -21,6 +21,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		'c1' AS process
 	FROM giscedata_switching_c1_06
 	WHERE
@@ -31,6 +32,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C3' AS tipo_cambio,
 		'c2' AS process
 	FROM giscedata_switching_c2_06
 	WHERE
@@ -41,6 +43,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
+		'C4' AS tipo_cambio,
 		'b1' AS process
 	FROM giscedata_switching_b1_05
 	WHERE
