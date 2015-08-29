@@ -74,14 +74,14 @@ class SwichingReport:
 		if not self.canvis : return
 		solicitudes = self.element(root, 'SolicitudesRealizadas')
 		for (
-			provincia, distribuidora, tipoPunto, tipoTarifa
+			provincia, distribuidora, tipoCambio, tipoPunto, tipoTarifa
 			),canvi  in sorted(self.canvis.iteritems()):
 				datos = self.element(solicitudes, 'DatosSolicitudes')
 				self.element(datos, 'Provincia', provincia+'000')
 				self.element(datos, 'Distribuidor', distribuidora)
 				self.element(datos, 'Comer_entrante', 'R2-415')
 				self.element(datos, 'Comer_saliente', '0')
-				self.element(datos, 'TipoCambio', 'C3') # TODO
+				self.element(datos, 'TipoCambio', tipoCambio) # TODO
 				self.element(datos, 'TipoPunto', tipoPunto) # TODO
 				self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa]) # TODO
 
@@ -184,6 +184,7 @@ class SwichingReport:
 			key=(
 				pendent.codiprovincia,
 				pendent.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				pendent.tarname,
 				)
@@ -194,6 +195,7 @@ class SwichingReport:
 			key=(
 				dropout.codiprovincia,
 				dropout.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				dropout.tarname,
 				)
@@ -204,6 +206,7 @@ class SwichingReport:
 			key=(
 				cancelled.codiprovincia,
 				cancelled.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				cancelled.tarname,
 				)
@@ -214,6 +217,7 @@ class SwichingReport:
 			key=(
 				pendent.codiprovincia,
 				pendent.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				pendent.tarname,
 				)
@@ -224,6 +228,7 @@ class SwichingReport:
 			key=(
 				summary.codiprovincia,
 				summary.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				summary.tarname,
 				)
@@ -234,6 +239,7 @@ class SwichingReport:
 			key = (
 				summary.codiprovincia,
 				summary.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				summary.tarname,
 				)
@@ -245,6 +251,7 @@ class SwichingReport:
 			key = (
 				summary.codiprovincia,
 				summary.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				summary.tarname,
 				)
@@ -255,6 +262,7 @@ class SwichingReport:
 			key=(
 				summary.codiprovincia,
 				summary.refdistribuidora,
+				'C3', # tipoCambio
 				1, # TODO
 				summary.tarname,
 				)
