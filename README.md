@@ -21,8 +21,8 @@ An old but open version is still available at the former regulator,
 
 The module is coupled to the data model developed by Gisce
 on the top of their OpenERP fork for electricity market agents.
-
-
+The script does not need the OpenERP, just access to the database model.
+ 
 ## Requirements
 
 ### Native dependencies on Debian/Ubuntu
@@ -33,40 +33,52 @@ on the top of their OpenERP fork for electricity market agents.
 
 	$ pip install -r requirements.txt
 
-## Testinga
+## Running
+
+### Configuration
+
+Configuration is made via a module named `dbconfig.py` in the root folder of the code.
+It should contain a dicctionary with the database configuration, in
+a global var named `psycodb`. That dictionary should contain the
+configuration parameters for a psycoql database object constructor.
+The distributed file 'dbconfig.py.example` can be used as example.
+
+### Command line interface
+
+To run it as script two parameters are required: year and month.
+
+```bash
+./switchingreport.py 2015 6
+```
+
+This will generate an XML file with the required nomenclator.
+
+You can use the `--csv` option to generate a set of `CSV`
+to easily inspect the collected data in a spread shet program.
+You can import them in LibreOffice by setting tags as separators
+and UTF8 as character encoding.
+
+## Testing
 
 ### Running
 
 To run the tests:
 
-	$ python2 setup.py test
+```bash
+$ python2 setup.py test
+```
 
 ### Enabling database dependant tests
 
-In order to run the database b2b tests you need to create a `dbconfig` module.
-It should contain a dicctionary with the database configuration, in
-a global var named `psycodb`.
-
-If you don't have it, database dependant tests will be skipped.
-
-### Enabling tests based on personal data
-
-Also some b2b data contain personal data that cannot be
-uploaded to the public repositories.
-The strategy here, if you have access to the database,
-is to run the tests before doing any changes to the code
-to generate the reference data. So:
-
-- Create the `b2bdata/personal` folder
-- Run the test, instead of skip, personal data based test will fail
-- Accept the new data generated
+If you don't have a `dbconfig.py` file, database dependant tests will be skipped.
+But the rest of the test will be run.
 
 ### Accepting or discarding modification to b2b data
 
 Two scripts are provided:
 
-- `acceptb2b.sh`: to turn `result` data in to the `expected`
-- `discardb2b.sh`: to discard `result` data and stich with the current `expected`
+- `acceptb2b.sh`: to turn all `result` data in to the `expected`
+- `discardb2b.sh`: to discard all `result` data and stich with the current `expected`
 
 Before accepting new data, take a close look at the changes.
 
@@ -115,6 +127,10 @@ so that three requests of the same contract count as three, not one.
 - **Repositioned requests ("Solicitudes reposicionadas"):**
     - Those the outgoing 
 
+### Invariants
+
+* `unanswered_old + sent == accepted + rejected (no intervention) + unanswered + cancelled`
+* `unactivated_old + accepted == activated + rejected (after intervetion) + cancelled + unactivated`
 
 
 
