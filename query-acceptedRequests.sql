@@ -8,14 +8,14 @@
 SELECT
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
-		%(periodEnd)s <= termini
+		data_acceptacio <= termini
 		) THEN 1 ELSE 0 END) AS ontime,
 	SUM(CASE WHEN (
-		%(periodEnd)s > termini AND
-		%(periodEnd)s <= termini + interval '15 days'
+		data_acceptacio > termini AND
+		data_acceptacio <= termini + interval '15 days'
 		) THEN 1 ELSE 0 END) AS late,
 	SUM(CASE WHEN (
-		%(periodEnd)s > termini + interval '15 days'
+		data_acceptacio > termini + interval '15 days'
 		) THEN 1 ELSE 0 END) AS verylate,
 /*	SUM(CASE WHEN (
 		%(periodEnd)s > termini + interval '90 days'
@@ -23,18 +23,19 @@ SELECT
 */
 
 	SUM(CASE WHEN (
-		%(periodEnd)s <= termini
+		data_acceptacio <= termini
 		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
 	) AS ontimeaddedtime,
 	SUM(CASE WHEN (
-		(%(periodEnd)s > termini)  AND
-		(%(periodEnd)s <= termini + interval '15 days')
+		data_acceptacio > termini  AND
+		data_acceptacio <= termini + interval '15 days'
 		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
 	) AS lateaddedtime,
 	SUM(CASE WHEN (
-		%(periodEnd)s > termini + interval '15 days'
+		data_acceptacio > termini + interval '15 days'
 		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
 	) AS verylateaddedtime,
+
 	codiprovincia,
 	s.distri,
 	s.tarname,
@@ -45,12 +46,7 @@ SELECT
 	TRUE
 FROM (
 	SELECT
-		CASE
-			WHEN c202.id IS NOT NULL THEN c202.data_acceptacio
-			WHEN c102.id IS NOT NULL THEN c102.data_acceptacio
-			WHEN case_.priority = '5' THEN %(periodEnd)s
-			ELSE null
-		END as data_acceptacio,
+		data_acceptacio,
 		sw.id AS sw_id,
 		provincia.code AS codiprovincia,
 		provincia.name AS nomprovincia,
@@ -66,14 +62,58 @@ FROM (
 				sw.create_date + interval '7 days'
 		END AS termini,
 		TRUE
-	FROM
-		giscedata_switching AS sw
+	FROM (
+		SELECT
+			id AS pass_id,
+			header_id,
+			'C3' AS tipo_cambio,
+			'c1' AS process,
+			data_acceptacio,
+			TRUE
+		FROM
+			giscedata_switching_c1_02
+		WHERE
+			data_acceptacio >= %(periodStart)s AND
+			data_acceptacio <= %(periodEnd)s AND
+			NOT rebuig AND
+			TRUE
+		UNION
+		SELECT
+			id AS pass_id,
+			header_id,
+			'C3' as tipo_cambio,
+			'c2' as process,
+			data_acceptacio,
+			TRUE
+		FROM
+			giscedata_switching_c2_02
+		WHERE
+			data_acceptacio >= %(periodStart)s AND
+			data_acceptacio <= %(periodEnd)s AND
+			NOT rebuig AND
+			TRUE
+/*
+		UNION
+		SELECT
+			id AS pass_id,
+			header_id,
+			'C4' as tipo_cambio,
+			'a3' as process,
+			data_acceptacio,
+			TRUE
+		FROM
+			giscedata_switching_a3_02
+		WHERE
+			data_acceptacio >= %(periodStart)s AND
+			data_acceptacio <= %(periodEnd)s AND
+			NOT rebuig AND
+			TRUE
+*/
+		) AS step
 	LEFT JOIN 
-		giscedata_switching_step_header AS sth ON sth.sw_id = sw.id
-	LEFT JOIN
-		giscedata_switching_c1_02 AS c102 ON c102.header_id = sth.id
-	LEFT JOIN
-		giscedata_switching_c2_02 AS c202 ON c202.header_id = sth.id
+		giscedata_switching_step_header AS sth ON header_id = sth.id
+	LEFT JOIN 
+		giscedata_switching AS sw ON sw.id = sth.sw_id
 	LEFT JOIN
 		crm_case AS case_ ON case_.id = sw.case_id
 	LEFT JOIN
@@ -89,29 +129,22 @@ FROM (
 	LEFT JOIN
 		giscedata_polissa_tarifa AS tar ON pol.tarifa = tar.id
 	WHERE
-		(
-			c102.id IS NOT NULL AND
-			c102.data_acceptacio >= %(periodStart)s AND
-			c102.data_acceptacio <= %(periodEnd)s AND
-			NOT c102.rebuig AND
-			TRUE
-			
-		) OR (
-			c202.id IS NOT NULL AND
-			c202.data_acceptacio >= %(periodStart)s AND
-			c202.data_acceptacio <= %(periodEnd)s AND
-			NOT c202.rebuig AND
-			TRUE
-		) OR (
-			/* No son de petites marcades com a aceptades sense 02 */
-			c202.data_acceptacio >= %(periodStart)s AND
-			c202.data_acceptacio <= %(periodEnd)s AND
-			pol.data_alta IS NOT NULL AND
-			pol.data_alta>=%(periodStart)s AND
-			pol.data_alta<=%(periodEnd)s AND
-			case_.priority = '5' AND
-			FALSE
-		)
+		TRUE OR
+		/* No son de petites marcades com a aceptades sense 02 */
+/*
+		CASE
+			WHEN step.id IS NOT NULL THEN step.data_acceptacio
+			WHEN case_.priority = '5' THEN %(periodEnd)s
+			ELSE null
+		END as data_acceptacio,
+*/
+/*
+		pol.data_alta IS NOT NULL AND
+		pol.data_alta>=%(periodStart)s AND
+		pol.data_alta<=%(periodEnd)s AND
+		case_.priority = '5' AND
+*/
+		FALSE
 	) AS s
 GROUP BY
 	s.nomdistribuidora,
