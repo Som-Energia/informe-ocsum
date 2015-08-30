@@ -303,6 +303,9 @@ class OcsumReport_Test(b2btest.TestCase) :
 	def test_rejectedRequests_2014_02(self) :
 		self._test_rejectedRequests((2014,2))
 
+	def test_rejectedRequests_2014_03(self) :
+		self._test_rejectedRequests((2014,3))
+
 
 	def _test_activatedRequests(self, testcase) :
 		year, month = testcase
@@ -316,6 +319,9 @@ class OcsumReport_Test(b2btest.TestCase) :
 
 	def test_activatedRequests_2014_02(self) :
 		self._test_activatedRequests((2014,2))
+
+	def test_activatedRequests_2014_03(self) :
+		self._test_activatedRequests((2014,3))
 
 	def _test_sentRequests(self, testcase) :
 		year, month = testcase
