@@ -4,6 +4,7 @@
 	- c2_02
 	- a3_03
 	- with rejected=FALSE
+º	TODO: Include case_.priority=5 with pol.data_alta within period
 */
 SELECT
 	COUNT(*) AS nprocessos,
@@ -24,16 +25,16 @@ SELECT
 
 	SUM(CASE WHEN (
 		data_acceptacio <= termini
-		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
+		) THEN DATE_PART('day',  data_acceptacio - create_date) ELSE 0 END
 	) AS ontimeaddedtime,
 	SUM(CASE WHEN (
 		data_acceptacio > termini  AND
 		data_acceptacio <= termini + interval '15 days'
-		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
+		) THEN DATE_PART('day', data_acceptacio - create_date) ELSE 0 END
 	) AS lateaddedtime,
 	SUM(CASE WHEN (
 		data_acceptacio > termini + interval '15 days'
-		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
+		) THEN DATE_PART('day', data_acceptacio - create_date) ELSE 0 END
 	) AS verylateaddedtime,
 
 	codiprovincia,
@@ -109,13 +110,16 @@ FROM (
 			NOT rebuig AND
 			TRUE
 */
-		) AS step
-	LEFT JOIN 
-		giscedata_switching_step_header AS sth ON header_id = sth.id
-	LEFT JOIN 
-		giscedata_switching AS sw ON sw.id = sth.sw_id
+	/* TODO:
 	LEFT JOIN
 		crm_case AS case_ ON case_.id = sw.case_id
+		case_.priority=5 with pol.data_alta within the period
+*/
+		) AS step
+	LEFT JOIN 
+		giscedata_switching_step_header AS sth ON step.header_id = sth.id
+	LEFT JOIN 
+		giscedata_switching AS sw ON sw.id = sth.sw_id
 	LEFT JOIN
 		giscedata_cups_ps AS cups ON sw.cups_id = cups.id
 	LEFT JOIN
@@ -128,23 +132,6 @@ FROM (
 		res_partner AS dist ON pol.distribuidora = dist.id
 	LEFT JOIN
 		giscedata_polissa_tarifa AS tar ON pol.tarifa = tar.id
-	WHERE
-		TRUE OR
-		/* No son de petites marcades com a aceptades sense 02 */
-/*
-		CASE
-			WHEN step.id IS NOT NULL THEN step.data_acceptacio
-			WHEN case_.priority = '5' THEN %(periodEnd)s
-			ELSE null
-		END as data_acceptacio,
-*/
-/*
-		pol.data_alta IS NOT NULL AND
-		pol.data_alta>=%(periodStart)s AND
-		pol.data_alta<=%(periodEnd)s AND
-		case_.priority = '5' AND
-*/
-		FALSE
 	) AS s
 GROUP BY
 	s.nomdistribuidora,
