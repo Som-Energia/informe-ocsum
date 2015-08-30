@@ -4,10 +4,20 @@
 */
 SELECT
 	COUNT(*) AS nprocessos,
-	SUM(CASE WHEN (%(periodEnd)s <= termini) THEN 1 ELSE 0 END) AS ontime,
-	SUM(CASE WHEN ((%(periodEnd)s > termini) AND (%(periodEnd)s <= termini + interval '15 days')) THEN 1 ELSE 0 END) AS late,
-	SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate, 
-/*	SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
+	SUM(CASE WHEN (
+		%(periodEnd)s <= termini
+		) THEN 1 ELSE 0 END) AS ontime,
+	SUM(CASE WHEN (
+		%(periodEnd)s > termini AND
+		%(periodEnd)s <= termini + interval '15 days'
+		) THEN 1 ELSE 0 END) AS late,
+	SUM(CASE WHEN (
+		%(periodEnd)s > termini + interval '15 days'
+		) THEN 1 ELSE 0 END) AS verylate,
+/*	SUM(CASE WHEN (
+		%(periodEnd)s > termini + interval '90 days'
+		) THEN 1 ELSE 0 END) AS unattended,
+*/
 	codiprovincia,
 	s.distri,
 	s.tarname,

@@ -1,20 +1,40 @@
-
+/*
+	Request accepted during the period
+	- c1_02
+	- c2_02
+	- a3_03
+	- with rejected=TRUE
+*/
 SELECT
 	COUNT(*) AS nprocessos,
-	SUM(CASE WHEN (%(periodEnd)s <= termini) THEN 1 ELSE 0 END) AS ontime,
-	SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN 1 ELSE 0 END) AS late,
-	SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN 1 ELSE 0 END) AS verylate, 
-/*	SUM(CASE WHEN (%(periodEnd)s > termini + interval '90 days') THEN 1 ELSE 0 END) AS unattended, */
+	SUM(CASE WHEN (
+		%(periodEnd)s <= termini
+		) THEN 1 ELSE 0 END) AS ontime,
+	SUM(CASE WHEN (
+		%(periodEnd)s > termini AND
+		%(periodEnd)s <= termini + interval '15 days'
+		) THEN 1 ELSE 0 END) AS late,
+	SUM(CASE WHEN (
+		%(periodEnd)s > termini + interval '15 days'
+		) THEN 1 ELSE 0 END) AS verylate,
+/*	SUM(CASE WHEN (
+		%(periodEnd)s > termini + interval '90 days'
+		) THEN 1 ELSE 0 END) AS unattended,
+*/
 
-	SUM(CASE WHEN (%(periodEnd)s <= termini) THEN
-		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
-		) AS ontimeaddedtime,
-	SUM(CASE WHEN ((%(periodEnd)s > termini)  AND (%(periodEnd)s <= termini + interval '15 days')) THEN
-		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
-		) AS lateaddedtime,
-	SUM(CASE WHEN (%(periodEnd)s > termini + interval '15 days') THEN
-		DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
-		) AS verylateaddedtime,
+	SUM(CASE WHEN (
+		%(periodEnd)s <= termini
+		) THEN DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
+	) AS ontimeaddedtime,
+	SUM(CASE WHEN (
+		(%(periodEnd)s > termini)  AND
+		(%(periodEnd)s <= termini + interval '15 days')
+		) THEN DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
+	) AS lateaddedtime,
+	SUM(CASE WHEN (
+		%(periodEnd)s > termini + interval '15 days'
+		) THEN DATE_PART('day', %(periodEnd)s - s.create_date) ELSE 0 END
+	) AS verylateaddedtime,
 	provincia.code AS codiprovincia,
 	s.distri,
 	s.rejectreason,
@@ -25,7 +45,7 @@ SELECT
 	STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
 	TRUE
 FROM (
-	SELECT 
+	SELECT
 		steph.date_created as data_rebuig,
 		sw.id AS sw_id,
 		dist.id AS distri,
@@ -54,7 +74,8 @@ FROM (
 		giscedata_switching AS sw
 	LEFT JOIN 
 		giscedata_switching_step_header AS steph ON steph.sw_id = sw.id
-	LEFT JOIN (
+	LEFT JOIN
+		(
 			SELECT *, 1 as process FROM giscedata_switching_c1_02
 		UNION
 			SELECT *, 2 as process FROM giscedata_switching_c2_02
@@ -75,7 +96,7 @@ FROM (
 		steph.date_created <= %(periodEnd)s AND
 		pass.rebuig AND
 		TRUE
-	) as s 
+	) AS s
 LEFT JOIN
 	giscedata_cups_ps AS cups ON s.cups_id = cups.id
 LEFT JOIN
