@@ -107,6 +107,7 @@ so that three requests of the same contract count as three, not one.
     - Does not include rejections because of the format
     - Warning: This could include requests started on previous periods.
 
+
 - **Unactivated requests ("Solicitudes pendientes de activacion"):**
     - Those accepted but not activated at the end of the period
     - Warning: This could include requests **send or accepted** on previous periods.
@@ -126,6 +127,21 @@ so that three requests of the same contract count as three, not one.
 
 - **Repositioned requests ("Solicitudes reposicionadas"):**
     - Those the outgoing 
+
+
+
+- **Response times:**
+	- Legal start: 01 step file is uploaded
+	- Actual start: 01 step file is created
+	- Legal end: FechaSolicitud field of the 02 step or the end of the period if not answered
+	- Actual end: idem but if legacy distri, used the policy activation
+	- Applies to: accepted, rejected, unanswered
+- **Activation times:**
+	- Legal start: User formalizes the request
+	- Actual start: 01 stepfile is created
+	- End: 05 step in DatosActivacion/Fecha or the end of the period if not activated
+	- Actual end: idem but if legacy distri, used the policy activation
+	- Applies to: activated, unactivated
 
 ### Invariants
 

@@ -36,10 +36,10 @@
 	- ~~`Comer_entrante` really always the emitter retailer?~~ -> yep
 	- ~~`Comer_saliente` really always unknown (0)?~~ -> yep
 	- Check all the date intervals
-	- Pick a date for managed request with no C2 (by email) (written down as 'case.priority')
+	- Pick a date for managed request with no Cn-02 (by email) (written down as 'case.priority')
 	- Current fare could be different from the one at the reported period
 	- Rejected marked as priority '4' are not taken into account
-	- ~~`NumIncidencias` set to 0 in Activated and ActivationPending
+	- ~~`NumIncidencias` set to 0 in Activated and ActivationPending~~
 
 - Things we accept we are doing wrong, eventually fixed
 	- sent: we are using create_date but it should be the upload date, not the same
