@@ -65,6 +65,14 @@ def debugCase(db, caseId, impersonate=False):
 			if len(step.details)>1:
 				warn("Més d'un detall pel pas")
 			step.details = step.details[0]
+		cur.execute("""\
+			SELECT * FROM crm_case
+			WHERE id=%(crm)s
+			""",
+			dict(
+				crm=case.case_id,
+			))
+		case.case=nsList(cur)[0]
 	
 	return case
 

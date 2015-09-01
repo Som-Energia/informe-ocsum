@@ -1,4 +1,43 @@
 accio_pendent: false
+case:
+  active: true
+  canal_id: null
+  case_id: null
+  categ_id: null
+  category2_id: null
+  create_date: 2014-02-11 12:53:55.109703
+  create_uid: 5
+  date: 2014-02-11 12:53:55
+  date_action_last: null
+  date_action_next: null
+  date_closed: 2014-05-20 18:22:22
+  date_deadline: null
+  description: null
+  duration: null
+  email_cc: null
+  email_from: atrbtendesa@endesa.es
+  id: 8221
+  name: !!python/str 'Procés C1 pel cups: ES0031405068003001QK0F'
+  note: null
+  partner_address_id: 14159
+  partner_id: 13788
+  partner_mobile: null
+  partner_name: null
+  partner_name2: null
+  partner_phone: null
+  planned_cost: null
+  planned_revenue: null
+  priority: '3'
+  probability: null
+  ref: null
+  ref2: null
+  section_id: 1
+  som: null
+  stage_id: null
+  state: done
+  user_id: 5
+  write_date: 2014-05-20 18:22:22.846831
+  write_uid: 1
 case_id: 8221
 codi_sollicitud: '201400006394'
 comer_sortint_id: null
