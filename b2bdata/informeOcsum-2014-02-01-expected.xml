@@ -160,9 +160,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>19.4</TMActivacion>
+        <TMActivacion>19.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>18</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>20</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -191,29 +191,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>17.9</TMActivacion>
+        <TMActivacion>19.4</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>8</NumSolicitudesActivadas>
-      </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>03000</Provincia>
-      <Distribuidor>0021</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2S</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleActivadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>23.0</TMActivacion>
-        <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>7</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -256,9 +236,9 @@
       <NumImpagados>0</NumImpagados>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>35.0</TMActivacion>
+        <TMActivacion>40.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -276,9 +256,9 @@
       <NumImpagados>0</NumImpagados>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>51.0</TMActivacion>
+        <TMActivacion>56.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -301,29 +281,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>18.5</TMActivacion>
+        <TMActivacion>21.7</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
-      </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>05000</Provincia>
-      <Distribuidor>0021</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleActivadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>28.0</TMActivacion>
-        <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>3</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -427,9 +387,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>30.3</TMActivacion>
+        <TMActivacion>29.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>22</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>21</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -452,9 +412,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>44.0</TMActivacion>
+        <TMActivacion>51.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -532,9 +492,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>25.3</TMActivacion>
+        <TMActivacion>25.2</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>279</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>294</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -567,9 +527,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>26.4</TMActivacion>
+        <TMActivacion>27.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>33</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>18</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -608,7 +568,7 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>29.1</TMActivacion>
+        <TMActivacion>31.1</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>7</NumSolicitudesActivadas>
       </DetalleActivadas>
@@ -633,9 +593,29 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>29.3</TMActivacion>
+        <TMActivacion>36.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>3</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
+      </DetalleActivadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>08000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>2V</TarifaATR>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleActivadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMActivacion>32.0</TMActivacion>
+        <NumIncidencias>0</NumIncidencias>
+        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -782,9 +762,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>24.5</TMActivacion>
+        <TMActivacion>28.6</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>6</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>7</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -813,9 +793,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>47.0</TMActivacion>
+        <TMActivacion>41.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -989,9 +969,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>29.1</TMActivacion>
+        <TMActivacion>27.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>7</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>8</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -1014,9 +994,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>14.8</TMActivacion>
+        <TMActivacion>14.3</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>4</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>3</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -1297,29 +1277,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>14.0</TMActivacion>
+        <TMActivacion>36.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
-      </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>16000</Provincia>
-      <Distribuidor>0032</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleActivadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>59.0</TMActivacion>
-        <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -1809,29 +1769,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>57.0</TMActivacion>
+        <TMActivacion>44.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
-      </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>21000</Provincia>
-      <Distribuidor>0031</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleActivadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>31.0</TMActivacion>
-        <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -2287,9 +2227,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>33.2</TMActivacion>
+        <TMActivacion>34.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>5</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>6</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -2310,12 +2250,6 @@
         <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
-      <DetalleActivadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>41.0</TMActivacion>
-        <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
-      </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>26000</Provincia>
@@ -2414,9 +2348,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>23.9</TMActivacion>
+        <TMActivacion>23.7</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>48</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>50</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -2461,9 +2395,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>9.3</TMActivacion>
+        <TMActivacion>5.2</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>6</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>4</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -2546,9 +2480,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>21.5</TMActivacion>
+        <TMActivacion>20.9</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>27</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>28</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -2577,9 +2511,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>28.2</TMActivacion>
+        <TMActivacion>32.6</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>6</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>5</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -2810,9 +2744,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>28.5</TMActivacion>
+        <TMActivacion>27.4</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>26</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>27</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -2835,9 +2769,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>13.5</TMActivacion>
+        <TMActivacion>27.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3303,9 +3237,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>25.2</TMActivacion>
+        <TMActivacion>26.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>21</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>22</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3328,9 +3262,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>44.0</TMActivacion>
+        <TMActivacion>39.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>3</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3453,9 +3387,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>27.8</TMActivacion>
+        <TMActivacion>30.4</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>4</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>5</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3473,9 +3407,9 @@
       <NumImpagados>0</NumImpagados>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>44.0</TMActivacion>
+        <TMActivacion>45.5</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>3</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3530,9 +3464,15 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>25.3</TMActivacion>
+        <TMActivacion>25.1</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>53</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>56</NumSolicitudesActivadas>
+      </DetalleActivadas>
+      <DetalleActivadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMActivacion>69.0</TMActivacion>
+        <NumIncidencias>0</NumIncidencias>
+        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3568,13 +3508,7 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>24.8</TMActivacion>
-        <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>4</NumSolicitudesActivadas>
-      </DetalleActivadas>
-      <DetalleActivadas>
-        <TipoRetraso>05</TipoRetraso>
-        <TMActivacion>69.0</TMActivacion>
+        <TMActivacion>35.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
@@ -3699,9 +3633,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>50.0</TMActivacion>
+        <TMActivacion>53.7</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>3</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3724,9 +3658,9 @@
       </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>38.5</TMActivacion>
+        <TMActivacion>16.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3836,9 +3770,9 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>26.4</TMActivacion>
+        <TMActivacion>24.3</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>10</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>11</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -3867,9 +3801,29 @@
       </DetalleRechazadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMActivacion>28.2</TMActivacion>
+        <TMActivacion>47.0</TMActivacion>
         <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesActivadas>4</NumSolicitudesActivadas>
+        <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
+      </DetalleActivadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>50000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>2T</TarifaATR>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleActivadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMActivacion>16.0</TMActivacion>
+        <NumIncidencias>0</NumIncidencias>
+        <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>

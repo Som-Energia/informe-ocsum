@@ -102,8 +102,14 @@ FROM (
 		giscedata_polissa AS pol ON cups_polissa_id = pol.id
 	LEFT JOIN 
 		res_partner AS dist ON pol.distribuidora = dist.id
+	LEFT JOIN 
+		giscedata_polissa_modcontractual AS mod ON mod.polissa_id = pol.id AND mod.modcontractual_ant IS NULL
 	LEFT JOIN
-		giscedata_polissa_tarifa AS tar ON pol.tarifa = tar.id
+		giscedata_polissa_tarifa AS tar ON (
+			(mod.id IS     NULL AND tar.id = pol.tarifa) OR
+			(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR
+			FALSE
+			)
 	WHERE
 		(
 			(

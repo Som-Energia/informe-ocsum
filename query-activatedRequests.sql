@@ -90,7 +90,13 @@ LEFT JOIN
 LEFT JOIN
 	res_partner AS dist ON dist.id = pol.distribuidora
 LEFT JOIN
-	giscedata_polissa_tarifa AS tar ON tar.id = pol.tarifa
+	giscedata_polissa_modcontractual AS mod ON mod.polissa_id = pol.id AND mod.modcontractual_ant IS NULL
+LEFT JOIN
+	giscedata_polissa_tarifa AS tar ON (
+		(mod.id IS     NULL AND tar.id = pol.tarifa) OR
+		(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR
+		FALSE
+		)
 LEFT JOIN
 	res_municipi ON res_municipi.id = cups.id_municipi
 LEFT JOIN
