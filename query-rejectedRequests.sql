@@ -9,14 +9,14 @@
 SELECT
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
-		data_rebuig <= termini
+		data_resposta <= termini
 		) THEN 1 ELSE 0 END) AS ontime,
 	SUM(CASE WHEN (
-		data_rebuig > termini AND
-		data_rebuig <= termini + interval '15 days'
+		data_resposta > termini AND
+		data_resposta <= termini + interval '15 days'
 		) THEN 1 ELSE 0 END) AS late,
 	SUM(CASE WHEN (
-		data_rebuig > termini + interval '15 days'
+		data_resposta > termini + interval '15 days'
 		) THEN 1 ELSE 0 END) AS verylate,
 /*	SUM(CASE WHEN (
 		%(periodEnd)s > termini + interval '90 days'
@@ -24,17 +24,17 @@ SELECT
 */
 
 	SUM(CASE WHEN (
-		data_rebuig <= termini
-		) THEN DATE_PART('day',  data_rebuig - create_date) ELSE 0 END
+		data_resposta <= termini
+		) THEN DATE_PART('day',  data_resposta - create_date) ELSE 0 END
 	) AS ontimeaddedtime,
 	SUM(CASE WHEN (
-		data_rebuig > termini  AND
-		data_rebuig <= termini + interval '15 days'
-		) THEN DATE_PART('day', data_rebuig - create_date) ELSE 0 END
+		data_resposta > termini  AND
+		data_resposta <= termini + interval '15 days'
+		) THEN DATE_PART('day', data_resposta - create_date) ELSE 0 END
 	) AS lateaddedtime,
 	SUM(CASE WHEN (
-		data_rebuig > termini + interval '15 days'
-		) THEN DATE_PART('day', data_rebuig - create_date) ELSE 0 END
+		data_resposta > termini + interval '15 days'
+		) THEN DATE_PART('day', data_resposta - create_date) ELSE 0 END
 	) AS verylateaddedtime,
 
 	codiprovincia,
@@ -44,11 +44,11 @@ SELECT
 	s.refdistribuidora,
 	nomprovincia,
 	s.nomdistribuidora,
-	STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
+	STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) AS casos,
 	TRUE
 FROM (
 	SELECT
-		data_rebuig,
+		data_resposta,
 		sw.id AS sw_id,
 		provincia.code AS codiprovincia,
 		provincia.name AS nomprovincia,
@@ -79,10 +79,10 @@ FROM (
 				header_id,
 				'C3' AS tipo_cambio,
 				'c1' AS process,
-				sth.date_created as data_rebuig,
+				sth.date_created AS data_resposta,
 				TRUE
 			FROM
-				giscedata_switching_c1_02 as step
+				giscedata_switching_c1_02 AS step
 			LEFT JOIN
 				giscedata_switching_step_header AS sth ON step.header_id = sth.id
 			WHERE
@@ -94,9 +94,9 @@ FROM (
 		/* c2_02, rebuig=true, accepted within the period */
 			SELECT
 				step.header_id,
-				'C3' as tipo_cambio,
-				'c2' as process,
-				sth.date_created as data_rebuig,
+				'C3' AS tipo_cambio,
+				'c2' AS process,
+				sth.date_created AS data_resposta,
 				TRUE
 			FROM
 				giscedata_switching_c2_02 AS step
@@ -111,9 +111,9 @@ FROM (
 		/* a3_02, rebuig=true, accepted within the period */
 			SELECT
 				header_id,
-				'C4' as tipo_cambio,
-				'a3' as process,
-				sth.date_created as data_rebuig,
+				'C4' AS tipo_cambio,
+				'a3' AS process,
+				sth.date_created AS data_resposta,
 				TRUE
 			FROM
 				giscedata_switching_a3_02 AS step
@@ -124,13 +124,13 @@ FROM (
 				sth.date_created <= %(periodEnd)s AND
 				rebuig AND
 				TRUE
-		/* single 01 step, priority=5, polissa.data_alta en el periode */
 		UNION
+		/* single 01 step, priority=5, polissa.data_alta en el periode */
 			SELECT
 				sth.id AS header_id,
 				step01.tipo_cambio AS tipo_cambio,
 				step01.process AS process,
-				pol.data_alta AS data_rebuig,
+				pol.data_alta AS data_resposta,
 				TRUE
 			FROM
 				crm_case AS case_
@@ -158,21 +158,21 @@ FROM (
 				SELECT
 					'C3' AS tipo_cambio,
 					'c1' AS process,
-					st.header_id as header_id
+					st.header_id AS header_id
 				FROM
 					giscedata_switching_c1_01 AS st
 				UNION
 				SELECT
 					'C3' AS tipo_cambio,
 					'c2' AS process,
-					st.header_id as header_id
+					st.header_id AS header_id
 				FROM
 					giscedata_switching_c2_01 AS st
 				UNION
 				SELECT
 					'C4' AS tipo_cambio,
 					'a3' AS process,
-					st.header_id as header_id
+					st.header_id AS header_id
 				FROM
 					giscedata_switching_a3_01 AS st
 
