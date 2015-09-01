@@ -1551,6 +1551,11 @@
         <TipoRetraso>15</TipoRetraso>
         <NumSolicitudesPendientes>2</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
+      <DetalleAceptadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesAceptadas>13.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>17000</Provincia>
