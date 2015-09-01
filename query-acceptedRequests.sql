@@ -93,9 +93,8 @@ FROM (
 				data_acceptacio <= %(periodEnd)s AND
 				NOT rebuig AND
 				TRUE
+		UNION
 		/* a3_02, rebuig=false, accepted within the period */
-/*
-			UNION
 			SELECT
 				header_id,
 				'C4' as tipo_cambio,
@@ -109,7 +108,6 @@ FROM (
 				data_acceptacio <= %(periodEnd)s AND
 				NOT rebuig AND
 				TRUE
-*/
 		UNION
 		/* single 01 step, priority=5, polissa.data_alta en el periode */
 			SELECT
