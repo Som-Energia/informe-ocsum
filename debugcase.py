@@ -14,7 +14,7 @@ def anonyfy(text):
 
 def impersonatePersonalData(detail):
 	personalKeys = set(
-		"nom cognom_1 cognom_2 codi_document telefon".split())
+		"nom cognom_1 cognom_2 codi_document telefon observacions ref_dist name".split())
 	for key in personalKeys:
 		if key in detail:
 			detail[key] = detail[key] and anonyfy(detail[key])
@@ -73,6 +73,17 @@ def debugCase(db, caseId, impersonate=False):
 				crm=case.case_id,
 			))
 		case.case=nsList(cur)[0]
+		cur.execute("""\
+			SELECT * FROM giscedata_polissa
+			WHERE id=%(polissaid)s
+			""",
+			dict(
+				polissaid=case.cups_polissa_id,
+			))
+		case.polissa=nsList(cur)[0]
+        if impersonate:
+			impersonatePersonalData(case.polissa)
+			case.polissa.observacions = 'bla bla bla'
 	
 	return case
 

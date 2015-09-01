@@ -52,6 +52,60 @@ finalitzat: true
 id: 15235
 notificacio_pendent: false
 obrir_cas_pendent: false
+polissa:
+  active: false
+  altre_p: null
+  bank: 18463
+  cnae: 986
+  comercialitzadora: 1
+  create_date: 2013-06-11 12:10:10.884950
+  create_uid: 4
+  cups: 13680
+  data_alta: 2013-07-05
+  data_baixa: 2014-06-03
+  data_firma_contracte: 2013-06-11
+  data_ultima_lectura: 2014-06-03
+  data_ultima_lectura_estimada: null
+  direccio_notificacio: 13082
+  direccio_pagament: 13082
+  distribuidora: 2273
+  donatiu: false
+  enviament: email
+  facturacio: 2
+  facturacio_distri: 2
+  facturacio_potencia: icp
+  id: 13368
+  llista_preu: 4
+  lot_facturacio: null
+  modcontractual_activa: 7963
+  name: 0...7
+  name_auto: true
+  no_estimable: false
+  notificacio: titular
+  observacions: bla bla bla
+  observacions_estimacio: null
+  pagador: 12741
+  pagador_sel: titular
+  payment_mode_id: 7
+  potencia: !!python/object/apply:decimal.Decimal
+  - '4.600'
+  proxima_facturacio: null
+  ref_dist: 9.........2
+  renovacio_auto: false
+  soci: 12741
+  sos: false
+  state: baixa
+  state_post_facturacio: null
+  tarifa: 1
+  tensio: 230
+  tensio_normalitzada: 4
+  tipo_pago: 1
+  tipus_vivenda: habitual
+  titular: 12741
+  trafo: 0.0
+  versio_primera_factura: 97
+  write_date: 2014-07-02 16:48:13.183124
+  write_uid: 3
 proces: null
 proces_id: 5
 process_name: B1

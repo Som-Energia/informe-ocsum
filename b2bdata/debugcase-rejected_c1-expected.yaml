@@ -52,6 +52,60 @@ finalitzat: true
 id: 8091
 notificacio_pendent: false
 obrir_cas_pendent: false
+polissa:
+  active: true
+  altre_p: null
+  bank: 26655
+  cnae: 682
+  comercialitzadora: 1
+  create_date: 2014-02-10 11:42:35.213607
+  create_uid: 4
+  cups: 27121
+  data_alta: 2014-03-19
+  data_baixa: null
+  data_firma_contracte: 2014-02-10
+  data_ultima_lectura: 2014-12-11
+  data_ultima_lectura_estimada: null
+  direccio_notificacio: 21508
+  direccio_pagament: 21508
+  distribuidora: 2273
+  donatiu: false
+  enviament: email
+  facturacio: 1
+  facturacio_distri: 1
+  facturacio_potencia: max
+  id: 26835
+  llista_preu: 12
+  lot_facturacio: 37
+  modcontractual_activa: 15192
+  name: 1...8
+  name_auto: true
+  no_estimable: false
+  notificacio: pagador
+  observacions: bla bla bla
+  observacions_estimacio: null
+  pagador: 20953
+  pagador_sel: titular
+  payment_mode_id: 7
+  potencia: !!python/object/apply:decimal.Decimal
+  - '31.177'
+  proxima_facturacio: 2015-01-31
+  ref_dist: 4.......8
+  renovacio_auto: true
+  soci: 20953
+  sos: false
+  state: activa
+  state_post_facturacio: null
+  tarifa: 7
+  tensio: 230
+  tensio_normalitzada: 4
+  tipo_pago: 1
+  tipus_vivenda: habitual
+  titular: 20953
+  trafo: 0.0
+  versio_primera_factura: 142
+  write_date: 2014-12-17 12:22:25.397687
+  write_uid: 10
 proces: null
 proces_id: 1
 process_name: C1
