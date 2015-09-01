@@ -136,7 +136,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>37</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>39</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -173,7 +173,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>10</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>9</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -204,7 +204,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2S</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -402,7 +402,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>68</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -445,7 +445,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -508,7 +508,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>446</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>475</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>5</ClientesSalientes>
@@ -569,7 +569,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>54</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>25</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -657,7 +657,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2T</TarifaATR>
-      <TotalSolicitudesEnviadas>8</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>7</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -682,7 +682,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>13</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>14</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -932,7 +932,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>6</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -957,7 +957,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1001,7 +1001,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>15</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>17</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1038,7 +1038,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1257,7 +1257,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1301,7 +1301,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2T</TarifaATR>
-      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1577,21 +1577,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>17000</Provincia>
-      <Distribuidor>0268</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1642,7 +1628,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>13</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>12</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1691,6 +1677,20 @@
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
+      <Provincia>18000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>1T</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
       <Provincia>19000</Provincia>
       <Distribuidor>0021</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
@@ -1698,7 +1698,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1717,7 +1717,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1847,7 +1847,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1872,7 +1872,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2107,7 +2107,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2132,7 +2132,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2157,7 +2157,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>28</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>31</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2202,7 +2202,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>6</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2450,7 +2450,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>75</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>78</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2487,7 +2487,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>14</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>10</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2534,7 +2534,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2T</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2573,7 +2573,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>38</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>39</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>3</ClientesSalientes>
@@ -2614,7 +2614,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2655,6 +2655,20 @@
         <TMSolicitudesAceptadas>2.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>28000</Provincia>
+      <Distribuidor>0022</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>2T</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>28000</Provincia>
@@ -2718,7 +2732,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2743,7 +2757,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2762,7 +2776,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>16</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>17</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2799,7 +2813,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2837,7 +2851,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>45</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>52</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2878,7 +2892,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>10</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -2980,7 +2994,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3005,7 +3019,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3259,7 +3273,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>6</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>9</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3288,7 +3302,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3362,7 +3376,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>50</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>51</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>1</ClientesSalientes>
@@ -3395,7 +3409,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3420,7 +3434,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1T</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3565,7 +3579,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>74</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>80</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3622,7 +3636,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>11</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3696,7 +3710,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2T</TarifaATR>
-      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3902,7 +3916,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>26</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>28</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -3933,7 +3947,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>

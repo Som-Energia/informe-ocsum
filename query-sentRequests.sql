@@ -11,7 +11,7 @@ SELECT
 	COUNT(*) AS nreq,
 	dist.id AS distriid,
 	dist.ref AS refdistribuidora,
-	tar.name as tarname,
+	tar.name AS tarname,
 	provincia.code AS codiprovincia,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
@@ -62,11 +62,13 @@ LEFT JOIN
 LEFT JOIN
 	res_partner AS dist ON dist.id = pol.distribuidora
 LEFT JOIN
-	giscedata_polissa_tarifa AS tar ON tar.id = pol.tarifa
-LEFT JOIN
 	res_municipi ON res_municipi.id = cups.id_municipi
 LEFT JOIN
 	res_country_state AS provincia ON provincia.id = res_municipi.state
+LEFT JOIN
+    giscedata_polissa_modcontractual AS mod ON mod.polissa_id = pol.id AND mod.modcontractual_ant IS NULL
+LEFT JOIN
+	giscedata_polissa_tarifa AS tar ON ((mod.id IS NULL AND tar.id = pol.tarifa) OR (mod.id IS NOT NULL AND tar.id = mod.tarifa))
 GROUP BY
 	dist.id,
 	dist.ref,
