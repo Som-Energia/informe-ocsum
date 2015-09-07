@@ -79,7 +79,8 @@ class SwichingReport:
 				datos = self.element(solicitudes, 'DatosSolicitudes')
 				self.element(datos, 'Provincia', provincia+'000')
 				self.element(datos, 'Distribuidor', distribuidora)
-				self.element(datos, 'Comer_entrante', 'R2-415')
+                                # For comer, is always the agent
+				self.element(datos, 'Comer_entrante', self.CodigoAgente),
 				self.element(datos, 'Comer_saliente', '0')
 				self.element(datos, 'TipoCambio', tipoCambio) # TODO
 				self.element(datos, 'TipoPunto', tipoPunto) # TODO
