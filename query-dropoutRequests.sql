@@ -8,11 +8,11 @@
 	- Test a period with a case with actual B1_05 step
 */
 SELECT
-	COUNT(*) AS nreq,
 	dist.id AS distriid,
 	dist.ref AS refdistribuidora,
-	tar.name as tarname,
 	provincia.code AS codiprovincia,
+	tar.name as tarname,
+	COUNT(*) AS nreq,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
 	STRING_AGG(sw.id::text, ',' ORDER BY sw.id) AS casos

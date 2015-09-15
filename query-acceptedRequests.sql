@@ -7,6 +7,10 @@
 º	TODO: Include case_.priority=5 with pol.data_alta within period
 */
 SELECT
+	s.distri,
+	s.refdistribuidora,
+	codiprovincia,
+	s.tarname,
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
 		data_resposta <= termini
@@ -37,10 +41,6 @@ SELECT
 		) THEN DATE_PART('day', data_resposta - create_date) ELSE 0 END
 	) AS verylateaddedtime,
 
-	codiprovincia,
-	s.distri,
-	s.tarname,
-	s.refdistribuidora,
 	nomprovincia,
 	s.nomdistribuidora,
 	STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) AS casos,

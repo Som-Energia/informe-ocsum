@@ -2,6 +2,10 @@
 	All Requests sent during or before the period not answered during the period
 */
 SELECT
+	s.distri,
+	s.refdistribuidora,
+	codiprovincia,
+	s.tarname,
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
 		%(periodEnd)s <= termini
@@ -31,10 +35,6 @@ SELECT
 		%(periodEnd)s > termini + interval '15 days'
 		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
 	) AS verylateaddedtime,
-	codiprovincia,
-	s.distri,
-	s.tarname,
-	s.refdistribuidora,
 	nomprovincia,
 	s.nomdistribuidora,
 	STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,

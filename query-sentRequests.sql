@@ -8,11 +8,11 @@
 	TODO: To be honest it should be the upload date not the creation date
 */
 SELECT
-	COUNT(*) AS nreq,
 	dist.id AS distriid,
 	dist.ref AS refdistribuidora,
-	tar.name AS tarname,
 	provincia.code AS codiprovincia,
+	tar.name AS tarname,
+	COUNT(*) AS nreq,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
 	STRING_AGG(sw.id::text, ',' ORDER BY sw.id) AS casos
@@ -69,8 +69,8 @@ LEFT JOIN
 	giscedata_polissa_modcontractual AS mod ON mod.polissa_id = pol.id AND mod.modcontractual_ant IS NULL
 LEFT JOIN
 	giscedata_polissa_tarifa AS tar ON (
-		(mod.id IS     NULL AND tar.id = pol.tarifa) OR
-		(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR
+		(mod.id IS     NULL AND tar.id = pol.tarifa) OR  /* No modification, use the on in the polissa */
+		(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR  /* Modification, means sometime activated, use the first value */
 		FALSE
 		)
 GROUP BY

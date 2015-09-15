@@ -4,16 +4,16 @@
 	- c1_09 (change cancellation response)
 	- c2_09 (change cancellation response)
 	- a3_07 (direct cancellation response)
-	- With a Cn_09 or A3_07 step (cancellation response) created during the period
+	- With a cn_09 or a3_07 step (cancellation response) created during the period
 	- having the 'rebuig' flag off
 	TODO: En criterio de conteo se dice que se usara FechaSolicitud del 09
 */
 SELECT
-	COUNT(*) AS nreq,
 	dist.id AS distriid,
 	dist.ref AS refdistribuidora,
-	tar.name as tarname,
 	provincia.code AS codiprovincia,
+	tar.name AS tarname,
+	COUNT(*) AS nreq,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
 	STRING_AGG(sw.id::text, ',' ORDER BY sw.id) AS casos

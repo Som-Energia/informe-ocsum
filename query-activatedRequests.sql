@@ -7,6 +7,10 @@
 	- with data_activacio during the period
 */
 SELECT
+	dist.id AS distriid,
+	dist.ref AS refdistribuidora,
+	provincia.code AS codiprovincia,
+	tar.name as tarname,
 	COUNT(*),
 	SUM(CASE WHEN (
 		data_activacio <= sw.create_date + interval '66 days'
@@ -34,10 +38,6 @@ SELECT
 	0 AS ontimeissues,
 	0 AS lateissues,
 	0 AS verylateissues,
-	dist.id AS distriid,
-	dist.ref AS refdistribuidora,
-	tar.name as tarname,
-	provincia.code AS codiprovincia,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
 	STRING_AGG(sw.id::text, ',' ORDER BY sw.id) AS casos
