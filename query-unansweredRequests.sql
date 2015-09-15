@@ -28,7 +28,6 @@ SELECT
 	TRUE
 FROM (
 	SELECT
-		count(sth.id) AS npassos,
 		sw.id AS sw_id,
 		provincia.code AS codiprovincia,
 		provincia.name AS nomprovincia,
@@ -94,6 +93,7 @@ FROM (
 		codiprovincia,
 		nomprovincia,
 		TRUE
+    HAVING COUNT(sth.id) = 1
 	ORDER BY
 		sw.id,
 		tarname,
@@ -109,7 +109,6 @@ LEFT JOIN
 LEFT JOIN
 	giscedata_switching_c2_01 AS c201 ON c201.header_id = sth.id
 WHERE
-	s.npassos = 1 AND
 	NOT (
 		c101.id IS NULL AND
 		c201.id IS NULL
@@ -117,7 +116,6 @@ WHERE
 GROUP BY
 	s.nomdistribuidora,
 	s.distri,
-	s.npassos,
 	s.refdistribuidora,
 	s.tarname,
 	s.codiprovincia,
