@@ -72,6 +72,7 @@ polissa:
   distribuidora: 2273
   donatiu: false
   enviament: email
+  etag: null
   facturacio: 1
   facturacio_distri: 2
   facturacio_potencia: icp
