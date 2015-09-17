@@ -13,6 +13,7 @@
 - ~~Setup travisCI~~
 
 - To review:
+	- ~~Take TarifaATR from case to be unaffected by later changes~~
 	- Distributor code is not the one required (using ref1 instead new ref2)
 	- Rejected includes MotivoRechazo field
 	- Rejected segregates by MotivoRechazo
@@ -22,7 +23,6 @@
 	- TipoRetraso en unanswered, accepted, rejected, unactivated, activated
 	- Segregation by TipoCambio
 	- Segregation by TipoPunto
-	- Take TarifaATR from case to be unaffected by later changes
 - Deployment
 	- Separate tests from code
 	- Add setup.py to run install
