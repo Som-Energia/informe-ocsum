@@ -101,8 +101,8 @@ so that three requests of the same contract count as three, not one.
 
 - **Rejected requests ("Solicitudes rechazadas"):**
     - Those rejected within the period
-        - Direct rejection: C1/2:02 with rejection flag
-        - After failed field intervention: C1/2:04
+        - Direct rejection: C1/2,A3:02 with rejection flag
+        - After failed field intervention: C1/2,A3:04
     - Includes also rejections because of field intervention after acceptation
     - Does not include rejections because of the format
     - Warning: This could include requests started on previous periods.
@@ -114,8 +114,8 @@ so that three requests of the same contract count as three, not one.
     - Plazo: desde la carga de la solicitud a final de mes
 
 - **Activated requests ("Solicitudes activadas"):**
-    - Those with activation date (C1/2:04) during the period
-    - Warning: Not the reception date of C1/2:04, but the indicated activation date
+    - Those with activation date (C1/2:05,07) during the period
+    - Warning: Not the reception date of C1/2:05,07, but the indicated activation date
     - Warning: This may include request **sent or accepted** on previous periods.
     - Includes later repositionated requests
     - Plazo: desde la carga de la solicitud a la fecha indicada para la activación
@@ -127,7 +127,6 @@ so that three requests of the same contract count as three, not one.
 
 - **Repositioned requests ("Solicitudes reposicionadas"):**
     - Those the outgoing 
-
 
 
 - **Response times:**
@@ -153,7 +152,6 @@ so that three requests of the same contract count as three, not one.
 ## Casos extraños
 
 - 9982: tiene un 02 con campos a null, rebutjat i proritat 5 (acceptat)
-
 - 6538: prioritat 5 ok a 2015-02
 - 7132: prioritat 5 ok a 2015-03
 
