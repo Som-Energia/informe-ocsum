@@ -5,6 +5,9 @@
 	- c2_05
 	- a3_05
 	- with data_activacio during the period
+
+TODO: Counting issues
+
 */
 SELECT
 	dist.id AS distriid,

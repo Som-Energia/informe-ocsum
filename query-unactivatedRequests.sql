@@ -45,7 +45,7 @@ FROM (
 			WHEN cn02.id IS NOT NULL THEN cn05.data_activacio
 			WHEN case_.priority = '5' THEN %(periodEnd)s
 			ELSE null
-		END as data_activacio,
+		END AS data_activacio,
 		sw.id AS sw_id,
 		provincia.code AS codiprovincia,
 		provincia.name AS nomprovincia,
