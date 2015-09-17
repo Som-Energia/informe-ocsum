@@ -56,6 +56,7 @@ polissa:
   active: true
   altre_p: null
   bank: 13551
+  cie: null
   cnae: 986
   comercialitzadora: 1
   create_date: 2013-06-08 11:58:43.791177
@@ -64,7 +65,7 @@ polissa:
   data_alta: 2014-02-01
   data_baixa: null
   data_firma_contracte: 2013-06-08
-  data_ultima_lectura: 2014-12-28
+  data_ultima_lectura: 2015-08-29
   data_ultima_lectura_estimada: null
   direccio_notificacio: 13005
   direccio_pagament: 13005
@@ -74,9 +75,10 @@ polissa:
   facturacio: 1
   facturacio_distri: 2
   facturacio_potencia: icp
+  fiscal_position_id: null
   id: 13229
   llista_preu: 4
-  lot_facturacio: 38
+  lot_facturacio: 46
   modcontractual_activa: 12823
   name: 0...9
   name_auto: true
@@ -89,7 +91,7 @@ polissa:
   payment_mode_id: 7
   potencia: !!python/object/apply:decimal.Decimal
   - '4.400'
-  proxima_facturacio: 2015-02-28
+  proxima_facturacio: 2015-10-31
   ref_dist: 9.........4
   renovacio_auto: true
   soci: 12672
@@ -99,13 +101,14 @@ polissa:
   tarifa: 1
   tensio: 230
   tensio_normalitzada: 4
+  tg: '2'
   tipo_pago: 1
   tipus_vivenda: habitual
   titular: 12672
   trafo: 0.0
   versio_primera_factura: 138
-  write_date: 2015-01-07 19:52:03.126565
-  write_uid: 11
+  write_date: 2015-09-09 16:24:34.733732
+  write_uid: 10
 proces: null
 proces_id: 1
 process_name: C1

@@ -56,6 +56,7 @@ polissa:
   active: false
   altre_p: null
   bank: 14172
+  cie: null
   cnae: 308
   comercialitzadora: 1
   create_date: 2013-06-25 13:05:39.074438
@@ -74,6 +75,7 @@ polissa:
   facturacio: 1
   facturacio_distri: 1
   facturacio_potencia: icp
+  fiscal_position_id: null
   id: 13872
   llista_preu: 12
   lot_facturacio: null
@@ -99,6 +101,7 @@ polissa:
   tarifa: 7
   tensio: 230
   tensio_normalitzada: 4
+  tg: '2'
   tipo_pago: 1
   tipus_vivenda: habitual
   titular: 12802
