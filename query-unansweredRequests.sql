@@ -51,7 +51,10 @@ FROM (
 	LEFT JOIN
 		giscedata_polissa_modcontractual AS mod ON mod.polissa_id = pol.id AND mod.modcontractual_ant IS NULL
 	LEFT JOIN
-		giscedata_polissa_tarifa AS tar ON ((mod.id IS NULL AND tar.id = pol.tarifa) OR (mod.id IS NOT NULL AND tar.id = mod.tarifa))
+		giscedata_polissa_tarifa AS tar ON (
+			(mod.id IS     NULL AND tar.id = pol.tarifa) OR
+			(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR
+			FALSE)
 	LEFT JOIN
 		giscedata_cups_ps AS cups ON sw.cups_id = cups.id
 	LEFT JOIN

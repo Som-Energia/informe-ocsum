@@ -13,7 +13,7 @@
 - ~~Setup travisCI~~
 
 - To review:
-	- Distributor code is not the one required
+	- Distributor code is not the one required (using ref1 instead new ref2)
 	- Rejected includes MotivoRechazo field
 	- Rejected segregates by MotivoRechazo
 	- NumIncidencias accounted in unactivated requests, how many have any C2_03 A3_03
