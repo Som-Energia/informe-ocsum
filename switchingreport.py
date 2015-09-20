@@ -7,7 +7,7 @@ from dbqueries import *
 from debugcase import *
 from decimal import Decimal
 from lxml import etree
-from consolemsg import step
+from consolemsg import step, warn
 
 class SwichingReport:
 
@@ -73,39 +73,42 @@ class SwichingReport:
 	def generateRequestSummaries(self, root):
 		if not self.canvis : return
 		solicitudes = self.element(root, 'SolicitudesRealizadas')
-		for (
-			provincia, distribuidora, tipoCambio, tipoPunto, tipoTarifa
-			),canvi  in sorted(self.canvis.iteritems()):
-				datos = self.element(solicitudes, 'DatosSolicitudes')
-				self.element(datos, 'Provincia', provincia+'000')
-				self.element(datos, 'Distribuidor', distribuidora)
-				self.element(datos, 'Comer_entrante', 'R2-415')
-				self.element(datos, 'Comer_saliente', '0')
-				self.element(datos, 'TipoCambio', tipoCambio) # TODO
-				self.element(datos, 'TipoPunto', tipoPunto) # TODO
-				self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa]) # TODO
+		for keys, canvi in sorted(self.canvis.iteritems()):
+			provincia, distribuidora, tipoCambio, tipoPunto, tipoTarifa = keys
+			if any(key is None for key in keys):
+				warn("A key has a None value ({}) : {}".format(
+					keys, canvi.dump()))
+				continue
+			datos = self.element(solicitudes, 'DatosSolicitudes')
+			self.element(datos, 'Provincia', provincia+'000')
+			self.element(datos, 'Distribuidor', distribuidora)
+			self.element(datos, 'Comer_entrante', 'R2-415')
+			self.element(datos, 'Comer_saliente', '0')
+			self.element(datos, 'TipoCambio', tipoCambio) # TODO
+			self.element(datos, 'TipoPunto', tipoPunto) # TODO
+			self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa]) # TODO
 
-				self.element(datos, 'TotalSolicitudesEnviadas', canvi.get('sent',0))
-				self.element(datos, 'SolicitudesAnuladas', canvi.get('cancelled',0))
-				self.element(datos, 'Reposiciones', 0) # TODO: No ben definit
-				self.element(datos, 'ClientesSalientes', canvi.get('dropouts',0))
-				self.element(datos, 'NumImpagados', 0) # TODO: No ben definit
+			self.element(datos, 'TotalSolicitudesEnviadas', canvi.get('sent',0))
+			self.element(datos, 'SolicitudesAnuladas', canvi.get('cancelled',0))
+			self.element(datos, 'Reposiciones', 0) # TODO: No ben definit
+			self.element(datos, 'ClientesSalientes', canvi.get('dropouts',0))
+			self.element(datos, 'NumImpagados', 0) # TODO: No ben definit
 
-				if 'pendents' in canvi :
-					self.generatePendingDetails(datos, canvi.pendents)
+			if 'pendents' in canvi :
+				self.generatePendingDetails(datos, canvi.pendents)
 
-				if 'accepted' in canvi :
-					self.generateAcceptedDetails(datos, canvi.accepted)
+			if 'accepted' in canvi :
+				self.generateAcceptedDetails(datos, canvi.accepted)
 
-				if 'rejected' in canvi :
-					for rejected in canvi.rejected :
-						self.generateRejectedDetails(datos, rejected)
-	
-				if 'activationPending' in canvi :
-					self.generateActivationPendingDetails(datos, canvi.activationPending)
+			if 'rejected' in canvi :
+				for rejected in canvi.rejected :
+					self.generateRejectedDetails(datos, rejected)
 
-				if 'activated' in canvi :
-					self.generateActivated(datos, canvi.activated)
+			if 'activationPending' in canvi :
+				self.generateActivationPendingDetails(datos, canvi.activationPending)
+
+			if 'activated' in canvi :
+				self.generateActivated(datos, canvi.activated)
 
 	def generatePendingDetails(self, parent, canvisPendents) :
 		for codigoRetraso, n in [
