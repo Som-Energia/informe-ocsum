@@ -11,7 +11,7 @@ SELECT
 	dist.id AS distriid,
 	dist.ref AS refdistribuidora,
 	provincia.code AS codiprovincia,
-	tar.name as tarname,
+	tar.name AS tarname,
 	COUNT(*) AS nreq,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
@@ -62,11 +62,15 @@ LEFT JOIN
 LEFT JOIN
 	res_partner AS dist ON dist.id = pol.distribuidora
 LEFT JOIN
-	giscedata_polissa_tarifa AS tar ON tar.id = pol.tarifa
-LEFT JOIN
 	res_municipi ON res_municipi.id = cups.id_municipi
 LEFT JOIN
 	res_country_state AS provincia ON provincia.id = res_municipi.state
+LEFT JOIN
+	giscedata_polissa_tarifa AS tar ON (
+		/** being a drop out no need to check in the historical modifications */
+		tar.id = pol.tarifa AND
+		FALSE
+		)
 GROUP BY
 	dist.id,
 	dist.ref,
