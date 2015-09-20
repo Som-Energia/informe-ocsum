@@ -25,35 +25,50 @@ def debugCase(db, caseId, impersonate=False):
 	processNames = {v:k for k,v in processIds.items()}
 
 	with db.cursor() as cur :
-		cur.execute('SELECT * FROM giscedata_switching WHERE id=%(caseid)s',
-			dict(
-				caseid = caseId,
-			))
-		case = nsList(cur)
-		if not case: return ns()
-		case = case[0]
+		def query(aQuery, **vars):
+			cur.execute(aQuery, vars)
+			return nsList(cur)
+
+		def queryOne(aQuery, **vars):
+			many = query(aQuery, **vars)
+			if len(many) is not 1:
+				warn("S'esperava un sol registre i s'han trobat {}\n"
+					"A la query:\n{}\nAmb:\n{}"
+					.format(len(many),aQuery,ns(vars).dump()))
+			return many[0]
+
+		def queryOneOrEmpty(aQuery, **vars):
+			many = query(aQuery, **vars)
+			if not many: return ns()
+			if len(many) is not 1:
+				warn("S'esperava un sol registre o cap i s'han trobat {}\n"
+					"A la query:\n{}\nAmb:\n{}"
+					.format(len(many),aQuery,ns(vars).dump()))
+			return many[0]
+
+
+		case = queryOneOrEmpty(
+			'SELECT * FROM giscedata_switching WHERE id=%(caseid)s',
+			caseid = caseId,
+			)
 		case.process_name = processNames[case.proces_id]
-		cur.execute("""\
+		case.steps = query("""\
 			SELECT * FROM giscedata_switching_step_header
 			WHERE sw_id=%(caseid)s
 			ORDER BY create_date
 			""",
-			dict(
-				caseid = caseId,
-			))
-		case.steps = nsList(cur)
+			caseid = caseId,
+			)
 		for step in case.steps :
 			maybeSteps = idsPasses(db, processNames[case.proces_id])
 			step.details = []
 			for maybeStepName, maybeStepId in maybeSteps.items():
-				cur.execute("""\
+				details = query("""\
 					SELECT * FROM giscedata_switching_{}
 					WHERE header_id=%(id)s
 					""".format(maybeStepName.lower()),
-					dict(
-						id = step.id,
-					))
-				details = nsList(cur)
+					id = step.id
+					)
 				if not details: continue
 				if impersonate:
 					for detail in details:
@@ -65,25 +80,21 @@ def debugCase(db, caseId, impersonate=False):
 			if len(step.details)>1:
 				warn("Més d'un detall pel pas")
 			step.details = step.details[0]
-		cur.execute("""\
+		case.case = queryOne("""\
 			SELECT * FROM crm_case
 			WHERE id=%(crm)s
 			""",
-			dict(
-				crm=case.case_id,
-			))
-		case.case=nsList(cur)[0]
-		cur.execute("""\
+			crm=case.case_id,
+			)
+		case.polissa = queryOne("""\
 			SELECT * FROM giscedata_polissa
 			WHERE id=%(polissaid)s
 			""",
-			dict(
-				polissaid=case.cups_polissa_id,
-			))
-		case.polissa=nsList(cur)[0]
+			polissaid=case.cups_polissa_id,
+			)
         if impersonate:
-			impersonatePersonalData(case.polissa)
-			case.polissa.observacions = 'bla bla bla'
+		impersonatePersonalData(case.polissa)
+		case.polissa.observacions = 'bla bla bla'
 	
 	return case
 
@@ -142,6 +153,10 @@ class DebugCase_Test(b2btest.TestCase) :
 #	@skipIfNoPersonalDataAccess()
 	def test_debugCase_activated_b1(self) :
 		self._test_debugCase('15235', 'activated_b1')
+
+#	@skipIfNoPersonalDataAccess()
+	def test_debugCase_cancelpending_c2(self) :
+		self._test_debugCase('4149', 'cancelpending_c2')
 
 
 
