@@ -154,5 +154,6 @@ so that three requests of the same contract count as three, not one.
 - 9982: tiene un 02 con campos a null, rebutjat i proritat 5 (acceptat)
 - 6538: prioritat 5 ok a 2015-02
 - 7132: prioritat 5 ok a 2015-03
-
+- 5335: Polissa sense cups associat (al formulari estava)
+- 4149: Cancelacio no resposta
 
