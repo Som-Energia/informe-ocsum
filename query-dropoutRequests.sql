@@ -12,6 +12,8 @@ SELECT
 	dist.ref AS refdistribuidora,
 	provincia.code AS codiprovincia,
 	tar.name AS tarname,
+	'C3' AS tipocambio,
+	'5' AS tipopunto,
 	COUNT(*) AS nreq,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
