@@ -14,6 +14,8 @@ SELECT
 	dist.ref AS refdistribuidora,
 	provincia.code AS codiprovincia,
 	tar.name as tarname,
+	'C3' AS tipocambio,
+	'5' AS tipopunto,
 	COUNT(*),
 	SUM(CASE WHEN (
 		data_activacio <= sw.create_date + interval '66 days'

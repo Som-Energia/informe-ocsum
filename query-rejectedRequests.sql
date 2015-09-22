@@ -11,6 +11,8 @@ SELECT
 	s.refdistribuidora,
 	codiprovincia,
 	s.tarname,
+	'C3' AS tipocambio,
+	'5' AS tipopunto,
 	s.rejectreason,
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
