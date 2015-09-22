@@ -187,7 +187,7 @@ class SwichingReport:
 			key=(
 				pendent.codiprovincia,
 				pendent.refdistribuidora,
-				'C3', # tipoCambio
+				pendent.tipocambio,
 				1, # TODO
 				pendent.tarname,
 				)
@@ -198,7 +198,7 @@ class SwichingReport:
 			key=(
 				dropout.codiprovincia,
 				dropout.refdistribuidora,
-				'C3', # tipoCambio
+				dropout.tipocambio,
 				1, # TODO
 				dropout.tarname,
 				)
@@ -209,7 +209,7 @@ class SwichingReport:
 			key=(
 				cancelled.codiprovincia,
 				cancelled.refdistribuidora,
-				'C3', # tipoCambio
+				cancelled.tipocambio,
 				1, # TODO
 				cancelled.tarname,
 				)
@@ -906,7 +906,7 @@ if __name__ == '__main__' :
 	with open(xmlname, 'w') as xml:
 		xml.write(result)
 
-
+unittest.TestCase.__str__ = unittest.TestCase.id
 
 
 

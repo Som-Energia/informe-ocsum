@@ -444,7 +444,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>472</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -662,6 +662,20 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>11</NumSolicitudesActivadas>
       </DetalleActivadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>08000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C4</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>1</TarifaATR>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>08000</Provincia>
@@ -1350,7 +1364,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -1455,6 +1469,20 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>17000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C4</TipoCambio>
+      <TipoPunto>1</TipoPunto>
+      <TarifaATR>1</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>17000</Provincia>
