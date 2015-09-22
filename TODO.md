@@ -14,7 +14,8 @@
 
 - No a3_07 cases to test in real data
 - No a3_02 rejected cases to test in real data
-- No a3_02 accepted cases to test in real data
+- No a3_02 accepted cases to test in real data (some in december 2012)
+- No a3_05 cases to test in real data
 
 
 - To review:

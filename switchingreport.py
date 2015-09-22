@@ -265,7 +265,7 @@ class SwichingReport:
 			key=(
 				summary.codiprovincia,
 				summary.refdistribuidora,
-				'C3', # tipoCambio
+				summary.tipocambio,
 				1, # TODO
 				summary.tarname,
 				)
@@ -774,6 +774,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylateissues=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				),
 			])

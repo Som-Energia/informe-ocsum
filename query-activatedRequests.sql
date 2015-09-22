@@ -14,7 +14,7 @@ SELECT
 	dist.ref AS refdistribuidora,
 	provincia.code AS codiprovincia,
 	tar.name as tarname,
-	'C3' AS tipocambio,
+	step.tipocambio,
 	'5' AS tipopunto,
 	COUNT(*),
 	SUM(CASE WHEN (
@@ -51,7 +51,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		'C3' AS tipo_cambio,
+		'C3' AS tipocambio,
 		data_activacio,
 		'c1' AS process
 	FROM giscedata_switching_c1_05
@@ -63,7 +63,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		'C3' AS tipo_cambio,
+		'C3' AS tipocambio,
 		data_activacio,
 		'c2' AS process
 	FROM giscedata_switching_c2_05
@@ -75,7 +75,7 @@ FROM
 	SELECT
 		id AS pass_id,
 		header_id,
-		'C4' AS tipo_cambio,
+		'C4' AS tipocambio,
 		data_activacio,
 		'a3' AS process
 	FROM giscedata_switching_a3_05
@@ -113,11 +113,13 @@ GROUP BY
 	provincia.code,
 	provincia.name,
 	tar.name,
+	tipocambio,
 	TRUE
 ORDER BY
 	dist.name,
 	provincia.code,
 	tar.name,
+	tipocambio,
 	TRUE
 ;
 
