@@ -3,7 +3,7 @@
 	- c1_01 with no c1_02
 	- c2_01 with no c2_02
 	- a3_01 with no a3_02
-    And case not closed at the end of the period
+	And case not closed at the end of the period
 	TODO: Include case_.priority=5 with pol.data_alta within period
 */
 SELECT
@@ -109,7 +109,7 @@ FROM (
 			ON sth.sw_id = sw.id
 		LEFT JOIN
 			crm_case AS case_
-            ON case_.id = sw.case_id
+			ON case_.id = sw.case_id
 		WHERE
 			(
 				case_.date_closed IS NULL OR
