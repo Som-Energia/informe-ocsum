@@ -65,20 +65,21 @@ polissa:
   data_alta: 2014-04-04
   data_baixa: null
   data_firma_contracte: 2013-11-25
-  data_ultima_lectura: 2015-07-11
+  data_ultima_lectura: 2015-08-11
   data_ultima_lectura_estimada: null
   direccio_notificacio: 18126
   direccio_pagament: 18126
   distribuidora: 2301
   donatiu: false
   enviament: email
+  etag: null
   facturacio: 1
   facturacio_distri: 2
   facturacio_potencia: icp
   fiscal_position_id: null
   id: 21403
   llista_preu: 4
-  lot_facturacio: 44
+  lot_facturacio: 45
   modcontractual_activa: 17481
   name: 1...7
   name_auto: true
@@ -91,7 +92,7 @@ polissa:
   payment_mode_id: 7
   potencia: !!python/object/apply:decimal.Decimal
   - '4.400'
-  proxima_facturacio: 2015-08-31
+  proxima_facturacio: 2015-09-30
   ref_dist: 2....8
   renovacio_auto: true
   soci: 17664
@@ -101,12 +102,13 @@ polissa:
   tarifa: 1
   tensio: 230
   tensio_normalitzada: 4
+  tg: '2'
   tipo_pago: 1
   tipus_vivenda: habitual
   titular: 21548
   trafo: 0.0
   versio_primera_factura: 148
-  write_date: 2015-07-22 14:30:49.261254
+  write_date: 2015-08-20 12:35:27.751062
   write_uid: 10
 proces: null
 proces_id: 2
@@ -127,6 +129,7 @@ steps:
     codi_document: 4.......F
     cognom_1: R.s
     cognom_2: ''
+    control_potencia: '1'
     cp_installacio: Y
     cp_propietat: N
     create_date: 2013-11-25 12:12:28.390131
