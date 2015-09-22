@@ -12,11 +12,17 @@
 - ~~Add setup.py to run tests~~
 - ~~Setup travisCI~~
 
+- ~~Segregation by TipoCambio~~
+- ~~Segregation by TipoPunto~~
+- NumIncidencias accounted in unactivated requests, count any C2_03 A3_03
+- NumIncidencias accounted in activated requests, count any C2_03 A3_03
+- Taking into account 07 steps (activation with intervention)
 - No a3_07 cases to test in real data
 - No a3_02 rejected cases to test in real data
 - No a3_02 accepted cases to test in real data (some in december 2012)
 - No a3_05 cases to test in real data
-- BUG: unactivated not properly selecting cases, example: the A3 one
+- BUG: unactivated not properly selecting cases, example: the A3 one in 2014-02
+- BUG: Reject reason None
 
 
 - To review:
@@ -24,12 +30,8 @@
 	- ~~Distributor code is not the one required (using ref1 instead new ref2)~~
 	- Rejected includes MotivoRechazo field
 	- Rejected segregates by MotivoRechazo
-	- NumIncidencias accounted in unactivated requests, how many have any C2_03 A3_03
-	- NumIncidencias accounted in activated requests, how many have any C2_03 A3_03
 	- TM en accepted, rejected, activated
 	- TipoRetraso en unanswered, accepted, rejected, unactivated, activated
-	- Segregation by TipoCambio
-	- Segregation by TipoPunto
 - Deployment
 	- Separate tests from code
 	- Add setup.py to run install
