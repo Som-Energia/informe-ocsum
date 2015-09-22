@@ -15,7 +15,7 @@ SELECT
 	provincia.code AS codiprovincia,
 	tar.name as tarname,
 	step.tipocambio,
-	'5' AS tipopunto,
+	tipopunto,
 	COUNT(*),
 	SUM(CASE WHEN (
 		data_activacio <= sw.create_date + interval '66 days'
@@ -95,6 +95,10 @@ LEFT JOIN
 LEFT JOIN
 	res_partner AS dist ON dist.id = pol.distribuidora
 LEFT JOIN
+	res_municipi ON res_municipi.id = cups.id_municipi
+LEFT JOIN
+	res_country_state AS provincia ON provincia.id = res_municipi.state
+LEFT JOIN
 	giscedata_polissa_modcontractual AS mod ON mod.polissa_id = pol.id AND mod.modcontractual_ant IS NULL
 LEFT JOIN
 	giscedata_polissa_tarifa AS tar ON (
@@ -102,10 +106,18 @@ LEFT JOIN
 		(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR
 		FALSE
 		)
-LEFT JOIN
-	res_municipi ON res_municipi.id = cups.id_municipi
-LEFT JOIN
-	res_country_state AS provincia ON provincia.id = res_municipi.state
+LEFT JOIN (
+	VALUES
+		(10000,1000000000, '1'),
+		(450,10000, '2'),
+		(50,450, '3'),
+		(15,50, '4'),
+		(0,15, '5')
+	) AS potencia(minim, maxim, tipopunto) ON (
+		(mod.id IS     NULL AND potencia.minim < pol.potencia AND potencia.maxim >= pol.potencia) OR
+		(mod.id IS NOT NULL AND potencia.minim < mod.potencia AND potencia.maxim >= mod.potencia) OR
+		FALSE
+	)
 GROUP BY
 	dist.id,
 	dist.ref,
@@ -114,6 +126,7 @@ GROUP BY
 	provincia.name,
 	tar.name,
 	tipocambio,
+	tipopunto,
 	TRUE
 ORDER BY
 	dist.name,

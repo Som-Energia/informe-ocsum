@@ -214,8 +214,8 @@ GROUP BY
 	s.tarname,
 	s.codiprovincia,
 	s.nomprovincia,
-	s.tipocambio,
-	s.tipopunto,
+	tipocambio,
+	tipopunto,
 	TRUE
 ORDER BY
 	s.distri,
