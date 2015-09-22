@@ -11,7 +11,7 @@ SELECT
 	s.refdistribuidora,
 	codiprovincia,
 	s.tarname,
-	'C3' AS tipocambio,
+	s.tipocambio,
 	'5' AS tipopunto,
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
@@ -57,6 +57,7 @@ FROM (
 		dist.ref AS refdistribuidora,
 		dist.name AS nomdistribuidora,
 		tar.name AS tarname,
+		tipo_cambio AS tipocambio,
 		sw.create_date AS create_date,
 		CASE
 			WHEN tar.tipus = 'AT' THEN
@@ -199,11 +200,13 @@ GROUP BY
 	s.tarname,
 	s.codiprovincia,
 	s.nomprovincia,
+	s.tipocambio,
 	TRUE
 ORDER BY
 	s.distri,
 	s.codiprovincia,
 	s.tarname,
+	s.tipocambio,
 	TRUE
 ;
 

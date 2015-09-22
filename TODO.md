@@ -12,9 +12,14 @@
 - ~~Add setup.py to run tests~~
 - ~~Setup travisCI~~
 
+- No a3_07 cases to test in real data
+- No a3_02 rejected cases to test in real data
+- No a3_02 accepted cases to test in real data
+
+
 - To review:
 	- ~~Take TarifaATR from case to be unaffected by later changes~~
-	- Distributor code is not the one required (using ref1 instead new ref2)
+	- ~~Distributor code is not the one required (using ref1 instead new ref2)~~
 	- Rejected includes MotivoRechazo field
 	- Rejected segregates by MotivoRechazo
 	- NumIncidencias accounted in unactivated requests, how many have any C2_03 A3_03

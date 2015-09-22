@@ -157,3 +157,5 @@ so that three requests of the same contract count as three, not one.
 - 5335: Polissa sense cups associat (al formulari estava)
 - 4149: Cancelacio no resposta
 
+- There is no a3-07 cancelation step to test in real data
+
