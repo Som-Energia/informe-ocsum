@@ -364,7 +364,7 @@
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>2</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>05</TipoRetraso>
@@ -428,31 +428,13 @@
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>1</ClientesSalientes>
+      <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
       </DetalleAceptadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>07000</Provincia>
-      <Distribuidor>0169</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>08000</Provincia>
@@ -462,18 +444,18 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>475</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>5</ClientesSalientes>
+      <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>12</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>22</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>2</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>3</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>15</TipoRetraso>
@@ -530,7 +512,7 @@
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>3</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>15</TipoRetraso>
@@ -696,11 +678,11 @@
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>2</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>3</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>5</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>3</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -740,42 +722,6 @@
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>08000</Provincia>
-      <Distribuidor>0177</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>08000</Provincia>
-      <Distribuidor>0259</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1T</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
         <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
     </DatosSolicitudes>
@@ -879,24 +825,6 @@
       </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
-      <Provincia>09000</Provincia>
-      <Distribuidor>0280</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
       <Provincia>10000</Provincia>
       <Distribuidor>0021</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
@@ -965,10 +893,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>11000</Provincia>
@@ -1411,10 +1335,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
       <DetalleRechazadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesRechazadas>0.0</TMSolicitudesRechazadas>
@@ -1430,14 +1350,14 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>70</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>4</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>5</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>15</TipoRetraso>
@@ -1551,35 +1471,17 @@
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>2</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>3</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>4</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetalleAceptadas>
         <TipoRetraso>05</TipoRetraso>
         <TMSolicitudesAceptadas>13.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>17000</Provincia>
-      <Distribuidor>0112</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>17000</Provincia>
@@ -1613,7 +1515,7 @@
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
+        <TipoRetraso>00</TipoRetraso>
         <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
     </DatosSolicitudes>
@@ -1637,42 +1539,6 @@
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>17000</Provincia>
-      <Distribuidor>0224</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>17000</Provincia>
-      <Distribuidor>0259</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>17000</Provincia>
       <Distribuidor>0268</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
@@ -1684,28 +1550,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>2</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>17000</Provincia>
-      <Distribuidor>0268</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>17000</Provincia>
@@ -2103,24 +1947,6 @@
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>22000</Provincia>
-      <Distribuidor>0282</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>22000</Provincia>
       <Distribuidor>0291</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
@@ -2363,24 +2189,6 @@
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>25000</Provincia>
-      <Distribuidor>0170</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>25000</Provincia>
       <Distribuidor>0187</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
@@ -2392,10 +2200,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
       <DetalleRechazadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesRechazadas>-16.0</TMSolicitudesRechazadas>
@@ -2434,10 +2238,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>26000</Provincia>
@@ -2527,10 +2327,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>27000</Provincia>
@@ -2563,10 +2359,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>28000</Provincia>
@@ -2707,8 +2499,12 @@
       <TotalSolicitudesEnviadas>39</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>3</ClientesSalientes>
+      <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
+      <DetallePendientesRespuesta>
+        <TipoRetraso>00</TipoRetraso>
+        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
+      </DetallePendientesRespuesta>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesAceptadas>0.2</TMSolicitudesAceptadas>
@@ -2855,10 +2651,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>05</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>29000</Provincia>
@@ -2975,7 +2767,7 @@
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>2</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
@@ -3083,28 +2875,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>31000</Provincia>
-      <Distribuidor>0203</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>32000</Provincia>
@@ -3124,24 +2894,6 @@
         <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>32000</Provincia>
-      <Distribuidor>0160</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>2T</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>33000</Provincia>
@@ -3207,24 +2959,6 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>35000</Provincia>
-      <Distribuidor>0031</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
-      <TarifaATR>1</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>36000</Provincia>
@@ -3384,10 +3118,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
@@ -3534,11 +3264,11 @@
       <TotalSolicitudesEnviadas>51</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>1</ClientesSalientes>
+      <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>00</TipoRetraso>
-        <NumSolicitudesPendientes>3</NumSolicitudesPendientes>
+        <NumSolicitudesPendientes>6</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetallePendientesRespuesta>
         <TipoRetraso>05</TipoRetraso>
@@ -3753,12 +3483,16 @@
       <TipoPunto>1</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>80</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <SolicitudesAnuladas>1</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
         <TipoRetraso>05</TipoRetraso>
+        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
+      </DetallePendientesRespuesta>
+      <DetallePendientesRespuesta>
+        <TipoRetraso>15</TipoRetraso>
         <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetalleAceptadas>
@@ -4002,7 +3736,7 @@
       <TotalSolicitudesEnviadas>18</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>1</ClientesSalientes>
+      <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
@@ -4168,7 +3902,7 @@
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
+        <TipoRetraso>00</TipoRetraso>
         <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
       <DetalleAceptadas>
