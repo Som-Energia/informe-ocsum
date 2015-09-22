@@ -24,6 +24,7 @@ SELECT
 		) THEN 1 ELSE 0 END) AS unattended,
 */
 
+	/* Not required by the report */
 	SUM(CASE WHEN (
 		%(periodEnd)s <= termini
 		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
@@ -37,6 +38,9 @@ SELECT
 		%(periodEnd)s > termini + interval '15 days'
 		) THEN DATE_PART('day', %(periodEnd)s - create_date) ELSE 0 END
 	) AS verylateaddedtime,
+	0 AS ontimeissues,
+	0 AS lateissues,
+	0 AS verylateissues,
 	nomprovincia,
 	s.nomdistribuidora,
 	STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
