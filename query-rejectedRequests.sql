@@ -11,7 +11,7 @@ SELECT
 	s.refdistribuidora,
 	codiprovincia,
 	s.tarname,
-	'C3' AS tipocambio,
+	tipocambio,
 	'5' AS tipopunto,
 	s.rejectreason,
 	COUNT(*) AS nprocessos,
@@ -58,6 +58,7 @@ FROM (
 		dist.ref AS refdistribuidora,
 		dist.name AS nomdistribuidora,
 		tar.name AS tarname,
+		tipocambio,
 		sw.create_date AS create_date,
 		(
 			SELECT MIN(motiu.name)
@@ -79,7 +80,7 @@ FROM (
 		/* c1_02, rebuig=true, accepted within the period */
 			SELECT
 				header_id,
-				'C3' AS tipo_cambio,
+				'C3' AS tipocambio,
 				'c1' AS process,
 				sth.date_created AS data_resposta,
 				TRUE
@@ -96,7 +97,7 @@ FROM (
 		/* c2_02, rebuig=true, accepted within the period */
 			SELECT
 				step.header_id,
-				'C3' AS tipo_cambio,
+				'C3' AS tipocambio,
 				'c2' AS process,
 				sth.date_created AS data_resposta,
 				TRUE
@@ -113,7 +114,7 @@ FROM (
 		/* a3_02, rebuig=true, accepted within the period */
 			SELECT
 				header_id,
-				'C4' AS tipo_cambio,
+				'C4' AS tipocambio,
 				'a3' AS process,
 				sth.date_created AS data_resposta,
 				TRUE
@@ -130,7 +131,7 @@ FROM (
 		/* single 01 step, priority=5, polissa.data_alta en el periode */
 			SELECT
 				sth.id AS header_id,
-				step01.tipo_cambio AS tipo_cambio,
+				step01.tipocambio AS tipocambio,
 				step01.process AS process,
 				pol.data_alta AS data_resposta,
 				TRUE
@@ -158,21 +159,21 @@ FROM (
 			JOIN (
 				/* and 01 steps */
 				SELECT
-					'C3' AS tipo_cambio,
+					'C3' AS tipocambio,
 					'c1' AS process,
 					st.header_id AS header_id
 				FROM
 					giscedata_switching_c1_01 AS st
 				UNION
 				SELECT
-					'C3' AS tipo_cambio,
+					'C3' AS tipocambio,
 					'c2' AS process,
 					st.header_id AS header_id
 				FROM
 					giscedata_switching_c2_01 AS st
 				UNION
 				SELECT
-					'C4' AS tipo_cambio,
+					'C4' AS tipocambio,
 					'a3' AS process,
 					st.header_id AS header_id
 				FROM
@@ -215,6 +216,7 @@ GROUP BY
 	s.codiprovincia,
 	s.nomprovincia,
 	s.rejectreason,
+	s.tipocambio,
 	TRUE
 ORDER BY
 	s.distri,

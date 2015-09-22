@@ -58,9 +58,9 @@ class SwichingReport:
 		return etree.tostring(
 			root,
 			pretty_print=True,
-        	xml_declaration=True,
+			xml_declaration=True,
 			encoding='utf-8',
-        	method="xml",
+			method="xml",
 			)
 
 	def generateHeader(self, parent):
@@ -242,7 +242,7 @@ class SwichingReport:
 			key = (
 				summary.codiprovincia,
 				summary.refdistribuidora,
-				'C3', # tipoCambio
+				summary.tipocambio,
 				1, # TODO
 				summary.tarname,
 				)
@@ -612,6 +612,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylateaddedtime=0,
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				rejectreason='03',
 				),
@@ -646,6 +647,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylateaddedtime=0,
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				rejectreason='03',
 				),
@@ -659,6 +661,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylateaddedtime=0,
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-002',
 				rejectreason='01',
 				),
