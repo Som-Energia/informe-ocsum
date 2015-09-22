@@ -84,9 +84,9 @@ class SwichingReport:
 			self.element(datos, 'Distribuidor', distribuidora)
 			self.element(datos, 'Comer_entrante', 'R2-415')
 			self.element(datos, 'Comer_saliente', '0')
-			self.element(datos, 'TipoCambio', tipoCambio) # TODO
+			self.element(datos, 'TipoCambio', tipoCambio)
 			self.element(datos, 'TipoPunto', tipoPunto) # TODO
-			self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa]) # TODO
+			self.element(datos, 'TarifaATR', self._fareCodes[tipoTarifa])
 
 			self.element(datos, 'TotalSolicitudesEnviadas', canvi.get('sent',0))
 			self.element(datos, 'SolicitudesAnuladas', canvi.get('cancelled',0))
@@ -182,49 +182,49 @@ class SwichingReport:
 	def details(self, key) :
 		return self.canvis.setdefault(key, ns())
 
-	def fillSent(self,sents) :
-		for sent in sents:
+	def fillSent(self,summaries) :
+		for summary in summaries:
 			key=(
-				sent.codiprovincia,
-				sent.refdistribuidora,
-				sent.tipocambio,
+				summary.codiprovincia,
+				summary.refdistribuidora,
+				summary.tipocambio,
 				1, # TODO
-				sent.tarname,
+				summary.tarname,
 				)
-			self.details(key).sent = sent.nreq
+			self.details(key).sent = summary.nreq
 
-	def fillDropOuts(self, dropouts):
-		for dropout in dropouts:
+	def fillDropOuts(self, summaries):
+		for summary in summaries:
 			key=(
-				dropout.codiprovincia,
-				dropout.refdistribuidora,
-				dropout.tipocambio,
+				summary.codiprovincia,
+				summary.refdistribuidora,
+				summary.tipocambio,
 				1, # TODO
-				dropout.tarname,
+				summary.tarname,
 				)
-			self.details(key).dropouts = dropout.nreq
+			self.details(key).dropouts = summary.nreq
 
-	def fillCancelled(self,cancelledOnes) :
-		for cancelled in cancelledOnes:
+	def fillCancelled(self,summaries) :
+		for summary in summaries:
 			key=(
-				cancelled.codiprovincia,
-				cancelled.refdistribuidora,
-				cancelled.tipocambio,
+				summary.codiprovincia,
+				summary.refdistribuidora,
+				summary.tipocambio,
 				1, # TODO
-				cancelled.tarname,
+				summary.tarname,
 				)
-			self.details(key).cancelled = cancelled.nreq
+			self.details(key).cancelled = summary.nreq
 
-	def fillPending(self,pendents) :
-		for pendent in pendents:
+	def fillPending(self,summaries) :
+		for summary in summaries:
 			key=(
-				pendent.codiprovincia,
-				pendent.refdistribuidora,
-				pendent.tipocambio,
+				summary.codiprovincia,
+				summary.refdistribuidora,
+				summary.tipocambio,
 				1, # TODO
-				pendent.tarname,
+				summary.tarname,
 				)
-			self.details(key).pendents = pendent
+			self.details(key).pendents = summary
 
 	def fillAccepted(self, sumaries) :
 		for summary in sumaries:
