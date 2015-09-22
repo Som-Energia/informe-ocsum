@@ -360,6 +360,39 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>3</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>1</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>07000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>07000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
@@ -423,22 +456,41 @@
       </DetalleActivadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
-      <Provincia>07000</Provincia>
+      <Provincia>08000</Provincia>
       <Distribuidor>0031</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>5</TipoPunto>
+      <TipoPunto>3</TipoPunto>
       <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>1</ClientesSalientes>
+      <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>08000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>13</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.1</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>10</NumSolicitudesAceptadas>
       </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
@@ -635,7 +687,7 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>14</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
@@ -644,11 +696,6 @@
         <TipoRetraso>15</TipoRetraso>
         <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
       </DetallePendientesRespuesta>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.1</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>11</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
       <DetalleRechazadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesRechazadas>3.0</TMSolicitudesRechazadas>
@@ -758,7 +805,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>5</TipoPunto>
+      <TipoPunto>4</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1128,6 +1175,25 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>14000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>11</TotalSolicitudesEnviadas>
@@ -1146,25 +1212,6 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>5</NumSolicitudesActivadas>
       </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>14000</Provincia>
-      <Distribuidor>0031</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>5</TipoPunto>
-      <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>15000</Provincia>
@@ -1375,6 +1422,25 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>17000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
@@ -1466,16 +1532,11 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
         <TMActivacion>24.0</TMActivacion>
@@ -1908,6 +1969,25 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>22000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
@@ -1966,25 +2046,6 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>22000</Provincia>
-      <Distribuidor>0031</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>5</TipoPunto>
-      <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>22000</Provincia>
@@ -2120,6 +2181,25 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>1</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.3</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>25000</Provincia>
+      <Distribuidor>0031</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>31</TotalSolicitudesEnviadas>
@@ -2211,16 +2291,11 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>1</SolicitudesAnuladas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.3</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>3</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
         <TMActivacion>43.0</TMActivacion>
@@ -2407,6 +2482,25 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>28000</Provincia>
+      <Distribuidor>0021</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>78</TotalSolicitudesEnviadas>
@@ -2509,25 +2603,6 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>28000</Provincia>
-      <Distribuidor>0021</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>5</TipoPunto>
-      <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>28000</Provincia>
@@ -3007,6 +3082,25 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>36000</Provincia>
+      <Distribuidor>0022</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
@@ -3034,16 +3128,11 @@
       <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
+      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
         <TMActivacion>2.0</TMActivacion>
@@ -3521,6 +3610,25 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
+      <TipoPunto>4</TipoPunto>
+      <TarifaATR>3</TarifaATR>
+      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetalleAceptadas>
+        <TipoRetraso>00</TipoRetraso>
+        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>2</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>46000</Provincia>
+      <Distribuidor>0021</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
       <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>80</TotalSolicitudesEnviadas>
@@ -3658,25 +3766,6 @@
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>4</NumSolicitudesAceptadas>
-      </DetalleAceptadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>46000</Provincia>
-      <Distribuidor>0021</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>5</TipoPunto>
-      <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetalleAceptadas>
-        <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
-        <NumSolicitudesAceptadas>2</NumSolicitudesAceptadas>
       </DetalleAceptadas>
     </DatosSolicitudes>
     <DatosSolicitudes>

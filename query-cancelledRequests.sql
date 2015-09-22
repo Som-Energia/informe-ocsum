@@ -14,7 +14,7 @@ SELECT
 	provincia.code AS codiprovincia,
 	tar.name AS tarname,
 	tipocambio,
-	'5' AS tipopunto,
+	tipopunto,
 	COUNT(*) AS nreq,
 	provincia.name AS nomprovincia,
 	dist.name AS distriname,
@@ -79,6 +79,18 @@ LEFT JOIN
 		(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR  /* Modification, means sometime activated, use the first value */
 		FALSE
 		)
+LEFT JOIN (
+	VALUES
+		(10000,1000000000, '1'),
+		(450,10000, '2'),
+		(50,450, '3'),
+		(15,50, '4'),
+		(0,15, '5')
+	) AS potencia(minim, maxim, tipopunto) ON (
+		(mod.id IS     NULL AND potencia.minim < pol.potencia AND potencia.maxim >= pol.potencia) OR
+		(mod.id IS NOT NULL AND potencia.minim < mod.potencia AND potencia.maxim >= mod.potencia) OR
+		FALSE
+	)
 GROUP BY
 	dist.id,
 	dist.ref,
@@ -87,12 +99,14 @@ GROUP BY
 	provincia.name,
 	tar.name,
 	tipocambio,
+	tipopunto,
 	TRUE
 ORDER BY
 	dist.name,
 	provincia.code,
 	tar.name,
 	tipocambio,
+	tipopunto,
 	TRUE
 ;
 
