@@ -4,7 +4,7 @@
 	- c2_02
 	- a3_03
 	- with rejected=FALSE
-º	TODO: Include case_.priority=5 with pol.data_alta within period
+	TODO: Include case_.priority=5 with pol.data_alta within period
 */
 SELECT
 	s.distri,
@@ -57,7 +57,7 @@ FROM (
 		dist.ref AS refdistribuidora,
 		dist.name AS nomdistribuidora,
 		tar.name AS tarname,
-		tipo_cambio AS tipocambio,
+		step.tipocambio AS tipocambio,
 		sw.create_date AS create_date,
 		CASE
 			WHEN tar.tipus = 'AT' THEN
@@ -70,7 +70,7 @@ FROM (
 		/* c1_02, rebuig=false, accepted within the period */
 			SELECT
 				header_id,
-				'C3' AS tipo_cambio,
+				'C3' AS tipocambio,
 				'c1' AS process,
 				data_acceptacio AS data_resposta,
 				TRUE
@@ -85,7 +85,7 @@ FROM (
 		/* c2_02, rebuig=false, accepted within the period */
 			SELECT
 				header_id,
-				'C3' AS tipo_cambio,
+				'C3' AS tipocambio,
 				'c2' AS process,
 				data_acceptacio AS data_resposta,
 				TRUE
@@ -100,7 +100,7 @@ FROM (
 		/* a3_02, rebuig=false, accepted within the period */
 			SELECT
 				header_id,
-				'C4' AS tipo_cambio,
+				'C4' AS tipocambio,
 				'a3' AS process,
 				data_acceptacio AS data_resposta,
 				TRUE
@@ -115,7 +115,7 @@ FROM (
 		/* single 01 step, priority=5, polissa.data_alta en el periode */
 			SELECT
 				sth.id AS header_id,
-				step01.tipo_cambio AS tipo_cambio,
+				step01.tipocambio AS tipocambio,
 				step01.process AS process,
 				pol.data_alta AS data_resposta,
 				TRUE
@@ -143,21 +143,21 @@ FROM (
 			JOIN (
 				/* and 01 steps */
 				SELECT
-					'C3' AS tipo_cambio,
+					'C3' AS tipocambio,
 					'c1' AS process,
 					st.header_id AS header_id
 				FROM
 					giscedata_switching_c1_01 AS st
 				UNION
 				SELECT
-					'C3' AS tipo_cambio,
+					'C3' AS tipocambio,
 					'c2' AS process,
 					st.header_id AS header_id
 				FROM
 					giscedata_switching_c2_01 AS st
 				UNION
 				SELECT
-					'C4' AS tipo_cambio,
+					'C4' AS tipocambio,
 					'a3' AS process,
 					st.header_id AS header_id
 				FROM

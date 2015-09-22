@@ -70,7 +70,7 @@ FROM (
 	SELECT
 		id AS pass_id,
 		header_id,
-		'C3' AS tipo_cambio,
+		'C3' AS tipocambio,
 		'c1' AS process
 	FROM giscedata_switching_c1_01
 	WHERE
@@ -80,7 +80,7 @@ FROM (
 	SELECT
 		id AS pass_id,
 		header_id,
-		'C3' AS tipo_cambio,
+		'C3' AS tipocambio,
 		'c2' AS process
 	FROM giscedata_switching_c2_01
 	WHERE
@@ -90,7 +90,7 @@ FROM (
 	SELECT
 		id AS pass_id,
 		header_id,
-		'C4' AS tipo_cambio,
+		'C4' AS tipocambio,
 		'a3' AS process
 	FROM giscedata_switching_a3_01
 	WHERE
