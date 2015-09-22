@@ -6,7 +6,7 @@ SELECT
 	s.refdistribuidora,
 	codiprovincia,
 	s.tarname,
-	'C3' AS tipocambio,
+	tipocambio AS tipocambio,
 	'5' AS tipopunto,
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
@@ -55,6 +55,7 @@ FROM (
 		dist.ref AS refdistribuidora,
 		dist.name AS nomdistribuidora,
 		tar.name AS tarname,
+		cn02.tipocambio AS tipocambio,
 		sw.create_date AS create_date,
 		CASE
 			WHEN tar.tipus = 'AT' THEN
@@ -74,6 +75,7 @@ FROM (
 			header_id,
 			data_acceptacio,
 			rebuig,
+			'C3' AS tipocambio,
 			'c1' AS tipus
 			FROM giscedata_switching_c1_02
 		UNION
@@ -82,8 +84,19 @@ FROM (
 			header_id,
 			data_acceptacio,
 			rebuig,
+			'C3' AS tipocambio,
 			'c2' AS tipus
 			FROM giscedata_switching_c2_02
+		/* TODO: steps 07 activated after intervention */
+		UNION
+		SELECT
+			id,
+			header_id,
+			data_acceptacio,
+			rebuig,
+			'C4' AS tipocambio,
+			'a3' AS tipus
+			FROM giscedata_switching_a3_02
 		) AS cn02 ON cn02.header_id = sth02.id
 	LEFT JOIN 
 		giscedata_switching_step_header AS sth05 ON sth05.sw_id = sw.id
@@ -143,6 +156,7 @@ GROUP BY
 	s.distri,
 	s.refdistribuidora,
 	s.tarname,
+	s.tipocambio,
 	s.codiprovincia,
 	s.nomprovincia,
 	TRUE
@@ -150,6 +164,7 @@ ORDER BY
 	s.distri,
 	s.codiprovincia,
 	s.tarname,
+	s.tipocambio,
 	TRUE
 ;
 
