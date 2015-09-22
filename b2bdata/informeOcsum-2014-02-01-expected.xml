@@ -13,7 +13,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -50,7 +50,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -70,7 +70,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -95,7 +95,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -114,7 +114,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -134,7 +134,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>39</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -171,7 +171,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>9</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -202,7 +202,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -227,7 +227,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -252,7 +252,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -272,7 +272,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -297,7 +297,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -315,7 +315,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -335,7 +335,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -360,7 +360,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -403,7 +403,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -428,7 +428,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -447,7 +447,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>472</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -508,7 +508,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>25</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -547,7 +547,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>13</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -588,7 +588,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>7</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -613,7 +613,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2V</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -633,7 +633,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>14</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -674,7 +674,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C4</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -696,7 +696,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -718,7 +718,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -740,7 +740,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -758,7 +758,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -777,7 +777,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>9</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -808,7 +808,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -839,7 +839,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -857,7 +857,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -876,7 +876,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -895,7 +895,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -913,7 +913,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -927,7 +927,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>6</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -952,7 +952,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -977,7 +977,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -996,7 +996,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>17</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1033,7 +1033,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1058,7 +1058,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1078,7 +1078,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1108,7 +1108,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1128,7 +1128,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>11</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1153,7 +1153,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1172,7 +1172,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>9</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1201,7 +1201,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1232,7 +1232,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1252,7 +1252,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1277,7 +1277,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1296,7 +1296,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1315,7 +1315,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1341,7 +1341,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1355,7 +1355,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1375,7 +1375,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>69</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1420,7 +1420,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1445,7 +1445,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1464,7 +1464,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1489,7 +1489,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C4</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1503,7 +1503,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1530,7 +1530,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1548,7 +1548,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1566,7 +1566,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1584,7 +1584,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1598,7 +1598,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1616,7 +1616,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1635,7 +1635,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>12</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1666,7 +1666,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1691,7 +1691,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1710,7 +1710,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1729,7 +1729,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1760,7 +1760,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1779,7 +1779,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1797,7 +1797,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1815,7 +1815,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1840,7 +1840,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1865,7 +1865,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1883,7 +1883,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1908,7 +1908,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1933,7 +1933,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1953,7 +1953,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1973,7 +1973,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -1992,7 +1992,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2010,7 +2010,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2035,7 +2035,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2055,7 +2055,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2075,7 +2075,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2100,7 +2100,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2120,7 +2120,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>31</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2165,7 +2165,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2190,7 +2190,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2209,7 +2209,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>1</SolicitudesAnuladas>
@@ -2234,7 +2234,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2254,7 +2254,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2272,7 +2272,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2286,7 +2286,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>7</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2323,7 +2323,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2342,7 +2342,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2361,7 +2361,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2375,7 +2375,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2393,7 +2393,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2407,7 +2407,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>78</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2444,7 +2444,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>10</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2491,7 +2491,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2516,7 +2516,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2535,7 +2535,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>39</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2576,7 +2576,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2607,7 +2607,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2626,7 +2626,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2645,7 +2645,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2V</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2665,7 +2665,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2685,7 +2685,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2699,7 +2699,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2724,7 +2724,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2743,7 +2743,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>17</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2780,7 +2780,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2799,7 +2799,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>52</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2840,7 +2840,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2865,7 +2865,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2884,7 +2884,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2909,7 +2909,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2923,7 +2923,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2942,7 +2942,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2967,7 +2967,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -2987,7 +2987,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3007,7 +3007,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>5</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3032,7 +3032,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3057,7 +3057,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3071,7 +3071,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3089,7 +3089,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3114,7 +3114,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3132,7 +3132,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3152,7 +3152,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3177,7 +3177,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3196,7 +3196,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3216,7 +3216,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>9</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3245,7 +3245,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3276,7 +3276,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3300,7 +3300,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>51</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3333,7 +3333,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3358,7 +3358,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3377,7 +3377,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3402,7 +3402,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3420,7 +3420,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>6</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3451,7 +3451,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3470,7 +3470,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>8</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3501,7 +3501,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3521,7 +3521,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>80</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>1</SolicitudesAnuladas>
@@ -3584,7 +3584,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3622,7 +3622,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1T</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3647,7 +3647,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3666,7 +3666,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>3</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3685,7 +3685,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3704,7 +3704,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3722,7 +3722,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3747,7 +3747,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3772,7 +3772,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>18</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3809,7 +3809,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>4</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3834,7 +3834,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>1</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3853,7 +3853,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>28</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3884,7 +3884,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2</TarifaATR>
       <TotalSolicitudesEnviadas>2</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3915,7 +3915,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>2T</TarifaATR>
       <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>
@@ -3935,7 +3935,7 @@
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
-      <TipoPunto>1</TipoPunto>
+      <TipoPunto>5</TipoPunto>
       <TarifaATR>1</TarifaATR>
       <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
       <SolicitudesAnuladas>0</SolicitudesAnuladas>

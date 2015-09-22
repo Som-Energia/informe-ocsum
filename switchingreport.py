@@ -188,7 +188,7 @@ class SwichingReport:
 				summary.codiprovincia,
 				summary.refdistribuidora,
 				summary.tipocambio,
-				1, # TODO
+				summary.tipopunto,
 				summary.tarname,
 				)
 			self.details(key).sent = summary.nreq
@@ -199,7 +199,7 @@ class SwichingReport:
 				summary.codiprovincia,
 				summary.refdistribuidora,
 				summary.tipocambio,
-				1, # TODO
+				summary.tipopunto,
 				summary.tarname,
 				)
 			self.details(key).dropouts = summary.nreq
@@ -210,7 +210,7 @@ class SwichingReport:
 				summary.codiprovincia,
 				summary.refdistribuidora,
 				summary.tipocambio,
-				1, # TODO
+				summary.tipopunto,
 				summary.tarname,
 				)
 			self.details(key).cancelled = summary.nreq
@@ -221,7 +221,7 @@ class SwichingReport:
 				summary.codiprovincia,
 				summary.refdistribuidora,
 				summary.tipocambio,
-				1, # TODO
+				summary.tipopunto,
 				summary.tarname,
 				)
 			self.details(key).pendents = summary
@@ -232,7 +232,7 @@ class SwichingReport:
 				summary.codiprovincia,
 				summary.refdistribuidora,
 				summary.tipocambio,
-				1, # TODO
+				summary.tipopunto,
 				summary.tarname,
 				)
 			self.details(key).accepted = summary
@@ -243,7 +243,7 @@ class SwichingReport:
 				summary.codiprovincia,
 				summary.refdistribuidora,
 				summary.tipocambio,
-				1, # TODO
+				summary.tipopunto,
 				summary.tarname,
 				)
 			# More than one entry (for each different reason
@@ -254,8 +254,8 @@ class SwichingReport:
 			key = (
 				summary.codiprovincia,
 				summary.refdistribuidora,
-                summary.tipocambio,
-				1, # TODO
+				summary.tipocambio,
+				summary.tipopunto,
 				summary.tarname,
 				)
 			self.details(key).activationPending = summary
@@ -266,7 +266,7 @@ class SwichingReport:
 				summary.codiprovincia,
 				summary.refdistribuidora,
 				summary.tipocambio,
-				1, # TODO
+				summary.tipopunto,
 				summary.tarname,
 				)
 			self.details(key).activated = summary
@@ -372,6 +372,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -396,6 +397,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -428,6 +430,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-002',
 				),
 			])
@@ -482,6 +485,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			ns(
@@ -492,6 +496,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-002',
 				),
 			])
@@ -539,6 +544,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -576,6 +582,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -617,6 +624,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				rejectreason='03',
 				),
@@ -652,6 +660,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				rejectreason='03',
 				),
@@ -666,6 +675,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-002',
 				rejectreason='01',
 				),
@@ -709,6 +719,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -743,6 +754,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -784,6 +796,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				codiprovincia='08',
 				tarname='2.0DHA',
 				tipocambio='C3',
+				tipopunto='1',
 				refdistribuidora='R1-001',
 				),
 			])
