@@ -220,7 +220,7 @@ class SwichingReport:
 			key=(
 				pendent.codiprovincia,
 				pendent.refdistribuidora,
-				'C3', # tipoCambio
+				pendent.tipocambio,
 				1, # TODO
 				pendent.tarname,
 				)
@@ -254,7 +254,7 @@ class SwichingReport:
 			key = (
 				summary.codiprovincia,
 				summary.refdistribuidora,
-				'C3', # tipoCambio
+                summary.tipocambio,
 				1, # TODO
 				summary.tarname,
 				)
@@ -395,6 +395,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylate=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -426,6 +427,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylate=300, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-002',
 				),
 			])
@@ -479,6 +481,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylate=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				),
 			ns(
@@ -488,6 +491,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylate=300, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-002',
 				),
 			])
@@ -704,6 +708,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylateissues=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				),
 			])
@@ -737,6 +742,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylateissues=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				),
 			])
