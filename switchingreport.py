@@ -812,21 +812,18 @@ def fullGenerate(year, month, agent):
 
 	import psycopg2
 	with psycopg2.connect(**config) as db:
-		pendents=unansweredRequests(db, inici, final)
-		acceptades=acceptedRequests(db, inici, final)
-		rejected=rejectedRequests(db, inici, final)
-		activated=activatedRequests(db, inici, final)
-		sent=sentRequests(db, inici, final)
-		cancelled=cancelledRequests(db, inici, final)
-		dropouts=dropoutRequests(db, inici, final)
-
-	informe.fillPending( pendents )
-	informe.fillAccepted( acceptades )
-	informe.fillRejected( rejected )
-	informe.fillActivated( activated )
-	informe.fillSent( sent )
-	informe.fillCancelled( cancelled )
-	informe.fillDropOuts( dropouts )
+		for request, filler in (
+			(unansweredRequests, informe.fillPending),
+			(unactivatedRequests, informe.fillActivationPending),
+			(acceptedRequests, informe.fillAccepted),
+			(rejectedRequests, informe.fillRejected),
+			(activatedRequests, informe.fillActivated),
+			(sentRequests, informe.fillSent),
+			(cancelledRequests, informe.fillCancelled),
+			(dropoutRequests, informe.fillDropOuts),
+			):
+			data=request(db, inici, final)
+			filler(data)
 
 	result = informe.genera()
 	return result
@@ -882,6 +879,7 @@ if __name__ == '__main__' :
 		with psycopg2.connect(**config) as db:
 			for f in (
 				unansweredRequests,
+				unactivatedRequests,
 				acceptedRequests,
 				rejectedRequests,
 				activatedRequests,

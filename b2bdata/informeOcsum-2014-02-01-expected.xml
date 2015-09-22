@@ -234,6 +234,11 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
+      <DetallePdteActivacion>
+        <TipoRetraso>15</TipoRetraso>
+        <NumIncidencias>0</NumIncidencias>
+        <NumSolicitudesPdteActivacion>19</NumSolicitudesPdteActivacion>
+      </DetallePdteActivacion>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
         <TMActivacion>40.5</TMActivacion>
