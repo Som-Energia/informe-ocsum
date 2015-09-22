@@ -173,10 +173,10 @@ GROUP BY
 	s.distri,
 	s.refdistribuidora,
 	s.tarname,
-	s.codiprovincia,
-	s.nomprovincia,
 	tipocambio,
 	tipopunto,
+	s.codiprovincia,
+	s.nomprovincia,
 	TRUE
 ORDER BY
 	s.distri,

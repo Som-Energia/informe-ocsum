@@ -487,6 +487,10 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
+      <DetallePendientesRespuesta>
+        <TipoRetraso>15</TipoRetraso>
+        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
+      </DetallePendientesRespuesta>
       <DetalleAceptadas>
         <TipoRetraso>00</TipoRetraso>
         <TMSolicitudesAceptadas>0.1</TMSolicitudesAceptadas>
@@ -696,24 +700,6 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>1</NumSolicitudesActivadas>
       </DetalleActivadas>
-    </DatosSolicitudes>
-    <DatosSolicitudes>
-      <Provincia>08000</Provincia>
-      <Distribuidor>0031</Distribuidor>
-      <Comer_entrante>R2-415</Comer_entrante>
-      <Comer_saliente>0</Comer_saliente>
-      <TipoCambio>C3</TipoCambio>
-      <TipoPunto>5</TipoPunto>
-      <TarifaATR>3</TarifaATR>
-      <TotalSolicitudesEnviadas>0</TotalSolicitudesEnviadas>
-      <SolicitudesAnuladas>0</SolicitudesAnuladas>
-      <Reposiciones>0</Reposiciones>
-      <ClientesSalientes>0</ClientesSalientes>
-      <NumImpagados>0</NumImpagados>
-      <DetallePendientesRespuesta>
-        <TipoRetraso>15</TipoRetraso>
-        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
-      </DetallePendientesRespuesta>
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>08000</Provincia>
