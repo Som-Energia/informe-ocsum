@@ -182,16 +182,16 @@ class SwichingReport:
 	def details(self, key) :
 		return self.canvis.setdefault(key, ns())
 
-	def fillSent(self,pendents) :
-		for pendent in pendents:
+	def fillSent(self,sents) :
+		for sent in sents:
 			key=(
-				pendent.codiprovincia,
-				pendent.refdistribuidora,
-				pendent.tipocambio,
+				sent.codiprovincia,
+				sent.refdistribuidora,
+				sent.tipocambio,
 				1, # TODO
-				pendent.tarname,
+				sent.tarname,
 				)
-			self.details(key).sent = pendent.nreq
+			self.details(key).sent = sent.nreq
 
 	def fillDropOuts(self, dropouts):
 		for dropout in dropouts:
@@ -371,6 +371,7 @@ class SwichingReport_Test(unittest.TestCase) :
 				verylate=0, 
 				codiprovincia='08',
 				tarname='2.0DHA',
+				tipocambio='C3',
 				refdistribuidora='R1-001',
 				),
 			])
