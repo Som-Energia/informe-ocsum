@@ -7,13 +7,13 @@
 	TODO: Include case_.priority=5 with pol.data_alta within period
 */
 SELECT
-	s.distri,
-	s.refdistribuidora,
+	distri,
+	refdistribuidora,
 	codiprovincia,
-	s.tarname,
+	tarname,
 	tipocambio,
-	'5' AS tipopunto,
-	s.rejectreason,
+	tipopunto,
+	rejectreason,
 	COUNT(*) AS nprocessos,
 	SUM(CASE WHEN (
 		data_resposta <= termini
@@ -59,6 +59,7 @@ FROM (
 		dist.name AS nomdistribuidora,
 		tar.name AS tarname,
 		tipocambio,
+		potencia.tipopunto as tipopunto,
 		sw.create_date AS create_date,
 		(
 			SELECT MIN(motiu.name)
@@ -204,9 +205,23 @@ FROM (
 		giscedata_polissa_modcontractual AS mod ON mod.polissa_id = pol.id AND mod.modcontractual_ant IS NULL
 	LEFT JOIN
 		giscedata_polissa_tarifa AS tar ON (
-			(mod.id IS NULL     AND tar.id = pol.tarifa) OR
+			(mod.id IS     NULL AND tar.id = pol.tarifa) OR
 			(mod.id IS NOT NULL AND tar.id = mod.tarifa) OR
-			FALSE)
+			FALSE
+			)
+	LEFT JOIN (
+		VALUES
+			(10000,1000000000, '1'),
+			(450,10000, '2'),
+			(50,450, '3'),
+			(15,50, '4'),
+			(0,15, '5')
+		) AS potencia(minim, maxim, tipopunto) ON (
+			(mod.id IS     NULL AND potencia.minim < pol.potencia AND potencia.maxim >= pol.potencia) OR
+			(mod.id IS NOT NULL AND potencia.minim < mod.potencia AND potencia.maxim >= mod.potencia) OR
+			FALSE
+		)
+
 	) AS s
 GROUP BY
 	s.nomdistribuidora,
@@ -217,11 +232,14 @@ GROUP BY
 	s.nomprovincia,
 	s.rejectreason,
 	s.tipocambio,
+	s.tipopunto,
 	TRUE
 ORDER BY
 	s.distri,
 	s.codiprovincia,
 	s.tarname,
+	s.tipocambio,
+	s.tipopunto,
 	TRUE
 ;
 

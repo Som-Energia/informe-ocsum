@@ -92,7 +92,7 @@ def debugCase(db, caseId, impersonate=False):
 			""",
 			polissaid=case.cups_polissa_id,
 			)
-        if impersonate:
+	if impersonate:
 		impersonatePersonalData(case.polissa)
 		case.polissa.observacions = 'bla bla bla'
 	
