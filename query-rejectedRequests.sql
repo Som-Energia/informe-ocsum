@@ -62,7 +62,7 @@ FROM (
 		potencia.tipopunto as tipopunto,
 		sw.create_date AS create_date,
 		(
-			SELECT MIN(motiu.name)
+			SELECT COALESCE(MIN(motiu.name),'99')
 			FROM sw_step_header_rebuig_ref AS h2r 
 			LEFT JOIN
 				giscedata_switching_rebuig AS rebuig ON h2r.rebuig_id = rebuig.id
