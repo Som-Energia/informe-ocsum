@@ -24,7 +24,10 @@
 - No a3_02 accepted cases to test in real data (some in december 2012)
 - No a3_05 activated cases to test in real data
 - BUG: unactivated not properly selecting cases, example: the A3 4379 in 2014-02
-- BUG: Reject reason None
+- BUG: Reject reason None -> 99
+- ~~unactivated filters cancelled c1_09~~
+- ~~unactivated filters cancelled c2_09~~
+- unactivated filters cancelled a3_07
 
 
 - To review:

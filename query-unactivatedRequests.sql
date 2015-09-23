@@ -117,6 +117,8 @@ FROM (
 			SELECT id, header_id, data_activacio FROM giscedata_switching_c2_07
 			UNION
 			SELECT id, header_id, data_acceptacio AS data_activacio FROM giscedata_switching_c1_09
+			UNION
+			SELECT id, header_id, data_acceptacio AS data_activacio FROM giscedata_switching_c2_09
 		) AS st05
 		JOIN
 			giscedata_switching_step_header AS sth05 ON st05.header_id = sth05.id
