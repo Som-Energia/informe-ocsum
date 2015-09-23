@@ -115,7 +115,6 @@ FROM (
 			SELECT id, header_id, data_activacio FROM giscedata_switching_a3_05
 			UNION
 			SELECT id, header_id, data_activacio FROM giscedata_switching_c2_07
-			/* TODO: A3 activation after intervention */
 		) AS st05
 		JOIN
 			giscedata_switching_step_header AS sth05 ON st05.header_id = sth05.id

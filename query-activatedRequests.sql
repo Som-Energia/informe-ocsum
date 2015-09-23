@@ -83,6 +83,18 @@ FROM
 		data_activacio >= %(periodStart)s AND
 		data_activacio < %(periodEnd)s AND
 		TRUE
+	UNION
+	SELECT
+		id AS pass_id,
+		header_id,
+		'C3' AS tipocambio,
+		data_activacio,
+		'c2' AS process
+	FROM giscedata_switching_c2_07
+	WHERE
+		data_activacio >= %(periodStart)s AND
+		data_activacio < %(periodEnd)s AND
+		TRUE
 	) AS step
 LEFT JOIN
 	giscedata_switching_step_header AS sth ON step.header_id = sth.id

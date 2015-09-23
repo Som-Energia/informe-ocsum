@@ -14,22 +14,24 @@
 
 - ~~Segregation by TipoCambio~~
 - ~~Segregation by TipoPunto~~
+- ~~BUG: unactivated, activated are not filtered and got dupes~~
+- ~~Taking into account 07 steps (activation with intervention) in unactivated~~
+- ~~Taking into account 07 steps (activation with intervention) in activated~~
 - NumIncidencias accounted in unactivated requests, count any C2_03 A3_03
 - NumIncidencias accounted in activated requests, count any C2_03 A3_03
-- Taking into account 07 steps (activation with intervention)
-- No a3_07 cases to test in real data
+- No a3_07 cancelled cases to test in real data
 - No a3_02 rejected cases to test in real data
 - No a3_02 accepted cases to test in real data (some in december 2012)
-- No a3_05 cases to test in real data
-- BUG: unactivated not properly selecting cases, example: the A3 one in 2014-02
+- No a3_05 activated cases to test in real data
+- BUG: unactivated not properly selecting cases, example: the A3 4379 in 2014-02
 - BUG: Reject reason None
 
 
 - To review:
 	- ~~Take TarifaATR from case to be unaffected by later changes~~
 	- ~~Distributor code is not the one required (using ref1 instead new ref2)~~
-	- Rejected includes MotivoRechazo field
-	- Rejected segregates by MotivoRechazo
+	- ~~Rejected includes MotivoRechazo field~~
+	- ~~Rejected segregates by MotivoRechazo~~
 	- TM en accepted, rejected, activated
 	- TipoRetraso en unanswered, accepted, rejected, unactivated, activated
 - Deployment
