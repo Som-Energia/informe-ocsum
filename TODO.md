@@ -17,6 +17,10 @@
 - ~~BUG: unactivated, activated are not filtered and got dupes~~
 - ~~Taking into account 07 steps (activation with intervention) in unactivated~~
 - ~~Taking into account 07 steps (activation with intervention) in activated~~
+- ~~BUG: Reject reason None -> 99~~
+- ~~unactivated filters cancelled c1_09~~
+- ~~unactivated filters cancelled c2_09~~
+- ~~unactivated filters cancelled a3_07~~
 - NumIncidencias accounted in unactivated requests, count any C2_03 A3_03
 - NumIncidencias accounted in activated requests, count any C2_03 A3_03
 - No a3_07 cancelled cases to test in real data
@@ -24,11 +28,10 @@
 - No a3_02 accepted cases to test in real data (some in december 2012)
 - No a3_05 activated cases to test in real data
 - BUG: unactivated not properly selecting cases, example: the A3 4379 in 2014-02
-- BUG: Reject reason None -> 99
-- ~~unactivated filters cancelled c1_09~~
-- ~~unactivated filters cancelled c2_09~~
-- unactivated filters cancelled a3_07
-
+- Cas 41010: associar-ho al CUPS
+- Cas 6817: associar-ho al CUPS
+- Cas 38114: why reject reason None
+- Cas 41907: why reject reason None
 
 - To review:
 	- ~~Take TarifaATR from case to be unaffected by later changes~~
