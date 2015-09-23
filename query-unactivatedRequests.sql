@@ -109,6 +109,8 @@ FROM (
 		SELECT id, header_id, data_activacio FROM giscedata_switching_c1_05
 		UNION
 		SELECT id, header_id, data_activacio FROM giscedata_switching_c2_05
+		UNION
+		SELECT id, header_id, data_activacio FROM giscedata_switching_a3_05
 		) AS cn05 ON cn05.header_id = sth05.id
 	LEFT JOIN
 		crm_case AS case_ ON case_.id = sw.case_id

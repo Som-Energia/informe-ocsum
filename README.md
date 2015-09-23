@@ -156,6 +156,7 @@ so that three requests of the same contract count as three, not one.
 - 7132: prioritat 5 ok a 2015-03
 - 5335: Polissa sense cups associat (al formulari estava)
 - 4149: Cancelacio no resposta
+- 3409: CUPS erroni
 
 - There is no a3-07 cancelation step to test in real data
 

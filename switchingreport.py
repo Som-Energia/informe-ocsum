@@ -76,7 +76,7 @@ class SwichingReport:
 		for keys, canvi in sorted(self.canvis.iteritems()):
 			provincia, distribuidora, tipoCambio, tipoPunto, tipoTarifa = keys
 			if any(key is None for key in keys):
-				warn("A key has a None value ({}) : {}".format(
+				warn("A key has a None value ({}):\n{}".format(
 					keys, canvi.dump()))
 				continue
 			datos = self.element(solicitudes, 'DatosSolicitudes')
