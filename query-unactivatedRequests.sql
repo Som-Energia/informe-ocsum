@@ -46,11 +46,11 @@ SELECT
 	STRING_AGG(s.sw_id::text, ',' ORDER BY s.sw_id) as casos,
 	TRUE
 FROM (
-	SELECT DISTINCT
+	SELECT
 		CASE
 			WHEN cn02.id IS NOT NULL THEN cn05.data_activacio
 			WHEN case_.priority = '5' THEN %(periodEnd)s
-			ELSE null
+			ELSE NULL
 		END AS data_activacio,
 		sw.id AS sw_id,
 		provincia.code AS codiprovincia,
@@ -71,10 +71,7 @@ FROM (
 		cn02.tipus,
 		TRUE
 	FROM
-		giscedata_switching AS sw
-	LEFT JOIN 
-		giscedata_switching_step_header AS sth02 ON sth02.sw_id = sw.id
-	JOIN ( 
+		( 
 		SELECT
 			id,
 			header_id,
@@ -92,7 +89,6 @@ FROM (
 			'C3' AS tipocambio,
 			'c2' AS tipus
 			FROM giscedata_switching_c2_02
-		/* TODO: steps 07 activated after intervention */
 		UNION
 		SELECT
 			id,
@@ -102,16 +98,26 @@ FROM (
 			'C4' AS tipocambio,
 			'a3' AS tipus
 			FROM giscedata_switching_a3_02
-		) AS cn02 ON cn02.header_id = sth02.id
+		) AS cn02
 	LEFT JOIN 
-		giscedata_switching_step_header AS sth05 ON sth05.sw_id = sw.id
-	LEFT JOIN ( 
-		SELECT id, header_id, data_activacio FROM giscedata_switching_c1_05
-		UNION
-		SELECT id, header_id, data_activacio FROM giscedata_switching_c2_05
-		UNION
-		SELECT id, header_id, data_activacio FROM giscedata_switching_a3_05
-		) AS cn05 ON cn05.header_id = sth05.id
+		giscedata_switching_step_header AS sth02 ON sth02.id = cn02.header_id
+	LEFT JOIN 
+		giscedata_switching AS sw ON sw.id = sth02.sw_id
+	LEFT JOIN 
+	(
+		SELECT st05.id, header_id, data_activacio, sw_id
+		FROM 
+		( 
+			/* TODO: steps 07 activated after intervention */
+			SELECT id, header_id, data_activacio FROM giscedata_switching_c1_05
+			UNION
+			SELECT id, header_id, data_activacio FROM giscedata_switching_c2_05
+			UNION
+			SELECT id, header_id, data_activacio FROM giscedata_switching_a3_05
+		) AS st05
+		JOIN
+			giscedata_switching_step_header AS sth05 ON st05.header_id = sth05.id
+	) AS cn05 ON cn05.sw_id = sw.id
 	LEFT JOIN
 		crm_case AS case_ ON case_.id = sw.case_id
 	LEFT JOIN
@@ -150,14 +156,15 @@ FROM (
 				/* Accepted prior to end of the period */
 				cn02.id IS NOT NULL AND
 				cn02.data_acceptacio <= %(periodEnd)s AND
-				NOT cn02.rebuig AND
+				cn02.rebuig = FALSE AND
 				( /* Not yet activated at the end of the period */
 					cn05.id IS NULL OR
 					cn05.data_activacio > %(periodEnd)s OR
 					FALSE
 				)
 			) OR
-			( /* No son de petites marcades com a aceptades sense 02 */
+			(
+				/* No son de petites marcades com a aceptades sense 02 */
 				cn02.id IS NULL AND
 				case_.priority = '5' AND
 				(
