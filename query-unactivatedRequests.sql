@@ -108,12 +108,14 @@ FROM (
 		SELECT st05.id, header_id, data_activacio, sw_id
 		FROM 
 		( 
-			/* TODO: steps 07 activated after intervention */
 			SELECT id, header_id, data_activacio FROM giscedata_switching_c1_05
 			UNION
 			SELECT id, header_id, data_activacio FROM giscedata_switching_c2_05
 			UNION
 			SELECT id, header_id, data_activacio FROM giscedata_switching_a3_05
+			UNION
+			SELECT id, header_id, data_activacio FROM giscedata_switching_c2_07
+			/* TODO: A3 activation after intervention */
 		) AS st05
 		JOIN
 			giscedata_switching_step_header AS sth05 ON st05.header_id = sth05.id

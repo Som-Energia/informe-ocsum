@@ -234,11 +234,6 @@
       <Reposiciones>0</Reposiciones>
       <ClientesSalientes>0</ClientesSalientes>
       <NumImpagados>0</NumImpagados>
-      <DetallePdteActivacion>
-        <TipoRetraso>15</TipoRetraso>
-        <NumIncidencias>0</NumIncidencias>
-        <NumSolicitudesPdteActivacion>5</NumSolicitudesPdteActivacion>
-      </DetallePdteActivacion>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
         <TMActivacion>40.5</TMActivacion>
@@ -347,6 +342,11 @@
         <TMSolicitudesAceptadas>0.0</TMSolicitudesAceptadas>
         <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
       </DetalleAceptadas>
+      <DetallePdteActivacion>
+        <TipoRetraso>00</TipoRetraso>
+        <NumIncidencias>0</NumIncidencias>
+        <NumSolicitudesPdteActivacion>1</NumSolicitudesPdteActivacion>
+      </DetallePdteActivacion>
       <DetalleActivadas>
         <TipoRetraso>00</TipoRetraso>
         <TMActivacion>22.0</TMActivacion>
