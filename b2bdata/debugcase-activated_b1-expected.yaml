@@ -71,6 +71,9 @@ polissa:
   direccio_pagament: 13082
   distribuidora: 2273
   donatiu: false
+  empowering_profile: null
+  empowering_profile_id: null
+  empowering_service: null
   enviament: email
   etag: null
   facturacio: 2
