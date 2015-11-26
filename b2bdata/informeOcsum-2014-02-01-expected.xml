@@ -3753,7 +3753,7 @@
     </DatosSolicitudes>
     <DatosSolicitudes>
       <Provincia>46000</Provincia>
-      <Distribuidor>R2-316</Distribuidor>
+      <Distribuidor>R1-316</Distribuidor>
       <Comer_entrante>R2-415</Comer_entrante>
       <Comer_saliente>0</Comer_saliente>
       <TipoCambio>C3</TipoCambio>
@@ -3981,6 +3981,29 @@
         <NumIncidencias>0</NumIncidencias>
         <NumSolicitudesActivadas>2</NumSolicitudesActivadas>
       </DetalleActivadas>
+    </DatosSolicitudes>
+    <DatosSolicitudes>
+      <Provincia>50000</Provincia>
+      <Distribuidor>R1-315</Distribuidor>
+      <Comer_entrante>R2-415</Comer_entrante>
+      <Comer_saliente>0</Comer_saliente>
+      <TipoCambio>C3</TipoCambio>
+      <TipoPunto>5</TipoPunto>
+      <TarifaATR>1</TarifaATR>
+      <TotalSolicitudesEnviadas>3</TotalSolicitudesEnviadas>
+      <SolicitudesAnuladas>0</SolicitudesAnuladas>
+      <Reposiciones>0</Reposiciones>
+      <ClientesSalientes>0</ClientesSalientes>
+      <NumImpagados>0</NumImpagados>
+      <DetallePendientesRespuesta>
+        <TipoRetraso>00</TipoRetraso>
+        <NumSolicitudesPendientes>1</NumSolicitudesPendientes>
+      </DetallePendientesRespuesta>
+      <DetalleAceptadas>
+        <TipoRetraso>05</TipoRetraso>
+        <TMSolicitudesAceptadas>9.0</TMSolicitudesAceptadas>
+        <NumSolicitudesAceptadas>1</NumSolicitudesAceptadas>
+      </DetalleAceptadas>
     </DatosSolicitudes>
   </SolicitudesRealizadas>
 </MensajeSolicitudesRealizadas>
