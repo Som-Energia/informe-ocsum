@@ -65,7 +65,7 @@ polissa:
   data_alta: 2014-03-19
   data_baixa: null
   data_firma_contracte: 2014-02-10
-  data_ultima_lectura: 2015-09-15
+  data_ultima_lectura: 2015-11-16
   data_ultima_lectura_estimada: null
   direccio_notificacio: 21508
   direccio_pagament: 21508
@@ -82,7 +82,7 @@ polissa:
   fiscal_position_id: null
   id: 26835
   llista_preu: 12
-  lot_facturacio: 46
+  lot_facturacio: 48
   modcontractual_activa: 15192
   name: 1...8
   name_auto: true
@@ -95,7 +95,7 @@ polissa:
   payment_mode_id: 7
   potencia: !!python/object/apply:decimal.Decimal
   - '31.177'
-  proxima_facturacio: 2015-10-31
+  proxima_facturacio: 2015-12-31
   ref_dist: 4.......8
   renovacio_auto: true
   soci: 20953
@@ -111,8 +111,8 @@ polissa:
   titular: 20953
   trafo: 0.0
   versio_primera_factura: 142
-  write_date: 2015-09-23 15:18:22.597138
-  write_uid: 10
+  write_date: 2015-11-25 11:10:39.938456
+  write_uid: 8
 proces: null
 proces_id: 1
 process_name: C1
