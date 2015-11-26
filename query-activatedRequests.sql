@@ -4,6 +4,7 @@
 	- c1_05
 	- c2_05
 	- a3_05
+	- c2_07
 	- with data_activacio during the period
 
 TODO: Counting issues
@@ -11,7 +12,7 @@ TODO: Counting issues
 */
 SELECT
 	dist.id AS distriid,
-	dist.ref AS refdistribuidora,
+	dist.ref2 AS refdistribuidora,
 	provincia.code AS codiprovincia,
 	tar.name as tarname,
 	step.tipocambio,

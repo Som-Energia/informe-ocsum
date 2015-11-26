@@ -56,7 +56,7 @@ FROM (
 		provincia.code AS codiprovincia,
 		provincia.name AS nomprovincia,
 		dist.id AS distri,
-		dist.ref AS refdistribuidora,
+		dist.ref2 AS refdistribuidora,
 		dist.name AS nomdistribuidora,
 		tar.name AS tarname,
 		cn02.tipocambio AS tipocambio,

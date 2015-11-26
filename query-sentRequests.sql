@@ -9,7 +9,7 @@
 */
 SELECT
 	dist.id AS distriid,
-	dist.ref AS refdistribuidora,
+	dist.ref2 AS refdistribuidora,
 	provincia.code AS codiprovincia,
 	tar.name AS tarname,
 	tipocambio,
@@ -89,7 +89,7 @@ LEFT JOIN (
 	)
 GROUP BY
 	dist.id,
-	dist.ref,
+	dist.ref2,
 	dist.name,
 	provincia.code,
 	provincia.name,
