@@ -54,6 +54,10 @@ notificacio_pendent: false
 obrir_cas_pendent: false
 polissa:
   active: true
+  agree_dh: E1
+  agree_tarifa: 2A
+  agree_tensio: E0
+  agree_tipus: '05'
   altre_p: null
   bank: 21430
   cie: null
@@ -65,7 +69,7 @@ polissa:
   data_alta: 2014-04-04
   data_baixa: null
   data_firma_contracte: 2013-11-25
-  data_ultima_lectura: 2015-11-15
+  data_ultima_lectura: 2016-04-20
   data_ultima_lectura_estimada: null
   direccio_notificacio: 18126
   direccio_pagament: 18126
@@ -75,14 +79,14 @@ polissa:
   empowering_profile_id: null
   empowering_service: null
   enviament: email
-  etag: null
+  etag: 0c641498b01042b62517e437150bc80c29db5a5e
   facturacio: 1
   facturacio_distri: 2
   facturacio_potencia: icp
   fiscal_position_id: null
   id: 21403
   llista_preu: 4
-  lot_facturacio: 48
+  lot_facturacio: 53
   modcontractual_activa: 17481
   name: 1...7
   name_auto: true
@@ -95,7 +99,7 @@ polissa:
   payment_mode_id: 7
   potencia: !!python/object/apply:decimal.Decimal
   - '4.400'
-  proxima_facturacio: 2015-12-31
+  proxima_facturacio: 2016-05-31
   ref_dist: 2....8
   renovacio_auto: true
   soci: 17664
@@ -111,7 +115,7 @@ polissa:
   titular: 21548
   trafo: 0.0
   versio_primera_factura: 148
-  write_date: 2015-11-17 16:48:10.209151
+  write_date: 2016-04-27 14:06:15.621245
   write_uid: 19
 proces: null
 proces_id: 2
@@ -154,6 +158,7 @@ steps:
     sollicitudadm: S
     tarifaATR: '001'
     telefon: null
+    tipus_autoconsum: '00'
     tipus_contracte: '01'
     tipus_document: DN
     tipus_equip_mesura: L00
@@ -193,6 +198,7 @@ steps:
   validacio_pendent: false
   write_date: 2014-02-17 13:13:15.301545
   write_uid: 1
+tarifa_comer_id: null
 validacio_pendent: false
 versio: '02'
 whereiam: comer

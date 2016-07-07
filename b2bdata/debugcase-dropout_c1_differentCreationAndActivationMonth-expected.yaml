@@ -54,6 +54,10 @@ notificacio_pendent: false
 obrir_cas_pendent: false
 polissa:
   active: false
+  agree_dh: E3
+  agree_tarifa: '30'
+  agree_tensio: E0
+  agree_tipus: '04'
   altre_p: null
   bank: 14172
   cie: null
@@ -140,6 +144,7 @@ steps:
   validacio_pendent: false
   write_date: 2014-02-11 12:53:55.109703
   write_uid: 5
+tarifa_comer_id: null
 validacio_pendent: false
 versio: '02'
 whereiam: comer
