@@ -64,7 +64,7 @@ class Test_switching(unittest.TestCase):
 		processos = idsProcessos(self.db)
 		self.assertEqual(
 			sorted(processos.keys()),[
-				'A3', 'B1', 'C1', 'C2', 'D1', 'M1', 'W1',
+				'A3', 'B1', 'C1', 'C2', 'D1', 'M1', 'R1', 'W1',
 			])
 
 	def test_idsPasses(self):
@@ -82,6 +82,7 @@ class Test_switching(unittest.TestCase):
 				'D1_01',
 				'M1_01', 'M1_02', 'M1_03', 'M1_04', 'M1_05',
 				'M1_06', 'M1_07', 'M1_08',
+				'R1_01', 'R1_02', 'R1_03', 'R1_04', 'R1_05',
 				'W1_01', 'W1_02',
 			])
 
