@@ -133,7 +133,7 @@ LEFT JOIN (
 	)
 GROUP BY
 	dist.id,
-	dist.ref,
+	dist.ref2,
 	dist.name,
 	provincia.code,
 	provincia.name,
