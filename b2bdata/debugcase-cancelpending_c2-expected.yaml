@@ -1,206 +1,203 @@
-accio_pendent: false
-case:
-  active: true
-  canal_id: null
-  case_id: null
-  categ_id: null
-  category2_id: null
-  create_date: 2013-11-25 12:12:28.390131
-  create_uid: 1
-  date: 2013-11-25 18:13:28
-  date_action_last: null
-  date_action_next: null
-  date_closed: 2014-02-14 13:04:13
-  date_deadline: null
-  description: null
-  duration: null
-  email_cc: null
-  email_from: MBellonch@estabanell.cat
-  id: 4178
-  name: !!python/str 'Procés C2 pel cups: ES0113000043136055EN0F'
-  note: null
-  partner_address_id: 2535
-  partner_id: 2301
-  partner_mobile: null
-  partner_name: null
-  partner_name2: null
-  partner_phone: null
-  planned_cost: null
-  planned_revenue: null
-  priority: '3'
-  probability: null
-  ref: null
-  ref2: null
-  section_id: 1
-  som: null
-  stage_id: null
-  state: done
-  user_id: 1
-  write_date: 2014-02-14 13:04:13.521923
-  write_uid: 1
-case_id: 4178
-codi_sollicitud: '201311253450'
-comer_sortint_id: null
-company_id: 1
-conversation_id: 46905
-create_date: 2013-11-25 12:12:28.390131
-create_uid: 1
-cups_id: 21696
-cups_polissa_id: 21403
-data_sollicitud: 2013-11-25
-finalitzat: null
 id: 4149
-notificacio_pendent: false
-obrir_cas_pendent: false
-polissa:
-  active: true
-  agree_dh: E1
-  agree_tarifa: 2A
-  agree_tensio: E0
-  agree_tipus: '05'
-  altre_p: null
-  bank: 21430
-  cie: null
-  cnae: 986
-  comercialitzadora: 1
-  create_date: 2013-11-25 02:16:00.998706
-  create_uid: 4
-  cups: 21696
-  data_alta: 2014-04-04
-  data_baixa: null
-  data_firma_contracte: 2013-11-25
-  data_ultima_lectura: 2016-06-20
-  data_ultima_lectura_estimada: null
-  direccio_notificacio: 18126
-  direccio_pagament: 18126
-  distribuidora: 2301
-  donatiu: false
-  empowering_profile: null
-  empowering_profile_id: null
-  empowering_service: null
-  enviament: email
-  etag: 0c641498b01042b62517e437150bc80c29db5a5e
-  facturacio: 1
-  facturacio_distri: 2
-  facturacio_potencia: icp
-  fiscal_position_id: null
-  id: 21403
-  llista_preu: 4
-  lot_facturacio: 55
-  modcontractual_activa: 17481
-  name: 1...7
-  name_auto: true
-  no_estimable: false
-  notificacio: pagador
-  observacions: bla bla bla
-  observacions_estimacio: null
-  pagador: 17664
-  pagador_sel: altre_p
-  payment_mode_id: 7
-  potencia: !!python/object/apply:decimal.Decimal
-  - '4.400'
-  proxima_facturacio: 2016-07-31
-  ref_dist: 2....8
-  renovacio_auto: true
-  soci: 17664
-  sos: false
-  state: activa
-  state_post_facturacio: null
-  tarifa: 1
-  tensio: 230
-  tensio_normalitzada: 4
-  tg: '2'
-  tipo_pago: 1
-  tipus_vivenda: habitual
-  titular: 21548
-  trafo: 0.0
-  versio_primera_factura: 148
-  write_date: 2016-06-29 13:02:36.320517
-  write_uid: 19
-proces: null
-proces_id: 2
-process_name: C2
-ref_contracte: '111111111'
-seq_sollicitud: '01'
-step_id: 16
-steps:
-- _stepname: C2_01
-  create_date: 2013-11-25 12:12:28.390131
-  create_uid: 1
-  date_created: 2013-11-25 18:13:28
-  details:
-    activacio_cicle: S
-    address_id: 18126
-    canvi_titular: S
-    cnae: 986
-    codi_document: 4.......F
-    cognom_1: R.s
-    cognom_2: ''
-    control_potencia: '1'
-    cp_installacio: Y
-    cp_propietat: N
-    create_date: 2013-11-25 12:12:28.390131
-    create_uid: 1
-    data_accio: 2013-11-25
-    data_final: 2013-11-25
-    equip_aportat_client: N
-    equip_installat_client: Y
-    fiscal_address_id: 18126
-    header_id: 7667
-    id: 572
-    ind_direccio: S
-    ind_direccio_fiscal: S
-    ind_representant: S
-    linia_negoci: '01'
-    nom: L....s
-    persona: F
-    prefix: null
-    sollicitudadm: S
-    tarifaATR: '001'
-    telefon: null
-    tipus_autoconsum: '00'
-    tipus_contracte: '01'
-    tipus_document: DN
-    tipus_equip_mesura: L00
-    vivenda: S
-    write_date: 2013-11-25 12:12:28.390131
-    write_uid: 1
-  emisor_id: 1
-  enviament_pendent: false
-  id: 7667
-  receptor_id: 2301
-  sw_id: 4149
-  validacio_pendent: false
-  write_date: 2013-11-27 08:09:13.468752
-  write_uid: 5
-- _stepname: C2_08
-  create_date: 2014-02-14 13:02:53.874680
-  create_uid: 1
-  date_created: 2014-02-14 13:02:54
-  details:
-    codi_document: 4.......F
-    cognom_1: R.s
-    cognom_2: ''
-    create_date: 2014-02-14 13:02:53.874680
-    create_uid: 1
-    header_id: 17916
-    id: 6
-    linia_negoci: '01'
-    nom: L....s
-    tipus_document: DN
-    write_date: 2014-02-14 13:02:53.874680
-    write_uid: 1
-  emisor_id: 1
-  enviament_pendent: false
-  id: 17916
-  receptor_id: 2301
-  sw_id: 4149
-  validacio_pendent: false
-  write_date: 2014-02-17 13:13:15.301545
-  write_uid: 1
-tarifa_comer_id: null
-validacio_pendent: false
-versio: '02'
-whereiam: comer
+create_uid: 1
+create_date: 2013-11-25 12:12:28.390131
 write_date: 2014-02-14 13:02:53.874680
 write_uid: 1
+accio_pendent: false
+comer_sortint_id: null
+data_sollicitud: 2013-11-25
+proces_id: 2
+whereiam: comer
+versio: '02'
+proces: null
+conversation_id: 46905
+step_id: 16
+ref_contracte: '111111111'
+company_id: 1
+cups_id: 21696
+seq_sollicitud: '01'
+case_id: 4178
+notificacio_pendent: false
+obrir_cas_pendent: false
+codi_sollicitud: '201311253450'
+validacio_pendent: false
+cups_polissa_id: 21403
+finalitzat: null
+tarifa_comer_id: null
+process_name: C2
+steps:
+- id: 7667
+  create_uid: 1
+  create_date: 2013-11-25 12:12:28.390131
+  write_date: 2013-11-27 08:09:13.468752
+  write_uid: 5
+  sw_id: 4149
+  receptor_id: 2301
+  date_created: 2013-11-25 18:13:28
+  emisor_id: 1
+  validacio_pendent: false
+  enviament_pendent: false
+  details:
+    id: 572
+    create_uid: 1
+    create_date: 2013-11-25 12:12:28.390131
+    write_date: 2013-11-25 12:12:28.390131
+    write_uid: 1
+    nom: L....s
+    address_id: 18126
+    persona: F
+    cognom_1: R.s
+    cognom_2: ''
+    ind_direccio_fiscal: S
+    vivenda: S
+    canvi_titular: S
+    ind_representant: S
+    telefon: null
+    codi_document: 4.......F
+    header_id: 7667
+    prefix: null
+    equip_installat_client: Y
+    linia_negoci: '01'
+    equip_aportat_client: N
+    tarifaATR: '001'
+    ind_direccio: S
+    tipus_document: DN
+    data_final: 2013-11-25
+    tipus_equip_mesura: L00
+    data_accio: 2013-11-25
+    tipus_contracte: '01'
+    sollicitudadm: S
+    fiscal_address_id: 18126
+    cp_propietat: N
+    activacio_cicle: S
+    cnae: 986
+    cp_installacio: Y
+    control_potencia: '1'
+    tipus_autoconsum: '00'
+- id: 17916
+  create_uid: 1
+  create_date: 2014-02-14 13:02:53.874680
+  write_date: 2014-02-17 13:13:15.301545
+  write_uid: 1
+  sw_id: 4149
+  receptor_id: 2301
+  date_created: 2014-02-14 13:02:54
+  emisor_id: 1
+  validacio_pendent: false
+  enviament_pendent: false
+  details:
+    id: 6
+    create_uid: 1
+    create_date: 2014-02-14 13:02:53.874680
+    write_date: 2014-02-14 13:02:53.874680
+    write_uid: 1
+    codi_document: 4.......F
+    nom: L....s
+    tipus_document: DN
+    cognom_1: R.s
+    cognom_2: ''
+    linia_negoci: '01'
+    header_id: 17916
+case:
+  id: 4178
+  create_uid: 1
+  create_date: 2013-11-25 12:12:28.390131
+  write_date: 2014-02-14 13:04:13.521923
+  write_uid: 1
+  date_closed: 2014-02-14 13:04:13
+  ref2: null
+  description: null
+  probability: null
+  canal_id: null
+  date_action_last: null
+  planned_cost: null
+  partner_address_id: 2535
+  som: null
+  section_id: 1
+  date: 2013-11-25 18:13:28
+  active: true
+  partner_id: 2301
+  date_action_next: null
+  user_id: 1
+  date_deadline: null
+  planned_revenue: null
+  categ_id: null
+  priority: '3'
+  state: done
+  email_cc: null
+  ref: null
+  email_from: MBellonch@estabanell.cat
+  category2_id: null
+  duration: null
+  partner_name: null
+  note: null
+  case_id: null
+  partner_name2: null
+  partner_mobile: null
+  stage_id: null
+  partner_phone: null
+  name: 'Procés C2 pel cups: ES0113000043136055EN0F'
+polissa:
+  id: 21403
+  create_uid: 4
+  create_date: 2013-11-25 02:16:00.998706
+  write_date: 2016-06-29 13:02:36.320517
+  write_uid: 19
+  titular: 21548
+  name_auto: true
+  tensio: 230
+  active: true
+  tarifa: 1
+  renovacio_auto: true
+  cups: 21696
+  name: 1...7
+  observacions: bla bla bla
+  tensio_normalitzada: 4
+  state: activa
+  data_alta: 2014-04-04
+  potencia: 4.400
+  data_firma_contracte: 2013-11-25
+  cnae: 986
+  data_baixa: null
+  modcontractual_activa: 17481
+  comercialitzadora: 1
+  ref_dist: 2....8
+  payment_mode_id: 7
+  distribuidora: 2301
+  data_ultima_lectura_estimada: null
+  versio_primera_factura: 148
+  tipo_pago: 1
+  direccio_pagament: 18126
+  data_ultima_lectura: 2016-06-20
+  pagador_sel: altre_p
+  notificacio: pagador
+  direccio_notificacio: 18126
+  llista_preu: 4
+  trafo: 0.0
+  proxima_facturacio: 2016-07-31
+  bank: 21430
+  state_post_facturacio: null
+  lot_facturacio: 55
+  facturacio: 1
+  facturacio_potencia: icp
+  altre_p: null
+  pagador: 17664
+  soci: 17664
+  donatiu: false
+  enviament: email
+  tipus_vivenda: habitual
+  facturacio_distri: 2
+  sos: false
+  no_estimable: false
+  observacions_estimacio: null
+  fiscal_position_id: null
+  cie: null
+  tg: '2'
+  etag: 0c641498b01042b62517e437150bc80c29db5a5e
+  empowering_profile_id: null
+  empowering_service: null
+  empowering_profile: null
+  agree_tensio: E0
+  agree_dh: E1
+  agree_tipus: '05'
+  agree_tarifa: 2A

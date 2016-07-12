@@ -1,152 +1,150 @@
-accio_pendent: false
-case:
-  active: true
-  canal_id: null
-  case_id: null
-  categ_id: null
-  category2_id: null
-  create_date: 2014-02-11 12:53:55.109703
-  create_uid: 5
-  date: 2014-02-11 12:53:55
-  date_action_last: null
-  date_action_next: null
-  date_closed: 2014-05-20 18:22:22
-  date_deadline: null
-  description: null
-  duration: null
-  email_cc: null
-  email_from: atrbtendesa@endesa.es
-  id: 8221
-  name: !!python/str 'Procés C1 pel cups: ES0031405068003001QK0F'
-  note: null
-  partner_address_id: 14159
-  partner_id: 13788
-  partner_mobile: null
-  partner_name: null
-  partner_name2: null
-  partner_phone: null
-  planned_cost: null
-  planned_revenue: null
-  priority: '3'
-  probability: null
-  ref: null
-  ref2: null
-  section_id: 1
-  som: null
-  stage_id: null
-  state: done
-  user_id: 5
-  write_date: 2014-05-20 18:22:22.846831
-  write_uid: 1
-case_id: 8221
-codi_sollicitud: '201400006394'
-comer_sortint_id: null
-company_id: 1
-conversation_id: 78086
-create_date: 2014-02-11 12:53:55.109703
-create_uid: 5
-cups_id: 14185
-cups_polissa_id: 13872
-data_sollicitud: 2014-02-06
-finalitzat: true
 id: 8166
-notificacio_pendent: false
-obrir_cas_pendent: false
-polissa:
-  active: false
-  agree_dh: E3
-  agree_tarifa: '30'
-  agree_tensio: E0
-  agree_tipus: '04'
-  altre_p: null
-  bank: 14172
-  cie: null
-  cnae: 308
-  comercialitzadora: 1
-  create_date: 2013-06-25 13:05:39.074438
-  create_uid: 4
-  cups: 14185
-  data_alta: 2013-06-27
-  data_baixa: 2014-01-29
-  data_firma_contracte: 2013-06-25
-  data_ultima_lectura: 2014-01-29
-  data_ultima_lectura_estimada: null
-  direccio_notificacio: 13143
-  direccio_pagament: 13143
-  distribuidora: 2273
-  donatiu: false
-  empowering_profile: null
-  empowering_profile_id: null
-  empowering_service: null
-  enviament: email
-  etag: null
-  facturacio: 1
-  facturacio_distri: 1
-  facturacio_potencia: icp
-  fiscal_position_id: null
-  id: 13872
-  llista_preu: 12
-  lot_facturacio: null
-  modcontractual_activa: 7636
-  name: 0...3
-  name_auto: true
-  no_estimable: false
-  notificacio: titular
-  observacions: bla bla bla
-  observacions_estimacio: null
-  pagador: 12802
-  pagador_sel: titular
-  payment_mode_id: 7
-  potencia: !!python/object/apply:decimal.Decimal
-  - '22.000'
-  proxima_facturacio: null
-  ref_dist: 4.......7
-  renovacio_auto: false
-  soci: 12802
-  sos: false
-  state: baixa
-  state_post_facturacio: null
-  tarifa: 7
-  tensio: 230
-  tensio_normalitzada: 4
-  tg: '2'
-  tipo_pago: 1
-  tipus_vivenda: habitual
-  titular: 12802
-  trafo: 0.0
-  versio_primera_factura: 90
-  write_date: 2014-03-19 13:20:29.912983
-  write_uid: 1
-proces: null
-proces_id: 1
-process_name: C1
-ref_contracte: 000485069617
-seq_sollicitud: '01'
-step_id: 4
-steps:
-- _stepname: C1_06
-  create_date: 2014-02-11 12:53:55.109703
-  create_uid: 5
-  date_created: 2014-02-06 00:44:50
-  details:
-    create_date: 2014-02-11 12:53:55.109703
-    create_uid: 5
-    data_activacio: 2014-01-29
-    header_id: 17591
-    id: 79
-    write_date: 2014-02-11 12:53:55.109703
-    write_uid: 5
-  emisor_id: 13788
-  enviament_pendent: false
-  id: 17591
-  receptor_id: 1
-  sw_id: 8166
-  validacio_pendent: false
-  write_date: 2014-02-11 12:53:55.109703
-  write_uid: 5
-tarifa_comer_id: null
-validacio_pendent: false
-versio: '02'
-whereiam: comer
+create_uid: 5
+create_date: 2014-02-11 12:53:55.109703
 write_date: null
 write_uid: null
+accio_pendent: false
+comer_sortint_id: null
+data_sollicitud: 2014-02-06
+proces_id: 1
+whereiam: comer
+versio: '02'
+proces: null
+conversation_id: 78086
+step_id: 4
+ref_contracte: 000485069617
+company_id: 1
+cups_id: 14185
+seq_sollicitud: '01'
+case_id: 8221
+notificacio_pendent: false
+obrir_cas_pendent: false
+codi_sollicitud: '201400006394'
+validacio_pendent: false
+cups_polissa_id: 13872
+finalitzat: true
+tarifa_comer_id: null
+process_name: C1
+steps:
+- id: 17591
+  create_uid: 5
+  create_date: 2014-02-11 12:53:55.109703
+  write_date: 2014-02-11 12:53:55.109703
+  write_uid: 5
+  sw_id: 8166
+  receptor_id: 1
+  date_created: 2014-02-06 00:44:50
+  emisor_id: 13788
+  validacio_pendent: false
+  enviament_pendent: false
+  details:
+    id: 79
+    create_uid: 5
+    create_date: 2014-02-11 12:53:55.109703
+    write_date: 2014-02-11 12:53:55.109703
+    write_uid: 5
+    header_id: 17591
+    data_activacio: 2014-01-29
+case:
+  id: 8221
+  create_uid: 5
+  create_date: 2014-02-11 12:53:55.109703
+  write_date: 2014-05-20 18:22:22.846831
+  write_uid: 1
+  date_closed: 2014-05-20 18:22:22
+  ref2: null
+  description: null
+  probability: null
+  canal_id: null
+  date_action_last: null
+  planned_cost: null
+  partner_address_id: 14159
+  som: null
+  section_id: 1
+  date: 2014-02-11 12:53:55
+  active: true
+  partner_id: 13788
+  date_action_next: null
+  user_id: 5
+  date_deadline: null
+  planned_revenue: null
+  categ_id: null
+  priority: '3'
+  state: done
+  email_cc: null
+  ref: null
+  email_from: atrbtendesa@endesa.es
+  category2_id: null
+  duration: null
+  partner_name: null
+  note: null
+  case_id: null
+  partner_name2: null
+  partner_mobile: null
+  stage_id: null
+  partner_phone: null
+  name: 'Procés C1 pel cups: ES0031405068003001QK0F'
+polissa:
+  id: 13872
+  create_uid: 4
+  create_date: 2013-06-25 13:05:39.074438
+  write_date: 2014-03-19 13:20:29.912983
+  write_uid: 1
+  titular: 12802
+  name_auto: true
+  tensio: 230
+  active: false
+  tarifa: 7
+  renovacio_auto: false
+  cups: 14185
+  name: 0...3
+  observacions: bla bla bla
+  tensio_normalitzada: 4
+  state: baixa
+  data_alta: 2013-06-27
+  potencia: 22.000
+  data_firma_contracte: 2013-06-25
+  cnae: 308
+  data_baixa: 2014-01-29
+  modcontractual_activa: 7636
+  comercialitzadora: 1
+  ref_dist: 4.......7
+  payment_mode_id: 7
+  distribuidora: 2273
+  data_ultima_lectura_estimada: null
+  versio_primera_factura: 90
+  tipo_pago: 1
+  direccio_pagament: 13143
+  data_ultima_lectura: 2014-01-29
+  pagador_sel: titular
+  notificacio: titular
+  direccio_notificacio: 13143
+  llista_preu: 12
+  trafo: 0.0
+  proxima_facturacio: null
+  bank: 14172
+  state_post_facturacio: null
+  lot_facturacio: null
+  facturacio: 1
+  facturacio_potencia: icp
+  altre_p: null
+  pagador: 12802
+  soci: 12802
+  donatiu: false
+  enviament: email
+  tipus_vivenda: habitual
+  facturacio_distri: 1
+  sos: false
+  no_estimable: false
+  observacions_estimacio: null
+  fiscal_position_id: null
+  cie: null
+  tg: '2'
+  etag: null
+  empowering_profile_id: null
+  empowering_service: null
+  empowering_profile: null
+  agree_tensio: E0
+  agree_dh: E3
+  agree_tipus: '04'
+  agree_tarifa: '30'

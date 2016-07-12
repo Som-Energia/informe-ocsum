@@ -6,8 +6,9 @@ from dbqueries import loadQuery, idsProcessos, idsPasses
 import psycopg2
 import sys
 import os
-from namespace import namespace as ns
+from yamlns import namespace as ns
 from consolemsg import warn, fail
+import dbconfig as config
 
 def anonyfy(text):
 	return ' '.join( w[0]+'.'*len(w[:-2])+w[-1] for  w in text.split())

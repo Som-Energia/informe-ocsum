@@ -1,195 +1,192 @@
-accio_pendent: false
-case:
-  active: true
-  canal_id: null
-  case_id: null
-  categ_id: null
-  category2_id: null
-  create_date: 2014-02-10 11:55:55.209982
-  create_uid: 5
-  date: 2014-02-10 12:03:49
-  date_action_last: null
-  date_action_next: null
-  date_closed: 2014-02-18 11:54:44
-  date_deadline: 2014-03-04 11:51:00
-  description: null
-  duration: null
-  email_cc: null
-  email_from: atrbtendesa@endesa.es
-  id: 8145
-  name: !!python/str 'Procés C1 pel cups: ES0031408211487001NF0F'
-  note: null
-  partner_address_id: 14159
-  partner_id: 13788
-  partner_mobile: null
-  partner_name: null
-  partner_name2: null
-  partner_phone: null
-  planned_cost: null
-  planned_revenue: null
-  priority: '2'
-  probability: null
-  ref: null
-  ref2: null
-  section_id: 1
-  som: null
-  stage_id: null
-  state: done
-  user_id: 5
-  write_date: 2014-02-18 11:54:44.056000
-  write_uid: 5
-case_id: 8145
-codi_sollicitud: '201402106838'
-comer_sortint_id: null
-company_id: 1
-conversation_id: 77780
-create_date: 2014-02-10 11:55:55.209982
-create_uid: 5
-cups_id: 27121
-cups_polissa_id: 26835
-data_sollicitud: 2014-02-10
-finalitzat: true
 id: 8091
-notificacio_pendent: false
-obrir_cas_pendent: false
-polissa:
-  active: true
-  agree_dh: E3
-  agree_tarifa: '30'
-  agree_tensio: E0
-  agree_tipus: '04'
-  altre_p: null
-  bank: 26655
-  cie: null
-  cnae: 682
-  comercialitzadora: 1
-  create_date: 2014-02-10 11:42:35.213607
-  create_uid: 4
-  cups: 27121
-  data_alta: 2014-03-19
-  data_baixa: null
-  data_firma_contracte: 2014-02-10
-  data_ultima_lectura: 2016-06-14
-  data_ultima_lectura_estimada: null
-  direccio_notificacio: 58381
-  direccio_pagament: 21508
-  distribuidora: 2273
-  donatiu: false
-  empowering_profile: null
-  empowering_profile_id: null
-  empowering_service: null
-  enviament: email
-  etag: 563e2e38b70e3d0e2ddf69f9286f665dd17f8fbc
-  facturacio: 1
-  facturacio_distri: 1
-  facturacio_potencia: max
-  fiscal_position_id: null
-  id: 26835
-  llista_preu: 12
-  lot_facturacio: 55
-  modcontractual_activa: 15192
-  name: 1...8
-  name_auto: true
-  no_estimable: false
-  notificacio: altre_p
-  observacions: bla bla bla
-  observacions_estimacio: null
-  pagador: 20953
-  pagador_sel: titular
-  payment_mode_id: 7
-  potencia: !!python/object/apply:decimal.Decimal
-  - '31.177'
-  proxima_facturacio: 2016-07-31
-  ref_dist: 4.......8
-  renovacio_auto: true
-  soci: 20953
-  sos: false
-  state: activa
-  state_post_facturacio: null
-  tarifa: 7
-  tensio: 230
-  tensio_normalitzada: 4
-  tg: '2'
-  tipo_pago: 1
-  tipus_vivenda: habitual
-  titular: 20953
-  trafo: 0.0
-  versio_primera_factura: 142
-  write_date: 2016-07-04 11:46:03.513480
-  write_uid: 13
-proces: null
-proces_id: 1
-process_name: C1
-ref_contracte: '111111111'
-seq_sollicitud: '01'
-step_id: 2
-steps:
-- _stepname: C1_01
-  create_date: 2014-02-10 11:55:55.209982
-  create_uid: 5
-  date_created: 2014-02-10 12:03:49
-  details:
-    activacio_cicle: S
-    codi_document: B.......0
-    cognom_1: ''
-    cognom_2: ''
-    create_date: 2014-02-10 11:55:55.209982
-    create_uid: 5
-    data_accio: 2014-02-10
-    data_final: 2014-02-10
-    header_id: 17271
-    id: 5833
-    ind_direccio: S
-    ind_representant: S
-    linia_negoci: '01'
-    nom: La M......, C......s P..o M.....s S...
-    persona: J
-    prefix: null
-    telefon: 6.......9
-    tipus_contracte: '01'
-    tipus_document: CI
-    validacio_pendent: null
-    write_date: 2014-02-10 12:18:38.555913
-    write_uid: 5
-  emisor_id: 1
-  enviament_pendent: false
-  id: 17271
-  receptor_id: 13788
-  sw_id: 8091
-  validacio_pendent: false
-  write_date: 2014-02-10 12:26:11.737935
-  write_uid: 5
-- _stepname: C1_02
-  create_date: 2014-02-18 10:45:54.362538
-  create_uid: 5
-  date_created: 2014-02-12 11:24:30
-  details:
-    actuacio_camp: null
-    consum_anual: null
-    create_date: 2014-02-18 10:45:54.362538
-    create_uid: 5
-    data_acceptacio: null
-    data_activacio: null
-    data_ult_lect: null
-    header_id: 18419
-    id: 4262
-    potencia_actual: null
-    rebuig: true
-    tarifaATR: null
-    tipus_activacio: null
-    write_date: 2014-02-18 10:45:54.362538
-    write_uid: 5
-  emisor_id: 13788
-  enviament_pendent: true
-  id: 18419
-  receptor_id: 1
-  sw_id: 8091
-  validacio_pendent: false
-  write_date: 2014-02-18 10:45:54.362538
-  write_uid: 5
-tarifa_comer_id: null
-validacio_pendent: false
-versio: '02'
-whereiam: comer
+create_uid: 5
+create_date: 2014-02-10 11:55:55.209982
 write_date: 2014-02-18 11:51:36.437152
 write_uid: 5
+accio_pendent: false
+comer_sortint_id: null
+data_sollicitud: 2014-02-10
+proces_id: 1
+whereiam: comer
+versio: '02'
+proces: null
+conversation_id: 77780
+step_id: 2
+ref_contracte: '111111111'
+company_id: 1
+cups_id: 27121
+seq_sollicitud: '01'
+case_id: 8145
+notificacio_pendent: false
+obrir_cas_pendent: false
+codi_sollicitud: '201402106838'
+validacio_pendent: false
+cups_polissa_id: 26835
+finalitzat: true
+tarifa_comer_id: null
+process_name: C1
+steps:
+- id: 17271
+  create_uid: 5
+  create_date: 2014-02-10 11:55:55.209982
+  write_date: 2014-02-10 12:26:11.737935
+  write_uid: 5
+  sw_id: 8091
+  receptor_id: 13788
+  date_created: 2014-02-10 12:03:49
+  emisor_id: 1
+  validacio_pendent: false
+  enviament_pendent: false
+  details:
+    id: 5833
+    create_uid: 5
+    create_date: 2014-02-10 11:55:55.209982
+    write_date: 2014-02-10 12:18:38.555913
+    write_uid: 5
+    nom: La M......, C......s P..o M.....s S...
+    persona: J
+    cognom_1: ''
+    cognom_2: ''
+    ind_representant: S
+    telefon: 6.......9
+    codi_document: B.......0
+    prefix: null
+    linia_negoci: '01'
+    header_id: 17271
+    ind_direccio: S
+    tipus_document: CI
+    data_final: 2014-02-10
+    data_accio: 2014-02-10
+    tipus_contracte: '01'
+    activacio_cicle: S
+    validacio_pendent: null
+- id: 18419
+  create_uid: 5
+  create_date: 2014-02-18 10:45:54.362538
+  write_date: 2014-02-18 10:45:54.362538
+  write_uid: 5
+  sw_id: 8091
+  receptor_id: 1
+  date_created: 2014-02-12 11:24:30
+  emisor_id: 13788
+  validacio_pendent: false
+  enviament_pendent: true
+  details:
+    id: 4262
+    create_uid: 5
+    create_date: 2014-02-18 10:45:54.362538
+    write_date: 2014-02-18 10:45:54.362538
+    write_uid: 5
+    tipus_activacio: null
+    data_acceptacio: null
+    data_activacio: null
+    rebuig: true
+    actuacio_camp: null
+    potencia_actual: null
+    header_id: 18419
+    tarifaATR: null
+    data_ult_lect: null
+    consum_anual: null
+case:
+  id: 8145
+  create_uid: 5
+  create_date: 2014-02-10 11:55:55.209982
+  write_date: 2014-02-18 11:54:44.056000
+  write_uid: 5
+  date_closed: 2014-02-18 11:54:44
+  ref2: null
+  description: null
+  probability: null
+  canal_id: null
+  date_action_last: null
+  planned_cost: null
+  partner_address_id: 14159
+  som: null
+  section_id: 1
+  date: 2014-02-10 12:03:49
+  active: true
+  partner_id: 13788
+  date_action_next: null
+  user_id: 5
+  date_deadline: 2014-03-04 11:51:00
+  planned_revenue: null
+  categ_id: null
+  priority: '2'
+  state: done
+  email_cc: null
+  ref: null
+  email_from: atrbtendesa@endesa.es
+  category2_id: null
+  duration: null
+  partner_name: null
+  note: null
+  case_id: null
+  partner_name2: null
+  partner_mobile: null
+  stage_id: null
+  partner_phone: null
+  name: 'Procés C1 pel cups: ES0031408211487001NF0F'
+polissa:
+  id: 26835
+  create_uid: 4
+  create_date: 2014-02-10 11:42:35.213607
+  write_date: 2016-07-04 11:46:03.513480
+  write_uid: 13
+  titular: 20953
+  name_auto: true
+  tensio: 230
+  active: true
+  tarifa: 7
+  renovacio_auto: true
+  cups: 27121
+  name: 1...8
+  observacions: bla bla bla
+  tensio_normalitzada: 4
+  state: activa
+  data_alta: 2014-03-19
+  potencia: 31.177
+  data_firma_contracte: 2014-02-10
+  cnae: 682
+  data_baixa: null
+  modcontractual_activa: 15192
+  comercialitzadora: 1
+  ref_dist: 4.......8
+  payment_mode_id: 7
+  distribuidora: 2273
+  data_ultima_lectura_estimada: null
+  versio_primera_factura: 142
+  tipo_pago: 1
+  direccio_pagament: 21508
+  data_ultima_lectura: 2016-06-14
+  pagador_sel: titular
+  notificacio: altre_p
+  direccio_notificacio: 58381
+  llista_preu: 12
+  trafo: 0.0
+  proxima_facturacio: 2016-07-31
+  bank: 26655
+  state_post_facturacio: null
+  lot_facturacio: 55
+  facturacio: 1
+  facturacio_potencia: max
+  altre_p: null
+  pagador: 20953
+  soci: 20953
+  donatiu: false
+  enviament: email
+  tipus_vivenda: habitual
+  facturacio_distri: 1
+  sos: false
+  no_estimable: false
+  observacions_estimacio: null
+  fiscal_position_id: null
+  cie: null
+  tg: '2'
+  etag: 563e2e38b70e3d0e2ddf69f9286f665dd17f8fbc
+  empowering_profile_id: null
+  empowering_service: null
+  empowering_profile: null
+  agree_tensio: E0
+  agree_dh: E3
+  agree_tipus: '04'
+  agree_tarifa: '30'

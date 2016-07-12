@@ -5,6 +5,7 @@ import psycopg2
 import psycopg2.extras
 import datetime
 from dbutils import *
+import dbconfig as config
 import os
 
 def loadQuery(name):
