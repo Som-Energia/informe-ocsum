@@ -29,16 +29,19 @@ SELECT
 		data_activacio >  sw.create_date + interval '81 days'
 		) THEN 1 ELSE 0 END) AS verylate,
 	SUM(CASE WHEN (
-		data_activacio <= sw.create_date + interval '66 days'
+		data_activacio <= sw.create_date + interval '66 days' AND
+		data_activacio >= sw.create_date
 		) THEN DATE_PART('day', data_activacio - sw.create_date ) ELSE 0 END
 	) AS ontimeaddedtime,
 	SUM(CASE WHEN (
 		data_activacio >  sw.create_date + interval '66 days' AND 
-		data_activacio <= sw.create_date + interval '81 days'
+		data_activacio <= sw.create_date + interval '81 days' AND
+		data_activacio >= sw.create_date
 		) THEN DATE_PART('day', data_activacio - sw.create_date ) ELSE 0 END
 	) AS lateaddedtime,
 	SUM(CASE WHEN (
-		data_activacio >  sw.create_date + interval '81 days'
+		data_activacio >  sw.create_date + interval '81 days' AND
+		data_activacio >= sw.create_date
 		) THEN DATE_PART('day', data_activacio - sw.create_date ) ELSE 0 END
 	) AS verylateaddedtime,
 	0 AS ontimeissues,

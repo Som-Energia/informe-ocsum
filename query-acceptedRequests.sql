@@ -31,15 +31,18 @@ SELECT
 
 	SUM(CASE WHEN (
 		data_resposta <= termini
+        AND data_resposta >= create_date
 		) THEN DATE_PART('day',  data_resposta - create_date) ELSE 0 END
 	) AS ontimeaddedtime,
 	SUM(CASE WHEN (
 		data_resposta > termini  AND
 		data_resposta <= termini + interval '15 days'
+        AND data_resposta >= create_date
 		) THEN DATE_PART('day', data_resposta - create_date) ELSE 0 END
 	) AS lateaddedtime,
 	SUM(CASE WHEN (
 		data_resposta > termini + interval '15 days'
+        AND data_resposta >= create_date
 		) THEN DATE_PART('day', data_resposta - create_date) ELSE 0 END
 	) AS verylateaddedtime,
 

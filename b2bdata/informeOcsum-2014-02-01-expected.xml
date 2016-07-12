@@ -2168,7 +2168,7 @@
       <NumImpagados>0</NumImpagados>
       <DetalleRechazadas>
         <TipoRetraso>00</TipoRetraso>
-        <TMSolicitudesRechazadas>-16.0</TMSolicitudesRechazadas>
+        <TMSolicitudesRechazadas>0.0</TMSolicitudesRechazadas>
         <MotivoRechazo>99</MotivoRechazo>
         <NumSolicitudesRechazadas>1</NumSolicitudesRechazadas>
       </DetalleRechazadas>
