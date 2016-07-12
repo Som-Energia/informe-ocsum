@@ -2,7 +2,7 @@
 #-*- encoding: utf-8 -*-
 
 import datetime
-from namespace import namespace as ns
+from yamlns import namespace as ns
 from dbqueries import *
 from debugcase import *
 from decimal import Decimal
