@@ -848,7 +848,7 @@ def fullGenerate(year, month, agent):
 	return result
 
 def reportName(year, month, agent, sequence=1):
-	return 'SI_{}_{}_{:04}{:02}_{}.xml'.format(
+	return 'SI_{}_{}_{:04}{:02}_{:02}.xml'.format(
 		agent, 'E',
 		year,
 		month,
