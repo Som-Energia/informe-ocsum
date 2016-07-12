@@ -69,7 +69,7 @@ polissa:
   data_alta: 2014-07-01
   data_baixa: null
   data_firma_contracte: 2014-01-29
-  data_ultima_lectura: 2016-03-31
+  data_ultima_lectura: 2016-05-31
   data_ultima_lectura_estimada: null
   direccio_notificacio: 10459
   direccio_pagament: 10459
@@ -86,7 +86,7 @@ polissa:
   fiscal_position_id: null
   id: 25842
   llista_preu: 12
-  lot_facturacio: 53
+  lot_facturacio: 55
   modcontractual_activa: 19811
   name: 1...2
   name_auto: true
@@ -99,7 +99,7 @@ polissa:
   payment_mode_id: 7
   potencia: !!python/object/apply:decimal.Decimal
   - '17.321'
-  proxima_facturacio: 2016-05-31
+  proxima_facturacio: 2016-07-31
   ref_dist: 4.......6
   renovacio_auto: true
   soci: 10011
@@ -115,7 +115,7 @@ polissa:
   titular: 10063
   trafo: 0.0
   versio_primera_factura: 166
-  write_date: 2016-04-27 13:47:02.424277
+  write_date: 2016-06-29 12:40:29.658728
   write_uid: 19
 proces: null
 proces_id: 1
