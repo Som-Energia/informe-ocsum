@@ -4,10 +4,13 @@
 import datetime
 from yamlns import namespace as ns
 from dbqueries import *
-from debugcase import *
+#from debugcase import *
 from decimal import Decimal
 from lxml import etree
 from consolemsg import step, warn
+try: import dbconfig as config
+except ImportError: config=None
+
 
 class SwichingReport:
 
@@ -271,6 +274,7 @@ class SwichingReport:
 				)
 			self.details(key).activated = summary
 
+import unittest
 
 class SwichingReport_Test(unittest.TestCase) :
 
