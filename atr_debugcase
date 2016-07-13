@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+#-*- encoding: utf-8 -*-
+
+
+from switchingreport.debugcase import debugCase
+
+def parseArgs():
+	import argparse
+
+	parser = argparse.ArgumentParser(
+		description="Dumps all related data for a switching case",
+		)
+
+	parser.add_argument(
+		dest='id',
+		)
+
+	parser.add_argument(
+		'--nopersonal',
+		action='store_true',
+		)
+	parser.add_argument(
+		'-C', '--config',
+		dest='config',
+		metavar='DBCONFIG.py',
+		help="use that DBCONFIG.py as configuration file "
+			"instead of default dbconfig.py at script location.",
+		)
+
+	return parser.parse_args()
+
+if __name__ == '__main__' :
+	args = parseArgs()
+
+	import psycopg2
+	if args.config:
+		import imp
+		config = imp.load_source('config',args.config)
+	else:
+		import dbconfig as config
+
+	db = psycopg2.connect(**config.psycopg)
+
+	print debugCase(db, args.id).dump()
+
+
+
+
+
+# vim: ts=4 sw=4 noet
