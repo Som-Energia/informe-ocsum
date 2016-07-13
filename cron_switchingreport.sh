@@ -27,8 +27,8 @@ IFS='-' read -r year month day <<< "${1:-$lastMonthEnd}" # split date
 
 step "Generant resum del $year-$month-$day"
 
-./generateSwitchingReport.py $year $month --csv || die No he pogut generar els CSV
-./generateSwitchingReport.py $year $month || die No he pogut generar el XML
+./atr_switchingreport $year $month --csv || die No he pogut generar els CSV
+./atr_switchingreport $year $month || die No he pogut generar el XML
 
 
 allreports=(SI_R2-???_E_${year}${month}_??.xml)

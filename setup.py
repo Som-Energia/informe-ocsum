@@ -5,7 +5,10 @@ setup(
     name = "SwitchingReports",
     version = "0.1",
     packages = find_packages(),
-    scripts = ['switchingreport.py'],
+    scripts = [
+        'atr_debugcase',
+        'atr_switchingreport',
+        ],
     install_requires=open('requirements.txt').read().split('\n'),
     author = "SomEnergia SCCL",
     author_email = "it@somenergia.coop",
