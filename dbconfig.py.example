@@ -14,3 +14,10 @@ psycopg = dict(
     port = '5433',
 )
 
+smtp = dict(
+    host = 'smtp.gmail.com',
+    port = 587,
+    user = 'me@gmail.com',
+    password = 'secret',
+    )
+

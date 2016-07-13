@@ -51,6 +51,7 @@ Un saludo.
 "
 
 emili.py \
+    -C dbconfig.py
     --subject "SomEnergia SCCL, informe canvios de comercializador, $year-$month" \
     $TOOPTIONS \
     --from sistemes@somenergia.coop \
