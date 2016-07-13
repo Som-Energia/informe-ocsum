@@ -2,3 +2,5 @@
 dbconfig.py
 *.sw?
 *.egg
+*.egg-info/
+

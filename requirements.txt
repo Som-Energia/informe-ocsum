@@ -3,3 +3,4 @@ lxml
 consolemsg
 yamlns
 somutils
+emili

@@ -815,6 +815,28 @@ class SwichingReport_Test(unittest.TestCase) :
 
 import b2btest
 
+def geneateCsv(inici, final, year, month):
+		from dbconfig import psycopg as config
+
+		import psycopg2
+		with psycopg2.connect(**config) as db:
+			for f in (
+				unansweredRequests,
+				unactivatedRequests,
+				acceptedRequests,
+				rejectedRequests,
+				activatedRequests,
+				sentRequests,
+				cancelledRequests,
+				dropoutRequests,
+				) :
+				results = f(db, inici, final, cursorManager=csvTable)
+				csvname = 'report-{:04}{:02}-{}.csv'.format(
+					year, month, f.__name__)
+				step("Generating '{}'...".format(csvname))
+				with open(csvname,'w') as output:
+					output.write(results)
+
 def fullGenerate(year, month, agent):
 	inici=datetime.date(year,month,1)
 	try:
