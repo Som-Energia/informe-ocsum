@@ -61,7 +61,7 @@ class SwitchingProcessStructure_Test(unittest.TestCase):
 import b2btest
 
 @unittest.skipIf(config is None, "No dbconfig.py file found")
-class OcsumReport_Test(b2btest.TestCase) :
+class ReportQueries_Test(b2btest.TestCase) :
 
 	def setUp(self):
 		from dbconfig import psycopg as config
