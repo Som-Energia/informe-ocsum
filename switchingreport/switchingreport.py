@@ -276,7 +276,7 @@ class SwichingReport:
 			self.details(key).activated = summary
 
 
-def geneateCsv(inici, final, year, month):
+def generateCsv(inici, final, year, month):
 		from dbconfig import psycopg as config
 
 		import psycopg2

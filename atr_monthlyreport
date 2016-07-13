@@ -2,7 +2,7 @@
 #-*- encoding: utf-8 -*-
 
 from switchingreport import (
-	geneateCsv,
+	generateCsv,
 	reportName,
 	fullGenerate,
 	)
@@ -36,7 +36,7 @@ if __name__ == '__main__' :
 		final=datetime.date(args.year+1,1,1)
 
 	if args.csv:
-		geneateCsv(inici, final, args.year, args.month)
+		generateCsv(inici, final, args.year, args.month)
 		sys.exit(0)
 
 	if args.sequence is None:
