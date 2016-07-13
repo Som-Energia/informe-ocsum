@@ -1,9 +1,9 @@
 - [ ] use shared b2btest framework
-- [ ] Separate tests from code
-- [ ] turn it into a module
-- [ ] install scripts
+- [x] Separate tests from code
+- [x] turn it into a module
+- [x] install scripts
 - [ ] merge into dataexports
-- [ ] crontab script
+- [x] crontab script
 - [ ] Script launcher integration
 
 
