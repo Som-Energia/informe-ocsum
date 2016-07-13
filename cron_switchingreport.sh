@@ -51,12 +51,11 @@ Un saludo.
 "
 
 emili.py \
-    -C dbconfig.py
     --subject "SomEnergia SCCL, informe canvios de comercializador, $year-$month" \
     $TOOPTIONS \
     --from sistemes@somenergia.coop \
     --replyto david.garcia@somenergia.coop \
-    --config $scriptpath/config.py \
+    --config $scriptpath/dbconfig.py \
     --format md \
     --style somenergia.css \
     $lastReport \
