@@ -38,7 +38,8 @@ The script does not need the OpenERP, just access to the database model.
 Configuration is made via a module named `dbconfig.py` in the root folder of the code.
 It should contain a dicctionary with the database configuration, in
 a global var named `psycodb`. That dictionary should contain the
-configuration parameters for a psycoql database object constructor.
+configuration parameters for a psycopg database object constructor.
+It also should contain a dictionary named `smtp` with `emili` configurations.
 The distributed file 'dbconfig.py.example` can be used as example.
 
 ### Command line interface
@@ -46,7 +47,7 @@ The distributed file 'dbconfig.py.example` can be used as example.
 To run it as script two parameters are required: year and month.
 
 ```bash
-./switchingreport.py 2015 6
+./atr_switchingreport 2015 6
 ```
 
 This will generate an XML file with the required nomenclator.
