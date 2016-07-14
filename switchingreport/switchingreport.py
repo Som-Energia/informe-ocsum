@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #-*- encoding: utf-8 -*-
 
-import datetime
 from yamlns import namespace as ns
 from dbqueries import *
 from dbutils import csvTable
@@ -275,13 +274,24 @@ class SwichingReport:
 				)
 			self.details(key).activated = summary
 
+def monthBounds(year, month):
+	import datetime
+	inici=datetime.date(year,month,1)
+	try:
+		final=datetime.date(year,month+1,1)
+	except ValueError:
+		final=datetime.date(year+1,1,1)
+	return inici, final
 
-def generateCsv(inici, final, year, month):
-		from dbconfig import psycopg as config
 
-		import psycopg2
-		with psycopg2.connect(**config) as db:
-			for f in (
+def generateCsv(year, month):
+	inici,final = monthBounds(year, month)
+
+	from dbconfig import psycopg as config
+
+	import psycopg2
+	with psycopg2.connect(**config) as db:
+		for f in (
 				unansweredRequests,
 				unactivatedRequests,
 				acceptedRequests,
@@ -291,19 +301,16 @@ def generateCsv(inici, final, year, month):
 				cancelledRequests,
 				dropoutRequests,
 				) :
-				results = f(db, inici, final, cursorManager=csvTable)
-				csvname = 'report-{:04}{:02}-{}.csv'.format(
-					year, month, f.__name__)
-				step("Generating '{}'...".format(csvname))
-				with open(csvname,'w') as output:
-					output.write(results)
+			results = f(db, inici, final, cursorManager=csvTable)
+			csvname = 'report-{:04}{:02}-{}.csv'.format(
+				year, month, f.__name__)
+			step("Generating '{}'...".format(csvname))
+			with open(csvname,'w') as output:
+				output.write(results)
 
 def fullGenerate(year, month, agent):
-	inici=datetime.date(year,month,1)
-	try:
-		final=datetime.date(year,month+1,1)
-	except ValueError:
-		final=datetime.date(year+1,1,1)
+	inici,final = monthBounds(year, month)
+
 	informe = SwichingReport(
 		CodigoAgente=agent,
 		TipoMercado='E',
@@ -342,4 +349,4 @@ def reportName(year, month, agent, sequence=1):
 
 
 
-
+# vim: ts=4 sw=4 noet
