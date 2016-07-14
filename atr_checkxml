@@ -1,0 +1,13 @@
+# -*- encoding: utf-8 -*-
+import sys
+from switching.input.messages import message
+from switching.input.messages.message import except_f1 
+
+with open(sys.argv[1], 'r') as xml_file:
+    try:
+        data = xml_file.read()
+        m = message.Message(data)
+        m.parse_xml()
+        sys.stdout.write('Fitxer Correcte\n')
+    except Exception, e:
+        sys.stdout.write('Fitxer Invàlid: {0}\n'.format(str(e.value)))
