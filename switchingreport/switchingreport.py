@@ -21,22 +21,23 @@ class SwichingReport:
 
 		# Codi tret de la taula mestra versió 4.1
 		self._fareCodes = dict(
-			line.split()[::-1]
+			line.split('\t')[::-1][:2]
 			for line in """\
-				1	2.0A  
-				1T	2.1A  
+				1	2.0A
+				1T	2.1A
 				2	2.0DHA
 				2S	2.0DHS
 				2T	2.1DHA
 				2V	2.1DHS
-				3	3.0A  
-				4	3.1A    
-				5	6.1A  
-				5T	6.1B  
-				6	6.2  
-				7	6.3    
-				8	6.4    
-				9	6.5    
+				3	3.0A
+				4	3.1A
+				4	3.1A LB
+				5	6.1A
+				5T	6.1B
+				6	6.2
+				7	6.3
+				8	6.4
+				9	6.5
 				""".split('\n')
 			if line.strip()
 		)
