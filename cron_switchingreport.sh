@@ -2,6 +2,15 @@
 
 die() {
     [ -z "$1" ] || echo -e '\033[34;1mError: '$*'\033[0m' >&2
+    emili.py \
+        --subject "ERROR: Informe cambios de comercializador, $year-$month" \
+        --to itcrowd@somenergia.coop \
+        --from sistemes@somenergia.coop \
+        --config $scriptpath/dbconfig.py \
+        --format md \
+        --style somenergia.css \
+        --body "$*" \
+
     exit -1
 }
 step() {
@@ -19,7 +28,6 @@ done < recipients-switchingreport
 )
 date
 
-
 today=$(date -I)
 IFS='-' read -r year month day <<< "$today" # split date
 lastMonthEnd=$(date -I -d "$year-$month-01 - 1 day") # last day of last month
@@ -27,8 +35,8 @@ IFS='-' read -r year month day <<< "${1:-$lastMonthEnd}" # split date
 
 step "Generant resum del $year-$month-$day"
 
-./atr_switchingreport $year $month --csv || die No he pogut generar els CSV
-./atr_switchingreport $year $month || die No he pogut generar el XML
+python ./atr_switchingreport $year $month --csv || die No he pogut generar els CSV
+python ./atr_switchingreport $year $month || die No he pogut generar el XML
 
 
 allreports=(SI_R2-???_E_${year}${month}_??.xml)
@@ -51,8 +59,9 @@ Un saludo.
 "
 
 emili.py \
-    --subject "SomEnergia SCCL, informe canvios de comercializador, $year-$month" \
-    $TOOPTIONS \
+    --subject "SomEnergia SCCL, informe cambios de comercializador, $year-$month" \
+    --to atr@somenergia.coop \
+    --to itcrowd@somenergia.coop \
     --from sistemes@somenergia.coop \
     --replyto david.garcia@somenergia.coop \
     --config $scriptpath/dbconfig.py \
@@ -61,6 +70,17 @@ emili.py \
     $lastReport \
     report-$year$month-*.csv \
     --body "$TEXTOK" \
-    || die
+
+emili.py \
+    --subject "SomEnergia SCCL, informe cambios de comercializador, $year-$month" \
+    --to cambiodecomercializador@cnmc.es \
+    --bcc itcrowd@somenergia.coop \
+    --from atr@somenergia.coop \
+    --replyto atr@somenergia.coop \
+    --config $scriptpath/dbconfig.py \
+    --format md \
+    --style somenergia.css \
+    $lastReport \
+    --body "$TEXTOK" \
 
 
