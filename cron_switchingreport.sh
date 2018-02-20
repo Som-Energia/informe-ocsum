@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Generates the report of the previous month unless you provide an isodate
+# in that case generate sthe report of the month containing the date.
+
+
 die() {
     [ -z "$1" ] || echo -e '\033[34;1mError: '$*'\033[0m' >&2
     emili.py \
@@ -26,7 +30,6 @@ do
     [ -n "$r" ] &&  echo "--to $r"
 done < recipients-switchingreport
 )
-date
 
 today=$(date -I)
 IFS='-' read -r year month day <<< "$today" # split date
