@@ -73,6 +73,7 @@ emili.py \
     $lastReport \
     report-$year$month-*.csv \
     --body "$TEXTOK" \
+    || die "Error enviant fitxers CSV als companys"
 
 emili.py \
     --subject "SomEnergia SCCL, informe cambios de comercializador, $year-$month" \
@@ -85,5 +86,6 @@ emili.py \
     --style somenergia.css \
     $lastReport \
     --body "$TEXTOK" \
+    || die "Error enviant missatge a la CNMC"
 
 
