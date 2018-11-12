@@ -47,7 +47,7 @@ lastReport=${allreports[-1]}
 
 MONTHS=("" Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre)
 
-monthname=${MONTHS[$month]}
+monthname=${MONTHS[$((10#$month))]}
 
 
 step "Enviant resultats..."
@@ -56,7 +56,7 @@ TEXTOK="
 # Informe de Cambios de comercializadora para SomEnergia $monthname de $year
 
 Les adjuntamos el informe de cambios de comercializador correspondiente al
-mes de ${MONTHS[$month]} de $year para la comercializadora \"Som Energia SCCL\".
+mes de ${MONTHS[$((10#$month))]} de $year para la comercializadora \"Som Energia SCCL\".
 
 Un saludo.
 "
