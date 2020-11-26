@@ -152,7 +152,7 @@ class SwichingReport:
 			detail = self.element(parent, 'DetalleRechazadas')
 			self.element(detail, 'TipoRetraso', codigoRetraso)
 			self.element(detail, 'TMSolicitudesRechazadas', '{:.1f}'.format(meanTime))
-			self.element(detail, 'MotivoRechazo', rejected.rejectreason)
+			self.element(detail, 'MotivoRechazo', rejected.rejectreason.lstrip('0'))
 			self.element(detail, 'NumSolicitudesRechazadas', n)
 
 	def generateActivationPendingDetails(self, parent, summary) :

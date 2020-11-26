@@ -379,7 +379,7 @@ class SwichingReport_Test(unittest.TestCase) :
 			<DetalleRechazadas>
 				<TipoRetraso>00</TipoRetraso>
 				<TMSolicitudesRechazadas>1.5</TMSolicitudesRechazadas>
-				<MotivoRechazo>03</MotivoRechazo>
+				<MotivoRechazo>3</MotivoRechazo>
 				<NumSolicitudesRechazadas>300</NumSolicitudesRechazadas>
 			</DetalleRechazadas>
 """ + self.summaryFoot + self.foot
@@ -430,14 +430,14 @@ class SwichingReport_Test(unittest.TestCase) :
 			<DetalleRechazadas>
 				<TipoRetraso>00</TipoRetraso>
 				<TMSolicitudesRechazadas>1.5</TMSolicitudesRechazadas>
-				<MotivoRechazo>03</MotivoRechazo>
+				<MotivoRechazo>3</MotivoRechazo>
 				<NumSolicitudesRechazadas>300</NumSolicitudesRechazadas>
 			</DetalleRechazadas>
 """ + self.secondSummaryHeader + """\
 			<DetalleRechazadas>
 				<TipoRetraso>00</TipoRetraso>
 				<TMSolicitudesRechazadas>5.0</TMSolicitudesRechazadas>
-				<MotivoRechazo>01</MotivoRechazo>
+				<MotivoRechazo>1</MotivoRechazo>
 				<NumSolicitudesRechazadas>200</NumSolicitudesRechazadas>
 			</DetalleRechazadas>
 """ + self.summaryFoot + self.foot
