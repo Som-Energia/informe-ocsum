@@ -1,8 +1,8 @@
 # SwitchingReport
 
 
-[![Build Status](https://travis-ci.org/Som-Energia/informe-ocsum.png?branch=master)](https://travis-ci.org/Som-Energia/informe-ocsum)
-[![Coverage Status](https://coveralls.io/repos/Som-Energia/informe-ocsum/badge.png?branch=master)](https://coveralls.io/r/Som-Energia/informe-ocsum?branch=master)
+[![CI Status](https://github.com/Som-Energia/informe-ocsum/actions/workflows/main.yml/badge.svg)](https://github.com/Som-Energia/informe-ocsum/actions/workflows/main.yml)
+[![Coverage Status](https://coveralls.io/repos/github/Som-Energia/informe-ocsum/badge.svg?branch=main)](https://coveralls.io/github/Som-Energia/informe-ocsum?branch=main)
 [![Issue Stats](http://www.issuestats.com/github/Som-Energia/informe-ocsum/badge/pr)](http://www.issuestats.com/github/Som-Energia/informe-ocsum)
 [![Issue Stats](http://www.issuestats.com/github/Som-Energia/informe-ocsum/badge/issue)](http://www.issuestats.com/github/Som-Energia/informe-ocsum)
 
