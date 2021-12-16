@@ -1,0 +1,71 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events
+  push:
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env:
+      TRAVIS: 'true' # Skip tests requiring data
+    strategy:
+      matrix:
+        python-version:
+          - '3.6.9' # the one in production
+          - '3.8'
+          - '3.9'
+    name: Python ${{ matrix.python-version }}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Install system dependencies
+        run: |
+	  sudo apt install libpq-dev libyaml-dev libxml2-dev libxslt1-dev
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: BSFishy/pip-action@v1
+        with:
+          packages: |
+            coveralls
+            pytest
+            pytest-cov
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Unit tests
+        run: |
+          coverage run --source switchingreport pytest switchingreport
+      - uses: actions/upload-artifact@master
+        if: failure() && hashFiles('b2bdata/*result*')
+        with:
+          name: b2b-results
+          path: |
+            b2bdata/*result*
+
+      - name: Coveralls
+        uses: AndreMiras/coveralls-python-action@develop
+        with:
+          parallel: true
+          flag-name: Unit tests
+
+  coveralls_finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: AndreMiras/coveralls-python-action@develop
+      with:
+        parallel-finished: true
