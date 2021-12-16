@@ -47,7 +47,7 @@ jobs:
           pip install -r requirements.txt
       - name: Unit tests
         run: |
-          coverage run --source switchingreport pytest switchingreport
+          pytest --cov switchingreport switchingreport
       - uses: actions/upload-artifact@master
         if: failure() && hashFiles('b2bdata/*result*')
         with:
